@@ -1,0 +1,105 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/Container.astro";
+import RightImageSection from "../components/RightImageSection.astro";
+import progressBuilding from "../assets/progress-building.avif";
+import pcb2 from "../assets/pcb2.jpg";
+import threedprint from "../assets/3dprint.jpg";
+import code from "../assets/code1.jpg";
+import laptop from "../assets/laptop.jpg";
+import LeftImageSection from "../components/LeftImageSection.astro";
+import Features from "../components/Features.astro";
+import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
+---
+
+<!-- Page Layout -->
+<Layout title="Services">
+  <Container>
+    <div class="mt-16">
+      <Features
+        title="Why Choose Crab Labs?"
+        subTitle=""
+        benefits={[
+          "Flexibility and Competitive Pricing ",
+          "Extended and Comprehensive Support",
+          "Incredibly talented multidisciplinary team",
+          "Expert Regulatory Knowledge"
+        ]}
+      />
+    </div>
+
+    <h1
+      class="mt-12 text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl dark:text-white
+            mx-auto max-w-[85rem] items-center px-4 sm:px-6 lg:px-8 2xl:max-w-full"
+    >
+      Services
+    </h1>
+
+    <RightImageSection
+      title={"Design and Engineering"}
+      subTitle={"Crab Labs specializes in the design and development of electronic devices. We provide top to bottom design and development for devices in nearly all industries."}
+      single={false}
+      imgOne={code}
+      imgOneAlt={"code"}
+      imgTwo={pcb2}
+      imgTwoAlt={"PCB"}
+      btnExists={false}
+      btnTitle={""}
+      btnURL={""}
+    />
+    <LeftImageSection
+      title={"Manufacturing"}
+      subTitle={"Crab Labs is capable of facilitating small production manufacturing runs. We have advanced manufacturing equipment and full time expert staff which operates and maintains said equipment."}
+      img={threedprint}
+      imgAlt={"3D printing"}
+      btnExists={false}
+      btnTitle={""}
+      btnURL={""}
+    />
+
+    <RightImageSection
+      title={"Education"}
+      subTitle={"Crab Labs provides engineering education at low to no cost to those with the desire to learn. "}
+      single={true}
+      imgOne={laptop}
+      imgOneAlt={"Person typing on laptop"}
+      imgTwo={progressBuilding}
+      imgTwoAlt={""}
+      btnExists={true}
+      btnTitle={"Coming Soon"}
+      btnURL={""}
+    />
+
+    <!-- Pricing -->
+    <h1
+      class="mt-12 text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl dark:text-white
+          mx-auto max-w-[85rem] items-center px-4 sm:px-6 lg:px-8 2xl:max-w-full"
+    >
+      Pricing
+    </h1>
+
+    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto break-words">
+      <!-- Grid -->
+      <div class="w-full grid gap-6 grid-cols-2 sm:gap-12 lg:gap-8 mx-auto">
+        <!-- Stats -->
+        <div>
+          <h4 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-neutral-200">Minimum Price</h4>
+          <p class="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-orange-600">$2000</p>
+          <p class="mt-1 text-gray-500 dark:text-neutral-500">*depending on complexity and timeline</p>
+        </div>
+        <!-- End Stats -->
+
+        <!-- Stats -->
+        <div>
+          <h4 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-neutral-200">Price Range</h4>
+          <p class="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-orange-600 break-word">$120 - $250/hr</p>
+        </div>
+        <!-- End Stats -->
+      </div>
+      <!-- End Grid -->
+      <h2 class="text-2xl mt-10 font-bold text-gray-500 dark:text-neutral-500"><i>We accept Fiat and Crypto</i></h2>
+      <PrimaryArrowButton href="/contact">Get a Quote</PrimaryArrowButton>
+    </div>
+    <!-- End Pricing -->
+  </Container>
+</Layout>

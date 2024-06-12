@@ -1,0 +1,107 @@
+---
+// interface for link properties
+interface Link {
+  text?: string;
+  href?: string;
+  ariaLabel?: string;
+  icon?: string;
+}
+
+// interface to type-check properties
+interface Props {
+  links?: Array<Link>;
+}
+
+// set CSS style for hover
+const hoverClasses = "transition duration-300 transform hover:scale-105 sm:hover:none";
+
+// set props
+const { links = [] } = Astro.props;
+---
+
+<!-- Header -->
+<header
+  class="fixed inset-x-0 top-0 z-100 flex flex-wrap sm:justify-start sm:flex-nowrap w-full text-sm backdrop-filter backdrop-blur-3xl"
+>
+  <!-- Nav Menu -->
+  <nav class="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between py-4" aria-label="Global">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a
+        class={`inline-flex items-center gap-x-2 text-xl font-semibold dark:text-white whitespace-nowrap ${hoverClasses}`}
+        href="/"
+      >
+        <img class="w-10 h-auto" src="/logo.webp" alt="Logo" />
+        CRAB LABS
+      </a>
+      <!-- Logo End -->
+      <!-- Nav Menu Button -->
+      <div class="sm:hidden">
+        <button
+          type="button"
+          class="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-x-2 rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-transparent dark:border-neutral-700 dark:text-white dark:hover:bg-white/10"
+          data-hs-collapse="#navbar-image-and-text-2"
+          aria-controls="navbar-image-and-text-2"
+          aria-label="Toggle navigation"
+        >
+          <svg
+            class="hs-collapse-open:hidden flex-shrink-0 size-4"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" x2="21" y1="6" y2="6"></line><line x1="3" x2="21" y1="12" y2="12"></line><line
+              x1="3"
+              x2="21"
+              y1="18"
+              y2="18"
+            >
+            </line>
+          </svg>
+          <svg
+            class="hs-collapse-open:block hidden flex-shrink-0 size-4"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M18 6 6 18"></path><path d="m6 6 12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <!-- Nav Menu Button End -->
+    </div>
+    <!-- Nav Links -->
+    <div
+      id="navbar-image-and-text-2"
+      class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block"
+    >
+      <div class="flex flex-col mt-5 px-3 sm:flex-row justify-end sm:mt-0 sm:px-0">
+        {
+          links.map(({ text, href }) => (
+            <a
+              class={`py-3 ps-px sm:px-3 font-medium text-gray-500 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 ${hoverClasses}`}
+              href={href}
+            >
+              {text}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+    <!-- Nav Links End -->
+  </nav>
+  <!-- Nav Menu End -->
+</header>
+<!-- Header End -->

@@ -1,0 +1,69 @@
+---
+// components
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/Container.astro";
+import HoverButton from "../components/buttons/HoverButton.astro";
+import { Image } from "astro:assets";
+
+// icons
+import gears from "../assets/icons/gears.svg";
+import engineering from "../assets/icons/engineering.svg";
+import software from "../assets/icons/code.svg";
+import manu from "../assets/icons/manufacturing.svg";
+import education from "../assets/icons/education.svg";
+import programmer from "../assets/programmer.svg";
+---
+
+<!-- ========== MAIN CONTENT ========== -->
+<main id="content">
+  <!-- Page Layout -->
+  <Layout title="Crab Labs">
+    <Hero />
+    <!-- <Swish/> -->
+    <Container>
+      <div class="w-full py-10">
+        <div class="flex flex flex-col md:flex-row justify-between sm:text-xl py-20 gap-6 dark:text-neutral-400">
+          <div class="flex items-center gap-3">
+            <Image src={gears} alt="Icon Mechanical" format={"svg"} />
+            <span>Mechanical Engineering</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <Image src={engineering} alt="Icon Electrial" format={"svg"} />
+            <span>Electrical Engineering</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <Image src={software} alt="Icon Code" format={"svg"} />
+            <span>Software Engineering</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <Image src={manu} alt="Icon Manufacturing" format={"svg"} />
+            <span>Manufacturing</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <Image src={education} alt="Icon Education" format={"svg"} />
+            <span>Education</span>
+          </div>
+        </div>
+      </div>
+      <div class="py-28 flex flex-col md:flex-row">
+        <div>
+          <Image src={programmer} alt="Programmer" format={"svg"} />
+        </div>
+        <div class="m-auto">
+          <h2 class="text-center block text-2xl font-bold text-gray-800 sm:text-4xl dark:text-white">
+            We deliver high quality engineering work
+          </h2>
+          <p class="py-8 text-center mt-3 text-lg text-gray-800 dark:text-neutral-400">
+            Trust us with your next engineering project.
+          </p>
+          <div class="flex place-content-center">
+            <HoverButton href="/services">Our Services</HoverButton>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Layout>
+  <!-- Page Layout End -->
+</main>
+<!-- ========== END MAIN CONTENT ========== -->

@@ -1,0 +1,13 @@
+---
+// set props
+const { href } = Astro.props;
+---
+
+<div class="mt-7 grid gap-3 w-full sm:inline-flex">
+    <a
+        class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent dark:border-neutral-700 dark:bg-zinc-700 dark:text-neutral-300 dark:ring-zinc-200 dark:hover:bg-zinc-600 dark:focus:outline-none disabled:opacity-50 disabled:pointer-events-none ring-zinc-500 transition duration-300 focus-visible:ring"
+        href={href}
+    >
+        <slot />
+    </a>
+</div>

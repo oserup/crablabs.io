@@ -1,0 +1,84 @@
+---
+import Container from "../components/Container.astro";
+import Layout from "../layouts/Layout.astro";
+import Quote from "../components/Quote.astro";
+import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
+import Image from "astro/components/Image.astro";
+import pcb3 from "../assets/pcb3.jpg";
+import code2 from "../assets/code2.jpg";
+---
+
+<!-- Page Layout -->
+<Layout title="About Us">
+    <Container>
+        <!-- About -->
+        <div class="max-w-3xl px-4 pt-6 lg:pt-10 pb-12 sm:px-6 lg:px-8 mx-auto">
+            <div class="max-w-2xl mt-12">
+                <!-- Content -->
+                <div class="space-y-5 md:space-y-8">
+                    <h2 class="text-2xl font-bold md:text-3xl dark:text-white">Meet Crab Labs</h2>
+
+                    <p class="text-lg text-gray-800 dark:text-neutral-200">
+                        At Crab Labs, we are pioneers in engineering and manufacturing, driven by a passion for
+                        innovation and a commitment to excellence. Founded on the principle of pushing boundaries, we
+                        embark on a journey to redefine industry standards and create solutions that shape the future.
+                    </p>
+
+                    <p class="text-lg text-gray-800 dark:text-neutral-200">
+                        Our team comprises seasoned professionals and fresh talent, united by a shared vision of
+                        transforming ideas into reality. With expertise spanning mechanical, electrical, and software
+                        engineering, we possess the versatility to tackle diverse challenges and deliver cutting-edge
+                        solutions.
+                    </p>
+
+                    <Image class="w-full rounded-xl" src={pcb3} alt={"PCB"} draggable={"false"} format={"jpg"} />
+
+                    <p class="text-lg text-gray-800 dark:text-neutral-200">
+                        In our state-of-the-art facilities, we combine traditional craftsmanship with advanced
+                        technologies, leveraging the latest in automation, robotics, and digital manufacturing. This
+                        seamless integration enables us to optimize production processes, enhance efficiency, and
+                        maintain uncompromising quality standards.
+                    </p>
+
+                    <PrimaryArrowButton href="/services">View Our Services</PrimaryArrowButton>
+
+                    <p class="text-lg text-gray-800 dark:text-neutral-200">
+                        At the heart of our operations lies a relentless pursuit of innovation. We thrive on pushing
+                        boundaries, exploring new frontiers, and pioneering breakthroughs that revolutionize industries.
+                        Whether it's developing sustainable energy solutions, optimizing manufacturing processes, or
+                        designing next-generation products, we are driven by a spirit of creativity and ingenuity.
+                    </p>
+
+                    <!--<Quote quote="If you're not changing the world the world is changing you" author="Orion Serup - Founder" />-->
+
+                    <Image
+                        class="w-full rounded-xl"
+                        src={code2}
+                        alt={"Laptop with code"}
+                        draggable={"false"}
+                        format={"jpg"}
+                    />
+                    <!-- <h3 class="text-2xl font-semibold dark:text-white">Our Mission</h3> -->
+
+                    <p class="text-lg text-gray-800 dark:text-neutral-200">
+                        At Crab Labs, we understand that success is not just about what we create, but how we
+                        create it. That's why we prioritize collaboration, integrity, and customer satisfaction in
+                        everything we do. We partner closely with our clients, understanding their unique needs and
+                        challenges to deliver tailored solutions that exceed expectations.
+                    </p>
+
+                    <p class="text-lg text-gray-800 dark:text-neutral-200">
+                        As we embark on this journey, we invite you to join us in shaping the future of engineering and
+                        manufacturing. Together, let's push boundaries, defy expectations, and unlock the limitless
+                        potential of technology to create a better tomorrow.
+                    </p>
+
+                    <h2 class="text-3xl font-bold dark:text-white text-center"><i>Welcome to Crab Labs</i></h2>
+                </div>
+                <!-- End Content -->
+            </div>
+
+            <!-- End About -->
+        </div>
+    </Container>
+</Layout>

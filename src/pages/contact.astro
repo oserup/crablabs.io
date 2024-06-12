@@ -1,0 +1,212 @@
+---
+import Container from "../components/Container.astro";
+import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
+import Layout from "../layouts/Layout.astro";
+
+const email = "contact@crablabs.io";
+const emailHref = "#mailto:contact@crablabs.io";
+const address = ["100 Long Beach Blvd", "Long Beach, CA, United States of America"];
+---
+
+<main id="content">
+  <!-- Page Layout -->
+  <Layout title="Contact Us">
+    <Container>
+      <!-- Contact -->
+      <div class="pt-6 lg:pt-10">
+        <div class="max-w-5xl px-4 xl:px-0 py-10 lg:py-20 mx-auto">
+          <!-- Title -->
+          <div class="max-w-3xl mb-10 lg:mb-14">
+            <h1 class="text-3xl font-bold md:text-4xl dark:text-white">Contact Us</h1>
+            <p class="mt-1 text-neutral-400">We'll get your shit done.</p>
+          </div>
+          <!-- End Title -->
+
+          <!-- Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-16">
+            <div class="md:order-2 border-b border-neutral-800 pb-10 mb-10 md:border-b-0 md:pb-0 md:mb-0">
+              <form>
+                <!-- Container for the label and email input field -->
+                <div class="grid gap-4">
+                  <!-- Input -->
+                  <div>
+                    <!-- Label for the name input field, visually hidden but accessible to screen readers -->
+                    <label for="hs-tac-input-name" class="sr-only">Name</label>
+                    <!-- Name input field -->
+                    <input
+                      type="text"
+                      id="hs-tac-input-name"
+                      class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+                      placeholder="Name"
+                    />
+                  </div>
+                  <!-- End Input -->
+
+                  <!-- Input -->
+                  <div>
+                    <!-- Label for the email input field, visually hidden but accessible to screen readers -->
+                    <label for="hs-tac-input-email" class="sr-only">Email</label>
+                    <!-- Email input field -->
+                    <input
+                      type="email"
+                      id="hs-tac-input-email"
+                      autocomplete="email"
+                      class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+                      placeholder="Email"
+                    />
+                  </div>
+                  <!-- End Input -->
+
+                  <!-- Input -->
+                  <div>
+                    <!-- Label for the phone input field, visually hidden but accessible to screen readers -->
+                    <label for="hs-tac-input-email" class="sr-only">Phone</label>
+                    <!-- Phone input field -->
+                    <input
+                      type="tel"
+                      id="hs-tac-input-phone"
+                      class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+                      placeholder="Phone"
+                    />
+                  </div>
+                  <!-- End Input -->
+
+                  <!-- Input -->
+
+                  <div>
+                    <label for="hs-tac-message" class="sr-only">Tell us more about your project</label>
+                    <!-- prettier-ignore -->
+                    <textarea
+                  id="hs-tac-message"
+                  rows="4"
+                  class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+                  placeholder="Tell us more about your project"
+                ></textarea>
+                  </div>
+                  <!-- End Input -->
+                </div>
+
+                <div class="mt-2">
+                  <p class="text-xs text-neutral-500">All fields are required</p>
+
+                  <PrimaryArrowButton href="">Submit</PrimaryArrowButton>
+                </div>
+              </form>
+      
+              </script>
+            </div>
+            <!-- End Col -->
+
+            <div class="space-y-14">
+              <!-- Item -->
+              <div class="flex gap-x-5">
+                <svg
+                  class="flex-shrink-0 size-6 text-neutral-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3">
+                  </circle>
+                </svg>
+                <div class="grow">
+                  <h4 class="text-white font-semibold">Our address:</h4>
+
+                  <address class="mt-1 text-neutral-400 text-sm not-italic">
+                    {address[0]}
+                    <br />
+                    {address[1]}
+                  </address>
+                </div>
+              </div>
+              <!-- End Item -->
+
+              <!-- Item -->
+              <div class="flex gap-x-5">
+                <svg
+                  class="flex-shrink-0 size-6 text-neutral-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z"
+                  >
+                  </path><path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10"></path>
+                </svg>
+                <div class="grow">
+                  <h4 class="text-white font-semibold">Email us:</h4>
+
+                  <a class="mt-1 text-neutral-400 text-sm" href={emailHref}>
+                    {email}
+                  </a>
+                </div>
+              </div>
+              <!-- End Item -->
+
+              <!-- Item -->
+              <div class="flex gap-x-5">
+                <svg
+                  class="flex-shrink-0 size-6 text-neutral-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m3 11 18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path>
+                </svg>
+                <div class="grow">
+                  <h4 class="text-white font-semibold">We're hiring</h4>
+                  <p class="mt-1 text-neutral-400">We are looking for talented individuals to join our team.</p>
+                  <p class="mt-2">
+                    <a
+                      class="group inline-flex items-center gap-x-2 font-medium text-sm text-orange-400 decoration-2 hover:underline focus:outline-none focus:underline"
+                      href="/careers"
+                    >
+                      Job openings
+                      <svg
+                        class="flex-shrink-0 size-4 transition group-hover:translate-x-0.5 group-hover:translate-x-0 group-focus:translate-x-0.5 group-focus:translate-x-0"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+                      </svg>
+                    </a>
+                  </p>
+                </div>
+              </div>
+              <!-- End Item -->
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Grid -->
+        </div>
+      </div>
+      <!-- End Contact -->
+    </Container>
+  </Layout>
+</main>

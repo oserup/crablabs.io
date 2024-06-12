@@ -1,0 +1,22 @@
+---
+const { href } = Astro.props;
+
+interface Props {
+    href?: string;
+}
+
+const baseClasses =
+    "group inline-flex items-center justify-center gap-x-3 rounded-lg px-4 py-3 text-center text-sm font-medium text-white ring-zinc-500 focus-visible:ring transition duration-300 outline-none";
+const borderClasses = "border border-transparent";
+const bgColorClasses = "bg-orange-600 dark:focus:outline-none";
+const hoverClasses = "hover:shadow-2xl hover:shadow-orange-500";
+const fontSizeClasses = "2xl:text-base";
+const ringClasses = "dark:ring-zinc-200";
+---
+
+<a
+    class={`${baseClasses} ${borderClasses} ${bgColorClasses} ${hoverClasses} ${fontSizeClasses} ${ringClasses}`}
+    href={href}
+>
+    <slot />
+</a>
