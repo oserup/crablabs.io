@@ -4,7 +4,7 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
 import Layout from "../layouts/Layout.astro";
 
 const email = "contact@crablabs.io";
-const emailHref = "#mailto:contact@crablabs.io";
+const emailHref = "mailto:contact@crablabs.io";
 const address = ["100 Long Beach Blvd", "Long Beach, CA, United States of America"];
 ---
 
@@ -25,19 +25,21 @@ const address = ["100 Long Beach Blvd", "Long Beach, CA, United States of Americ
           <!-- Grid -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-16">
             <div class="md:order-2 border-b border-neutral-800 pb-10 mb-10 md:border-b-0 md:pb-0 md:mb-0">
-              <form>
+              <form action="https://usebasin.com/f/d4ca8152fb97" method="POST">
                 <!-- Container for the label and email input field -->
                 <div class="grid gap-4">
                   <!-- Input -->
                   <div>
                     <!-- Label for the name input field, visually hidden but accessible to screen readers -->
-                    <label for="hs-tac-input-name" class="sr-only">Name</label>
+                    <label for="name" class="sr-only">Name</label>
                     <!-- Name input field -->
                     <input
                       type="text"
-                      id="hs-tac-input-name"
+                      name="name"
+                      id="name"
                       class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
                       placeholder="Name"
+                      required
                     />
                   </div>
                   <!-- End Input -->
@@ -45,14 +47,16 @@ const address = ["100 Long Beach Blvd", "Long Beach, CA, United States of Americ
                   <!-- Input -->
                   <div>
                     <!-- Label for the email input field, visually hidden but accessible to screen readers -->
-                    <label for="hs-tac-input-email" class="sr-only">Email</label>
+                    <label for="email" class="sr-only">Email</label>
                     <!-- Email input field -->
                     <input
                       type="email"
-                      id="hs-tac-input-email"
+                      name="email"
+                      id="email"
                       autocomplete="email"
                       class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
                       placeholder="Email"
+                      required
                     />
                   </div>
                   <!-- End Input -->
@@ -60,11 +64,12 @@ const address = ["100 Long Beach Blvd", "Long Beach, CA, United States of Americ
                   <!-- Input -->
                   <div>
                     <!-- Label for the phone input field, visually hidden but accessible to screen readers -->
-                    <label for="hs-tac-input-email" class="sr-only">Phone</label>
+                    <label for="phone" class="sr-only">Phone</label>
                     <!-- Phone input field -->
                     <input
                       type="tel"
-                      id="hs-tac-input-phone"
+                      name="phone"
+                      id="phone"
                       class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
                       placeholder="Phone"
                     />
@@ -74,13 +79,15 @@ const address = ["100 Long Beach Blvd", "Long Beach, CA, United States of Americ
                   <!-- Input -->
 
                   <div>
-                    <label for="hs-tac-message" class="sr-only">Tell us more about your project</label>
+                    <label for="message" class="sr-only">Tell us more about your project</label>
                     <!-- prettier-ignore -->
                     <textarea
-                  id="hs-tac-message"
+                  id="message"
+                  name="message"
                   rows="4"
                   class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
                   placeholder="Tell us more about your project"
+                  required
                 ></textarea>
                   </div>
                   <!-- End Input -->
@@ -88,8 +95,7 @@ const address = ["100 Long Beach Blvd", "Long Beach, CA, United States of Americ
 
                 <div class="mt-2">
                   <p class="text-xs text-neutral-500">All fields are required</p>
-
-                  <PrimaryArrowButton href="">Submit</PrimaryArrowButton>
+                  <button type="submit"> <PrimaryArrowButton type="submit" href=""> Submit</PrimaryArrowButton></button> 
                 </div>
               </form>
       
