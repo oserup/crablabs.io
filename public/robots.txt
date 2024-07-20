@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://crablabs.io/sitemap-index.xml
