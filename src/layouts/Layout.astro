@@ -35,7 +35,8 @@ const links = [
 const { title } = Astro.props;
 ---
 
-<!-- HTML layout --><!doctype html>
+<!-- HTML layout -->
+<!doctype html>
 <html lang="en" class="dark">
 	<head>
 		<meta charset="UTF-8" />
@@ -44,17 +45,20 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="sitemap" href="/sitemap-index.xml" />
+	<!-- Google tag (gtag.js) -->
 		<script
-			type="text/partytown"
-			src="https://www.googletagmanager.com/gtag/js?id=G-VS3TXE9GHY"></script>
-	  	<script type="text/partytown">
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-VS3TXE9GHY"
+		></script>
+		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
-		  		dataLayer.push(arguments);
+			dataLayer.push(arguments);
 			}
 			gtag("js", new Date());
+	
 			gtag("config", "G-VS3TXE9GHY");
-	  	</script>
+		</script>
 		<title>{title}</title>
 	</head>
 	<div class="flex flex-col h-screen">

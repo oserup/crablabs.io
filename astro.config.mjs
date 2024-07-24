@@ -11,13 +11,8 @@ export default defineConfig({
   site: "https://crablabs.io",
   integrations: [
     tailwind(),
-    partytown({
-      config: {
-        forward: ["dataLayer.push"],
-      },
-    } ),
+    mdx(),
     sitemap(), 
-    mdx()
   ],
   output: "static",
   adapter: vercelStatic()
