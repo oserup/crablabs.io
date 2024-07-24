@@ -44,6 +44,17 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="sitemap" href="/sitemap-index.xml" />
+		<script
+			type="text/partytown"
+			src="https://www.googletagmanager.com/gtag/js?id=G-VS3TXE9GHY"></script>
+	  	<script type="text/partytown">
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+		  		dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+			gtag("config", "G-VS3TXE9GHY");
+	  	</script>
 		<title>{title}</title>
 	</head>
 	<div class="flex flex-col h-screen">
