@@ -1,8 +1,31 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Container from "../components/Container.astro";
 ---
 
 <main id="content">
     <!-- Page Layout -->
-    <Layout title="Careers" />
+    <Layout title="Careers">
+        <Container>
+            <!-- About -->
+            <div class="max-w-3xl px-4 pt-6 lg:pt-10 pb-12 sm:px-6 lg:px-8 mx-auto">
+                <div class="max-w-2xl mt-12">
+                    <!-- Content -->
+                    <div class="space-y-5 md:space-y-8">
+    
+                        <p class="text-xl text-gray-800 dark:text-neutral-200">
+                            We are always looking for fresh talent. 
+                            
+                            
+                            Send an updated resume to <a href="mailto:jobs@crablabs.io">jobs@crablabs.io</a> 
+                        </p>
+                    </div>
+                    <!-- End Content -->
+                </div>
+    
+                <!-- End About -->
+            </div>
+        </Container>
+    </Layout>
 </main>
+
