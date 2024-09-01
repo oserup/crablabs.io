@@ -6,6 +6,7 @@ import PrimaryArrowButton from "./buttons/PrimaryArrowButton.astro";
 const {
   title,
   subTitle,
+  content,
   btnExists,
   btnTitle,
   btnURL,
@@ -19,6 +20,7 @@ const {
 interface Props {
   title: string;
   subTitle: string;
+  content?: Array<string>;
   btnExists?: boolean;
   btnTitle?: string;
   btnURL?: string;
@@ -46,6 +48,21 @@ interface Props {
     >
       {subTitle}
     </p>
+
+    {
+      content && (
+          <ul class="space-y-1 sm:space-y-2">
+              {content.map((item) => (
+                  <li class="flex space-x-2">
+                      <span class="mb-4 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-lg">
+                          {item}
+                      </span>
+                  </li>
+              ))}
+          </ul>
+      )
+  }
+
     <!-- Conditional rendering of the Primary Call-To-Action button if 'btnExists' is true -->
     {btnExists ? <PrimaryArrowButton url={btnURL}>{btnTitle}</PrimaryArrowButton> : null}
   </div>
