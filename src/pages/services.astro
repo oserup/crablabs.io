@@ -5,6 +5,7 @@ import RightImageSection from "../components/RightImageSection.astro";
 import progressBuilding from "../assets/progress-building.avif";
 import pcb2 from "../assets/pcb2.jpg";
 import threedprint from "../assets/3dprint.jpg";
+import bedofnails from "../assets/bedofnails.webp";
 import code from "../assets/code1.jpg";
 import laptop from "../assets/laptop.jpg";
 import LeftImageSection from "../components/LeftImageSection.astro";
@@ -64,13 +65,27 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
     />
 
     <RightImageSection
+    title={"Testing"}
+    subTitle={"We test and verify products for you"}
+    content = {[
+                "Software: HIL, SIL, Unit Testing, Integration Testing, System Testing",
+                "Electrical: Custom Test Fixtures, Bed of Nails, EMI/EMC, Functional Testing",
+              ]}
+    single={true}
+    imgOne={bedofnails}
+    imgOneAlt={"Bed of Nails"}
+    imgTwo={pcb2}
+    imgTwoAlt={"PCB"}
+    btnExists={false}
+    btnTitle={""}
+    btnURL={""}
+  />
+
+    <LeftImageSection
       title={"Education"}
       subTitle={"Crab Labs provides engineering education at low to no cost to those with the desire to learn."}
-      single={true}
-      imgOne={laptop}
-      imgOneAlt={"Person typing on laptop"}
-      imgTwo={progressBuilding}
-      imgTwoAlt={""}
+      img={laptop}
+      imgAlt={"Person typing on laptop"}
       btnExists={true}
       btnTitle={"Coming Soon"}
       btnURL={""}
