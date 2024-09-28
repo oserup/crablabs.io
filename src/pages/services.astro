@@ -2,12 +2,15 @@
 import Layout from "../layouts/Layout.astro";
 import Container from "../components/Container.astro";
 import RightImageSection from "../components/RightImageSection.astro";
-import progressBuilding from "../assets/progress-building.avif";
+import prototype from "../assets/prototype.jpeg"
 import pcb2 from "../assets/pcb2.jpg";
-import threedprint from "../assets/3dprint.jpg";
 import bedofnails from "../assets/bedofnails.webp";
 import code from "../assets/code1.jpg";
-import laptop from "../assets/laptop.jpg";
+import feasibility from "../assets/Feasibility-Study.jpg"
+import typing from "../assets/typing.jpg"
+import design from "../assets/design.webp"
+import molding from "../assets/molding.jpeg"
+import testing from "../assets/tetsing.jpg"
 import LeftImageSection from "../components/LeftImageSection.astro";
 import Features from "../components/Features.astro";
 import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
@@ -22,8 +25,8 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
         subTitle=""
         benefits={[
           "We work with you not for you",
-          "We make advanced engineering affordable",
-          "We deliver on short timelines",
+          "We make product design affordable",
+          "We deliver in weeks not months",
           "We go to you, not the other way around",
         ]}
       />
@@ -37,43 +40,67 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
     </h1>
 
     <RightImageSection
-      title={"Design and Engineering"}
-      subTitle={"We provide solutions and support to get your idea realized"}
-      content = {[
-                  "Project Management: Regulatory Documentation, Product Lifecycle Management, Requirement Generation, System Integration",
-                  "Software Engineering: UI/UX Design, Desktop, Mobile, Web, and Cloud Development",
-                  "Electrical Engineering: Schematic Capture, PCB Design, Firmware Development, Simulation and Modelling, DFM/DFT",
-                  "Mechanical Engineering: Product Design, CAD Design, Simulation and Modelling, DFM/DFT"
-                ]}
-      single={false}
-      imgOne={code}
-      imgOneAlt={"code"}
-      imgTwo={pcb2}     
-      imgTwoAlt={"PCB"}
+      title={"Feasibility Studies"}
+      subTitle={"We evaluate your idea"}
+      content = {["We conduct market research and evaluate product market fit",
+                  "We evaluate competition and analyze competing products",
+                  "We perform technical analysis and a product development plan is generated",
+                  "We estimate development and product cost"]}
+      imgOne={feasibility}
+      imgOneAlt={"feasibility"}
+      single= {true}
       btnExists={false}
       btnTitle={""}
       btnURL={""}
     />
+
     <LeftImageSection
-      title={"Manufacturing"}
-      subTitle={"We are capable of facilitating small production manufacturing runs. We have a number of manufacturing partners both foreign and domestic which facilitate larger scale manufacturing initiatives on our behalf."}
-      img={threedprint}
-      imgAlt={"3D printing"}
+    title={"Product Design"}
+    subTitle={"We define the form and function of the product to your specification. Our expert designers and engineers will work together with you to create the best looking and functioning device possible.  "}
+    img={design}
+    imgAlt={"design"}
+    btnExists={false}
+    btnTitle={""}
+    btnURL={""}
+  />
+
+    <RightImageSection
+      title={"Prototyping"}
+      subTitle={"We develop a working version of your idea"}
+      content={[
+        "We develop several levels of prototype from rough functional to Design Validation ready",
+        "We leverage vast internal manufacturing and testing capabilities to iterate quickly",
+      ]}
+      single={true}
+      imgOne={prototype}
+      imgOneAlt={"prototype"}
+      imgTwo={code}
+      imgTwoAlt={"code"}
+      btnExists={false}
+      btnTitle={""}
+      btnURL={""}
+    />
+
+    <LeftImageSection
+      title={"Design for Manufacture/Test"}
+      subTitle={"Our team of experts refines the design so that it can be manufactured and tested effectively at scale"}
+      img={molding}
+      imgAlt={"molding"}
       btnExists={false}
       btnTitle={""}
       btnURL={""}
     />
 
     <RightImageSection
-    title={"Testing"}
+    title={"Testing and Verification"}
     subTitle={"We test and verify products for you"}
     content = {[
-                "Software: HIL, SIL, Unit Testing, Integration Testing, System Testing",
-                "Electrical: Custom Test Fixtures, Bed of Nails, EMI/EMC, Functional Testing",
+                "We facilitate in-depth functional device testing and verification",
+                "We partner with local certified testing labs for regulatory testing"
               ]}
     single={true}
-    imgOne={bedofnails}
-    imgOneAlt={"Bed of Nails"}
+    imgOne={testing}
+    imgOneAlt={"testing"}
     imgTwo={pcb2}
     imgTwoAlt={"PCB"}
     btnExists={false}
@@ -81,15 +108,16 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
     btnURL={""}
   />
 
-    <LeftImageSection
-      title={"Education"}
-      subTitle={"Crab Labs provides engineering education at low to no cost to those with the desire to learn."}
-      img={laptop}
-      imgAlt={"Person typing on laptop"}
-      btnExists={true}
-      btnTitle={"Coming Soon"}
-      btnURL={""}
-    />
+  <LeftImageSection
+  title={"Documentation"}
+  subTitle={"Our team of experienced experts will provide in-depth technical documentation at all stages of development."}
+  img={typing}
+  imgAlt={"typing"}
+  btnExists={false}
+  btnTitle={""}
+  btnURL={""}
+  />
+
 
     <!-- Pricing -->
     <h1
