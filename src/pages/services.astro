@@ -4,7 +4,6 @@ import Container from "../components/Container.astro";
 import RightImageSection from "../components/RightImageSection.astro";
 import prototype from "../assets/prototype.jpeg"
 import pcb2 from "../assets/pcb2.jpg";
-import bedofnails from "../assets/bedofnails.webp";
 import code from "../assets/code1.jpg";
 import feasibility from "../assets/Feasibility-Study.jpg"
 import typing from "../assets/typing.jpg"
@@ -19,32 +18,15 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
 <!-- Page Layout -->
 <Layout title="Services">
   <Container>
-    <div class="mt-16">
-      <Features
-        title="Why Choose Crab Labs?"
-        subTitle=""
-        benefits={[
-          "We work with you not for you",
-          "We make product design affordable",
-          "We deliver in weeks not months",
-          "We go to you, not the other way around",
-        ]}
-      />
-    </div>
 
-    <h1
-      class="mt-12 text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl dark:text-white
-            mx-auto max-w-[85rem] items-center px-4 sm:px-6 lg:px-8 2xl:max-w-full"
-    >
-      Services
-    </h1>
+    Crab Labs
 
     <RightImageSection
       title={"Feasibility Studies"}
-      subTitle={"We evaluate your idea"}
+      subTitle={""}
       content = {["We conduct market research and evaluate product market fit",
                   "We evaluate competition and analyze competing products",
-                  "We perform technical analysis and a product development plan is generated",
+                  "We perform technical analysis to generate a product development plan",
                   "We estimate development and product cost"]}
       imgOne={feasibility}
       imgOneAlt={"feasibility"}
@@ -83,7 +65,7 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
 
     <LeftImageSection
       title={"Design for Manufacture/Test"}
-      subTitle={"Our team of experts refines the design so that it can be manufactured and tested effectively at scale"}
+      subTitle={"Our team of experts refines an existing design so that it can be manufactured and tested effectively at scale"}
       img={molding}
       imgAlt={"molding"}
       btnExists={false}
@@ -117,7 +99,6 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
   btnTitle={""}
   btnURL={""}
   />
-
 
     <!-- Pricing -->
     <h1

@@ -1,11 +1,11 @@
 ---
 import Container from "../components/Container.astro";
 import Layout from "../layouts/Layout.astro";
-import Quote from "../components/Quote.astro";
 import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
 import Image from "astro/components/Image.astro";
 import pcb3 from "../assets/pcb3.jpg";
-import code2 from "../assets/code2.jpg";
+import Features from "../components/Features.astro"
+
 ---
 
 <!-- Page Layout -->
@@ -14,16 +14,34 @@ import code2 from "../assets/code2.jpg";
         <!-- About -->
         <div class="max-w-3xl px-4 pt-6 lg:pt-10 pb-12 sm:px-6 lg:px-8 mx-auto">
             <div class="max-w-2xl mt-12">
+
                 <!-- Content -->
                 <div class="space-y-5 md:space-y-8">
                     <h2 class="text-2xl font-bold md:text-3xl dark:text-white">Meet Crab Labs</h2>
 
                     <p class="text-lg text-gray-800 dark:text-neutral-200">
-                        Crab Labs was founded with the express goal of fixing many of the problems associated with the product development industry. We are a people centered firm first and foremost.
+                        We are a engineering and design firm based in Long Beach, California. We assist companies and individuals develop their products from anywhere in the product development process.
+                        We specialize in the development of electronic devices from a hardware and software perspective.
+                    </p>
+
+                    <div class="mt-16">
+                        <Features
+                          title="Why Choose Crab Labs?"
+                          subTitle="Compared to other firms, Crab Labs has:"
+                          benefits={[
+                            "Faster Delivery",        
+                            "Higher Quality of Work",
+                            "Better Client Experience",
+                          ]}
+                        />
+                      </div>
+
+                    <p class="text-lg text-gray-800 dark:text-neutral-200">
+                        Crab Labs was founded with the express goal of fixing many of the problems associated with the engineering services industry. We are a people centered firm first and foremost.
                     </p>
 
                     <p class="text-lg text-gray-800 dark:text-neutral-200">
-                        Crab Labs is owned and operated by its workers. Our workers are passionate, dedicated, and extremely technically gifted. Our team takes pride and direct ownership of their work. 
+                        Crab Labs is owned and operated by its workers. Our workers are passionate, dedicated, and technically gifted. Our team takes pride and direct ownership of their work. 
 
                     <p class="text-lg text-gray-800 dark:text-neutral-200">
                         We focus on fostering relationships with our clients. We believe that good communication is what separates good firms from great firms. We operate on a foundation of frequent, fluid, and comprehensive communication.
@@ -31,7 +49,8 @@ import code2 from "../assets/code2.jpg";
                     </p>
 
                     <p class="text-lg text-gray-800 dark:text-neutral-200">
-                        Our goal is to work with you, not for you. We seek to tightly integrate with your team and get to know you. Whatever we build, we build for you with you by our side.
+                        Our goal is to work with you, not for you. We seek to tightly integrate with your team and get to know you. Whatever we build, we build for you with you by our side. 
+                        All material 
                     </p>
 
                     <p class="text-lg text-gray-800 dark:text-neutral-200">
