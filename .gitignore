@@ -24,3 +24,5 @@ dist/*
 
 # jetbrains setting folder
 .idea/
+
+.vscode/
