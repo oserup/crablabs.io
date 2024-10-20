@@ -3,15 +3,11 @@ import Layout from "../layouts/Layout.astro";
 import Container from "../components/Container.astro";
 import RightImageSection from "../components/RightImageSection.astro";
 import prototype from "../assets/prototype.jpeg"
-import pcb2 from "../assets/pcb2.jpg";
-import code from "../assets/code1.jpg";
+import reverseeng from "../assets/reverseeng.jpg";
 import feasibility from "../assets/Feasibility-Study.jpg"
-import typing from "../assets/typing.jpg"
 import design from "../assets/design.webp"
-import molding from "../assets/molding.jpeg"
-import testing from "../assets/tetsing.jpg"
+import code from "../assets/code2.jpg"
 import LeftImageSection from "../components/LeftImageSection.astro";
-import Features from "../components/Features.astro";
 import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
 ---
 
@@ -22,86 +18,49 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
     Crab Labs
 
     <RightImageSection
-      title={"Feasibility Studies"}
-      subTitle={""}
-      content = {["We conduct market research and evaluate product market fit",
-                  "We evaluate competition and analyze competing products",
-                  "We perform technical analysis to generate a product development plan",
-                  "We estimate development and product cost"]}
+      title={"Consulting"}
+      subTitle={"Our team helps you solve your problems"}
+      content = {}
       imgOne={feasibility}
       imgOneAlt={"feasibility"}
       single= {true}
-      btnExists={false}
-      btnTitle={""}
-      btnURL={""}
+      btnExists={true}
+      btnTitle={"Get a Quote"}
+      btnURL={"/contact"}
     />
 
     <LeftImageSection
-    title={"Product Design"}
-    subTitle={"We define the form and function of the product to your specification. Our expert designers and engineers will work together with you to create the best looking and functioning device possible.  "}
-    img={design}
-    imgAlt={"design"}
-    btnExists={false}
-    btnTitle={""}
-    btnURL={""}
-  />
+      title={"Design Review and Analysis"}
+      subTitle={"We ensure that your design will meet applicable requirements and standards"}
+      img={code}
+      imgAlt={"code review"}
+      btnExists={true}
+      btnTitle={"Get a Quote"}
+      btnURL={"/contact"}
+    />
 
     <RightImageSection
-      title={"Prototyping"}
-      subTitle={"We develop a working version of your idea"}
-      content={[
-        "We develop several levels of prototype from rough functional to Design Validation ready",
-        "We leverage vast internal manufacturing and testing capabilities to iterate quickly",
-      ]}
-      single={true}
+      title={"Prototyping and Product Development"}
+      subTitle={"We provide full-cycle product development"}
       imgOne={prototype}
       imgOneAlt={"prototype"}
-      imgTwo={code}
-      imgTwoAlt={"code"}
-      btnExists={false}
-      btnTitle={""}
-      btnURL={""}
+      single= {true}
+      btnExists={true}
+      btnTitle={"Get a Quote"}
+      btnURL={"/contact"}
     />
 
     <LeftImageSection
-      title={"Design for Manufacture/Test"}
-      subTitle={"Our team of experts refines an existing design so that it can be manufactured and tested effectively at scale"}
-      img={molding}
-      imgAlt={"molding"}
-      btnExists={false}
-      btnTitle={""}
-      btnURL={""}
-    />
-
-    <RightImageSection
-    title={"Testing and Verification"}
-    subTitle={"We test and verify products for you"}
-    content = {[
-                "We facilitate in-depth functional device testing and verification",
-                "We partner with local certified testing labs for regulatory testing"
-              ]}
-    single={true}
-    imgOne={testing}
-    imgOneAlt={"testing"}
-    imgTwo={pcb2}
-    imgTwoAlt={"PCB"}
-    btnExists={false}
-    btnTitle={""}
-    btnURL={""}
+      title={"Reverse Engineering"}
+      subTitle={"We produce usable source files and documentation from manufactured products"}
+      img={reverseeng}
+      imgAlt={"reverse engineering"}
+      btnExists={true}
+      btnTitle={"Get a Quote"}
+      btnURL={"/contact"}
   />
 
-  <LeftImageSection
-  title={"Documentation"}
-  subTitle={"Our team of experienced experts will provide in-depth technical documentation at all stages of development."}
-  img={typing}
-  imgAlt={"typing"}
-  btnExists={false}
-  btnTitle={""}
-  btnURL={""}
-  />
-
-    <!-- Pricing -->
-    <h1
+    <!-- <h1
       class="mt-12 text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl dark:text-white
           mx-auto max-w-[85rem] items-center px-4 sm:px-6 lg:px-8 2xl:max-w-full"
     >
@@ -109,27 +68,24 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
     </h1>
 
     <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto break-words">
-      <!-- Grid -->
-      <div class="w-full grid gap-6 grid-cols-2 sm:gap-12 lg:gap-8 mx-auto">
-        <!-- Stats -->
+
+      <!-- <div class="w-full grid gap-6 grid-cols-2 sm:gap-12 lg:gap-8 mx-auto">
+
         <div>
           <h4 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-neutral-200">Project Based - Most Common</h4>
           <p class="mt-2 sm:mt-3 text-white break-word">You define the project and we build it to your specification on a fixed timeline</p>
           <p class="mt-1 text-gray-500 dark:text-neutral-500">*pricing depends on difficulty and timeline</p>
         </div>
-        <!-- End Stats -->
 
-        <!-- Stats -->
         <div>
           <h4 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-neutral-200">Hourly</h4>
           <p class="mt-2 sm:mt-3 text-white break-word">We work on an as-needed basis</p>
           <p class="mt-1 text-gray-500 dark:text-neutral-500">**retainers are available on request</p>
         </div>
-        <!-- End Stats -->
-      </div>
+      </div> -->
       <!-- End Grid -->
-      <h2 class="text-2xl mt-10 font-bold text-gray-500 dark:text-neutral-500"><i></i></h2>
-      <PrimaryArrowButton href="/contact">Get a Quote</PrimaryArrowButton>
+      <!-- <h2 class="text-2xl mt-10 font-bold text-gray-500 dark:text-neutral-500"><i></i></h2>
+      <PrimaryArrowButton href="/contact">Get a Quote</PrimaryArrowButton> -->
     </div>
     <!-- End Pricing -->
   </Container>

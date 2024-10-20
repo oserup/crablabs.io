@@ -64,7 +64,7 @@ interface Props {
   }
 
     <!-- Conditional rendering of the Primary Call-To-Action button if 'btnExists' is true -->
-    {btnExists ? <PrimaryArrowButton url={btnURL}>{btnTitle}</PrimaryArrowButton> : null}
+    {btnExists ? <PrimaryArrowButton href={btnURL}>{btnTitle}</PrimaryArrowButton> : null}
   </div>
   <!-- Conditionally render one or two images based on 'single' property -->
   {

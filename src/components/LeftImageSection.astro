@@ -33,6 +33,6 @@ interface Props {
             {subTitle}
         </p>
         <!-- Conditionally render the Primary CTA button if btnExists is true -->
-        {btnExists ? <PrimaryArrowButton url={btnURL}>{btnTitle}</PrimaryArrowButton> : null}
+        {btnExists ? <PrimaryArrowButton href={btnURL}>{btnTitle}</PrimaryArrowButton> : null}
     </div>
 </section>
