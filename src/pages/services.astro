@@ -6,6 +6,8 @@ import prototype from "../assets/BackDiag.jpg"
 import reverseeng from "../assets/reverseeng.jpg";
 import feasibility from "../assets/Feasibility-Study.jpg"
 import code from "../assets/code2.jpg"
+import testing from "../assets/emc.webp"
+import electronics from "../assets/eletronics.webp"
 import LeftImageSection from "../components/LeftImageSection.astro";
 import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
 ---
@@ -39,8 +41,8 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
     />
 
     <RightImageSection
-      title={"Prototyping and Product Development"}
-      subTitle={"We facilitate full-cycle product development"}
+      title={"New Product Development"}
+      subTitle={"We facilitate full-cycle product development for new ideas"}
       imgOne={prototype}
       imgOneAlt={"prototype"}
       single= {true}
@@ -50,14 +52,35 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
     />
 
     <LeftImageSection
-      title={"Reverse Engineering"}
-      subTitle={"We produce modifiable source files and documentation from finished products"}
-      img={reverseeng}
-      imgAlt={"reverse engineering"}
+      title={"Design Retooling"}
+      subTitle={"We improve or upgrade existing products/designs"}
+      img={electronics}
+      imgAlt={"retooling"}
       btnExists={true}
       btnTitle={"Get a Quote"}
       btnURL={"/contact"}
-  />
+    />
+
+    <RightImageSection
+      title={"Reverse Engineering"}
+      subTitle={"We produce modifiable source files and documentation from finished products"}
+      imgOne={reverseeng}
+      imgOneAlt={"reverse engineering"}
+      single={true}
+      btnExists={true}
+      btnTitle={"Get a Quote"}
+      btnURL={"/contact"}
+    />
+
+    <LeftImageSection
+      title={"Pre-Compliance Testing"}
+      subTitle={"We evaluate a product before it is evaluated by a certification authority"}
+      img={testing}
+      imgAlt={"EMC Testing"}
+      btnExists={true}
+      btnTitle={"Get a Quote"}
+      btnURL={"/contact"}
+    />
 
     <h1
       class="mt-12 text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl dark:text-white

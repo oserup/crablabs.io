@@ -9,9 +9,10 @@ import { Image } from "astro:assets";
 // icons
 import gears from "../assets/icons/gears.svg";
 import engineering from "../assets/icons/engineering.svg";
+import electrical from "../assets/icons/electrical.svg"
 import software from "../assets/icons/code.svg";
 import manu from "../assets/icons/manufacturing.svg";
-import education from "../assets/icons/education.svg";
+import testing from "../assets/icons/testing.svg";
 import programmer from "../assets/programmer.svg";
 ---
 
@@ -29,21 +30,21 @@ import programmer from "../assets/programmer.svg";
             <span>Mechanical Engineering</span>
           </div> -->
           <div class="flex items-center gap-3">
-            <Image src={engineering} alt="Icon Electrical" format={"svg"} />
+            <Image src={electrical} alt="Icon Electrical" format={"svg"} />
             <span>Electrical Engineering</span>
           </div>
           <div class="flex items-center gap-3">
             <Image src={software} alt="Icon Code" format={"svg"} />
             <span>Software Engineering</span>
           </div>
-          <!-- <div class="flex items-center gap-3">
+          <div class="flex items-center gap-3">
             <Image src={manu} alt="Icon Manufacturing" format={"svg"} />
             <span>Manufacturing</span>
-          </div> -->
-          <!-- <div class="flex items-center gap-3">
-            <Image src={education} alt="Icon Education" format={"svg"} />
-            <span>Education</span>
-          </div> -->
+          </div>
+          <div class="flex items-center gap-3">
+            <Image src={engineering} alt="Icon Testing" format={"svg"} />
+            <span>Testing</span>
+          </div>
         </div>
       </div>
       <div class="py-28 flex flex-col md:flex-row">
