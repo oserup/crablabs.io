@@ -461,7 +461,7 @@ const phoneHref = "tel:+14242715569";
     
     if (serviceParam) {
       // Find and check the corresponding checkbox
-      const checkbox = document.querySelector(`input[name="services[]"][value="${serviceParam}"]`);
+      const checkbox = document.querySelector(`input[name="services[]"][value="${serviceParam}"]`) as HTMLInputElement;
       if (checkbox) {
         checkbox.checked = true;
       }
@@ -469,12 +469,15 @@ const phoneHref = "tel:+14242715569";
   });
 
   // Form validation
-  document.querySelector('form').addEventListener('submit', function(e) {
-    const services = document.querySelectorAll('input[name="services[]"]:checked');
-    if (services.length === 0) {
-      e.preventDefault();
-      alert('Please select at least one service.');
-      return;
-    }
-  });
+  const form = document.querySelector('form');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      const services = document.querySelectorAll('input[name="services[]"]:checked');
+      if (services.length === 0) {
+        e.preventDefault();
+        alert('Please select at least one service.');
+        return;
+      }
+    });
+  }
 </script>
