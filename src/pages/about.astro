@@ -16,64 +16,153 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
                 <div class="space-y-5 md:space-y-6">
                     <h1 class="text-2xl font-bold md:text-3xl dark:text-white">Who Are We?</h1>
 
-                    <p class="text-lg text-gray-800 dark:text-neutral-200">
-                        At Crab Labs, we provide precision electrical and software engineering services for clients who demand excellence. We’re a small, focused team of experienced engineers who choose our projects carefully. When we commit, we go all in.
-                    </p>
+                    <div class="bg-gray-50 dark:bg-neutral-800 rounded-lg p-6 mb-6">
+                        <p class="text-lg text-gray-800 dark:text-neutral-200 mb-4">
+                            At Crab Labs, we provide precision electrical and software engineering services for clients who demand excellence. We're a small, focused team of experienced engineers who choose our projects carefully. When we commit, we go all in.
+                        </p>
 
-                    <p class="text-lg text-gray-800 dark:text-neutral-200">
-                        We specialize in developing robust, production-ready systems across a range of industries, including biomedical devices, industrial automation, e-mobility platforms, and advanced consumer electronics. Whether you're launching a new product or refining a critical subsystem, we bring deep technical expertise and relentless attention to detail.
-                    </p>
+                        <p class="text-lg text-gray-800 dark:text-neutral-200">
+                            We specialize in developing robust, production-ready systems across a range of industries, including biomedical devices, industrial automation, e-mobility platforms, and advanced consumer electronics. Whether you're launching a new product or refining a critical subsystem, we bring deep technical expertise and relentless attention to detail.
+                        </p>
+                    </div>
 
                     <h1 class="text-2xl font-bold md:text-3xl dark:text-white">What Sets Us Apart?</h1>
                     
-                    <ul>
-                        <li class="text-lg dark:text-white"><b>Expert Engineers Only:</b> No handoffs to junior staff. Every project is executed by seasoned professionals.</li>
-                        <li class="text-lg dark:text-white"><b>Selective by Design: </b> We only take on work where we can deliver exceptional results.</li>
-                        <li class="text-lg dark:text-white"><b>Disciplinary Capability:</b> From full-stack software to power electronics, we connect the dots. </li>
-                        <li class="text-lg dark:text-white"><b>Transparency & Trust:</b> Clear communication, honest timelines, and reliable delivery every time.</li>
-                    </ul>
+                    <div class="grid gap-4 md:grid-cols-2 mb-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="flex-shrink-0">
+                                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800 dark:text-white">Expert Engineers Only</h4>
+                                <p class="text-gray-600 dark:text-neutral-400">No handoffs to junior staff. Every project is executed by seasoned professionals.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <div class="flex-shrink-0">
+                                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800 dark:text-white">Selective by Design</h4>
+                                <p class="text-gray-600 dark:text-neutral-400">We only take on work where we can deliver exceptional results.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <div class="flex-shrink-0">
+                                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800 dark:text-white">Multi-Disciplinary Capability</h4>
+                                <p class="text-gray-600 dark:text-neutral-400">From full-stack software to power electronics, we connect the dots.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <div class="flex-shrink-0">
+                                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800 dark:text-white">Transparency & Trust</h4>
+                                <p class="text-gray-600 dark:text-neutral-400">Clear communication, honest timelines, and reliable delivery every time.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                    <p class="text-lg text-gray-800 dark:text-neutral-200">
-                    We don’t aim to be the biggest firm. We aim to be the best development partner you’ve ever worked with.
-                    </p>
+                    <div class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-600 p-6 my-8">
+                        <p class="text-lg text-gray-800 dark:text-neutral-200 font-medium italic">
+                            "We don't aim to be the biggest firm. We focus on being the best development partner you've ever worked with."
+                        </p>
+                    </div>
 
                     <h1 class="text-2xl font-bold md:text-3xl dark:text-white">What Can We Do?</h1>
 
-                    <p class="text-lg text-gray-800 dark:text-neutral-200">
-                        Our passionate and talented multi-disciplinary team can take on projects in nearly all domains.
+                    <p class="text-lg text-gray-600 dark:text-neutral-400 mb-8">
+                        Our experienced multidisciplinary team handles projects across virtually any technical domain.
                     </p>
 
                     <h2 class="text-xl font-bold md:text-2xl dark:text-white">Design</h2>
                     
-                    <ul>
-                        <li class="text-lg dark:text-white">- <b>Electronics</b>: Power, Digital, Analog, and Mixed Signal Systems</li>
-                        <li class="text-lg dark:text-white">- <b>Software/Firmware</b>: Embedded (IoT), Web, Desktop, and Mobile Applications</li>
-                        <li class="text-lg dark:text-white">- <b>Mechanical</b>: Plastic and Metal Assemblies</li>
-                    </ul>
+                    <div class="grid gap-3 mb-6">
+                        <div class="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-neutral-800 rounded-lg">
+                            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                            <div>
+                                <span class="font-semibold text-gray-800 dark:text-white">Electronics:</span>
+                                <span class="text-gray-600 dark:text-neutral-400 ml-2">Power, Digital, Analog, and Mixed Signal Systems</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-neutral-800 rounded-lg">
+                            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                            <div>
+                                <span class="font-semibold text-gray-800 dark:text-white">Software/Firmware:</span>
+                                <span class="text-gray-600 dark:text-neutral-400 ml-2">Embedded (IoT), Web, Desktop, and Mobile Applications</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-neutral-800 rounded-lg">
+                            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                            <div>
+                                <span class="font-semibold text-gray-800 dark:text-white">Mechanical:</span>
+                                <span class="text-gray-600 dark:text-neutral-400 ml-2">Plastic and Metal Assemblies</span>
+                            </div>
+                        </div>
+                    </div>
 
                     <h2 class="text-xl font-bold md:text-2xl dark:text-white"> Manufacturing</h2>
                     <p class="text-lg text-gray-800 dark:text-neutral-200">
-                        Our state of the art facility enables us to assemble our own electronics as well as manufacture a bevy of supporting components and enclosures. We produce all limited-run prototypes in house as much as possible.
+                        Our modern facility allows us to assemble electronics and manufacture supporting components and enclosures. We handle limited-run prototypes in house whenever possible.
 
                     </p>
                     <p class="text-lg text-gray-800 dark:text-neutral-200">
-                        For items we can't build in house, we have a large network of foreign and domestic manufacturing partners. We do not receive compensation (either direct or indirect) from any of our partners, we just really like their work. 
+                        For items beyond our in-house capabilities, we work with a trusted network of domestic and international manufacturing partners. We maintain complete independence and select partners based solely on quality and reliability. 
                     </p>
 
                     <h2 class="text-xl font-bold md:text-2xl dark:text-white"> Testing</h2>
                     <p class="text-lg text-gray-800 dark:text-neutral-200">
                         We facilitate advanced testing on-site in our Long Beach facility. 
                         
-                        <ul>
-                            <li class="text-lg dark:text-white">- <b>Functional</b>: HIL, SIL, Static, Dynamic, and Parametric</li>
-                            <li class="text-lg dark:text-white">- <b>Environmental</b>: Temperature, Humidity, and Mechanical Stress</li>
-                            <li class="text-lg dark:text-white">- <b>EMI/EMC</b>: Electromagnetic Interference/Compatibility </li>
-                            <li class="text-lg dark:text-white">- <b>Lifecycle</b>: Stress and Accelerated Aging </li>
-                        </ul>
+                        <div class="grid gap-3 mb-6">
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-neutral-800 rounded-lg">
+                                <div class="w-2 h-2 bg-green-600 rounded-full"></div>
+                                <div>
+                                    <span class="font-semibold text-gray-800 dark:text-white">Functional:</span>
+                                    <span class="text-gray-600 dark:text-neutral-400 ml-2">HIL, SIL, Static, Dynamic, and Parametric</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-neutral-800 rounded-lg">
+                                <div class="w-2 h-2 bg-green-600 rounded-full"></div>
+                                <div>
+                                    <span class="font-semibold text-gray-800 dark:text-white">Environmental:</span>
+                                    <span class="text-gray-600 dark:text-neutral-400 ml-2">Temperature, Humidity, and Mechanical Stress</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-neutral-800 rounded-lg">
+                                <div class="w-2 h-2 bg-green-600 rounded-full"></div>
+                                <div>
+                                    <span class="font-semibold text-gray-800 dark:text-white">EMI/EMC:</span>
+                                    <span class="text-gray-600 dark:text-neutral-400 ml-2">Electromagnetic Interference/Compatibility</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-neutral-800 rounded-lg">
+                                <div class="w-2 h-2 bg-green-600 rounded-full"></div>
+                                <div>
+                                    <span class="font-semibold text-gray-800 dark:text-white">Lifecycle:</span>
+                                    <span class="text-gray-600 dark:text-neutral-400 ml-2">Stress and Accelerated Aging</span>
+                                </div>
+                            </div>
+                        </div>
 
                     </p>
                     <p class="text-lg text-gray-800 dark:text-neutral-200">
-                        Our testing and verification partners enable us to take your product all the way through to production. Whether it be FCC/CE or something more exotic, we can prepare for and handle just about any certification testing process on your behalf for no additional charge.  
+                        Our testing and verification partners help us take your product through to production. Whether you need FCC/CE certification or more specialized testing, we can prepare for and manage the certification process as part of our service.  
                     
                     </p>
                     <PrimaryArrowButton href="/services">View Our Services</PrimaryArrowButton>
@@ -88,27 +177,126 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
                         Our past clients are mainly small to medium business in the following domains:
                     </p>
 
-                    <ul>
-                        <li class="text-lg dark:text-white">- Industrial/Automation</li>
-                        <li class="text-lg dark:text-white">- Biomedical Devices</li>
-                        <li class="text-lg dark:text-white">- Consumer Electronics</li>
-                    </ul>
+                    <div class="grid gap-4 md:grid-cols-3 mb-8">
+                        <div class="text-center p-4 bg-gray-50 dark:bg-neutral-800 rounded-lg">
+                            <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mx-auto mb-3">
+                                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 dark:text-white">Industrial/Automation</h4>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 dark:bg-neutral-800 rounded-lg">
+                            <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mx-auto mb-3">
+                                <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 dark:text-white">Biomedical Devices</h4>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 dark:bg-neutral-800 rounded-lg">
+                            <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mx-auto mb-3">
+                                <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 dark:text-white">Consumer Electronics</h4>
+                        </div>
+                    </div>
 
-                    <h1 class="text-2xl font-bold md:text-3xl dark:text-white">What is Our Guiding Philosophy?</h1>
-                    <p class="text-lg text-gray-800 dark:text-neutral-200">
-                        <ol>
-                            <li class="text-lg dark:text-white">1. <b>People over Profits</b>: We view our clients as people not potential revenue</li>
-                            <li class="text-lg dark:text-white">2. <b>Efficiency</b>: We are passionate about doing more with less </li>
-                            <li class="text-lg dark:text-white">3. <b>Collaboration</b>: We work best when we work together</li>
-                            <li class="text-lg dark:text-white">4. <b>Communication</b>: We stay connected with our clients and one another</li>
-                            <li class="text-lg dark:text-white">5. <b>Discretion</b>: We value the privacy of our clients and their ideas </li>
-                            <li class="text-lg dark:text-white">6. <b>Ownership</b>: We take pride in our work</li>
-                            <li class="text-lg dark:text-white">7. <b>Integrity</b>: We own our mistakes and admit when we are wrong</li>
-                            <li class="text-lg dark:text-white">8. <b>Simplicity</b>: We strive for simplicity in our work</li>
-                            <li class="text-lg dark:text-white">9. <b>Frugality</b>: We value value</li>
-                            <li class="text-lg dark:text-white">10. <b>Do No Harm</b>: We do not develop weapons</li>
-                        </ol>
+                    <h1 class="text-2xl font-bold md:text-3xl dark:text-white mb-6">Our Guiding Philosophy</h1>
+                    <p class="text-lg text-gray-600 dark:text-neutral-400 mb-8">
+                        These core values shape how we approach every client relationship and project:
                     </p>
+
+                    <!-- Philosophy Grid -->
+                    <div class="grid gap-6 md:grid-cols-2 mb-8">
+                        <!-- Client-Focused Values -->
+                        <div class="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+                            <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300 mb-4 flex items-center">
+                                <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                </svg>
+                                Client-Centered
+                            </h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                    <div>
+                                        <span class="font-semibold text-gray-800 dark:text-white">People over Profits:</span>
+                                        <span class="text-gray-600 dark:text-neutral-400 ml-1">We view our clients as partners, not revenue sources</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                    <div>
+                                        <span class="font-semibold text-gray-800 dark:text-white">Clear Communication:</span>
+                                        <span class="text-gray-600 dark:text-neutral-400 ml-1">Honest timelines, regular updates, and transparent processes</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                    <div>
+                                        <span class="font-semibold text-gray-800 dark:text-white">Complete Discretion:</span>
+                                        <span class="text-gray-600 dark:text-neutral-400 ml-1">Your ideas and intellectual property are sacred to us</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                    <div>
+                                        <span class="font-semibold text-gray-800 dark:text-white">True Collaboration:</span>
+                                        <span class="text-gray-600 dark:text-neutral-400 ml-1">We work with you, not for you</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Ethical & Excellence Values -->
+                        <div class="bg-green-50 dark:bg-green-900/20 rounded-xl p-6 border border-green-200 dark:border-green-800">
+                            <h3 class="text-xl font-semibold text-green-800 dark:text-green-300 mb-4 flex items-center">
+                                <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                Ethics & Excellence
+                            </h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <div class="w-2 h-2 bg-green-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                    <div>
+                                        <span class="font-semibold text-gray-800 dark:text-white">Unwavering Integrity:</span>
+                                        <span class="text-gray-600 dark:text-neutral-400 ml-1">We own our mistakes and always do what's right</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="w-2 h-2 bg-green-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                    <div>
+                                        <span class="font-semibold text-gray-800 dark:text-white">Complete Ownership:</span>
+                                        <span class="text-gray-600 dark:text-neutral-400 ml-1">We take full responsibility and pride in every deliverable</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="w-2 h-2 bg-green-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                    <div>
+                                        <span class="font-semibold text-gray-800 dark:text-white">Elegant Efficiency:</span>
+                                        <span class="text-gray-600 dark:text-neutral-400 ml-1">Simple solutions that maximize value and minimize waste</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="w-2 h-2 bg-green-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                    <div>
+                                        <span class="font-semibold text-gray-800 dark:text-white">Do No Harm:</span>
+                                        <span class="text-gray-600 dark:text-neutral-400 ml-1">We will not develop weapons or harmful technologies</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-neutral-800 border-l-4 border-blue-600 p-6 rounded-r-lg">
+                        <p class="text-lg text-gray-800 dark:text-neutral-200 font-medium italic">
+                            "These values guide every decision we make and every project we take on. They're the foundation of how we build lasting partnerships with our clients."
+                        </p>
+                    </div>
 
                 </div>
                 <!-- End Content -->

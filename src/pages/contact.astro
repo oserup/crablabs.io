@@ -5,6 +5,8 @@ import Layout from "../layouts/Layout.astro";
 
 const email = "contact@crablabs.io";
 const emailHref = "mailto:contact@crablabs.io";
+const phone = "(424) 271-5569";
+const phoneHref = "tel:+14242715569";
 const address = ["235 E Broadway Ste 210", "Long Beach, CA, United States of America"];
 ---
 
@@ -18,7 +20,7 @@ const address = ["235 E Broadway Ste 210", "Long Beach, CA, United States of Ame
           <!-- Title -->
           <div class="max-w-3xl mb-10 lg:mb-14">
             <h1 class="text-3xl font-bold md:text-4xl dark:text-white">Contact Us</h1>
-            <p class="mt-1 text-neutral-400"></p>
+            <p class="mt-3 text-lg text-neutral-400">Ready to discuss your project? We'd love to hear from you.</p>
           </div>
           <!-- End Title -->
 
@@ -77,6 +79,28 @@ const address = ["235 E Broadway Ste 210", "Long Beach, CA, United States of Ame
                   </div>
                   <!-- End Input -->
 
+                  <!-- Service Type Dropdown -->
+                  <div>
+                    <label for="service-type" class="sr-only">Service Type</label>
+                    <select
+                      name="service-type"
+                      id="service-type"
+                      class="block w-full rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-900 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-white dark:focus:ring-1"
+                      required
+                    >
+                      <option value="" disabled selected>What service are you interested in?</option>
+                      <option value="technical-consulting">Technical Consulting</option>
+                      <option value="design-review">Design Review & Analysis</option>
+                      <option value="product-development">New Product Development</option>
+                      <option value="design-retooling">Design Retooling & Upgrades</option>
+                      <option value="reverse-engineering">Reverse Engineering</option>
+                      <option value="pre-compliance-testing">Pre-Compliance Testing</option>
+                      <option value="multiple-services">Multiple Services</option>
+                      <option value="not-sure">Not Sure / Need Guidance</option>
+                    </select>
+                  </div>
+                  <!-- End Service Type Dropdown -->
+
                   <!-- Input -->
 
                   <div>
@@ -94,7 +118,7 @@ const address = ["235 E Broadway Ste 210", "Long Beach, CA, United States of Ame
                 </div>
 
                 <div class="mt-2 grid gap-6">
-                  <p class="text-xs text-neutral-500">All fields are required</p>
+                  <p class="text-xs text-neutral-500">Name, email, service type, and message are required</p>
                   <button 
                     name="submit" 
                     class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-orange-600 text-white hover:bg-orange-700 disabled:opacity-50 disabled:pointer-events-none ring-zinc-500 transition duration-300 focus-visible:ring" 
@@ -104,6 +128,25 @@ const address = ["235 E Broadway Ste 210", "Long Beach, CA, United States of Ame
                 </div>
               </form>
       
+              <script>
+                // Auto-select service type based on URL parameter
+                document.addEventListener('DOMContentLoaded', function() {
+                  const urlParams = new URLSearchParams(window.location.search);
+                  const serviceParam = urlParams.get('service');
+                  
+                  if (serviceParam) {
+                    const serviceSelect = document.getElementById('service-type');
+                    // Try to find and select the matching option
+                    if (serviceSelect && serviceSelect instanceof HTMLSelectElement) {
+                      for (let option of serviceSelect.options) {
+                        if (option.value === serviceParam) {
+                          option.selected = true;
+                          break;
+                        }
+                      }
+                    }
+                  }
+                });
               </script>
             </div>
             <!-- End Col -->
@@ -127,7 +170,7 @@ const address = ["235 E Broadway Ste 210", "Long Beach, CA, United States of Ame
                   </circle>
                 </svg>
                 <div class="grow">
-                  <h4 class="text-white font-semibold">Our address:</h4>
+                  <h4 class="text-white font-semibold">Our address</h4>
 
                   <address class="mt-1 text-neutral-400 text-sm not-italic">
                     {address[0]}
@@ -158,7 +201,7 @@ const address = ["235 E Broadway Ste 210", "Long Beach, CA, United States of Ame
                   </path><path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10"></path>
                 </svg>
                 <div class="grow">
-                  <h4 class="text-white font-semibold">Email us:</h4>
+                  <h4 class="text-white font-semibold">Email us</h4>
 
                   <a class="mt-1 text-neutral-400 text-sm" href={emailHref}>
                     {email}
@@ -166,6 +209,32 @@ const address = ["235 E Broadway Ste 210", "Long Beach, CA, United States of Ame
                 </div>
               </div>
               <!-- End Item -->
+
+              <!-- Phone Item -->
+              <div class="flex gap-x-5">
+                <svg
+                  class="flex-shrink-0 size-6 text-neutral-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <div class="grow">
+                  <h4 class="text-white font-semibold">Call us</h4>
+                  <a class="mt-1 text-neutral-400 text-sm hover:text-orange-400 transition-colors" href={phoneHref}>
+                    {phone}
+                  </a>
+                </div>
+              </div>
+              <!-- End Phone Item -->
+
               <div class="flex gap-x-5">
                 <svg
                   class="flex-shrink-0 size-6 text-neutral-500"
@@ -185,7 +254,7 @@ const address = ["235 E Broadway Ste 210", "Long Beach, CA, United States of Ame
                   <line x1="3" y1="10" x2="21" y2="10"></line>
                 </svg>
                 <div class="grow">
-                  <h4 class="text-white font-semibold">Schedule a Consultation</h4>
+                  <h4 class="text-white font-semibold">Schedule a Free Consultation</h4>
                   <p class="mt-1 text-neutral-400 text-sm">Let's discuss your project and how we can help.</p>
                   <p class="mt-2">
                     <a
@@ -211,51 +280,6 @@ const address = ["235 E Broadway Ste 210", "Long Beach, CA, United States of Ame
                   </p>
                 </div>
               </div>
-              <!-- Item -->
-              <!-- <div class="flex gap-x-5">
-                <svg
-                  class="flex-shrink-0 size-6 text-neutral-500"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="m3 11 18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path>
-                </svg> -->
-<!--                 
-                <div class="grow">
-                  <h4 class="text-white font-semibold">We're hiring</h4>
-                  <p class="mt-1 text-neutral-400">We are looking for talented individuals to join our team.</p>
-                  <p class="mt-2">
-                    <a
-                      class="group inline-flex items-center gap-x-2 font-medium text-sm text-orange-400 decoration-2 hover:underline focus:outline-none focus:underline"
-                      href="/careers"
-                    >
-                      Job openings
-                      <svg
-                        class="flex-shrink-0 size-4 transition group-hover:translate-x-0.5 group-hover:translate-x-0 group-focus:translate-x-0.5 group-focus:translate-x-0"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
-                      </svg>
-                    </a>
-                  </p>
-                </div>
-              </div> -->
-              <!-- End Item -->
             </div>
             <!-- End Col -->
           </div>
