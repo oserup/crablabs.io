@@ -11,12 +11,12 @@ import electrical from "../assets/icons/electrical.svg"
 import software from "../assets/icons/code.svg";
 import manufacturing from "../assets/icons/manufacturing.svg";
 
-// Structured data for SEO
+// Structured data for SEO - Medical Device Engineering Focus
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Crab Labs",
-  "description": "Professional engineering services company specializing in electronics design, software development, product testing, and small-scale manufacturing for businesses across the USA.",
+  "description": "Custom engineering services for electronics design, embedded systems, software development, and product testing. Serving medical devices, industrial automation, robotics, IoT, and consumer electronics industries.",
   "url": "https://crablabs.io",
   "telephone": "+1-424-271-5569",
   "email": "contact@crablabs.io",
@@ -34,13 +34,29 @@ const structuredData = {
   },
   "serviceType": [
     "Electronics Design",
-    "Software Development",
-    "Product Testing",
-    "Small Scale Manufacturing",
-    "Engineering Consulting"
+    "Embedded Systems Development",
+    "Software Development", 
+    "Circuit Design and PCB Layout",
+    "Firmware Development",
+    "Product Testing and Validation",
+    "System Integration",
+    "Engineering Consulting",
+    "Prototype Development",
+    "Motor Control Systems",
+    "Power Electronics",
+    "IoT Solutions",
+    "Industrial Automation",
+    "Medical Device Engineering",
+    "Robotics Engineering"
   ],
   "industry": "Engineering Services",
   "foundingDate": "2024",
+  "hasCredential": [
+    "FDA Design Controls Experience",
+    "IEC 62304 Compliance Expertise",
+    "ISO 13485 Quality Management",
+    "Medical Device Validation Testing"
+  ],
   "sameAs": [
     "https://crablabs.io"
   ]
@@ -50,7 +66,7 @@ const structuredData = {
 <!-- ========== MAIN CONTENT ========== -->
 <main id="content">
   <!-- Page Layout -->
-  <Layout title="Engineering Services Company | Electronics Design, Software Development & Testing | USA">
+  <Layout title="Custom Engineering Services | Electronics Design, Embedded Systems & Software Development | USA">
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
     <Hero />
     <Container>
@@ -58,51 +74,100 @@ const structuredData = {
       <!-- What We Do -->
       <div class="py-16 text-center">
         <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">
-          Expert-Level Services
+          Custom Engineering Solutions
         </h2>
         <p class="text-xl text-gray-600 dark:text-neutral-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-          Access the same level of engineering expertise that Fortune 500 companies use.
+          We design and build custom electronics, embedded systems, firmware, and software solutions for medical devices, industrial automation, robotics, IoT, and consumer electronics companies.
         </p>
         
         <!-- Services Grid -->
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-16">
           <div class="bg-white dark:bg-neutral-900 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-neutral-700">
-            <Image src={electrical} alt="Electronics Design" format={"svg"} class="w-12 h-12 mx-auto mb-3" />
+            <Image src={electrical} alt="Medical Device Electronics Design FDA Compliant" format={"svg"} class="w-12 h-12 mx-auto mb-3" />
             <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Electronics Design</h3>
             <p class="text-gray-600 dark:text-neutral-400 text-sm">
-              Custom circuit design that meets your specifications.
+              Custom circuit design and PCB development for specialized applications.
             </p>
           </div>
           
           <div class="bg-white dark:bg-neutral-900 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-neutral-700">
-            <Image src={software} alt="Software Development" format={"svg"} class="w-12 h-12 mx-auto mb-3" />
+            <Image src={software} alt="IEC 62304 Medical Device Software Development" format={"svg"} class="w-12 h-12 mx-auto mb-3" />
             <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Software Development</h3>
             <p class="text-gray-600 dark:text-neutral-400 text-sm">
-              Embedded firmware and application development.
+              Embedded firmware and control software for complex systems.
             </p>
           </div>
           
           <div class="bg-white dark:bg-neutral-900 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-neutral-700">
-            <Image src={engineering} alt="Product Testing" format={"svg"} class="w-12 h-12 mx-auto mb-3" />
-            <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Product Testing</h3>
+            <Image src={engineering} alt="Medical Device Validation Testing FDA Compliance" format={"svg"} class="w-12 h-12 mx-auto mb-3" />
+            <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Testing & Validation</h3>
             <p class="text-gray-600 dark:text-neutral-400 text-sm">
-              Validation testing before you commit to production.
+              Comprehensive testing to ensure systems meet specifications and requirements.
             </p>
           </div>
           
           <div class="bg-white dark:bg-neutral-900 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-neutral-700">
-            <Image src={manufacturing} alt="Small Scale Manufacturing" format={"svg"} class="w-12 h-12 mx-auto mb-3" />
-            <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Small Scale Manufacturing</h3>
+            <Image src={manufacturing} alt="Medical Device Embedded Systems Development" format={"svg"} class="w-12 h-12 mx-auto mb-3" />
+            <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">System Integration</h3>
             <p class="text-gray-600 dark:text-neutral-400 text-sm">
-              Working prototypes and production planning.
+              Complete system design integrating hardware, software, and mechanical components.
             </p>
           </div>
         </div>
 
+        <!-- Project Showcase -->
+        <div class="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 mb-12">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 text-center">
+            Current Projects
+          </h3>
+          <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white dark:bg-neutral-900 rounded-lg p-6 shadow-sm">
+              <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Industrial Power Distribution</h4>
+              <p class="text-sm text-gray-600 dark:text-neutral-400 mb-3">Advanced control and monitoring system with custom hardware, software, and housings for power distribution applications.</p>
+              <div class="flex flex-wrap gap-1">
+                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded text-xs">Industrial</span>
+                <span class="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 rounded text-xs">Custom Hardware</span>
+              </div>
+            </div>
+            <div class="bg-white dark:bg-neutral-900 rounded-lg p-6 shadow-sm">
+              <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">5-Axis Robotic Controller</h4>
+              <p class="text-sm text-gray-600 dark:text-neutral-400 mb-3">Motor controller and driver for medical diagnostic applications with precision multi-axis control and custom hardware/software.</p>
+              <div class="flex flex-wrap gap-1">
+                <span class="px-2 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 rounded text-xs">Medical</span>
+                <span class="px-2 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200 rounded text-xs">Precision Control</span>
+              </div>
+            </div>
+            <div class="bg-white dark:bg-neutral-900 rounded-lg p-6 shadow-sm">
+              <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">GaN Motor Driver</h4>
+              <p class="text-sm text-gray-600 dark:text-neutral-400 mb-3">Gallium Nitride based motor controller and driver for robotic applications featuring advanced power electronics and control algorithms.</p>
+              <div class="flex flex-wrap gap-1">
+                <span class="px-2 py-1 bg-teal-100 dark:bg-teal-900/30 text-teal-800 dark:text-teal-200 rounded text-xs">GaN Technology</span>
+                <span class="px-2 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-800 dark:text-pink-200 rounded text-xs">Robotics</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
         <!-- Primary CTA -->
         <div class="mb-16">
           <a href="/quote" class="inline-block px-8 py-4 bg-orange-600 text-white text-lg font-semibold rounded-lg hover:bg-orange-700 transition-colors">
-            Get a Quick Assessment
+            Get Project Assessment
           </a>
           <p class="text-sm text-gray-500 dark:text-neutral-500 mt-3">
             Most project assessments completed within 24 hours
@@ -151,31 +216,31 @@ const structuredData = {
       <!-- Industries We've Worked In -->
       <div class="py-16 text-center">
         <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-8">
-          Enterprise-Grade Experience
+          Industry Experience Across Multiple Sectors
         </h2>
         
         <div class="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto mb-12">
           <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">
-            Healthcare
+            Healthcare & Medical
           </span>
           <span class="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 rounded-full text-sm font-medium">
-            Industrial
+            Industrial Automation
           </span>
           <span class="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 rounded-full text-sm font-medium">
-            Consumer
+            Consumer Electronics
           </span>
           <span class="px-4 py-2 bg-teal-100 dark:bg-teal-900/30 text-teal-800 dark:text-teal-200 rounded-full text-sm font-medium">
-            Scientific
+            Scientific Instruments
           </span>
         </div>
 
         <!-- Final CTA -->
         <div class="bg-gray-50 dark:bg-neutral-800 rounded-2xl p-8 max-w-2xl mx-auto">
           <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">
-            Access Expert Engineering Today
+            Get Expert Engineering Solutions Today
           </h3>
           <p class="text-gray-600 dark:text-neutral-400 mb-6">
-            No long sales cycles or minimum contracts. Get expert-level engineering help when you need it.
+            No long sales cycles or minimum contracts. Get professional engineering help for your complex projects, with regulatory compliance expertise when needed.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/quote" class="px-6 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors">
