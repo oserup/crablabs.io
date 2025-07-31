@@ -1,6 +1,5 @@
 ---
 import Container from "../components/Container.astro";
-import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
 import Layout from "../layouts/Layout.astro";
 
 const email = "contact@crablabs.io";
@@ -16,11 +15,23 @@ const address = ["235 E Broadway Ste 210", "Long Beach, CA, United States of Ame
     <Container>
       <!-- Contact -->
       <div class="pt-6 lg:pt-10">
-        <div class="max-w-5xl px-4 xl:px-0 py-10 lg:py-20 mx-auto">
+        <div class="max-w-5xl px-4 xl:px-0 py-8 lg:py-16 mx-auto">
           <!-- Title -->
-          <div class="max-w-3xl mb-10 lg:mb-14">
-            <h1 class="text-3xl font-bold md:text-4xl dark:text-white">Contact Us</h1>
-            <p class="mt-3 text-lg text-neutral-400">Ready to discuss your project? We'd love to hear from you.</p>
+          <div class="max-w-3xl mb-8 lg:mb-12">
+            <h1 class="text-3xl font-bold md:text-4xl dark:text-white">Let's Talk About Your Project</h1>
+            <p class="mt-3 text-lg text-neutral-400">Tell us about your project. We'll give you an honest assessment of feasibility, timeline, and cost. If we're not the right fit, we'll connect you with someone who is.</p>
+            
+            <div class="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+              <div class="flex items-start">
+                <svg class="w-5 h-5 text-blue-600 mt-0.5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                </svg>
+                <div>
+                  <p class="text-sm text-blue-800 dark:text-blue-200 font-medium">Initial project assessment within 24 hours</p>
+                  <p class="text-xs text-blue-700 dark:text-blue-300 mt-1">All project details kept strictly confidential under NDA</p>
+                </div>
+              </div>
+            </div>
           </div>
           <!-- End Title -->
 
@@ -28,7 +39,7 @@ const address = ["235 E Broadway Ste 210", "Long Beach, CA, United States of Ame
           <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-16">
             <div class="md:order-2 border-b border-neutral-800 pb-10 mb-10 md:border-b-0 md:pb-0 md:mb-0">
 
-              <form action="https://usebasin.com/f/d4ca8152fb97" method="POST">
+              <form action="https://usebasin.com/f/00c426b2708e" method="POST">
                 <!-- Container for the label and email input field -->
                 <div class="grid gap-4">
                   <!-- Input -->
@@ -123,8 +134,12 @@ const address = ["235 E Broadway Ste 210", "Long Beach, CA, United States of Ame
                     name="submit" 
                     class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-orange-600 text-white hover:bg-orange-700 disabled:opacity-50 disabled:pointer-events-none ring-zinc-500 transition duration-300 focus-visible:ring" 
                     type="submit">
-                    <b>Submit</b>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                    </svg>
+                    <b>Request Consultation</b>
                   </button>
+                  <p class="text-xs text-neutral-500">Personal response from our engineering team within 4 hours</p>
                 </div>
               </form>
       

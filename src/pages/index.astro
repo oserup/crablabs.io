@@ -3,69 +3,191 @@
 import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
 import Container from "../components/Container.astro";
-import HoverButton from "../components/buttons/HoverButton.astro";
 import { Image } from "astro:assets";
 
 // icons
-import gears from "../assets/icons/gears.svg";
 import engineering from "../assets/icons/engineering.svg";
 import electrical from "../assets/icons/electrical.svg"
 import software from "../assets/icons/code.svg";
-import manu from "../assets/icons/manufacturing.svg";
-import testing from "../assets/icons/testing.svg";
-import programmer from "../assets/programmer.svg";
+import manufacturing from "../assets/icons/manufacturing.svg";
+
+// Structured data for SEO
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Crab Labs",
+  "description": "Professional engineering services company specializing in electronics design, software development, product testing, and small-scale manufacturing for businesses across the USA.",
+  "url": "https://crablabs.io",
+  "telephone": "+1-424-271-5569",
+  "email": "contact@crablabs.io",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "235 E Broadway Ste 210",
+    "addressLocality": "Long Beach",
+    "addressRegion": "CA",
+    "postalCode": "90803",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "serviceType": [
+    "Electronics Design",
+    "Software Development",
+    "Product Testing",
+    "Small Scale Manufacturing",
+    "Engineering Consulting"
+  ],
+  "industry": "Engineering Services",
+  "foundingDate": "2024",
+  "sameAs": [
+    "https://crablabs.io"
+  ]
+};
 ---
 
 <!-- ========== MAIN CONTENT ========== -->
 <main id="content">
   <!-- Page Layout -->
-  <Layout title="Crab Labs">
+  <Layout title="Engineering Services Company | Electronics Design, Software Development & Testing | USA">
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
     <Hero />
-    <!-- <Swish/> -->
     <Container>
-      <div class="w-full py-10">
-        <div class="flex flex flex-col md:flex-row justify-between sm:text-xl py-20 gap-6 dark:text-neutral-400">
-          <!-- <div class="flex items-center gap-3">
-            <Image src={gears} alt="Icon Mechanical" format={"svg"} />
-            <span>Mechanical Engineering</span>
-          </div> -->
-          <div class="flex items-center gap-3">
-            <Image src={electrical} alt="Icon Electrical" format={"svg"} />
-            <span>Electrical Engineering</span>
+      
+      <!-- What We Do -->
+      <div class="py-16 text-center">
+        <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">
+          Expert-Level Services
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-neutral-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+          Access the same level of engineering expertise that Fortune 500 companies use.
+        </p>
+        
+        <!-- Services Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-16">
+          <div class="bg-white dark:bg-neutral-900 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-neutral-700">
+            <Image src={electrical} alt="Electronics Design" format={"svg"} class="w-12 h-12 mx-auto mb-3" />
+            <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Electronics Design</h3>
+            <p class="text-gray-600 dark:text-neutral-400 text-sm">
+              Custom circuit design that meets your specifications.
+            </p>
           </div>
-          <div class="flex items-center gap-3">
-            <Image src={software} alt="Icon Code" format={"svg"} />
-            <span>Software Engineering</span>
+          
+          <div class="bg-white dark:bg-neutral-900 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-neutral-700">
+            <Image src={software} alt="Software Development" format={"svg"} class="w-12 h-12 mx-auto mb-3" />
+            <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Software Development</h3>
+            <p class="text-gray-600 dark:text-neutral-400 text-sm">
+              Embedded firmware and application development.
+            </p>
           </div>
-          <div class="flex items-center gap-3">
-            <Image src={manu} alt="Icon Manufacturing" format={"svg"} />
-            <span>Manufacturing</span>
+          
+          <div class="bg-white dark:bg-neutral-900 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-neutral-700">
+            <Image src={engineering} alt="Product Testing" format={"svg"} class="w-12 h-12 mx-auto mb-3" />
+            <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Product Testing</h3>
+            <p class="text-gray-600 dark:text-neutral-400 text-sm">
+              Validation testing before you commit to production.
+            </p>
           </div>
-          <div class="flex items-center gap-3">
-            <Image src={engineering} alt="Icon Testing" format={"svg"} />
-            <span>Testing</span>
+          
+          <div class="bg-white dark:bg-neutral-900 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-neutral-700">
+            <Image src={manufacturing} alt="Small Scale Manufacturing" format={"svg"} class="w-12 h-12 mx-auto mb-3" />
+            <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Small Scale Manufacturing</h3>
+            <p class="text-gray-600 dark:text-neutral-400 text-sm">
+              Working prototypes and production planning.
+            </p>
           </div>
         </div>
-      </div>
-      <div class="py-28 flex flex-col md:flex-row">
-        <div>
-          <Image src={programmer} alt="Programmer" format={"svg"} />
-        </div>
-        <div class="m-auto">
-          <h2 class="text-center block text-2xl font-bold text-gray-800 sm:text-4xl dark:text-white">
-            We bring the experts to you
-          </h2>
-          <p class="py-8 text-center mt-3 text-lg text-gray-800 dark:text-neutral-400">
-            Trust us with your next project.
+
+        <!-- Primary CTA -->
+        <div class="mb-16">
+          <a href="/quote" class="inline-block px-8 py-4 bg-orange-600 text-white text-lg font-semibold rounded-lg hover:bg-orange-700 transition-colors">
+            Get a Quick Assessment
+          </a>
+          <p class="text-sm text-gray-500 dark:text-neutral-500 mt-3">
+            Most project assessments completed within 24 hours
           </p>
-          <div class="flex flex-col sm:flex-row gap-4 place-content-center">
-            <HoverButton href="/services">Our Services</HoverButton>
-            <HoverButton href="/quote">Get a Quote</HoverButton>
+        </div>
+      </div>
+
+      <!-- Who We Are -->
+      <div class="py-16 bg-gray-50 dark:bg-neutral-800">
+        <div class="max-w-4xl mx-auto text-center px-4">
+          <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-8">
+            Why Choose Crab Labs
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="text-left">
+              <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">
+                Senior-Level Expertise
+              </h3>
+              <p class="text-gray-600 dark:text-neutral-400 mb-4">
+                Our team has the same credentials and experience you'd find at major engineering firms.
+              </p>
+              <p class="text-gray-600 dark:text-neutral-400">
+                Work directly with senior engineers who have solved complex problems for companies of all sizes.
+              </p>
+            </div>
+            
+            <div class="bg-white dark:bg-neutral-900 rounded-xl p-6 border border-gray-200 dark:border-neutral-700">
+              <h4 class="text-lg font-bold text-gray-800 dark:text-white mb-4">No Minimum Project Size</h4>
+              <p class="text-gray-600 dark:text-neutral-400 text-sm mb-4">
+                Get expert engineering help whether you need a quick consultation or a full product development.
+              </p>
+              <div class="flex items-center justify-center">
+                <div class="w-5 h-5 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mr-2">
+                  <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <span class="text-orange-600 font-medium text-sm">Expert help without the big firm barriers</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- Industries We've Worked In -->
+      <div class="py-16 text-center">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-8">
+          Enterprise-Grade Experience
+        </h2>
+        
+        <div class="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto mb-12">
+          <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">
+            Healthcare
+          </span>
+          <span class="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 rounded-full text-sm font-medium">
+            Industrial
+          </span>
+          <span class="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 rounded-full text-sm font-medium">
+            Consumer
+          </span>
+          <span class="px-4 py-2 bg-teal-100 dark:bg-teal-900/30 text-teal-800 dark:text-teal-200 rounded-full text-sm font-medium">
+            Scientific
+          </span>
+        </div>
+
+        <!-- Final CTA -->
+        <div class="bg-gray-50 dark:bg-neutral-800 rounded-2xl p-8 max-w-2xl mx-auto">
+          <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">
+            Access Expert Engineering Today
+          </h3>
+          <p class="text-gray-600 dark:text-neutral-400 mb-6">
+            No long sales cycles or minimum contracts. Get expert-level engineering help when you need it.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/quote" class="px-6 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors">
+              Get Started
+            </a>
+            <a href="/services" class="px-6 py-3 border border-gray-300 text-gray-700 dark:text-neutral-300 dark:border-neutral-600 font-semibold rounded-lg hover:bg-gray-50 dark:hover:bg-neutral-700 transition-colors">
+              See All Services
+            </a>
+          </div>
+        </div>
+      </div>
+
     </Container>
   </Layout>
-  <!-- Page Layout End -->
 </main>
-<!-- ========== END MAIN CONTENT ========== -->

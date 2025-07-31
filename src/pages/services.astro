@@ -1,35 +1,34 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Container from "../components/Container.astro";
-import RightImageSection from "../components/RightImageSection.astro";
 import prototype from "../assets/BackDiag.jpg"
 import reverseeng from "../assets/reverseeng.jpg";
 import feasibility from "../assets/Feasibility-Study.jpg"
 import code from "../assets/code2.jpg"
 import testing from "../assets/emc.webp"
 import electronics from "../assets/eletronics.webp"
-import LeftImageSection from "../components/LeftImageSection.astro";
 import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
 ---
 
 <!-- Page Layout -->
-<Layout title="Services">
+<Layout title="Engineering Services | Electronics Design, Software Development & Testing Company USA">
   <Container>
     <!-- Services Header -->
-    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-      <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-        <h1 class="text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl dark:text-white">
-          Our Services
+    <div class="max-w-[85rem] px-4 pt-16 pb-8 sm:px-6 lg:px-8 lg:pt-20 lg:pb-12 mx-auto">
+      <div class="max-w-3xl mx-auto text-center mb-6 lg:mb-8">
+        <h1 class="text-2xl font-bold text-gray-800 sm:text-3xl lg:text-3xl dark:text-white mb-3">
+          Engineering Services
         </h1>
-        <p class="mt-3 text-lg text-gray-600 dark:text-neutral-400">
-          Complete engineering solutions from initial concept through production
+        <p class="text-gray-600 dark:text-neutral-400">
+          We offer engineering services for businesses across the US. If you need help with electronics, software, testing, or manufacturing, we're here for you. If your project needs different expertise, we'll connect you with the right specialists.
         </p>
       </div>
     </div>
     <!-- End Services Header -->
 
+
     <!-- Services Grid -->
-    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 mx-auto">
+    <div class="max-w-[85rem] px-4 py-8 sm:px-6 lg:px-8 mx-auto">
       <div class="grid gap-8 lg:gap-12">
         
         <!-- Consulting Service -->
@@ -51,7 +50,7 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
                   <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Technical Consulting</h3>
                 </div>
                 <p class="text-gray-600 dark:text-neutral-400 mb-4">
-                  Expert guidance when you need strategic technical direction. Our consulting services help you navigate complex engineering decisions, feasibility assessments, and technical roadmapping.
+                  We'll tell you if your project makes sense, give you realistic timelines, and let you know if we can help. If we're not the right fit, we'll point you toward someone who is.
                 </p>
                 <ul class="space-y-2 mb-6">
                   <li class="flex items-center text-sm text-gray-600 dark:text-neutral-400">
@@ -98,7 +97,7 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
                   <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Design Review & Analysis</h3>
                 </div>
                 <p class="text-gray-600 dark:text-neutral-400 mb-4">
-                  Comprehensive evaluation of your existing designs to ensure they meet requirements, standards, and best practices. We identify potential issues before they become costly problems.
+                  Independent design validation to catch issues before production. Comprehensive reviews prevent costly failures.
                 </p>
                 <ul class="space-y-2 mb-6">
                   <li class="flex items-center text-sm text-gray-600 dark:text-neutral-400">
@@ -145,7 +144,7 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
                   <h3 class="text-2xl font-bold text-gray-800 dark:text-white">New Product Development</h3>
                 </div>
                 <p class="text-gray-600 dark:text-neutral-400 mb-4">
-                  Complete product development from initial concept to market-ready solution. We handle the entire engineering lifecycle, turning your innovative ideas into successful products.
+                  Full-cycle product development from concept to market-ready solution. Complete engineering lifecycle management.
                 </p>
                 <ul class="space-y-2 mb-6">
                   <li class="flex items-center text-sm text-gray-600 dark:text-neutral-400">
@@ -164,7 +163,7 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
                     <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                     </svg>
-                    Manufacturing preparation and scaling
+                    Manufacturing liaison and scaling support
                   </li>
                 </ul>
                 <PrimaryArrowButton href="/quote?service=product-development">Get a Quote</PrimaryArrowButton>
@@ -172,6 +171,7 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
             </div>
           </div>
         </div>
+
 
         <!-- Design Retooling Service -->
         <div class="group">
@@ -192,7 +192,7 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
                   <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Design Retooling & Upgrades</h3>
                 </div>
                 <p class="text-gray-600 dark:text-neutral-400 mb-4">
-                  Modernize and enhance your existing products with updated technology, improved performance, and better manufacturability. We breathe new life into proven designs.
+                  Modernize existing products with updated technology and improved performance. Enhanced manufacturability for proven designs.
                 </p>
                 <ul class="space-y-2 mb-6">
                   <li class="flex items-center text-sm text-gray-600 dark:text-neutral-400">
@@ -239,7 +239,7 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
                   <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Reverse Engineering</h3>
                 </div>
                 <p class="text-gray-600 dark:text-neutral-400 mb-4">
-                  Comprehensive analysis and documentation of existing products to create modifiable source files and detailed specifications. Perfect for legacy systems or competitive analysis.
+                  Complete analysis and documentation of existing products. Create modifiable source files for legacy systems.
                 </p>
                 <ul class="space-y-2 mb-6">
                   <li class="flex items-center text-sm text-gray-600 dark:text-neutral-400">
@@ -286,7 +286,7 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
                   <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Pre-Compliance Testing</h3>
                 </div>
                 <p class="text-gray-600 dark:text-neutral-400 mb-4">
-                  Comprehensive testing and validation before official certification. We identify and resolve compliance issues early, saving time and costs in the certification process.
+                  Pre-certification testing and validation. Identify compliance issues early to reduce certification costs.
                 </p>
                 <ul class="space-y-2 mb-6">
                   <li class="flex items-center text-sm text-gray-600 dark:text-neutral-400">
@@ -319,14 +319,11 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
     <!-- End Services Grid -->
 
     <!-- Service Plans Section -->
-    <div class="max-w-[85rem] px-4 py-16 sm:px-6 lg:px-8 lg:py-20 mx-auto">
-      <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-16">
-        <h2 class="text-3xl font-bold text-gray-800 sm:text-4xl lg:text-5xl dark:text-white">
-          Service Plans
+    <div class="max-w-[85rem] px-4 py-12 sm:px-6 lg:px-8 lg:py-16 mx-auto">
+      <div class="max-w-2xl mx-auto text-center mb-8 lg:mb-12">
+        <h2 class="text-2xl font-bold text-gray-800 sm:text-3xl dark:text-white mb-4">
+          Engagement Models
         </h2>
-        <p class="mt-3 text-lg text-gray-600 dark:text-neutral-400">
-          Choose the engagement model that works best for your project
-        </p>
       </div>
 
       <div class="grid gap-8 lg:gap-12 lg:grid-cols-2 max-w-4xl mx-auto">
@@ -402,13 +399,6 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
         </div>
       </div>
 
-      <!-- CTA Section -->
-      <div class="text-center mt-12">
-        <PrimaryArrowButton href="/quote">Get a Quote</PrimaryArrowButton>
-        <p class="mt-4 text-sm text-gray-500 dark:text-neutral-500">
-          Not sure which option is right for you? <a href="/contact" class="text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300">Let's discuss your project</a>
-        </p>
-      </div>
     </div>
     <!-- End Pricing -->
   </Container>
