@@ -72,113 +72,118 @@ const structuredData = {
     <Container>
       
       <!-- What We Do -->
-      <div class="py-16 text-center">
-        <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">
-          Engineering Solutions
-        </h2>
-        
+      <div class="py-20 text-center">
+        <h2 class="text-4xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 dark:from-slate-100 dark:to-slate-300 bg-clip-text text-transparent mb-16">Our Core Services</h2>
         <!-- Services Grid -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-16">
-          <div class="bg-white dark:bg-neutral-900 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-neutral-700">
-            <Image src={electrical} alt="Medical Device Electronics Design FDA Compliant" format={"svg"} class="w-12 h-12 mx-auto mb-3" />
-            <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Electronics Design</h3>
-            <p class="text-gray-600 dark:text-neutral-400 text-sm mb-3">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-20">
+          <div class="group bg-gradient-to-br from-white/95 to-orange-50/50 dark:from-neutral-900/95 dark:to-orange-950/40 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-orange-200/40 dark:border-orange-800/40 hover:shadow-2xl hover:scale-[1.05] hover:border-orange-300/70 transition-all duration-500">
+            <div class="w-16 h-16 bg-gradient-to-br from-orange-500/15 to-orange-600/35 dark:from-orange-400/25 dark:to-orange-500/45 rounded-2xl flex items-center justify-center mx-auto mb-6 ring-2 ring-orange-200/50 dark:ring-orange-700/50 group-hover:ring-orange-300/70 group-hover:scale-110 transition-all duration-500 shadow-lg">
+              <Image src={electrical} alt="Medical Device Electronics Design FDA Compliant" format={"svg"} class="w-8 h-8 text-orange-600 dark:text-orange-400 group-hover:text-orange-500 dark:group-hover:text-orange-300 transition-colors duration-300" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 group-hover:text-orange-700 dark:group-hover:text-orange-300 transition-colors duration-300">Electronics Design</h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm mb-4 leading-relaxed">
               Custom circuit design and PCB development for specialized applications.
             </p>
-            <ul class="space-y-1 text-xs text-gray-500 dark:text-neutral-500">
-              <li>• Analog & digital circuit design</li>
-              <li>• Multi-layer PCB layout</li>
-              <li>• Power supply design</li>
-              <li>• Signal integrity optimization</li>
+            <ul class="space-y-2 text-xs text-slate-500 dark:text-slate-400">
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 group-hover:bg-orange-500 transition-colors duration-300"></span>Analog & digital circuit design</li>
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 group-hover:bg-orange-500 transition-colors duration-300"></span>Multi-layer PCB layout</li>
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 group-hover:bg-orange-500 transition-colors duration-300"></span>Power supply design</li>
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 group-hover:bg-orange-500 transition-colors duration-300"></span>Signal integrity optimization</li>
             </ul>
           </div>
           
-          <div class="bg-white dark:bg-neutral-900 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-neutral-700">
-            <Image src={software} alt="IEC 62304 Medical Device Software Development" format={"svg"} class="w-12 h-12 mx-auto mb-3" />
-            <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Software Engineering</h3>
-            <p class="text-gray-600 dark:text-neutral-400 text-sm mb-3">
-              Custom software development, firmware, real-time systems, and safety-critical applications.
+          <div class="group bg-gradient-to-br from-white/95 to-blue-50/50 dark:from-neutral-900/95 dark:to-blue-950/40 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-blue-200/40 dark:border-blue-800/40 hover:shadow-2xl hover:scale-[1.05] hover:border-blue-300/70 transition-all duration-500">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-500/15 to-blue-600/35 dark:from-blue-400/25 dark:to-blue-500/45 rounded-2xl flex items-center justify-center mx-auto mb-6 ring-2 ring-blue-200/50 dark:ring-blue-700/50 group-hover:ring-blue-300/70 group-hover:scale-110 transition-all duration-500 shadow-lg">
+              <Image src={software} alt="IEC 62304 Medical Device Software Development" format={"svg"} class="w-8 h-8 text-blue-600 dark:text-blue-400 group-hover:text-blue-500 dark:group-hover:text-blue-300 transition-colors duration-300" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-300">Software Engineering</h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm mb-4 leading-relaxed">
+              Software development, firmware, real-time control systems, and safety-critical applications.
             </p>
-            <ul class="space-y-1 text-xs text-gray-500 dark:text-neutral-500">
-              <li>• Embedded firmware development</li>
-              <li>• Real-time control software</li>
-              <li>• Desktop and web applications</li>
-              <li>• Safety-critical software design</li>
+            <ul class="space-y-2 text-xs text-slate-500 dark:text-slate-400">
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2 group-hover:bg-blue-500 transition-colors duration-300"></span>Embedded firmware development</li>
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2 group-hover:bg-blue-500 transition-colors duration-300"></span>Real-time control software</li>
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2 group-hover:bg-blue-500 transition-colors duration-300"></span>Desktop and web applications</li>
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2 group-hover:bg-blue-500 transition-colors duration-300"></span>Safety-critical software design</li>
             </ul>
           </div>
           
-          <div class="bg-white dark:bg-neutral-900 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-neutral-700">
-            <Image src={engineering} alt="Medical Device Validation Testing FDA Compliance" format={"svg"} class="w-12 h-12 mx-auto mb-3" />
-            <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Testing & Validation</h3>
-            <p class="text-gray-600 dark:text-neutral-400 text-sm mb-3">
-              Comprehensive testing to ensure systems meet specifications and regulatory requirements.
+          <div class="group bg-gradient-to-br from-white/95 to-emerald-50/50 dark:from-neutral-900/95 dark:to-emerald-950/40 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-emerald-200/40 dark:border-emerald-800/40 hover:shadow-2xl hover:scale-[1.05] hover:border-emerald-300/70 transition-all duration-500">
+            <div class="w-16 h-16 bg-gradient-to-br from-emerald-500/15 to-emerald-600/35 dark:from-emerald-400/25 dark:to-emerald-500/45 rounded-2xl flex items-center justify-center mx-auto mb-6 ring-2 ring-emerald-200/50 dark:ring-emerald-700/50 group-hover:ring-emerald-300/70 group-hover:scale-110 transition-all duration-500 shadow-lg">
+              <Image src={engineering} alt="Medical Device Validation Testing FDA Compliance" format={"svg"} class="w-8 h-8 text-emerald-600 dark:text-emerald-400 group-hover:text-emerald-500 dark:group-hover:text-emerald-300 transition-colors duration-300" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 group-hover:text-emerald-700 dark:group-hover:text-emerald-300 transition-colors duration-300">Testing & Validation</h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm mb-4 leading-relaxed">
+              Design verification, compliance testing, and validation to meet industry standards.
             </p>
-            <ul class="space-y-1 text-xs text-gray-500 dark:text-neutral-500">
-              <li>• Design verification & validation</li>
-              <li>• Environmental testing</li>
-              <li>• EMC/EMI compliance testing</li>
-              <li>• Standards compliance verification</li>
+            <ul class="space-y-2 text-xs text-slate-500 dark:text-slate-400">
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full mr-2 group-hover:bg-emerald-500 transition-colors duration-300"></span>Design verification & validation</li>
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full mr-2 group-hover:bg-emerald-500 transition-colors duration-300"></span>Environmental testing</li>
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full mr-2 group-hover:bg-emerald-500 transition-colors duration-300"></span>EMC/EMI compliance testing</li>
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full mr-2 group-hover:bg-emerald-500 transition-colors duration-300"></span>Standards compliance verification</li>
             </ul>
           </div>
           
-          <div class="bg-white dark:bg-neutral-900 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-neutral-700">
-            <Image src={manufacturing} alt="Medical Device Embedded Systems Development" format={"svg"} class="w-12 h-12 mx-auto mb-3" />
-            <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">System Integration</h3>
-            <p class="text-gray-600 dark:text-neutral-400 text-sm mb-3">
+          <div class="group bg-gradient-to-br from-white/95 to-purple-50/50 dark:from-neutral-900/95 dark:to-purple-950/40 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-purple-200/40 dark:border-purple-800/40 hover:shadow-2xl hover:scale-[1.05] hover:border-purple-300/70 transition-all duration-500">
+            <div class="w-16 h-16 bg-gradient-to-br from-purple-500/15 to-purple-600/35 dark:from-purple-400/25 dark:to-purple-500/45 rounded-2xl flex items-center justify-center mx-auto mb-6 ring-2 ring-purple-200/50 dark:ring-purple-700/50 group-hover:ring-purple-300/70 group-hover:scale-110 transition-all duration-500 shadow-lg">
+              <Image src={manufacturing} alt="Medical Device Embedded Systems Development" format={"svg"} class="w-8 h-8 text-purple-600 dark:text-purple-400 group-hover:text-purple-500 dark:group-hover:text-purple-300 transition-colors duration-300" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors duration-300">System Integration</h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm mb-4 leading-relaxed">
               Complete system design integrating hardware, software, and mechanical components.
             </p>
-            <ul class="space-y-1 text-xs text-gray-500 dark:text-neutral-500">
-              <li>• Hardware-software co-design</li>
-              <li>• System architecture</li>
-              <li>• Performance optimization</li>
-              <li>• Manufacturing transition</li>
+            <ul class="space-y-2 text-xs text-slate-500 dark:text-slate-400">
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2 group-hover:bg-purple-500 transition-colors duration-300"></span>Hardware-software co-design</li>
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2 group-hover:bg-purple-500 transition-colors duration-300"></span>System architecture</li>
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2 group-hover:bg-purple-500 transition-colors duration-300"></span>Performance optimization</li>
+              <li class="flex items-center"><span class="w-1.5 h-1.5 bg-purple-400 rounded-full mr-2 group-hover:bg-purple-500 transition-colors duration-300"></span>Manufacturing transition</li>
             </ul>
           </div>
         </div>
 
         <!-- Project Examples -->
-        <div class="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 mb-12">
-          <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-8 text-center">
+        <div class="bg-gradient-to-br from-white/95 to-slate-50/60 dark:from-neutral-900/95 dark:to-slate-950/60 backdrop-blur-sm rounded-3xl p-10 mb-20 border border-slate-200/40 dark:border-slate-700/40 shadow-xl hover:shadow-2xl transition-all duration-500">
+          <h3 class="text-4xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 dark:from-slate-100 dark:to-slate-300 bg-clip-text text-transparent mb-16 text-center">
             Recent Project Highlights
           </h3>
           <div class="grid md:grid-cols-3 gap-6">
-            <div class="bg-white dark:bg-neutral-900 rounded-lg p-6 shadow-sm">
-              <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-4">
-                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+            <div class="group bg-gradient-to-br from-white/95 to-orange-50/50 dark:from-neutral-900/95 dark:to-orange-950/40 backdrop-blur-sm rounded-xl p-6 border border-orange-200/40 dark:border-orange-800/40 hover:shadow-xl hover:scale-[1.02] hover:border-orange-300/70 transition-all duration-500">
+              <div class="w-12 h-12 bg-gradient-to-br from-orange-500/15 to-orange-600/35 dark:from-orange-400/25 dark:to-orange-500/45 rounded-xl flex items-center justify-center mb-4 ring-2 ring-orange-200/50 dark:ring-orange-700/50 group-hover:ring-orange-300/70 group-hover:scale-110 transition-all duration-500 shadow-lg">
+                <svg class="w-6 h-6 text-orange-600 dark:text-orange-400 group-hover:text-orange-500 dark:group-hover:text-orange-300 transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
                 </svg>
               </div>
-              <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Industrial Power Distribution Controller</h4>
-              <p class="text-sm text-gray-600 dark:text-neutral-400 mb-3">Real-time monitoring and control system for low-voltage distribution networks (≤600V). Features redundant safety systems and compliance with IEC 61850 standards.</p>
-              <div class="flex flex-wrap gap-1">
-                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded text-xs">Industrial</span>
-                <span class="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 rounded text-xs">IEC 61850</span>
+              <h4 class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-3 group-hover:text-orange-700 dark:group-hover:text-orange-300 transition-colors duration-300">Industrial Power Distribution Controller</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">Real-time monitoring and control system for low-voltage distribution networks (≤600V). Features redundant safety systems and compliance with IEC 61850 standards.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 bg-gradient-to-r from-orange-100 to-orange-200 dark:from-orange-900/30 dark:to-orange-800/40 text-orange-700 dark:text-orange-300 rounded-full text-xs font-medium shadow-sm border border-orange-200/50 dark:border-orange-700/50">Industrial</span>
+                <span class="px-3 py-1.5 bg-gradient-to-r from-orange-100 to-orange-200 dark:from-orange-900/30 dark:to-orange-800/40 text-orange-700 dark:text-orange-300 rounded-full text-xs font-medium shadow-sm border border-orange-200/50 dark:border-orange-700/50">IEC 61850</span>
               </div>
             </div>
-            <div class="bg-white dark:bg-neutral-900 rounded-lg p-6 shadow-sm">
-              <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mb-4">
-                <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+            <div class="group bg-gradient-to-br from-white/95 to-blue-50/50 dark:from-neutral-900/95 dark:to-blue-950/40 backdrop-blur-sm rounded-xl p-6 border border-blue-200/40 dark:border-blue-800/40 hover:shadow-xl hover:scale-[1.02] hover:border-blue-300/70 transition-all duration-500">
+              <div class="w-12 h-12 bg-gradient-to-br from-blue-500/15 to-blue-600/35 dark:from-blue-400/25 dark:to-blue-500/45 rounded-xl flex items-center justify-center mb-4 ring-2 ring-blue-200/50 dark:ring-blue-700/50 group-hover:ring-blue-300/70 group-hover:scale-110 transition-all duration-500 shadow-lg">
+                <svg class="w-6 h-6 text-blue-600 dark:text-blue-400 group-hover:text-blue-500 dark:group-hover:text-blue-300 transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"></path>
                 </svg>
               </div>
-              <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Medical Diagnostic Robot Controller</h4>
-              <p class="text-sm text-gray-600 dark:text-neutral-400 mb-3">5-axis precision positioning system with sub-millimeter accuracy. Integrated safety monitoring and FDA design control documentation.</p>
-              <div class="flex flex-wrap gap-1">
-                <span class="px-2 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 rounded text-xs">Medical</span>
-                <span class="px-2 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200 rounded text-xs">FDA Controls</span>
+              <h4 class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-3 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-300">Medical Diagnostic Robot Controller</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">5-axis precision positioning system with sub-millimeter accuracy. Integrated safety monitoring and FDA design control documentation.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 bg-gradient-to-r from-blue-100 to-blue-200 dark:from-blue-900/30 dark:to-blue-800/40 text-blue-700 dark:text-blue-300 rounded-full text-xs font-medium shadow-sm border border-blue-200/50 dark:border-blue-700/50">Medical</span>
+                <span class="px-3 py-1.5 bg-gradient-to-r from-blue-100 to-blue-200 dark:from-blue-900/30 dark:to-blue-800/40 text-blue-700 dark:text-blue-300 rounded-full text-xs font-medium shadow-sm border border-blue-200/50 dark:border-blue-700/50">FDA Controls</span>
               </div>
             </div>
-            <div class="bg-white dark:bg-neutral-900 rounded-lg p-6 shadow-sm">
-              <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mb-4">
-                <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+            <div class="group bg-gradient-to-br from-white/95 to-emerald-50/50 dark:from-neutral-900/95 dark:to-emerald-950/40 backdrop-blur-sm rounded-xl p-6 border border-emerald-200/40 dark:border-emerald-800/40 hover:shadow-xl hover:scale-[1.02] hover:border-emerald-300/70 transition-all duration-500">
+              <div class="w-12 h-12 bg-gradient-to-br from-emerald-500/15 to-emerald-600/35 dark:from-emerald-400/25 dark:to-emerald-500/45 rounded-xl flex items-center justify-center mb-4 ring-2 ring-emerald-200/50 dark:ring-emerald-700/50 group-hover:ring-emerald-300/70 group-hover:scale-110 transition-all duration-500 shadow-lg">
+                <svg class="w-6 h-6 text-emerald-600 dark:text-emerald-400 group-hover:text-emerald-500 dark:group-hover:text-emerald-300 transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
                 </svg>
               </div>
-              <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">High-Efficiency GaN Motor Driver</h4>
-              <p class="text-sm text-gray-600 dark:text-neutral-400 mb-3">72V GaN-based three-phase motor controller achieving 98% efficiency. Custom controllers and drivers with field-oriented control algorithms for precision robotics.</p>
-              <div class="flex flex-wrap gap-1">
-                <span class="px-2 py-1 bg-teal-100 dark:bg-teal-900/30 text-teal-800 dark:text-teal-200 rounded text-xs">GaN Technology</span>
-                <span class="px-2 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-800 dark:text-pink-200 rounded text-xs">98% Efficiency</span>
+              <h4 class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-3 group-hover:text-emerald-700 dark:group-hover:text-emerald-300 transition-colors duration-300">High-Efficiency GaN Motor Driver</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">72V GaN-based three-phase motor controller achieving 98% efficiency. Custom controllers and drivers with field-oriented control algorithms for precision robotics.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 bg-gradient-to-r from-emerald-100 to-emerald-200 dark:from-emerald-900/30 dark:to-emerald-800/40 text-emerald-700 dark:text-emerald-300 rounded-full text-xs font-medium shadow-sm border border-emerald-200/50 dark:border-emerald-700/50">GaN Technology</span>
+                <span class="px-3 py-1.5 bg-gradient-to-r from-emerald-100 to-emerald-200 dark:from-emerald-900/30 dark:to-emerald-800/40 text-emerald-700 dark:text-emerald-300 rounded-full text-xs font-medium shadow-sm border border-emerald-200/50 dark:border-emerald-700/50">98% Efficiency</span>
               </div>
             </div>
           </div>
@@ -188,64 +193,64 @@ const structuredData = {
       </div>
 
       <!-- Industry Focus -->
-      <div class="py-16 bg-gray-50 dark:bg-neutral-800">
-        <div class="max-w-6xl mx-auto text-center px-4">
-          <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-12">
-            Industry Focus
+      <div class="py-20 bg-gradient-to-br from-slate-50/95 to-slate-100/60 dark:from-neutral-800/95 dark:to-neutral-900/60 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto text-center px-4">
+          <h2 class="text-4xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 dark:from-slate-100 dark:to-slate-300 bg-clip-text text-transparent mb-16">
+            Industries We Serve
           </h2>
           
-          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-white dark:bg-neutral-900 rounded-lg p-6 border border-gray-200 dark:border-neutral-700">
-              <div class="w-10 h-10 bg-red-100 dark:bg-red-900/30 rounded-lg flex items-center justify-center mb-3">
-                <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="group bg-gradient-to-br from-white/95 to-orange-50/50 dark:from-neutral-900/95 dark:to-orange-950/40 backdrop-blur-sm rounded-2xl p-8 border border-orange-200/40 dark:border-orange-800/40 shadow-xl hover:shadow-2xl hover:scale-[1.05] hover:border-orange-300/70 transition-all duration-500">
+              <div class="w-14 h-14 bg-gradient-to-br from-orange-500/15 to-orange-600/35 dark:from-orange-400/25 dark:to-orange-500/45 rounded-2xl flex items-center justify-center mb-6 ring-2 ring-orange-200/50 dark:ring-orange-700/50 group-hover:ring-orange-300/70 group-hover:scale-110 transition-all duration-500 shadow-lg mx-auto">
+                <svg class="w-7 h-7 text-orange-600 dark:text-orange-400 group-hover:text-orange-500 dark:group-hover:text-orange-300 transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
                 </svg>
               </div>
-              <h3 class="font-bold text-gray-800 dark:text-white mb-2">Medical Devices</h3>
-              <p class="text-sm text-gray-600 dark:text-neutral-400 mb-3">Electronics design following FDA Design Controls and IEC 62304 practices for Class I-III devices</p>
-              <ul class="space-y-1 text-xs text-gray-500 dark:text-neutral-500">
+              <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-4 group-hover:text-orange-700 dark:group-hover:text-orange-300 transition-colors duration-300">Medical Devices</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">Electronics design following FDA Design Controls and IEC 62304 practices for Class I-III devices</p>
+              <ul class="space-y-1 text-xs text-slate-500 dark:text-slate-400">
                 <li>• Diagnostic equipment</li>
                 <li>• Patient monitoring systems</li>
                 <li>• Surgical robotics</li>
               </ul>
             </div>
-            <div class="bg-white dark:bg-neutral-900 rounded-lg p-6 border border-gray-200 dark:border-neutral-700">
-              <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-3">
-                <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+            <div class="group bg-gradient-to-br from-white/95 to-blue-50/50 dark:from-neutral-900/95 dark:to-blue-950/40 backdrop-blur-sm rounded-2xl p-8 border border-blue-200/40 dark:border-blue-800/40 shadow-xl hover:shadow-2xl hover:scale-[1.05] hover:border-blue-300/70 transition-all duration-500">
+              <div class="w-14 h-14 bg-gradient-to-br from-blue-500/15 to-blue-600/35 dark:from-blue-400/25 dark:to-blue-500/45 rounded-2xl flex items-center justify-center mb-6 ring-2 ring-blue-200/50 dark:ring-blue-700/50 group-hover:ring-blue-300/70 group-hover:scale-110 transition-all duration-500 shadow-lg mx-auto">
+                <svg class="w-7 h-7 text-blue-600 dark:text-blue-400 group-hover:text-blue-500 dark:group-hover:text-blue-300 transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
                 </svg>
               </div>
-              <h3 class="font-bold text-gray-800 dark:text-white mb-2">Robotics & Automation</h3>
-              <p class="text-sm text-gray-600 dark:text-neutral-400 mb-3">Robotics control systems, motor drives, and industrial automation solutions</p>
-              <ul class="space-y-1 text-xs text-gray-500 dark:text-neutral-500">
+              <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-4 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-300">Robotics & Automation</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">Robotics control systems, motor drives, and industrial automation solutions</p>
+              <ul class="space-y-1 text-xs text-slate-500 dark:text-slate-400">
                 <li>• Precision robotic controllers</li>
                 <li>• High-efficiency motor drives</li>
                 <li>• Industrial automation systems</li>
               </ul>
             </div>
-            <div class="bg-white dark:bg-neutral-900 rounded-lg p-6 border border-gray-200 dark:border-neutral-700">
-              <div class="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mb-3">
-                <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+            <div class="group bg-gradient-to-br from-white/95 to-purple-50/50 dark:from-neutral-900/95 dark:to-purple-950/40 backdrop-blur-sm rounded-2xl p-8 border border-purple-200/40 dark:border-purple-800/40 shadow-xl hover:shadow-2xl hover:scale-[1.05] hover:border-purple-300/70 transition-all duration-500">
+              <div class="w-14 h-14 bg-gradient-to-br from-purple-500/15 to-purple-600/35 dark:from-purple-400/25 dark:to-purple-500/45 rounded-2xl flex items-center justify-center mb-6 ring-2 ring-purple-200/50 dark:ring-purple-700/50 group-hover:ring-purple-300/70 group-hover:scale-110 transition-all duration-500 shadow-lg mx-auto">
+                <svg class="w-7 h-7 text-purple-600 dark:text-purple-400 group-hover:text-purple-500 dark:group-hover:text-purple-300 transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" clip-rule="evenodd"></path>
                 </svg>
               </div>
-              <h3 class="font-bold text-gray-800 dark:text-white mb-2">Scientific Instruments</h3>
-              <p class="text-sm text-gray-600 dark:text-neutral-400 mb-3">Precision measurement, data acquisition, and laboratory automation</p>
-              <ul class="space-y-1 text-xs text-gray-500 dark:text-neutral-500">
+              <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-4 group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors duration-300">Scientific Instruments</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">Precision measurement, data acquisition, and laboratory automation</p>
+              <ul class="space-y-1 text-xs text-slate-500 dark:text-slate-400">
                 <li>• High-precision sensors</li>
                 <li>• Data acquisition systems</li>
                 <li>• Automated test equipment</li>
               </ul>
             </div>
-            <div class="bg-white dark:bg-neutral-900 rounded-lg p-6 border border-gray-200 dark:border-neutral-700">
-              <div class="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mb-3">
-                <svg class="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+            <div class="group bg-gradient-to-br from-white/95 to-emerald-50/50 dark:from-neutral-900/95 dark:to-emerald-950/40 backdrop-blur-sm rounded-2xl p-8 border border-emerald-200/40 dark:border-emerald-800/40 shadow-xl hover:shadow-2xl hover:scale-[1.05] hover:border-emerald-300/70 transition-all duration-500">
+              <div class="w-14 h-14 bg-gradient-to-br from-emerald-500/15 to-emerald-600/35 dark:from-emerald-400/25 dark:to-emerald-500/45 rounded-2xl flex items-center justify-center mb-6 ring-2 ring-emerald-200/50 dark:ring-emerald-700/50 group-hover:ring-emerald-300/70 group-hover:scale-110 transition-all duration-500 shadow-lg mx-auto">
+                <svg class="w-7 h-7 text-emerald-600 dark:text-emerald-400 group-hover:text-emerald-500 dark:group-hover:text-emerald-300 transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
                 </svg>
               </div>
-              <h3 class="font-bold text-gray-800 dark:text-white mb-2">Consumer Electronics</h3>
-              <p class="text-sm text-gray-600 dark:text-neutral-400 mb-3">FCC/CE compliance, IoT development, wireless connectivity</p>
-              <ul class="space-y-1 text-xs text-gray-500 dark:text-neutral-500">
+              <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-4 group-hover:text-emerald-700 dark:group-hover:text-emerald-300 transition-colors duration-300">Consumer Electronics</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">FCC/CE compliance, IoT development, wireless connectivity</p>
+              <ul class="space-y-1 text-xs text-slate-500 dark:text-slate-400">
                 <li>• Connected devices</li>
                 <li>• Wearable technology</li>
                 <li>• Smart home systems</li>
@@ -255,20 +260,21 @@ const structuredData = {
         </div>
       </div>
 
+
       <!-- CTA Section -->
       <div class="py-16 text-center">
         <div class="max-w-2xl mx-auto">
-          <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">
-            Project Discussion
+          <h2 class="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-4">
+            Let's Discuss Your Project
           </h2>
-          <p class="text-gray-600 dark:text-neutral-400 mb-8">
+          <p class="text-slate-600 dark:text-slate-300 mb-8">
             Technical assessment and feasibility analysis for complex engineering projects.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/quote" class="px-8 py-4 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors">
+            <a href="/quote" class="px-8 py-4 bg-gradient-to-r from-orange-600 to-orange-700 text-white font-semibold rounded-xl hover:from-orange-500 hover:to-orange-600 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300">
               Request Assessment
             </a>
-            <a href="/services" class="px-8 py-4 border border-gray-300 text-gray-700 dark:text-neutral-300 dark:border-neutral-600 font-semibold rounded-lg hover:bg-gray-50 dark:hover:bg-neutral-700 transition-colors">
+            <a href="/services" class="px-8 py-4 border border-orange-300/50 text-orange-700 dark:text-orange-300 dark:border-orange-600/50 font-semibold rounded-xl hover:bg-orange-50/50 dark:hover:bg-orange-700/50 hover:border-orange-400 dark:hover:border-orange-500 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300">
               View Services
             </a>
           </div>

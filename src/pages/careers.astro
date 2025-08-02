@@ -5,24 +5,79 @@ import Container from "../components/Container.astro";
 
 <main id="content">
     <!-- Page Layout -->
-    <Layout title="Careers">
+    <Layout title="Careers | Join Our Engineering Team | Crab Labs">
         <Container>
-            <!-- About -->
-            <div class="max-w-3xl px-4 pt-6 lg:pt-10 pb-12 sm:px-6 lg:px-8 mx-auto">
-                <div class="max-w-2xl mt-12">
-                    <!-- Content -->
-                    <div class="space-y-5 md:space-y-8">
-    
-                        <p class="text-xl text-gray-800 dark:text-neutral-200">
-                            We are always looking for fresh talent. 
-                            
-                            Send an updated resume to <a href="mailto:jobs@crablabs.io">jobs@crablabs.io</a> 
-                        </p>
-                    </div>
-                    <!-- End Content -->
+            <!-- Careers -->
+            <div class="max-w-6xl px-4 pt-16 pb-16 sm:px-6 lg:px-8 mx-auto">
+                <!-- Header -->
+                <div class="text-center mb-20">
+                    <h1 class="text-5xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 dark:from-slate-100 dark:to-slate-300 bg-clip-text text-transparent mb-8">Join Our Team</h1>
+                    <p class="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+                        We're building the future of engineering services. Join our team of technical experts who deliver enterprise-quality solutions without the enterprise overhead.
+                    </p>
                 </div>
-    
-                <!-- End About -->
+
+                <!-- Current Openings -->
+                <div class="mb-16">
+                    <h2 class="text-4xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 dark:from-slate-100 dark:to-slate-300 bg-clip-text text-transparent text-center mb-16">Current Openings</h2>
+                    
+                    <!-- Senior Electrical Engineer -->
+                    <div class="group bg-gradient-to-br from-white/95 to-orange-50/50 dark:from-neutral-900/95 dark:to-orange-950/40 backdrop-blur-sm border border-orange-200/40 dark:border-orange-800/40 rounded-3xl p-10 shadow-xl hover:shadow-2xl hover:scale-[1.02] hover:border-orange-300/70 transition-all duration-500 mb-12">
+                        <div class="flex items-start gap-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-orange-500/15 to-orange-600/35 dark:from-orange-400/25 dark:to-orange-500/45 rounded-2xl flex items-center justify-center flex-shrink-0 ring-2 ring-orange-200/50 dark:ring-orange-700/50 group-hover:ring-orange-300/70 group-hover:scale-110 transition-all duration-500 shadow-lg">
+                                <svg class="w-9 h-9 text-orange-600 dark:text-orange-400 group-hover:text-orange-500 dark:group-hover:text-orange-300 transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"></path>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-6 group-hover:text-orange-700 dark:group-hover:text-orange-300 transition-colors duration-300">Senior Electrical Engineer</h3>
+                                <p class="text-slate-600 dark:text-slate-300 mb-6">
+                                    Lead complex electronics design projects for medical devices, robotics, and industrial automation. Work directly with clients to deliver innovative solutions.
+                                </p>
+                                
+                                <div class="grid md:grid-cols-2 gap-8 mb-6">
+                                    <div>
+                                        <h4 class="font-semibold text-slate-800 dark:text-slate-100 mb-3">Key Responsibilities</h4>
+                                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                                            <li>• Design analog and digital circuits for specialized applications</li>
+                                            <li>• Multi-layer PCB layout and signal integrity optimization</li>
+                                            <li>• Power electronics and motor control systems</li>
+                                            <li>• EMC/EMI compliance and validation testing</li>
+                                            <li>• Client consultation and technical leadership</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-slate-800 dark:text-slate-100 mb-3">Requirements</h4>
+                                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                                            <li>• 7+ years of electronics design experience</li>
+                                            <li>• Experience with medical device regulations (FDA Design Controls preferred)</li>
+                                            <li>• Proficiency in Altium Designer or similar CAD tools</li>
+                                            <li>• Strong understanding of power electronics</li>
+                                            <li>• Excellent communication and client-facing skills</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-orange-50 dark:bg-orange-900/20 rounded-lg p-4 mb-6">
+                                    <p class="text-sm text-orange-700 dark:text-orange-300">
+                                        <strong>What We Offer:</strong> Competitive compensation, direct client interaction, technical autonomy, professional development opportunities, and the chance to work on cutting-edge projects across multiple industries.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- General Application -->
+                <div class="bg-gradient-to-br from-slate-50/95 to-slate-100/60 dark:from-slate-800/95 dark:to-slate-900/60 backdrop-blur-sm rounded-3xl p-10 text-center border border-slate-200/40 dark:border-slate-700/40 shadow-xl">
+                    <h2 class="text-3xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 dark:from-slate-100 dark:to-slate-300 bg-clip-text text-transparent mb-6">Don't See a Perfect Match?</h2>
+                    <p class="text-slate-600 dark:text-slate-300 mb-6 max-w-2xl mx-auto">
+                        We're always looking for exceptional engineers. If you're passionate about solving complex technical challenges and delivering high-quality solutions, we'd love to hear from you.
+                    </p>
+                    <p class="text-lg text-slate-800 dark:text-slate-100">
+                        Send your resume to <a href="mailto:jobs@crablabs.io" class="text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300 font-semibold underline transition-colors">jobs@crablabs.io</a>
+                    </p>
+                </div>
             </div>
         </Container>
     </Layout>

@@ -13,42 +13,48 @@ const phoneHref = "tel:+14242715569";
   <Layout title="Request for Quote">
     <Container>
       <!-- RFQ Header -->
-      <div class="pt-6 lg:pt-10">
+      <div class="pt-16 lg:pt-20">
         <div class="max-w-6xl px-4 xl:px-0 py-10 lg:py-20 mx-auto">
           <!-- Title -->
-          <div class="max-w-3xl mb-10 lg:mb-14">
-            <h1 class="text-3xl font-bold md:text-4xl lg:text-5xl dark:text-white">Request for Quote</h1>
-            <p class="mt-3 text-lg text-neutral-400">
+          <div class="max-w-4xl mb-12 lg:mb-16 text-center mx-auto">
+            <h1 class="text-5xl font-bold md:text-6xl lg:text-7xl bg-gradient-to-r from-slate-800 to-slate-600 dark:from-slate-100 dark:to-slate-300 bg-clip-text text-transparent mb-6">Request for Quote</h1>
+            <p class="text-lg text-slate-600 dark:text-slate-300">
               Get an accurate quote with realistic timelines and no hidden costs. The more detail you provide, the more precise our estimate.
             </p>
-            <div class="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
-              <p class="text-sm text-blue-800 dark:text-blue-200">
-                <strong>Response Time:</strong> Initial feasibility assessment and quote within 24-48 hours. Detailed technical review within 1 week.
-              </p>
+            <div class="mt-8 p-8 bg-gradient-to-br from-orange-50/50 to-orange-100/40 dark:from-orange-950/30 dark:to-orange-900/40 border border-orange-200/40 dark:border-orange-700/40 rounded-3xl backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500">
+              <div class="flex items-start">
+                <svg class="w-5 h-5 text-orange-600 dark:text-orange-400 mt-0.5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                </svg>
+                <div>
+                  <p class="text-sm text-orange-700 dark:text-orange-300 font-medium">Initial feasibility assessment and quote within 24-48 hours</p>
+                  <p class="text-xs text-orange-600 dark:text-orange-400 mt-1">Detailed technical review and project planning within 1 week</p>
+                </div>
+              </div>
             </div>
           </div>
           <!-- End Title -->
 
           <!-- RFQ Form -->
-          <div class="bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-700 rounded-2xl p-8 shadow-sm">
+          <div class="bg-gradient-to-br from-white/95 to-slate-50/50 dark:from-neutral-900/95 dark:to-slate-950/40 backdrop-blur-sm border border-slate-200/40 dark:border-slate-700/40 rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-500">
             <form action="https://usebasin.com/f/00c426b2708e" method="POST">
               
               <!-- Company & Contact Information -->
               <div class="mb-8">
-                <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-6 border-b border-gray-200 dark:border-neutral-700 pb-2">
+                <h2 class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-6 border-b border-slate-200/50 dark:border-slate-700/50 pb-2">
                   Company & Contact Information
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <!-- Company Name -->
                   <div>
-                    <label for="company" class="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
+                    <label for="company" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       Company Name *
                     </label>
                     <input
                       type="text"
                       name="company"
                       id="company"
-                      class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-orange-500 focus:outline-none focus:ring focus:ring-orange-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:border-orange-400 dark:focus:ring-orange-800/30"
+                      class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
                       placeholder="Your Company Name"
                       required
                     />
@@ -56,13 +62,13 @@ const phoneHref = "tel:+14242715569";
 
                   <!-- Industry -->
                   <div>
-                    <label for="industry" class="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
+                    <label for="industry" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       Industry
                     </label>
                     <select
                       name="industry"
                       id="industry"
-                      class="block w-full rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-900 focus:border-orange-500 focus:outline-none focus:ring focus:ring-orange-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-white dark:focus:border-orange-400 dark:focus:ring-orange-800/30"
+                      class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:focus:border-orange-400 dark:focus:ring-orange-400/20 [&>option]:bg-white [&>option]:text-slate-700 dark:[&>option]:bg-neutral-800 dark:[&>option]:text-slate-200"
                     >
                       <option value="">Select Industry</option>
                       <option value="aerospace-defense">Aerospace & Defense</option>
@@ -81,14 +87,14 @@ const phoneHref = "tel:+14242715569";
 
                   <!-- Contact Name -->
                   <div>
-                    <label for="contact-name" class="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
+                    <label for="contact-name" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       Your Name *
                     </label>
                     <input
                       type="text"
                       name="contact-name"
                       id="contact-name"
-                      class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-orange-500 focus:outline-none focus:ring focus:ring-orange-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:border-orange-400 dark:focus:ring-orange-800/30"
+                      class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
                       placeholder="Your Full Name"
                       required
                     />
@@ -96,21 +102,21 @@ const phoneHref = "tel:+14242715569";
 
                   <!-- Title/Role -->
                   <div>
-                    <label for="title" class="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
+                    <label for="title" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       Title/Role
                     </label>
                     <input
                       type="text"
                       name="title"
                       id="title"
-                      class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-orange-500 focus:outline-none focus:ring focus:ring-orange-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:border-orange-400 dark:focus:ring-orange-800/30"
+                      class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
                       placeholder="e.g., Engineering Manager, CTO"
                     />
                   </div>
 
                   <!-- Email -->
                   <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
+                    <label for="email" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       Email Address *
                     </label>
                     <input
@@ -118,7 +124,7 @@ const phoneHref = "tel:+14242715569";
                       name="email"
                       id="email"
                       autocomplete="email"
-                      class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-orange-500 focus:outline-none focus:ring focus:ring-orange-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:border-orange-400 dark:focus:ring-orange-800/30"
+                      class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
                       placeholder="your@company.com"
                       required
                     />
@@ -126,14 +132,14 @@ const phoneHref = "tel:+14242715569";
 
                   <!-- Phone -->
                   <div>
-                    <label for="phone" class="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
+                    <label for="phone" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       Phone Number
                     </label>
                     <input
                       type="tel"
                       name="phone"
                       id="phone"
-                      class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-orange-500 focus:outline-none focus:ring focus:ring-orange-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:border-orange-400 dark:focus:ring-orange-800/30"
+                      class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
                       placeholder="(xxx) xxx-xxxx"
                     />
                   </div>
@@ -142,53 +148,53 @@ const phoneHref = "tel:+14242715569";
 
               <!-- Project Details -->
               <div class="mb-8">
-                <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-6 border-b border-gray-200 dark:border-neutral-700 pb-2">
+                <h2 class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-6 border-b border-slate-200/50 dark:border-slate-700/50 pb-2">
                   Project Details
                 </h2>
                 <div class="grid grid-cols-1 gap-6">
                   <!-- Services Needed -->
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-3">
+                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-3">
                       Services Needed * (Select all that apply)
                     </label>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                       <label class="flex items-center">
                         <input type="checkbox" name="services[]" value="technical-consulting" class="rounded border-gray-300 text-orange-600 focus:ring-orange-500 dark:border-gray-600 dark:bg-gray-700">
-                        <span class="ml-2 text-sm text-gray-700 dark:text-neutral-300">Technical Consulting</span>
+                        <span class="ml-2 text-sm text-slate-700 dark:text-slate-300">Technical Consulting</span>
                       </label>
                       <label class="flex items-center">
                         <input type="checkbox" name="services[]" value="design-review" class="rounded border-gray-300 text-orange-600 focus:ring-orange-500 dark:border-gray-600 dark:bg-gray-700">
-                        <span class="ml-2 text-sm text-gray-700 dark:text-neutral-300">Design Review & Analysis</span>
+                        <span class="ml-2 text-sm text-slate-700 dark:text-slate-300">Design Review & Analysis</span>
                       </label>
                       <label class="flex items-center">
                         <input type="checkbox" name="services[]" value="product-development" class="rounded border-gray-300 text-orange-600 focus:ring-orange-500 dark:border-gray-600 dark:bg-gray-700">
-                        <span class="ml-2 text-sm text-gray-700 dark:text-neutral-300">New Product Development</span>
+                        <span class="ml-2 text-sm text-slate-700 dark:text-slate-300">New Product Development</span>
                       </label>
                       <label class="flex items-center">
                         <input type="checkbox" name="services[]" value="design-retooling" class="rounded border-gray-300 text-orange-600 focus:ring-orange-500 dark:border-gray-600 dark:bg-gray-700">
-                        <span class="ml-2 text-sm text-gray-700 dark:text-neutral-300">Design Retooling & Upgrades</span>
+                        <span class="ml-2 text-sm text-slate-700 dark:text-slate-300">Design Retooling & Upgrades</span>
                       </label>
                       <label class="flex items-center">
                         <input type="checkbox" name="services[]" value="reverse-engineering" class="rounded border-gray-300 text-orange-600 focus:ring-orange-500 dark:border-gray-600 dark:bg-gray-700">
-                        <span class="ml-2 text-sm text-gray-700 dark:text-neutral-300">Reverse Engineering</span>
+                        <span class="ml-2 text-sm text-slate-700 dark:text-slate-300">Reverse Engineering</span>
                       </label>
                       <label class="flex items-center">
                         <input type="checkbox" name="services[]" value="pre-compliance-testing" class="rounded border-gray-300 text-orange-600 focus:ring-orange-500 dark:border-gray-600 dark:bg-gray-700">
-                        <span class="ml-2 text-sm text-gray-700 dark:text-neutral-300">Pre-Compliance Testing</span>
+                        <span class="ml-2 text-sm text-slate-700 dark:text-slate-300">Pre-Compliance Testing</span>
                       </label>
                     </div>
                   </div>
 
                   <!-- Project Title -->
                   <div>
-                    <label for="project-title" class="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
+                    <label for="project-title" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       Project Title *
                     </label>
                     <input
                       type="text"
                       name="project-title"
                       id="project-title"
-                      class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-orange-500 focus:outline-none focus:ring focus:ring-orange-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:border-orange-400 dark:focus:ring-orange-800/30"
+                      class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
                       placeholder="Brief project name or description"
                       required
                     />
@@ -196,14 +202,14 @@ const phoneHref = "tel:+14242715569";
 
                   <!-- Project Description -->
                   <div>
-                    <label for="project-description" class="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
+                    <label for="project-description" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       Detailed Project Description *
                     </label>
                     <textarea
                       id="project-description"
                       name="project-description"
                       rows="6"
-                      class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-orange-500 focus:outline-none focus:ring focus:ring-orange-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:border-orange-400 dark:focus:ring-orange-800/30"
+                      class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
                       placeholder="Please provide a detailed description of your project, including objectives, requirements, constraints, and any specific challenges you're facing."
                       required
                     ></textarea>
@@ -211,14 +217,14 @@ const phoneHref = "tel:+14242715569";
 
                   <!-- Technical Requirements -->
                   <div>
-                    <label for="technical-requirements" class="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
+                    <label for="technical-requirements" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       Technical Requirements & Specifications
                     </label>
                     <textarea
                       id="technical-requirements"
                       name="technical-requirements"
                       rows="4"
-                      class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-orange-500 focus:outline-none focus:ring focus:ring-orange-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:border-orange-400 dark:focus:ring-orange-800/30"
+                      class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
                       placeholder="Performance requirements, technical standards, operating conditions, compliance needs, etc."
                     ></textarea>
                   </div>
@@ -227,19 +233,19 @@ const phoneHref = "tel:+14242715569";
 
               <!-- Project Scope & Timeline -->
               <div class="mb-8">
-                <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-6 border-b border-gray-200 dark:border-neutral-700 pb-2">
+                <h2 class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-6 border-b border-slate-200/50 dark:border-slate-700/50 pb-2">
                   Project Scope & Timeline
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <!-- Project Phase -->
                   <div>
-                    <label for="project-phase" class="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
+                    <label for="project-phase" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       Current Project Phase
                     </label>
                     <select
                       name="project-phase"
                       id="project-phase"
-                      class="block w-full rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-900 focus:border-orange-500 focus:outline-none focus:ring focus:ring-orange-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-white dark:focus:border-orange-400 dark:focus:ring-orange-800/30"
+                      class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:focus:border-orange-400 dark:focus:ring-orange-400/20 [&>option]:bg-white [&>option]:text-slate-700 dark:[&>option]:bg-neutral-800 dark:[&>option]:text-slate-200"
                     >
                       <option value="">Select Phase</option>
                       <option value="concept">Concept/Ideation</option>
@@ -255,13 +261,13 @@ const phoneHref = "tel:+14242715569";
 
                   <!-- Timeline -->
                   <div>
-                    <label for="timeline" class="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
+                    <label for="timeline" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       Desired Timeline *
                     </label>
                     <select
                       name="timeline"
                       id="timeline"
-                      class="block w-full rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-900 focus:border-orange-500 focus:outline-none focus:ring focus:ring-orange-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-white dark:focus:border-orange-400 dark:focus:ring-orange-800/30"
+                      class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:focus:border-orange-400 dark:focus:ring-orange-400/20 [&>option]:bg-white [&>option]:text-slate-700 dark:[&>option]:bg-neutral-800 dark:[&>option]:text-slate-200"
                       required
                     >
                       <option value="">Select Timeline</option>
@@ -278,13 +284,13 @@ const phoneHref = "tel:+14242715569";
 
                   <!-- Budget Range -->
                   <div>
-                    <label for="budget" class="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
+                    <label for="budget" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       Estimated Budget Range
                     </label>
                     <select
                       name="budget"
                       id="budget"
-                      class="block w-full rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-900 focus:border-orange-500 focus:outline-none focus:ring focus:ring-orange-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-white dark:focus:border-orange-400 dark:focus:ring-orange-800/30"
+                      class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:focus:border-orange-400 dark:focus:ring-orange-400/20 [&>option]:bg-white [&>option]:text-slate-700 dark:[&>option]:bg-neutral-800 dark:[&>option]:text-slate-200"
                     >
                       <option value="">Select Budget Range</option>
                       <option value="under-5k">Under $5,000</option>
@@ -298,13 +304,13 @@ const phoneHref = "tel:+14242715569";
 
                   <!-- Engagement Type -->
                   <div>
-                    <label for="engagement-type" class="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
+                    <label for="engagement-type" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       Preferred Engagement Type
                     </label>
                     <select
                       name="engagement-type"
                       id="engagement-type"
-                      class="block w-full rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-900 focus:border-orange-500 focus:outline-none focus:ring focus:ring-orange-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-white dark:focus:border-orange-400 dark:focus:ring-orange-800/30"
+                      class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:focus:border-orange-400 dark:focus:ring-orange-400/20 [&>option]:bg-white [&>option]:text-slate-700 dark:[&>option]:bg-neutral-800 dark:[&>option]:text-slate-200"
                     >
                       <option value="">Select Engagement Type</option>
                       <option value="fixed-price">Fixed Price Project</option>
@@ -318,48 +324,48 @@ const phoneHref = "tel:+14242715569";
 
               <!-- Additional Information -->
               <div class="mb-8">
-                <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-6 border-b border-gray-200 dark:border-neutral-700 pb-2">
+                <h2 class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-6 border-b border-slate-200/50 dark:border-slate-700/50 pb-2">
                   Additional Information
                 </h2>
                 <div class="grid grid-cols-1 gap-4">
                   <!-- Existing Documentation -->
                   <div>
-                    <label for="existing-docs" class="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
+                    <label for="existing-docs" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       Existing Documentation & Assets
                     </label>
                     <textarea
                       id="existing-docs"
                       name="existing-docs"
                       rows="3"
-                      class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-orange-500 focus:outline-none focus:ring focus:ring-orange-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:border-orange-400 dark:focus:ring-orange-800/30"
+                      class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
                       placeholder="Describe any existing documentation, designs, prototypes, or other assets we should be aware of."
                     ></textarea>
                   </div>
 
                   <!-- Special Requirements -->
                   <div>
-                    <label for="special-requirements" class="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
+                    <label for="special-requirements" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       Special Requirements or Constraints
                     </label>
                     <textarea
                       id="special-requirements"
                       name="special-requirements"
                       rows="3"
-                      class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-orange-500 focus:outline-none focus:ring focus:ring-orange-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:border-orange-400 dark:focus:ring-orange-800/30"
+                      class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
                       placeholder="NDA requirements, security clearances, specific methodologies, regulatory compliance, etc."
                     ></textarea>
                   </div>
 
                   <!-- Questions/Concerns -->
                   <div>
-                    <label for="questions" class="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-2">
+                    <label for="questions" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       Questions or Concerns
                     </label>
                     <textarea
                       id="questions"
                       name="questions"
                       rows="3"
-                      class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-orange-500 focus:outline-none focus:ring focus:ring-orange-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:border-orange-400 dark:focus:ring-orange-800/30"
+                      class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
                       placeholder="Any specific questions about our services or concerns about your project?"
                     ></textarea>
                   </div>
@@ -367,21 +373,21 @@ const phoneHref = "tel:+14242715569";
               </div>
 
               <!-- Submission -->
-              <div class="border-t border-gray-200 dark:border-neutral-700 pt-6">
+              <div class="border-t border-slate-200/50 dark:border-slate-700/50 pt-6">
                 <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
                   <div>
-                    <p class="text-xs text-neutral-500 mb-2">
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mb-2">
                       Required fields are marked with *
                     </p>
-                    <p class="text-xs text-neutral-500">
-                      By submitting this form, you agree to our <a href="/privacy" class="text-orange-600 hover:text-orange-500">Privacy Policy</a> and consent to being contacted about your project.
+                    <p class="text-xs text-slate-500 dark:text-slate-400">
+                      By submitting this form, you agree to our <a href="/privacy" class="text-orange-700 dark:text-orange-300 hover:text-orange-600 dark:hover:text-orange-400">Privacy Policy</a> and consent to being contacted about your project.
                     </p>
                   </div>
                   <button 
                     name="submit" 
-                    class="py-3 px-6 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-orange-600 text-white hover:bg-orange-700 disabled:opacity-50 disabled:pointer-events-none ring-orange-500 transition duration-300 focus-visible:ring whitespace-nowrap" 
+                    class="py-5 px-10 inline-flex justify-center items-center gap-x-3 text-base font-bold rounded-2xl bg-gradient-to-r from-orange-600 to-orange-700 text-white hover:from-orange-500 hover:to-orange-600 hover:shadow-2xl transform hover:scale-[1.05] disabled:opacity-50 disabled:pointer-events-none transition-all duration-500 whitespace-nowrap shadow-lg" 
                     type="submit">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
                     </svg>
                     Submit RFQ
@@ -393,51 +399,51 @@ const phoneHref = "tel:+14242715569";
           </div>
 
           <!-- What Happens Next -->
-          <div class="mt-12 bg-gray-50 dark:bg-neutral-800/50 rounded-2xl p-8">
-            <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-6">What Happens Next?</h2>
+          <div class="mt-12 bg-gradient-to-br from-slate-50 via-slate-50 to-orange-50/20 dark:from-neutral-800 dark:via-neutral-800 dark:to-orange-950/20 rounded-2xl p-8 border border-slate-200/50 dark:border-orange-800/20">
+            <h2 class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-6">What Happens Next?</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div class="text-center">
-                <div class="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="w-12 h-12 bg-gradient-to-br from-orange-500/10 to-orange-600/20 dark:from-orange-400/10 dark:to-orange-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 ring-1 ring-orange-200/30 dark:ring-orange-700/20">
+                  <svg class="w-6 h-6 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
                   </svg>
                 </div>
-                <h3 class="font-semibold text-gray-800 dark:text-white mb-2">1. Review</h3>
-                <p class="text-sm text-neutral-600 dark:text-neutral-400">Engineering team reviews for feasibility and scope within 24 hours.</p>
+                <h3 class="font-semibold text-slate-800 dark:text-slate-100 mb-2">1. Review</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300">Engineering team reviews for feasibility and scope within 24 hours.</p>
               </div>
               <div class="text-center">
-                <div class="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="w-12 h-12 bg-gradient-to-br from-orange-500/10 to-orange-600/20 dark:from-orange-400/10 dark:to-orange-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 ring-1 ring-orange-200/30 dark:ring-orange-700/20">
+                  <svg class="w-6 h-6 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
                   </svg>
                 </div>
-                <h3 class="font-semibold text-gray-800 dark:text-white mb-2">2. Consultation</h3>
-                <p class="text-sm text-neutral-600 dark:text-neutral-400">Technical discussion to clarify requirements and identify potential issues.</p>
+                <h3 class="font-semibold text-slate-800 dark:text-slate-100 mb-2">2. Consultation</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300">Technical discussion to clarify requirements and identify potential issues.</p>
               </div>
               <div class="text-center">
-                <div class="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="w-12 h-12 bg-gradient-to-br from-orange-500/10 to-orange-600/20 dark:from-orange-400/10 dark:to-orange-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 ring-1 ring-orange-200/30 dark:ring-orange-700/20">
+                  <svg class="w-6 h-6 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                   </svg>
                 </div>
-                <h3 class="font-semibold text-gray-800 dark:text-white mb-2">3. Quote</h3>
-                <p class="text-sm text-neutral-600 dark:text-neutral-400">Detailed quote with fixed pricing, milestone deliverables, and realistic timeline.</p>
+                <h3 class="font-semibold text-slate-800 dark:text-slate-100 mb-2">3. Quote</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300">Detailed quote with fixed pricing, milestone deliverables, and realistic timeline.</p>
               </div>
             </div>
           </div>
 
           <!-- Contact Information -->
           <div class="mt-12 text-center">
-            <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">Need to discuss your project first?</h3>
+            <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4">Need to discuss your project first?</h3>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href={phoneHref} class="inline-flex items-center gap-2 text-orange-600 hover:text-orange-500 font-medium">
+              <a href={phoneHref} class="inline-flex items-center gap-2 text-orange-700 dark:text-orange-300 hover:text-orange-600 dark:hover:text-orange-400 font-medium">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                 </svg>
                 Call or text {phone}
               </a>
-              <span class="text-neutral-400 hidden sm:block">•</span>
-              <a href={emailHref} class="inline-flex items-center gap-2 text-orange-600 hover:text-orange-500 font-medium">
+              <span class="text-slate-400 hidden sm:block">•</span>
+              <a href={emailHref} class="inline-flex items-center gap-2 text-orange-700 dark:text-orange-300 hover:text-orange-600 dark:hover:text-orange-400 font-medium">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                 </svg>
