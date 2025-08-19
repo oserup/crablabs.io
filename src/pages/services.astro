@@ -11,12 +11,12 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
 ---
 
 <!-- Page Layout -->
-<Layout title="Engineering Services | Electronics Design, Embedded Systems, Software Development & Testing USA">
+<Layout title="Engineering Services | Crab Labs">
   <Container>
 
 
     <!-- Header Section -->
-    <div class="max-w-[85rem] px-4 pt-16 pb-8 sm:px-6 lg:px-8 lg:pt-20 mx-auto text-center">
+    <div class="max-w-6xl px-4 pt-16 pb-8 mx-auto text-center">
       <h1 class="text-5xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 dark:from-slate-100 dark:to-slate-300 bg-clip-text text-transparent mb-8">Engineering Services</h1>
       <p class="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto mb-16">
         From concept to production, we provide comprehensive engineering solutions with enterprise-quality without the enterprise overhead.
@@ -24,12 +24,16 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
     </div>
 
     <!-- Services Grid -->
-    <div class="max-w-[85rem] px-4 pb-8 sm:px-6 lg:px-8 lg:pb-12 mx-auto">
-      <div class="grid gap-8 lg:gap-12">
+    <div class="max-w-6xl px-4 pb-8 mx-auto">
+      
+      <!-- Core Services -->
+      <div class="bg-white dark:bg-neutral-900 rounded-2xl p-8 mb-16 border border-slate-200 dark:border-slate-700 shadow-lg">
+        <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-8 text-center">On Demand Services</h2>
+        <div class="space-y-8">
         
         <!-- Consulting Service -->
         <div class="group">
-          <div class="bg-gradient-to-br from-white/95 to-orange-50/50 dark:from-neutral-900/95 dark:to-orange-950/40 backdrop-blur-sm border border-orange-200/40 dark:border-orange-800/40 rounded-3xl p-10 shadow-xl hover:shadow-2xl hover:scale-[1.03] hover:border-orange-300/70 transition-all duration-500">
+          <div class="bg-white dark:bg-neutral-800 border border-orange-200 dark:border-orange-800/50 rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300">
             <div class="flex flex-col lg:flex-row lg:items-center gap-8">
               <div class="lg:w-1/3">
                 <div class="w-full h-48 sm:h-56 lg:h-48 bg-slate-100 dark:bg-neutral-800 rounded-xl overflow-hidden shadow-lg ring-1 ring-slate-200/30 dark:ring-blue-700/20">
@@ -82,7 +86,7 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
 
         <!-- Design Review Service -->
         <div class="group">
-          <div class="bg-gradient-to-br from-white/95 to-blue-50/50 dark:from-neutral-900/95 dark:to-blue-950/40 backdrop-blur-sm border border-blue-200/40 dark:border-blue-800/40 rounded-3xl p-10 shadow-xl hover:shadow-2xl hover:scale-[1.03] hover:border-blue-300/70 transition-all duration-500">
+          <div class="bg-white dark:bg-neutral-800 border border-blue-200 dark:border-blue-800/50 rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300">
             <div class="flex flex-col lg:flex-row-reverse lg:items-center gap-8">
               <div class="lg:w-1/3">
                 <div class="w-full h-48 sm:h-56 lg:h-48 bg-slate-100 dark:bg-neutral-800 rounded-xl overflow-hidden shadow-lg ring-1 ring-slate-200/30 dark:ring-blue-700/20">
@@ -132,10 +136,17 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
             </div>
           </div>
         </div>
+        </div>
+      </div>
+
+      <!-- Development Services -->
+      <div class="bg-white dark:bg-neutral-900 rounded-2xl p-8 mb-16 border border-slate-200 dark:border-slate-700 shadow-lg">
+        <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-8 text-center">Product Development Services</h2>
+        <div class="space-y-8">
 
         <!-- New Product Development Service -->
         <div class="group">
-          <div class="bg-gradient-to-br from-white/95 to-purple-50/50 dark:from-neutral-900/95 dark:to-purple-950/40 backdrop-blur-sm border border-purple-200/40 dark:border-purple-800/40 rounded-3xl p-10 shadow-xl hover:shadow-2xl hover:scale-[1.03] hover:border-purple-300/70 transition-all duration-500">
+          <div class="bg-white dark:bg-neutral-800 border border-purple-200 dark:border-purple-800/50 rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300">
             <div class="flex flex-col lg:flex-row lg:items-center gap-8">
               <div class="lg:w-1/3">
                 <div class="w-full h-48 sm:h-56 lg:h-48 bg-slate-100 dark:bg-neutral-800 rounded-xl overflow-hidden shadow-lg ring-1 ring-slate-200/30 dark:ring-purple-700/20">
@@ -186,10 +197,9 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
           </div>
         </div>
 
-
         <!-- Design Retooling Service -->
         <div class="group">
-          <div class="bg-gradient-to-br from-white/95 to-emerald-50/50 dark:from-neutral-900/95 dark:to-emerald-950/40 backdrop-blur-sm border border-emerald-200/40 dark:border-emerald-800/40 rounded-3xl p-10 shadow-xl hover:shadow-2xl hover:scale-[1.03] hover:border-emerald-300/70 transition-all duration-500">
+          <div class="bg-white dark:bg-neutral-800 border border-emerald-200 dark:border-emerald-800/50 rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300">
             <div class="flex flex-col lg:flex-row-reverse lg:items-center gap-8">
               <div class="lg:w-1/3">
                 <div class="w-full h-48 sm:h-56 lg:h-48 bg-slate-100 dark:bg-neutral-800 rounded-xl overflow-hidden shadow-lg ring-1 ring-slate-200/30 dark:ring-emerald-700/20">
@@ -239,10 +249,17 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
             </div>
           </div>
         </div>
+        </div>
+      </div>
+
+      <!-- Specialized Services -->
+      <div class="bg-white dark:bg-neutral-900 rounded-2xl p-8 mb-16 border border-slate-200 dark:border-slate-700 shadow-lg">
+        <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-8 text-center">Specialized Services</h2>
+        <div class="space-y-8">
 
         <!-- Reverse Engineering Service -->
         <div class="group">
-          <div class="bg-gradient-to-br from-white/95 to-slate-50/50 dark:from-neutral-900/95 dark:to-slate-950/40 backdrop-blur-sm border border-slate-200/40 dark:border-slate-800/40 rounded-3xl p-10 shadow-xl hover:shadow-2xl hover:scale-[1.03] hover:border-slate-300/70 transition-all duration-500">
+          <div class="bg-white dark:bg-neutral-800 border border-slate-200 dark:border-slate-700 rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300">
             <div class="flex flex-col lg:flex-row lg:items-center gap-8">
               <div class="lg:w-1/3">
                 <div class="w-full h-48 sm:h-56 lg:h-48 bg-slate-100 dark:bg-neutral-800 rounded-xl overflow-hidden shadow-lg ring-1 ring-slate-200/30 dark:ring-slate-700/20">
@@ -295,7 +312,7 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
 
         <!-- Pre-Compliance Testing Service -->
         <div class="group">
-          <div class="bg-gradient-to-br from-white/95 to-orange-50/50 dark:from-neutral-900/95 dark:to-orange-950/40 backdrop-blur-sm border border-orange-200/40 dark:border-orange-800/40 rounded-3xl p-10 shadow-xl hover:shadow-2xl hover:scale-[1.03] hover:border-orange-300/70 transition-all duration-500">
+          <div class="bg-white dark:bg-neutral-800 border border-orange-200 dark:border-orange-800/50 rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300">
             <div class="flex flex-col lg:flex-row-reverse lg:items-center gap-8">
               <div class="lg:w-1/3">
                 <div class="w-full h-48 sm:h-56 lg:h-48 bg-slate-100 dark:bg-neutral-800 rounded-xl overflow-hidden shadow-lg ring-1 ring-slate-200/30 dark:ring-orange-700/20">
@@ -345,8 +362,10 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
             </div>
           </div>
         </div>
-
+        </div>
       </div>
+
+    </div>
     </div>
     <!-- End Services Grid -->
 
@@ -361,7 +380,7 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
 
       <div class="grid gap-8 lg:gap-12 lg:grid-cols-2 max-w-4xl mx-auto">
         <!-- Project Based Card -->
-        <div class="bg-gradient-to-br from-white/95 to-orange-50/50 dark:from-neutral-900/95 dark:to-orange-950/40 backdrop-blur-sm border border-orange-200/40 dark:border-orange-800/40 rounded-3xl p-10 shadow-xl hover:shadow-2xl hover:scale-[1.03] hover:border-orange-300/70 transition-all duration-500">
+        <div class="bg-white dark:bg-neutral-800 border border-orange-200 dark:border-orange-800/50 rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300">
           <div class="mb-4">
             <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800/30 dark:text-blue-500">
               Most Popular
@@ -399,7 +418,7 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
         </div>
 
         <!-- Hourly Card -->
-        <div class="bg-gradient-to-br from-white/95 to-orange-50/50 dark:from-neutral-900/95 dark:to-orange-950/40 backdrop-blur-sm border border-orange-200/40 dark:border-orange-800/40 rounded-3xl p-10 shadow-xl hover:shadow-2xl hover:scale-[1.03] hover:border-orange-300/70 transition-all duration-500">
+        <div class="bg-white dark:bg-neutral-800 border border-orange-200 dark:border-orange-800/50 rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300">
           <h3 class="text-xl font-semibold text-gray-800 dark:text-neutral-200 mb-4">Hourly Consulting</h3>
           <p class="text-slate-600 dark:text-slate-300 mb-6 text-lg leading-relaxed">
             Flexible engagement for ongoing support, analysis, or specialized expertise
