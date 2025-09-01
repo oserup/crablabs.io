@@ -13,22 +13,22 @@ const phoneHref = "tel:+14242715569";
   <Layout title="Get a Quote | Crab Labs">
     <Container>
       <!-- RFQ Header -->
-      <div class="pt-16 lg:pt-20">
-        <div class="max-w-6xl px-4 xl:px-0 py-10 lg:py-20 mx-auto">
+      <div class="pt-16">
+        <div class="max-w-6xl px-4 pb-12 mx-auto">
           <!-- Title -->
-          <div class="max-w-4xl mb-12 lg:mb-16 text-center mx-auto">
-            <h1 class="text-5xl font-bold md:text-6xl lg:text-7xl bg-gradient-to-r from-slate-800 to-slate-600 dark:from-slate-100 dark:to-slate-300 bg-clip-text text-transparent mb-6">Request for Quote</h1>
+          <div class="max-w-4xl mb-12 text-center mx-auto">
+            <h1 class="text-4xl font-bold text-slate-800 dark:text-slate-100 mb-4">Request Quote</h1>
             <p class="text-lg text-slate-600 dark:text-slate-300">
-              Get an accurate quote with realistic timelines and no hidden costs. The more detail you provide, the more precise our estimate.
+              Senior engineers who ship products fast. Share your project details - the more specific you are, the better we can solve your problems.
             </p>
-            <div class="mt-8 p-8 bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-700/50 rounded-xl shadow-lg">
+            <div class="mt-6 p-4 bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-700/50 rounded-xl">
               <div class="flex items-start">
                 <svg class="w-5 h-5 text-orange-600 dark:text-orange-400 mt-0.5 mr-3" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
                 </svg>
                 <div>
-                  <p class="text-sm text-orange-700 dark:text-orange-300 font-medium">Initial feasibility assessment and quote within 24-48 hours</p>
-                  <p class="text-xs text-orange-600 dark:text-orange-400 mt-1">Detailed technical review and project planning within 1 week</p>
+                  <p class="text-sm text-orange-700 dark:text-orange-300 font-medium">Direct access to senior engineers - no sales team</p>
+                  <p class="text-xs text-orange-600 dark:text-orange-400 mt-1">Technical call within 24-48 hours, then detailed quote if we're a good fit</p>
                 </div>
               </div>
             </div>
@@ -36,12 +36,12 @@ const phoneHref = "tel:+14242715569";
           <!-- End Title -->
 
           <!-- RFQ Form -->
-          <div class="bg-white dark:bg-neutral-800 border border-slate-200 dark:border-slate-700 rounded-xl p-8 shadow-lg">
+          <div class="bg-white dark:bg-neutral-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6">
             <form action="https://usebasin.com/f/00c426b2708e" method="POST">
               
               <!-- Company & Contact Information -->
-              <div class="mb-8">
-                <h2 class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-6 border-b border-slate-200 dark:border-slate-700 pb-2">
+              <div class="mb-6">
+                <h2 class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2">
                   Company & Contact Information
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -159,28 +159,16 @@ const phoneHref = "tel:+14242715569";
                     </label>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                       <label class="flex items-center">
-                        <input type="checkbox" name="services[]" value="technical-consulting" class="rounded border-gray-300 text-orange-600 focus:ring-orange-500 dark:border-gray-600 dark:bg-gray-700">
-                        <span class="ml-2 text-sm text-slate-700 dark:text-slate-300">Technical Consulting</span>
-                      </label>
-                      <label class="flex items-center">
-                        <input type="checkbox" name="services[]" value="design-review" class="rounded border-gray-300 text-orange-600 focus:ring-orange-500 dark:border-gray-600 dark:bg-gray-700">
-                        <span class="ml-2 text-sm text-slate-700 dark:text-slate-300">Design Review & Analysis</span>
+                        <input type="checkbox" name="services[]" value="consulting" class="rounded border-gray-300 text-orange-600 focus:ring-orange-500 dark:border-gray-600 dark:bg-gray-700">
+                        <span class="ml-2 text-sm text-slate-700 dark:text-slate-300">Consulting & Strategy</span>
                       </label>
                       <label class="flex items-center">
                         <input type="checkbox" name="services[]" value="product-development" class="rounded border-gray-300 text-orange-600 focus:ring-orange-500 dark:border-gray-600 dark:bg-gray-700">
-                        <span class="ml-2 text-sm text-slate-700 dark:text-slate-300">New Product Development</span>
+                        <span class="ml-2 text-sm text-slate-700 dark:text-slate-300">Product Development</span>
                       </label>
                       <label class="flex items-center">
-                        <input type="checkbox" name="services[]" value="design-retooling" class="rounded border-gray-300 text-orange-600 focus:ring-orange-500 dark:border-gray-600 dark:bg-gray-700">
-                        <span class="ml-2 text-sm text-slate-700 dark:text-slate-300">Design Retooling & Upgrades</span>
-                      </label>
-                      <label class="flex items-center">
-                        <input type="checkbox" name="services[]" value="reverse-engineering" class="rounded border-gray-300 text-orange-600 focus:ring-orange-500 dark:border-gray-600 dark:bg-gray-700">
-                        <span class="ml-2 text-sm text-slate-700 dark:text-slate-300">Reverse Engineering</span>
-                      </label>
-                      <label class="flex items-center">
-                        <input type="checkbox" name="services[]" value="pre-compliance-testing" class="rounded border-gray-300 text-orange-600 focus:ring-orange-500 dark:border-gray-600 dark:bg-gray-700">
-                        <span class="ml-2 text-sm text-slate-700 dark:text-slate-300">Pre-Compliance Testing</span>
+                        <input type="checkbox" name="services[]" value="testing-validation" class="rounded border-gray-300 text-orange-600 focus:ring-orange-500 dark:border-gray-600 dark:bg-gray-700">
+                        <span class="ml-2 text-sm text-slate-700 dark:text-slate-300">Testing & Validation</span>
                       </label>
                     </div>
                   </div>
@@ -259,26 +247,22 @@ const phoneHref = "tel:+14242715569";
                     </select>
                   </div>
 
-                  <!-- Timeline -->
+                  <!-- Priority -->
                   <div>
-                    <label for="timeline" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                      Desired Timeline *
+                    <label for="priority" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                      Project Priority *
                     </label>
                     <select
-                      name="timeline"
-                      id="timeline"
+                      name="priority"
+                      id="priority"
                       class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:focus:border-orange-400 dark:focus:ring-orange-400/20 [&>option]:bg-white [&>option]:text-slate-700 dark:[&>option]:bg-neutral-800 dark:[&>option]:text-slate-200"
                       required
                     >
-                      <option value="">Select Timeline</option>
-                      <option value="asap">ASAP (Rush job)</option>
-                      <option value="1-2-weeks">1-2 weeks</option>
-                      <option value="1-month">1 month</option>
-                      <option value="2-3-months">2-3 months</option>
-                      <option value="3-6-months">3-6 months</option>
-                      <option value="6-12-months">6-12 months</option>
-                      <option value="1-year-plus">1+ years</option>
-                      <option value="flexible">Flexible</option>
+                      <option value="">Select Priority</option>
+                      <option value="urgent">Urgent - Need to start ASAP</option>
+                      <option value="high">High - Starting soon</option>
+                      <option value="medium">Medium - Planning ahead</option>
+                      <option value="low">Low - Exploratory/Future project</option>
                     </select>
                   </div>
 
@@ -388,9 +372,9 @@ const phoneHref = "tel:+14242715569";
                     class="py-4 px-8 inline-flex justify-center items-center gap-x-2 text-base font-semibold rounded-xl bg-orange-600 text-white hover:bg-orange-500 hover:shadow-lg disabled:opacity-50 disabled:pointer-events-none transition-all duration-300 whitespace-nowrap shadow-md" 
                     type="submit">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 9l2 2 4-4"/>
                     </svg>
-                    Submit RFQ
+                    Request Quote
                   </button>
                 </div>
               </div>
@@ -409,7 +393,7 @@ const phoneHref = "tel:+14242715569";
                   </svg>
                 </div>
                 <h3 class="font-semibold text-slate-800 dark:text-slate-100 mb-2">1. Review</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-300">Engineering team reviews for feasibility and scope within 24 hours.</p>
+                <p class="text-sm text-slate-600 dark:text-slate-300">Senior engineer reviews your project for feasibility within 24 hours.</p>
               </div>
               <div class="text-center">
                 <div class="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-xl flex items-center justify-center mx-auto mb-4 border border-orange-200 dark:border-orange-800">
@@ -418,7 +402,7 @@ const phoneHref = "tel:+14242715569";
                   </svg>
                 </div>
                 <h3 class="font-semibold text-slate-800 dark:text-slate-100 mb-2">2. Consultation</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-300">Technical discussion to clarify requirements and identify potential issues.</p>
+                <p class="text-sm text-slate-600 dark:text-slate-300">Direct conversation with the engineer who'll build it. No sales people.</p>
               </div>
               <div class="text-center">
                 <div class="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-xl flex items-center justify-center mx-auto mb-4 border border-orange-200 dark:border-orange-800">
@@ -427,7 +411,7 @@ const phoneHref = "tel:+14242715569";
                   </svg>
                 </div>
                 <h3 class="font-semibold text-slate-800 dark:text-slate-100 mb-2">3. Quote</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-300">Detailed quote with fixed pricing, milestone deliverables, and realistic timeline.</p>
+                <p class="text-sm text-slate-600 dark:text-slate-300">Honest quote with fixed pricing and clear deliverables. No surprises.</p>
               </div>
             </div>
           </div>
