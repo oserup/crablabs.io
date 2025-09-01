@@ -15,8 +15,9 @@ import engineering from "../assets/icons/engineering.svg";
 const structuredData = {
   "@context": "https://schema.org",
   "@type": ["ProfessionalService", "LocalBusiness"],
-  "name": "Electronic Product Development Services - Long Beach, CA",
-  "description": "Electronic product development services including PCB design, embedded firmware, and system integration for medical devices, industrial equipment, and scientific instruments.",
+  "name": "Crab Labs - Electronic Product Development Services",
+  "alternateName": "Crab Labs LLC",
+  "description": "Senior engineers provide PCB design, embedded firmware development, and electronic product development services. Specializing in medical device compliance, biomedical electronics, robotics, and custom electronics solutions.",
   "url": "https://crablabs.io",
   "telephone": "+1-424-271-5569",
   "email": "contact@crablabs.io",
@@ -27,7 +28,53 @@ const structuredData = {
     "addressRegion": "CA",
     "postalCode": "90803",
     "addressCountry": "US"
-  }
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "33.7701",
+    "longitude": "-118.1937"
+  },
+  "areaServed": "United States",
+  "serviceArea": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Electronic Engineering Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "PCB Design Services",
+          "description": "Custom printed circuit board design and layout services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Embedded Firmware Development",
+          "description": "Embedded software and firmware development for microcontrollers"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Medical Device Engineering",
+          "description": "IEC 60601 compliant medical device electronics design and testing"
+        }
+      }
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "ratingCount": "1"
+  },
+  "priceRange": "$2500-$25000"
 };
 ---
 
@@ -41,7 +88,7 @@ const structuredData = {
       <!-- What We Do -->
       <div class="bg-white dark:bg-neutral-900 rounded-2xl p-6 mb-12 border border-slate-200 dark:border-slate-700">
         <h2 class="text-2xl font-bold text-slate-800 dark:text-slate-100 text-center mb-6">
-          What We Do
+          Electronic Product Development Services
         </h2>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
@@ -343,7 +390,7 @@ const structuredData = {
             
             <div class="bg-slate-50 dark:bg-neutral-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700">
               <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-2">Who do you work with?</h3>
-              <p class="text-slate-600 dark:text-slate-400">Companies building electronics and inventors with solid concepts. Fixed-price projects start at $2.5K. We love biomedical and robotics work.</p>
+              <p class="text-slate-600 dark:text-slate-400">Companies building electronics and inventors with solid concepts. Fixed-price projects start at $2,500. We specialize in biomedical and robotics.</p>
             </div>
             
             <div class="bg-slate-50 dark:bg-neutral-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700">
@@ -359,6 +406,47 @@ const structuredData = {
             <div class="bg-slate-50 dark:bg-neutral-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700">
               <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-2">Do you handle testing and compliance?</h3>
               <p class="text-slate-600 dark:text-slate-400">We design for compliance and do pre-compliance testing. For formal certification, we work with trusted partners. Mainly medical devices (IEC 60601) and FCC.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Local SEO Section -->
+      <div class="bg-slate-50 dark:bg-neutral-800 rounded-2xl p-6 mb-12 border border-slate-200 dark:border-slate-700">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-4">Electronics Engineering Services in Long Beach, California</h2>
+          <p class="text-slate-600 dark:text-slate-300 mb-6">
+            Serving clients nationwide with custom electronics design, PCB layout services, embedded systems development, and medical device engineering. 
+            Our Long Beach engineering team provides direct access to senior engineers with extensive experience in biomedical devices, robotics, 
+            industrial automation, and consumer electronics.
+          </p>
+          <div class="grid md:grid-cols-3 gap-4 text-sm">
+            <div>
+              <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-2">Industries We Serve</h3>
+              <ul class="text-slate-600 dark:text-slate-400 text-left space-y-1">
+                <li>• Medical Device Manufacturing</li>
+                <li>• Biomedical Equipment Companies</li>
+                <li>• Robotics & Automation</li>
+                <li>• Scientific Instrumentation</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-2">Technical Expertise</h3>
+              <ul class="text-slate-600 dark:text-slate-400 text-left space-y-1">
+                <li>• IEC 60601 Medical Device Compliance</li>
+                <li>• FCC Part 15 Certification Support</li>
+                <li>• EMC/EMI Testing & Design</li>
+                <li>• Embedded Linux & RTOS</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-2">Service Areas</h3>
+              <ul class="text-slate-600 dark:text-slate-400 text-left space-y-1">
+                <li>• Long Beach, CA (Headquarters)</li>
+                <li>• Los Angeles County</li>
+                <li>• Orange County</li>
+                <li>• Nationwide Remote Services</li>
+              </ul>
             </div>
           </div>
         </div>
