@@ -12,31 +12,14 @@ const phoneHref = "tel:+14242715569";
   <!-- Page Layout -->
   <Layout title="Get a Quote | Crab Labs">
     <Container>
-      <!-- RFQ Header -->
-      <div class="pt-16">
-        <div class="max-w-6xl px-4 pb-12 mx-auto">
-          <!-- Title -->
-          <div class="max-w-4xl mb-12 text-center mx-auto">
-            <h1 class="text-4xl font-bold text-slate-800 dark:text-slate-100 mb-4">Request Quote</h1>
-            <p class="text-lg text-slate-600 dark:text-slate-300">
-              Senior engineers who ship products fast. Share your project details - the more specific you are, the better we can solve your problems.
-            </p>
-            <div class="mt-6 p-4 bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-700/50 rounded-xl">
-              <div class="flex items-start">
-                <svg class="w-5 h-5 text-orange-600 dark:text-orange-400 mt-0.5 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
-                </svg>
-                <div>
-                  <p class="text-sm text-orange-700 dark:text-orange-300 font-medium">Direct access to senior engineers - no sales team</p>
-                  <p class="text-xs text-orange-600 dark:text-orange-400 mt-1">Technical call within 24-48 hours, then detailed quote if we're a good fit</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End Title -->
+      <div class="max-w-6xl px-4 pt-16 pb-12 mx-auto">
+        <!-- Header Section -->
+        <div class="text-center mb-16">
+          <h1 class="text-5xl font-bold text-slate-800 dark:text-slate-100 mb-16">Request Quote</h1>
+        </div>
 
-          <!-- RFQ Form -->
-          <div class="bg-white dark:bg-neutral-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6">
+        <!-- RFQ Form -->
+        <div class="bg-white dark:bg-slate-900 rounded-2xl p-10 mb-16 border-2 border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-orange-500/20 dark:hover:shadow-none hover:border-orange-500 dark:hover:border-orange-400 hover:scale-[1.01] transition-all duration-500">
             <form action="https://usebasin.com/f/00c426b2708e" method="POST">
               
               <!-- Company & Contact Information -->
@@ -372,7 +355,7 @@ const phoneHref = "tel:+14242715569";
                     class="py-4 px-8 inline-flex justify-center items-center gap-x-2 text-base font-semibold rounded-xl bg-orange-600 text-white hover:bg-orange-500 hover:shadow-lg disabled:opacity-50 disabled:pointer-events-none transition-all duration-300 whitespace-nowrap shadow-md" 
                     type="submit">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 9l2 2 4-4"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
                     </svg>
                     Request Quote
                   </button>
@@ -382,8 +365,8 @@ const phoneHref = "tel:+14242715569";
             </form>
           </div>
 
-          <!-- What Happens Next -->
-          <div class="mt-12 bg-white dark:bg-neutral-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700 shadow-lg">
+        <!-- What Happens Next -->
+        <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-10 mb-16 border-2 border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-orange-500/20 dark:hover:shadow-none hover:border-orange-500 dark:hover:border-orange-400 hover:scale-[1.01] transition-all duration-500">
             <h2 class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-6">What Happens Next?</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div class="text-center">
@@ -416,8 +399,8 @@ const phoneHref = "tel:+14242715569";
             </div>
           </div>
 
-          <!-- Contact Information -->
-          <div class="mt-12 text-center">
+        <!-- Contact Information -->
+        <div class="text-center">
             <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4">Need to discuss your project first?</h3>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a href={phoneHref} class="inline-flex items-center gap-2 text-orange-700 dark:text-orange-300 hover:text-orange-600 dark:hover:text-orange-400 font-medium">
@@ -438,7 +421,6 @@ const phoneHref = "tel:+14242715569";
 
         </div>
       </div>
-      <!-- End RFQ -->
     </Container>
   </Layout>
 </main>

@@ -8,8 +8,6 @@ import { Image } from "astro:assets";
 // icons
 import electrical from "../assets/icons/electrical.svg"
 import software from "../assets/icons/code.svg";
-import manufacturing from "../assets/icons/manufacturing.svg";
-import engineering from "../assets/icons/engineering.svg";
 
 // Structured data for SEO
 const structuredData = {
@@ -17,7 +15,7 @@ const structuredData = {
   "@type": ["ProfessionalService", "LocalBusiness"],
   "name": "Crab Labs - Electronic Product Development Services",
   "alternateName": "Crab Labs LLC",
-  "description": "Senior engineers provide PCB design, embedded firmware development, and electronic product development services. Specializing in medical device compliance, biomedical electronics, robotics, and custom electronics solutions.",
+  "description": "Electronic product development that works the first time. 25+ years building medical devices, industrial systems, and precision instruments that pass compliance testing without redesigns.",
   "url": "https://crablabs.io",
   "telephone": "+1-424-271-5569",
   "email": "contact@crablabs.io",
@@ -63,18 +61,13 @@ const structuredData = {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Medical Device Engineering",
-          "description": "IEC 60601 compliant medical device electronics design and testing"
+          "name": "Pre-Compliance EMC Testing",
+          "description": "EMC pre-compliance testing and validation for medical devices and industrial systems"
         }
       }
     ]
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "ratingCount": "1"
-  },
-  "priceRange": "$2500-$25000"
+  "priceRange": "$2500+"
 };
 ---
 
@@ -84,433 +77,190 @@ const structuredData = {
     <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)}></script>
     <Hero />
     <Container>
-
       <!-- What We Do -->
-      <div class="bg-white dark:bg-neutral-900 rounded-2xl p-6 mb-12 border border-slate-200 dark:border-slate-700">
-        <h2 class="text-2xl font-bold text-slate-800 dark:text-slate-100 text-center mb-6">
-          Electronic Product Development Services
-        </h2>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-          <div class="text-center">
-            <div class="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-xl flex items-center justify-center mb-4 mx-auto">
-              <Image src={electrical} alt="Electronics" format={"svg"} class="w-7 h-7" />
+      <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-10 mb-16 border-2 border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-orange-500/20 dark:hover:shadow-none hover:border-orange-500 dark:hover:border-orange-400 hover:scale-[1.01] transition-all duration-500 group">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4">
+            What We Deliver
+          </h2>
+          <p class="text-lg text-slate-600 dark:text-slate-300 mb-12 leading-relaxed">
+            Precision engineering built to last, designed to perform.
+          </p>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border-2 border-slate-200 dark:border-slate-700 hover:scale-[1.03] hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-500 dark:hover:border-orange-400 transition-all duration-400 group">
+              <div class="w-16 h-16 bg-slate-600 dark:bg-slate-400 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg group-hover:shadow-xl group-hover:scale-110 group-hover:bg-orange-500 transition-all duration-300">
+                <Image src={electrical} alt="Hardware Design" format={"svg"} class="w-8 h-8 text-white" />
+              </div>
+              <h3 class="text-xl font-bold text-slate-700 dark:text-slate-300 group-hover:text-orange-500 dark:group-hover:text-orange-400 mb-4 transition-colors duration-300">Hardware</h3>
+              <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                Circuit design and PCB layout.
+              </p>
             </div>
-            <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-3">Electronics Design</h3>
-            <ul class="text-sm text-slate-600 dark:text-slate-400 text-left space-y-1">
-              <li>• PCB Design & Layout</li>
-              <li>• Analog & Digital Circuits</li>
-              <li>• Power Systems</li>
-              <li>• RF & Wireless Design</li>
-              <li>• Signal Integrity</li>
-            </ul>
-          </div>
 
-          <div class="text-center">
-            <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-4 mx-auto">
-              <Image src={software} alt="Software" format={"svg"} class="w-7 h-7" />
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border-2 border-slate-200 dark:border-slate-700 hover:scale-[1.03] hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-500 dark:hover:border-orange-400 transition-all duration-400 group">
+              <div class="w-16 h-16 bg-slate-600 dark:bg-slate-400 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg group-hover:shadow-xl group-hover:scale-110 group-hover:bg-orange-500 transition-all duration-300">
+                <Image src={software} alt="Embedded Software" format={"svg"} class="w-8 h-8 text-white" />
+              </div>
+              <h3 class="text-xl font-bold text-slate-700 dark:text-slate-300 group-hover:text-orange-500 dark:group-hover:text-orange-400 mb-4 transition-colors duration-300">Software</h3>
+              <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                Firmware and supporting software.
+              </p>
             </div>
-            <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-3">Software Development</h3>
-            <ul class="text-sm text-slate-600 dark:text-slate-400 text-left space-y-1">
-              <li>• Embedded Firmware</li>
-              <li>• Real-Time Systems</li>
-              <li>• Device Drivers</li>
-              <li>• Communication Protocols</li>
-              <li>• User Interfaces</li>
-            </ul>
-          </div>
-
-          <div class="text-center">
-            <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center mb-4 mx-auto">
-              <Image src={manufacturing} alt="Integration" format={"svg"} class="w-7 h-7" />
-            </div>
-            <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-3">System Integration</h3>
-            <ul class="text-sm text-slate-600 dark:text-slate-400 text-left space-y-1">
-              <li>• Hardware/Software Co-design</li>
-              <li>• System Architecture</li>
-              <li>• Interface Design</li>
-              <li>• Protocol Implementation</li>
-              <li>• Performance Optimization</li>
-            </ul>
-          </div>
-
-          <div class="text-center">
-            <div class="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl flex items-center justify-center mb-4 mx-auto">
-              <Image src={engineering} alt="Testing & Support" format={"svg"} class="w-7 h-7" />
-            </div>
-            <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-3">Testing & Support</h3>
-            <ul class="text-sm text-slate-600 dark:text-slate-400 text-left space-y-1">
-              <li>• Design Verification</li>
-              <li>• Pre-Compliance Design Review</li>
-              <li>• Technical Documentation</li>
-              <li>• Manufacturing Support</li>
-              <li>• Post-Launch Assistance</li>
-            </ul>
           </div>
         </div>
-        
-        <div class="text-center">
-          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="/services" class="inline-flex items-center px-6 py-3 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors duration-200">
-              View our services
+      </div>
+
+      <!-- Recent Projects -->
+      <div class="bg-white dark:bg-slate-900 rounded-2xl p-10 mb-16 border-2 border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-orange-500/20 dark:hover:shadow-none hover:border-orange-500 dark:hover:border-orange-400 hover:scale-[1.01] transition-all duration-500">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4">
+            Recent Project
+          </h2>
+          <p class="text-lg text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
+            Latest project we've shipped.
+          </p>
+          
+          <!-- Medical Device Project -->
+          <div class="bg-slate-50 dark:bg-slate-800 p-6 rounded-2xl border-2 border-slate-200 dark:border-slate-700 shadow-lg hover:scale-[1.02] hover:shadow-xl hover:shadow-orange-500/15 hover:border-orange-500 dark:hover:border-orange-400 transition-all duration-400">
+            <div class="flex items-center justify-center mb-4">
+              <span class="px-4 py-2 bg-slate-600 dark:bg-slate-500 text-white text-sm font-bold rounded-full shadow-md">Medical Device</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-3">Ultrasound Imaging System Motor Control</h3>
+            <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+              Previous engineering firm's 5-axis system failed EMC testing and couldn't hit positioning specs. We redesigned it from scratch and delivered sub-0.1mm accuracy with full compliance.
+            </p>
+          </div>
+          
+          <div class="mt-8">
+            <a href="/about" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-medium rounded-xl hover:from-orange-600 hover:to-orange-700 hover:scale-105 shadow-lg transition-all duration-200">
+              View All Projects
               <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
               </svg>
             </a>
-            <a href="https://blog.crablabs.io" target="_blank" class="inline-flex items-center px-6 py-3 bg-slate-600 dark:bg-slate-700 text-white font-medium rounded-lg hover:bg-slate-700 dark:hover:bg-slate-600 transition-colors duration-200">
-              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
-              </svg>
-              Technical blog
-            </a>
-            <a href="https://github.com/crablabsllc" target="_blank" class="inline-flex items-center px-6 py-3 bg-slate-800 dark:bg-slate-700 text-white font-medium rounded-lg hover:bg-slate-900 dark:hover:bg-slate-600 transition-colors duration-200">
-              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-              </svg>
-              View our code
-            </a>
           </div>
         </div>
       </div>
 
 
-
-      <!-- Why Choose Us -->
-      <div class="bg-white dark:bg-neutral-900 rounded-2xl p-6 mb-12 border border-slate-200 dark:border-slate-700">
-        <h2 class="text-2xl font-bold text-slate-800 dark:text-slate-100 text-center mb-6">
-          Who We Are
-        </h2>
-        <p class="text-lg text-slate-600 dark:text-slate-300 text-center mb-10 max-w-3xl mx-auto">
-          We're different from other engineering options. Here's how we compare:
-        </p>
-        
-        <div class="grid md:grid-cols-2 gap-6 mb-8">
-          <!-- Large Consultancies -->
-          <div class="bg-slate-50 dark:bg-neutral-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700">
-            <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-3">Large Consultancies</h3>
-            <div class="space-y-2 text-sm">
-              <div class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span class="text-slate-600 dark:text-slate-400">Large teams for complex projects</span>
-              </div>
-              <div class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span class="text-slate-600 dark:text-slate-400">Proven track record with major clients</span>
-              </div>
-              <div class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span class="text-slate-600 dark:text-slate-400">Deep bench of specialists</span>
-              </div>
-              <div class="flex items-start">
-                <span class="text-red-500 mr-2">✗</span>
-                <span class="text-slate-600 dark:text-slate-400">$200-300/hr (often junior staff)</span>
-              </div>
-              <div class="flex items-start">
-                <span class="text-red-500 mr-2">✗</span>
-                <span class="text-slate-600 dark:text-slate-400">Communication through PMs only</span>
-              </div>
-              <div class="flex items-start">
-                <span class="text-red-500 mr-2">✗</span>
-                <span class="text-slate-600 dark:text-slate-400">Slower, more bureaucratic</span>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Our Approach -->
-          <div class="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/10 p-6 rounded-xl border-2 border-orange-200 dark:border-orange-800/50">
-            <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-3">Us</h3>
-            <div class="space-y-2 text-sm">
-              <div class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span class="text-slate-600 dark:text-slate-400"><strong>Direct access to senior engineers</strong></span>
-              </div>
-              <div class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span class="text-slate-600 dark:text-slate-400"><strong>Fast iteration and decisions</strong></span>
-              </div>
-              <div class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span class="text-slate-600 dark:text-slate-400"><strong>40-60% below big firm rates</strong></span>
-              </div>
-              <div class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span class="text-slate-600 dark:text-slate-400"><strong>ISO-compliant quality processes</strong></span>
-              </div>
-              <div class="flex items-start">
-                <span class="text-amber-500 mr-2">~</span>
-                <span class="text-slate-600 dark:text-slate-400"><strong>Building portfolio with early clients</strong></span>
-              </div>
-              <div class="flex items-start">
-                <span class="text-amber-500 mr-2">~</span>
-                <span class="text-slate-600 dark:text-slate-400"><strong>Best for focused projects ($5K-50K)</strong></span>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Offshore Teams -->
-          <div class="bg-slate-50 dark:bg-neutral-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700">
-            <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-3">Offshore Teams</h3>
-            <div class="space-y-2 text-sm">
-              <div class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span class="text-slate-600 dark:text-slate-400">Very low cost ($20-60/hr)</span>
-              </div>
-              <div class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span class="text-slate-600 dark:text-slate-400">Large talent pool available</span>
-              </div>
-              <div class="flex items-start">
-                <span class="text-amber-500 mr-2">~</span>
-                <span class="text-slate-600 dark:text-slate-400">Quality varies significantly</span>
-              </div>
-              <div class="flex items-start">
-                <span class="text-amber-500 mr-2">~</span>
-                <span class="text-slate-600 dark:text-slate-400">Project management (rarely)</span>
-              </div>
-              <div class="flex items-start">
-                <span class="text-red-500 mr-2">✗</span>
-                <span class="text-slate-600 dark:text-slate-400">Time zone challenges</span>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Freelancers -->
-          <div class="bg-slate-50 dark:bg-neutral-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700">
-            <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-3">Freelancers</h3>
-            <div class="space-y-2 text-sm">
-              <div class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span class="text-slate-600 dark:text-slate-400">Direct expert access when good</span>
-              </div>
-              <div class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span class="text-slate-600 dark:text-slate-400">Lower overhead costs</span>
-              </div>
-              <div class="flex items-start">
-                <span class="text-amber-500 mr-2">~</span>
-                <span class="text-slate-600 dark:text-slate-400">Hard to verify experience</span>
-              </div>
-              <div class="flex items-start">
-                <span class="text-red-500 mr-2">✗</span>
-                <span class="text-slate-600 dark:text-slate-400">No project management or QC</span>
-              </div>
-              <div class="flex items-start">
-                <span class="text-red-500 mr-2">✗</span>
-                <span class="text-slate-600 dark:text-slate-400">No backup if they disappear</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="text-center">
-          <a href="/about" class="inline-flex items-center px-6 py-3 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors duration-200">
-            Learn more about our team & process
-            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-
-      <!-- Recent Projects -->
-      <div class="bg-slate-50 dark:bg-neutral-800 rounded-2xl p-6 mb-12 border border-slate-200 dark:border-slate-700">
-        <h2 class="text-2xl font-bold text-slate-800 dark:text-slate-100 text-center mb-6">
-          Recent Project Examples
-        </h2>
-        
-        <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          <!-- Medical Project -->
-          <div class="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/10 p-5 rounded-xl border border-orange-200 dark:border-orange-800/50">
-            <div class="mb-3">
-              <span class="text-xs font-bold text-orange-600 dark:text-orange-400 uppercase tracking-wide">Medical Device</span>
-            </div>
-            <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-2">Ultrasound Motor Control System</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-300 mb-3">
-              <strong>Challenge:</strong> Design compact motor control electronics that fully integrate with existing ultrasound system while maintaining 0.1mm position resolution. Required smoother operation, EMC compliance, and reduced manufacturing complexity for new market release.
-            </p>
-            <p class="text-sm text-slate-600 dark:text-slate-300 mb-3">
-              <strong>Solution:</strong> Compact PCB design with high-speed PID algorithms for smooth motion control. Eliminated EMC failures through proper grounding/shielding. Fully integrated with existing system architecture. Passed Class B EMC and IEC 60601 pre-certification testing.
-            </p>
-            <div class="text-xs text-slate-500 dark:text-slate-400 grid grid-cols-2 gap-2 mb-2">
-              <div><span class="font-medium">Timeline:</span> 6 months</div>
-              <div><span class="font-medium">Budget:</span> $35K</div>
-            </div>
-            <div class="text-xs text-slate-600 dark:text-slate-300">
-              <strong>Impact:</strong> Outperformed existing device, reduced manufacturing complexity, saved $100K+ in costs
-            </div>
-          </div>
-
-          <!-- Industrial Project -->
-          <div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/10 p-5 rounded-xl border border-blue-200 dark:border-blue-800/50">
-            <div class="mb-3">
-              <span class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wide">Industrial Control</span>
-            </div>
-            <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-2">Power Distribution Automation</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-300 mb-3">
-              <strong>Challenge:</strong> 20-year-old power distribution system required manual meter reading and on-site monitoring. PLCs and RS-485 sensors had no remote capability. Client needed full automation for modern operations.
-            </p>
-            <p class="text-sm text-slate-600 dark:text-slate-300 mb-3">
-              <strong>Solution:</strong> Smart gateway that automates meter reading and control. Modbus/BACnet/IP protocol conversion for remote monitoring and control. Added analytics, alerts, and predictive maintenance. Eliminated all manual processes.
-            </p>
-            <div class="text-xs text-slate-500 dark:text-slate-400 grid grid-cols-2 gap-2 mb-2">
-              <div><span class="font-medium">Timeline:</span> 6 months</div>
-              <div><span class="font-medium">Budget:</span> $43K</div>
-            </div>
-            <div class="text-xs text-slate-600 dark:text-slate-300">
-              <strong>Impact:</strong> Fully automated power monitoring/control, eliminated manual meter reading
-            </div>
-          </div>
-        </div>
-        
-        <div class="text-center mt-6">
-          <p class="text-sm text-slate-500 dark:text-slate-400">
-            <a href="/about" class="text-orange-600 dark:text-orange-400 hover:underline">View more project examples</a> on our about page
-          </p>
-        </div>
-      </div>
-
-      <!-- Frequently Asked Questions -->
-      <div class="bg-white dark:bg-neutral-900 rounded-2xl p-6 mb-12 border border-slate-200 dark:border-slate-700">
-        <h2 class="text-2xl font-bold text-slate-800 dark:text-slate-100 text-center mb-6">
-          Frequently Asked Questions
-        </h2>
-        
-        <div class="max-w-4xl mx-auto">
-          <div class="grid md:grid-cols-2 gap-6">
-            <div class="bg-slate-50 dark:bg-neutral-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700">
-              <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-2">How fast can we start?</h3>
-              <p class="text-slate-600 dark:text-slate-400">1-2 weeks from first contact. Quote, contract, and project prep all happen during this time.</p>
-            </div>
-            
-            <div class="bg-slate-50 dark:bg-neutral-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700">
-              <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-2">What makes you different?</h3>
-              <p class="text-slate-600 dark:text-slate-400">You talk directly with the engineers building your product. No project managers or client reps in between.</p>
-            </div>
-            
-            <div class="bg-slate-50 dark:bg-neutral-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700">
-              <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-2">Who do you work with?</h3>
-              <p class="text-slate-600 dark:text-slate-400">Companies building electronics and inventors with solid concepts. Fixed-price projects start at $2,500. We specialize in biomedical and robotics.</p>
-            </div>
-            
-            <div class="bg-slate-50 dark:bg-neutral-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700">
-              <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-2">How do you price projects?</h3>
-              <p class="text-slate-600 dark:text-slate-400">Fixed-price quotes based on $125-175/hr estimates. No billing surprises - if we underestimate, that's on us.</p>
-            </div>
-            
-            <div class="bg-slate-50 dark:bg-neutral-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700">
-              <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-2">What if we're not a fit?</h3>
-              <p class="text-slate-600 dark:text-slate-400">We'll tell you honestly (happens ~25% of the time) and connect you with specialists in our network who can help.</p>
-            </div>
-            
-            <div class="bg-slate-50 dark:bg-neutral-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700">
-              <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-2">Do you handle testing and compliance?</h3>
-              <p class="text-slate-600 dark:text-slate-400">We design for compliance and do pre-compliance testing. For formal certification, we work with trusted partners. Mainly medical devices (IEC 60601) and FCC.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Local SEO Section -->
-      <div class="bg-slate-50 dark:bg-neutral-800 rounded-2xl p-6 mb-12 border border-slate-200 dark:border-slate-700">
+      <!-- FAQ -->
+      <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-10 mb-16 border-2 border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-orange-500/20 dark:hover:shadow-none hover:border-orange-500 dark:hover:border-orange-400 hover:scale-[1.01] transition-all duration-500">
         <div class="max-w-4xl mx-auto text-center">
-          <h2 class="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-4">Electronics Engineering Services in Long Beach, California</h2>
-          <p class="text-slate-600 dark:text-slate-300 mb-6">
-            Serving clients nationwide with custom electronics design, PCB layout services, embedded systems development, and medical device engineering. 
-            Our Long Beach engineering team provides direct access to senior engineers with extensive experience in biomedical devices, robotics, 
-            industrial automation, and consumer electronics.
-          </p>
-          <div class="grid md:grid-cols-3 gap-4 text-sm">
-            <div>
-              <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-2">Industries We Serve</h3>
-              <ul class="text-slate-600 dark:text-slate-400 text-left space-y-1">
-                <li>• Medical Device Manufacturing</li>
-                <li>• Biomedical Equipment Companies</li>
-                <li>• Robotics & Automation</li>
-                <li>• Scientific Instrumentation</li>
-              </ul>
+          <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4">
+            What Sets Us Apart
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-8 border-2 border-slate-200 dark:border-slate-700 hover:scale-[1.02] hover:shadow-xl hover:shadow-orange-500/15 hover:border-orange-500 dark:hover:border-orange-400 transition-all duration-300">
+              <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-4">No Middle Man - Work Directly With Us</h3>
+              <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Talk directly to the engineers building your project. No account managers or coordinators - just the people doing the work.</p>
             </div>
-            <div>
-              <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-2">Technical Expertise</h3>
-              <ul class="text-slate-600 dark:text-slate-400 text-left space-y-1">
-                <li>• IEC 60601 Medical Device Compliance</li>
-                <li>• FCC Part 15 Certification Support</li>
-                <li>• EMC/EMI Testing & Design</li>
-                <li>• Embedded Linux & RTOS</li>
-              </ul>
-            </div>
-            <div>
-              <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-2">Service Areas</h3>
-              <ul class="text-slate-600 dark:text-slate-400 text-left space-y-1">
-                <li>• Long Beach, CA (Headquarters)</li>
-                <li>• Los Angeles County</li>
-                <li>• Orange County</li>
-                <li>• Nationwide Remote Services</li>
-              </ul>
+            
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-8 border-2 border-slate-200 dark:border-slate-700 hover:scale-[1.02] hover:shadow-xl hover:shadow-orange-500/15 hover:border-orange-500 dark:hover:border-orange-400 transition-all duration-300">
+              <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-4">We Define the Spec With You First</h3>
+              <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Most projects fail because nobody knows what "done" means. We figure out exactly what you need before building anything.</p>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Common Questions -->
+      <div class="bg-white dark:bg-slate-900 rounded-2xl p-10 mb-16 border-2 border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-orange-500/20 dark:hover:shadow-none hover:border-orange-500 dark:hover:border-orange-400 hover:scale-[1.01] transition-all duration-500">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4">
+            Common Questions
+          </h2>
+          <p class="text-lg text-slate-600 dark:text-slate-300 mb-12 leading-relaxed">
+            Questions prospects ask us.
+          </p>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 border-2 border-slate-200 dark:border-slate-700 hover:scale-[1.02] hover:shadow-xl hover:shadow-orange-500/15 hover:border-orange-500 dark:hover:border-orange-400 transition-all duration-300">
+              <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-3">How quickly can we start?</h3>
+              <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Usually 1-2 weeks. Clear scope, timeline, and price - no 47-page proposals.</p>
+            </div>
+            
+            <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 border-2 border-slate-200 dark:border-slate-700 hover:scale-[1.02] hover:shadow-xl hover:shadow-orange-500/15 hover:border-orange-500 dark:hover:border-orange-400 transition-all duration-300">
+              <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-3">How do you handle regulatory requirements?</h3>
+              <p class="text-slate-600 dark:text-slate-400 leading-relaxed">We've been through regulatory submissions before. We design for compliance from day one and handle pre-compliance testing. For final certification, we work with accredited test labs.</p>
+            </div>
+            
+            <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 border-2 border-slate-200 dark:border-slate-700 hover:scale-[1.02] hover:shadow-xl hover:shadow-orange-500/15 hover:border-orange-500 dark:hover:border-orange-400 transition-all duration-300">
+              <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-3">Can you work with existing systems?</h3>
+              <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Absolutely. Half our projects involve upgrading existing systems. We're good at adding new features without breaking what already works.</p>
+            </div>
+            
+            <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 border-2 border-slate-200 dark:border-slate-700 hover:scale-[1.02] hover:shadow-xl hover:shadow-orange-500/15 hover:border-orange-500 dark:hover:border-orange-400 transition-all duration-300">
+              <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-3">What do we receive at project completion?</h3>
+              <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Everything. Source code, schematics, PCB files, BOM, and manufacturing docs. It's all yours - no licensing fees or strings attached.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
       <!-- CTA -->
-      <div class="bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-6 text-center text-white shadow-lg">
-        <h2 class="text-3xl font-bold mb-4">Get Your Product Built Right</h2>
-        <p class="text-xl mb-8 opacity-90">Talk directly to senior engineers who solve problems</p>
+      <div class="bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-10 text-center text-white border-2 border-orange-500 shadow-2xl hover:shadow-orange-500/40 hover:scale-[1.01] hover:from-orange-600 hover:to-orange-700 transition-all duration-500">
+        <h2 class="text-3xl font-bold mb-4">Ready to Start Your Project?</h2>
+        <p class="text-lg mb-8 opacity-95">
+          Talk directly with a senior engineer about your requirements.
+        </p>
         
-        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
-          <div class="bg-white/10 rounded-lg p-6 border border-white/20">
-            <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-              </svg>
-            </div>
-            <h3 class="font-bold mb-2 text-lg">Quick Consultation</h3>
-            <p class="text-sm opacity-90 mb-4">30-minute technical discussion to assess feasibility and get ballpark estimates</p>
-            <a href="https://cal.com/crablabsllc/consultation" class="inline-block w-full px-6 py-3 bg-white text-orange-600 font-bold rounded-lg hover:bg-orange-50 transition-colors">
-              Schedule Call
-            </a>
-            <p class="text-xs opacity-75 mt-2">Usually available within 48 hours</p>
-          </div>
-          
-          <div class="bg-white/10 rounded-lg p-6 border border-white/20">
-            <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
-              </svg>
-            </div>
-            <h3 class="font-bold mb-2 text-lg">Detailed Quote</h3>
-            <p class="text-sm opacity-90 mb-4">Complete project form for detailed timeline and pricing analysis</p>
-            <a href="/quote" class="inline-block w-full px-6 py-3 bg-orange-700 text-white font-bold rounded-lg hover:bg-orange-800 transition-colors">
-              Request Quote
-            </a>
-            <p class="text-xs opacity-75 mt-2">Detailed response within 24-48 hours</p>
-          </div>
-          
-          <div class="bg-white/10 rounded-lg p-6 border border-white/20">
-            <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-            </div>
-            <h3 class="font-bold mb-2 text-lg">Learn More</h3>
-            <p class="text-sm opacity-90 mb-4">Explore our experience, process, and technical capabilities in detail</p>
-            <a href="/about" class="inline-block w-full px-6 py-3 bg-white/20 text-white font-bold rounded-lg hover:bg-white/30 transition-colors">
-              About Us
-            </a>
-            <p class="text-xs opacity-75 mt-2">Team, process, and case studies</p>
-          </div>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+          <a href="/quote" class="px-8 py-4 bg-white text-orange-600 font-bold rounded-xl hover:bg-gray-100 hover:scale-105 shadow-lg transition-all duration-200">
+            Get Project Quote
+          </a>
+          <a href="tel:+14242715569" class="px-8 py-4 bg-orange-700 text-white font-bold rounded-xl hover:bg-orange-800 hover:scale-105 shadow-lg transition-all duration-200">
+            Call (424) 271-5569
+          </a>
         </div>
         
-        <div class="border-t border-white/20 pt-6">
-          <p class="text-sm opacity-75 mb-2">
-            Or call us directly: <a href="tel:+14242715569" class="underline hover:no-underline font-medium">(424) 271-5569</a>
-          </p>
-          <p class="text-xs opacity-60">
-            Long Beach, CA • Projects Nationwide
-          </p>
-        </div>
+        <p class="text-sm opacity-90">
+          Long Beach, CA • Response within 24 hours
+        </p>
       </div>
 
     </Container>
   </Layout>
 </main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const expandButtons = document.querySelectorAll('.expand-btn');
+    
+    expandButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            const icon = this.querySelector('svg');
+            const span = this.querySelector('span');
+            
+            // Close all other expanded sections
+            expandButtons.forEach(otherButton => {
+                if (otherButton !== this) {
+                    const otherContent = otherButton.nextElementSibling;
+                    const otherIcon = otherButton.querySelector('svg');
+                    const otherSpan = otherButton.querySelector('span');
+                    
+                    if (otherContent && !otherContent.classList.contains('hidden')) {
+                        otherContent.classList.add('hidden');
+                        otherIcon.style.transform = 'rotate(0deg)';
+                        otherSpan.textContent = 'Show Technical Details';
+                    }
+                }
+            });
+            
+            // Toggle current section
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+                span.textContent = 'Hide Technical Details';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+                span.textContent = 'Show Technical Details';
+            }
+        });
+    });
+});
+</script>

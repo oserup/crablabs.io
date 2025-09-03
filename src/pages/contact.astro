@@ -13,33 +13,17 @@ const address = ["235 E Broadway Ste 210", "Long Beach, CA, United States of Ame
   <!-- Page Layout -->
   <Layout title="Contact Us">
     <Container>
-      <!-- Contact -->
-      <div class="pt-16 lg:pt-20">
-        <div class="max-w-6xl px-4 xl:px-0 py-8 lg:py-16 mx-auto">
-          <!-- Title -->
-          <div class="max-w-4xl mb-12 lg:mb-16 text-center mx-auto">
-            <h1 class="text-5xl font-bold md:text-6xl bg-gradient-to-r from-slate-800 to-slate-600 dark:from-slate-100 dark:to-slate-300 bg-clip-text text-transparent mb-6">Contact</h1>
-            <p class="text-lg text-slate-600 dark:text-slate-300">Get in touch about your project.</p>
-            
-            <div class="mt-8 p-8 bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-700/50 rounded-xl shadow-lg">
-              <div class="flex items-start">
-                <svg class="w-5 h-5 text-orange-600 dark:text-orange-400 mt-0.5 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
-                </svg>
-                <div>
-                  <p class="text-sm text-orange-700 dark:text-orange-300 font-medium">Executive briefing and technical assessment within 24 hours</p>
-                  <p class="text-xs text-orange-600 dark:text-orange-400 mt-1">All discussions strictly confidential • NDA available upon request</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End Title -->
+      <div class="max-w-6xl px-4 pt-16 pb-12 mx-auto">
+        <!-- Header Section -->
+        <div class="text-center mb-16">
+          <h1 class="text-5xl font-bold text-slate-800 dark:text-slate-100 mb-16">Contact Us</h1>
+        </div>
 
-          <!-- Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-16">
-            <div class="md:order-2">
-              <!-- Contact Form -->
-              <div class="bg-white dark:bg-neutral-800 border border-slate-200 dark:border-slate-700 rounded-xl p-8 shadow-lg">
+        <!-- Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-16">
+          <div class="md:order-2">
+            <!-- Contact Form -->
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-8 border-2 border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-orange-500/20 dark:hover:shadow-none hover:border-orange-500 dark:hover:border-orange-400 hover:scale-[1.01] transition-all duration-500">
                 <form action="https://usebasin.com/f/00c426b2708e" method="POST">
                 <!-- Container for the label and email input field -->
                 <div class="grid gap-4">
@@ -52,7 +36,7 @@ const address = ["235 E Broadway Ste 210", "Long Beach, CA, United States of Ame
                       type="text"
                       name="name"
                       id="name"
-                      class="block w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600 dark:bg-neutral-700 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:ring-orange-400/20"
+                      class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-slate-700/30 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
                       placeholder="Name"
                       required
                     />
@@ -69,7 +53,7 @@ const address = ["235 E Broadway Ste 210", "Long Beach, CA, United States of Ame
                       name="email"
                       id="email"
                       autocomplete="email"
-                      class="block w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600 dark:bg-neutral-700 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:ring-orange-400/20"
+                      class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-slate-700/30 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
                       placeholder="Email"
                       required
                     />
@@ -85,7 +69,7 @@ const address = ["235 E Broadway Ste 210", "Long Beach, CA, United States of Ame
                       type="tel"
                       name="phone"
                       id="phone"
-                      class="block w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600 dark:bg-neutral-700 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:ring-orange-400/20"
+                      class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-slate-700/30 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
                       placeholder="Phone"
                     />
                   </div>
@@ -97,7 +81,7 @@ const address = ["235 E Broadway Ste 210", "Long Beach, CA, United States of Ame
                     <select
                       name="service-type"
                       id="service-type"
-                      class="block w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600 dark:bg-neutral-700 dark:text-slate-300 dark:focus:ring-orange-400/20 [&>option]:bg-white [&>option]:text-slate-700 dark:[&>option]:bg-neutral-800 dark:[&>option]:text-slate-200"
+                      class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-slate-700/30 dark:text-slate-300 dark:focus:border-orange-400 dark:focus:ring-orange-400/20 [&>option]:bg-white [&>option]:text-slate-700 dark:[&>option]:bg-slate-800 dark:[&>option]:text-slate-200"
                       required
                     >
                       <option value="" disabled selected>What service are you interested in?</option>
@@ -122,7 +106,7 @@ const address = ["235 E Broadway Ste 210", "Long Beach, CA, United States of Ame
                       id="message"
                       name="message"
                       rows="4"
-                      class="block w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600 dark:bg-neutral-700 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:ring-orange-400/20"
+                      class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-slate-700/30 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
                       placeholder="Tell us more about your project"
                 ></textarea>
                   </div>
@@ -303,7 +287,6 @@ const address = ["235 E Broadway Ste 210", "Long Beach, CA, United States of Ame
           <!-- End Grid -->
         </div>
       </div>
-      <!-- End Contact -->
     </Container>
   </Layout>
 </main>

@@ -3,234 +3,315 @@ import Container from "../components/Container.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="About Us | 20+ Years Experience | Long Beach, CA">
+<Layout title="About Us | 25+ Years Experience | Long Beach, CA">
     <Container>
         <div class="max-w-6xl px-4 pt-16 pb-12 mx-auto">
             
             <!-- Header -->
-            <div class="text-center mb-12">
-                <h1 class="text-4xl font-bold text-slate-800 dark:text-slate-100 mb-4">About Us</h1>
-                <p class="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">Senior engineers who ship products fast. Direct access, no bureaucracy.</p>
+            <div class="text-center mb-16">
+                <h1 class="text-5xl font-bold text-slate-800 dark:text-slate-100 mb-6">About Us</h1>
+                <p class="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">We're the engineers other engineers call when their stuff isn't working.</p>
             </div>
             
             <!-- Who We Are -->
-            <div class="bg-slate-50 dark:bg-neutral-800 rounded-2xl p-6 mb-12 border border-slate-200 dark:border-slate-700">
-                <h2 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-6 text-center">Team & Approach</h2>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-slate-200 dark:border-slate-700">
-                        <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-3">Our Team</h3>
-                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                            <li>• <strong>5-person engineering team</strong> expandable to 8 engineers on short notice</li>
-                            <li>• <strong>20+ years combined experience</strong> building and shipping electronics, with deep biomedical expertise</li>
-                            <li>• <strong>Former engineering roles</strong> at automotive, biomedical, and consumer electronics companies</li>
-                            <li>• <strong>Long Beach based</strong>, serving clients nationwide via remote collaboration</li>
-                        </ul>
-                    </div>
-                    <div class="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-slate-200 dark:border-slate-700">
-                        <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-3">Scaling Approach</h3>
-                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                            <li>• <strong>Right-sized for focused projects</strong> - optimal team attention</li>
-                            <li>• <strong>Partner network</strong> for larger projects requiring scale</li>
-                            <li>• <strong>Clean handoffs</strong> to established firms when needed</li>
-                            <li>• <strong>Best of both worlds</strong> - startup agility with enterprise backing</li>
-                        </ul>
-                    </div>
-                    <div class="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-slate-200 dark:border-slate-700">
-                        <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-3">Industries We Work With</h3>
-                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                            <li>• Biomedical devices</li>
-                            <li>• Industrial automation & robotics</li>
-                            <li>• Consumer electronics</li>
-                            <li>• Scientific instrumentation</li>
-                            <li>• Open to any industry with interesting challenges</li>
-                        </ul>
+            <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-10 mb-16 border-2 border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-orange-500/20 dark:hover:shadow-none hover:border-orange-500 dark:hover:border-orange-400 hover:scale-[1.01] transition-all duration-500 group">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4">Who We Are</h2>
+                    <p class="text-lg text-slate-600 dark:text-slate-300 mb-12 leading-relaxed">
+                        5 senior engineers with 25+ years combined experience shipping products that actually work.
+                    </p>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border-2 border-slate-200 dark:border-slate-700 hover:scale-[1.03] hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-500 dark:hover:border-orange-400 transition-all duration-400 group">
+                            <h3 class="text-xl font-bold text-slate-700 dark:text-slate-300 group-hover:text-orange-500 dark:group-hover:text-orange-400 mb-4 transition-colors duration-300">Experience</h3>
+                            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Medical devices, industrial controls, automotive systems, precision instruments.
+                            </p>
+                        </div>
+
+                        <div class="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-lg border-2 border-slate-200 dark:border-slate-700 hover:scale-[1.03] hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-500 dark:hover:border-orange-400 transition-all duration-400 group">
+                            <h3 class="text-xl font-bold text-slate-700 dark:text-slate-300 group-hover:text-orange-500 dark:group-hover:text-orange-400 mb-4 transition-colors duration-300">Reach</h3>
+                            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Based in Long Beach, working nationwide.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Our Approach vs Established Firms -->
-            <div class="bg-slate-50 dark:bg-neutral-800 rounded-2xl p-6 mb-12 border border-slate-200 dark:border-slate-700">
-                <h2 class="text-xl font-bold text-slate-800 dark:text-slate-100 text-center mb-6">Our Approach vs Established Firms</h2>
-                
-                <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                    <div class="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-slate-200 dark:border-slate-700">
-                        <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-3">Established Firms</h3>
-                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                            <li>• <strong>Comfortable with their reputation</strong> - they know they'll get new clients regardless</li>
-                            <li>• <strong>Assign junior staff to reduce costs</strong> - seniors are "too expensive" for most projects</li>
-                            <li>• <strong>Process-heavy and slow</strong> - bureaucracy protects them from accountability</li>
-                            <li>• <strong>Lost the passion</strong> - engineering becomes routine, not exciting</li>
-                            <li>• <strong>Take clients for granted</strong> - you're just another invoice</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-slate-200 dark:border-slate-700">
-                        <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-3">Our Approach</h3>
-                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                            <li>• <strong>Senior engineers on every project</strong> - no junior staff</li>
-                            <li>• <strong>Fast and direct</strong> - talk directly to the engineers</li>
-                            <li>• <strong>We actually like this stuff</strong> - engineering is what we do for fun</li>
-                            <li>• <strong>Your project is our reputation</strong> - we need you to win</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="text-center mt-6 p-4 bg-white dark:bg-neutral-900 rounded-xl max-w-2xl mx-auto border border-slate-200 dark:border-slate-700">
-                    <p class="text-sm text-slate-700 dark:text-slate-300 font-medium">
-                        <strong>Bottom line:</strong> Senior-level engineering at accessible rates with direct access.
+            <!-- Why We're Different -->
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-10 mb-16 border-2 border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-orange-500/20 dark:hover:shadow-none hover:border-orange-500 dark:hover:border-orange-400 hover:scale-[1.01] transition-all duration-500">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4">Why Choose Us</h2>
+                    <p class="text-lg text-slate-600 dark:text-slate-300 mb-12 leading-relaxed">
+                        Same expertise, half the overhead, none of the politics.
                     </p>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-slate-50 dark:bg-slate-800 p-6 rounded-2xl border-2 border-slate-200 dark:border-slate-700 shadow-lg hover:scale-[1.03] hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-500 dark:hover:border-orange-400 transition-all duration-400 group">
+                            <h3 class="text-xl font-bold text-slate-700 dark:text-slate-300 mb-4">Big Consulting Firms</h3>
+                            <ul class="text-slate-600 dark:text-slate-300 space-y-2 text-sm">
+                                <li>• Junior engineers on your project</li>
+                                <li>• Senior rates for junior work</li>
+                                <li>• Layers of managers who've never soldered</li>
+                                <li>• Account reps and coordinators</li>
+                                <li>• Corporate bureaucracy</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-slate-50 dark:bg-slate-800 p-6 rounded-2xl border-2 border-slate-200 dark:border-slate-700 shadow-lg hover:scale-[1.03] hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-500 dark:hover:border-orange-400 hover:bg-white dark:hover:bg-slate-700 transition-all duration-400 group">
+                            <h3 class="text-xl font-bold text-slate-700 dark:text-slate-300 mb-4">Us</h3>
+                            <ul class="text-slate-600 dark:text-slate-300 space-y-2 text-sm">
+                                <li>• Senior engineers only</li>
+                                <li>• Talk directly to who's building it</li>
+                                <li>• No management overhead</li>
+                                <li>• No account managers</li>
+                                <li>• No corporate nonsense</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Recent Projects -->
-            <div class="bg-slate-50 dark:bg-neutral-800 rounded-2xl p-6 mb-12 border border-slate-200 dark:border-slate-700">
-                <h2 class="text-xl font-bold text-slate-800 dark:text-slate-100 text-center mb-6">Recent Projects</h2>
-                
-                <div class="grid md:grid-cols-2 gap-6">
-                    <!-- Medical Project -->
-                    <div class="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/10 p-6 rounded-xl border border-orange-200 dark:border-orange-800/50">
-                        <div class="mb-3">
-                            <span class="text-xs font-bold text-orange-600 dark:text-orange-400 uppercase tracking-wide">Medical Device • $35K • 6 months</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-3">Ultrasound Motor Control System</h3>
-                        <div class="space-y-3 text-sm">
-                            <div>
-                                <p class="font-medium text-slate-700 dark:text-slate-200 mb-1">Challenge:</p>
-                                <p class="text-slate-600 dark:text-slate-300">Client's ultrasound equipment needed 0.1mm positioning resolution for new market release. Existing motion control system was failing EMC tests due to spurious emissions. Manufacturing costs were too high and assembly was complex. System had to work with existing ultrasound architecture without redesigning the mechanical components.</p>
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-10 mb-16 border-2 border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-orange-500/20 dark:hover:shadow-none hover:border-orange-500 dark:hover:border-orange-400 hover:scale-[1.01] transition-all duration-500">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4">Recent Projects</h2>
+                    <p class="text-lg text-slate-600 dark:text-slate-300 mb-12 leading-relaxed">
+                        Projects we've shipped across medical devices, industrial systems, and precision instruments.
+                    </p>
+                    
+                    <div class="space-y-8">
+                        <!-- Medical Device Project -->
+                        <div class="bg-slate-50 dark:bg-slate-800 p-6 rounded-2xl border-2 border-slate-200 dark:border-slate-700 shadow-lg hover:scale-[1.03] hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-500 dark:hover:border-orange-400 hover:bg-white dark:hover:bg-slate-700 transition-all duration-400 group">
+                            <div class="flex items-center mb-4">
+                                <span class="px-4 py-2 bg-slate-600 dark:bg-slate-500 text-white text-sm font-bold rounded-full shadow-md group-hover:shadow-lg group-hover:scale-105 group-hover:bg-orange-500 transition-all duration-300">Medical Device</span>
                             </div>
-                            <div>
-                                <p class="font-medium text-slate-700 dark:text-slate-200 mb-1">Technical Approach:</p>
-                                <p class="text-slate-600 dark:text-slate-300">Designed compact 6-layer PCB with proper signal routing and EMI reduction using Pi filters, strategic component placement, and other filtering techniques. Implemented motor control algorithms with high-resolution encoder feedback for precise positioning control. Created multi-stage filtering architecture combining input filters, common-mode chokes, and output filtering for both conducted and radiated emissions compliance. Built in safety systems with overcurrent protection, thermal monitoring, and fault detection with graceful degradation modes.</p>
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-3">Ultrasound Imaging System Motor Control</h3>
+                            <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                                Client's previous engineering firm delivered a 5-axis positioning system that failed EMC testing and couldn't hit 0.1mm positioning accuracy. We redesigned it from scratch with proper motor drive topology, EMI filtering, and 6-layer PCB stackup.
+                            </p>
+                            <div class="bg-white dark:bg-neutral-900 p-3 rounded-lg border border-slate-200 dark:border-slate-700">
+                                <p class="text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Results:</p>
+                                <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1">
+                                    <li>• Sub-0.1mm positioning accuracy achieved</li>
+                                    <li>• IEC 60601-1-2 EMC pre-compliance passed</li>
+                                    <li>• $10K+ annual cost savings from design optimization</li>
+                                </ul>
                             </div>
-                            <div>
-                                <p class="font-medium text-slate-700 dark:text-slate-200 mb-1">Results:</p>
-                                <p class="text-slate-600 dark:text-slate-300">Achieved consistent 0.1mm resolution with significantly smoother motion profile. Pre-compliance testing indicates strong likelihood of IEC 60601-1-2 certification success. Reduced design complexity and manufacturing costs. Client saves over $10K annually in direct costs plus substantial indirect savings. Delivered on-time and within budget.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Industrial Project -->
-                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/10 p-6 rounded-xl border border-blue-200 dark:border-blue-800/50">
-                        <div class="mb-3">
-                            <span class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wide">Industrial Control • $43K • 6 months</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-3">Power Distribution Automation</h3>
-                        <div class="space-y-3 text-sm">
-                            <div>
-                                <p class="font-medium text-slate-700 dark:text-slate-200 mb-1">Challenge:</p>
-                                <p class="text-slate-600 dark:text-slate-300">PDU manufacturer needed to modernize their product line to compete in marketplace. Their existing units lacked smart features that customers increasingly demanded. Legacy systems required manual monitoring with no remote visibility, alerting capabilities, or data analytics. Challenge was adding intelligence while maintaining cost competitiveness and reliability.</p>
-                            </div>
-                            <div>
-                                <p class="font-medium text-slate-700 dark:text-slate-200 mb-1">Technical Approach:</p>
-                                <p class="text-slate-600 dark:text-slate-300">Designed intelligent monitoring system using embedded Linux on ARM Cortex-A processor with large color touchscreen interface for local control and visualization. Implemented dedicated microcontroller co-processor to handle real-time external I/O interfacing, including 16-bit ADCs for high-precision current monitoring and temperature monitoring across all circuits. Added multiple communication protocols (BACnet IP, MQTT, REST APIs) with automatic failover and data buffering during network outages. Developed predictive analytics algorithms using statistical analysis and machine learning techniques to identify anomalies, thermal trends, and potential failure modes before they impact operations. Created intuitive touchscreen interface with real-time visualization, historical trending, and alarm management, plus web dashboard for remote monitoring and control from any device.</p>
-                            </div>
-                            <div>
-                                <p class="font-medium text-slate-700 dark:text-slate-200 mb-1">Results:</p>
-                                <p class="text-slate-600 dark:text-slate-300">Delivered intelligent power management system with remote monitoring, predictive maintenance, and automated alerts. Added competitive smart features that differentiate their products in marketplace. Enabled real-time visibility into power usage patterns and system health. Completed on-time and on-budget, positioning client to compete with established smart PDU manufacturers.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Scientific Project -->
-                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/10 p-5 rounded-xl border border-purple-200 dark:border-purple-800/50">
-                        <div class="mb-3">
-                            <span class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wide">Scientific Instrument • $8K • 4 months</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-3">Gravitometer Controller Replacement</h3>
-                        <div class="space-y-3 text-sm">
-                            <div>
-                                <p class="font-medium text-slate-700 dark:text-slate-200 mb-1">Challenge:</p>
-                                <p class="text-slate-600 dark:text-slate-300">30-year-old gravitometer controller failed completely. Original manufacturer closed, zero documentation available, and replacement would cost $200K+. Legacy analog sensors worth $150K had to be preserved. Required 1µGal resolution despite multiple noise sources from aging analog components, temperature drift, and environmental vibrations.</p>
-                            </div>
-                            <div>
-                                <p class="font-medium text-slate-700 dark:text-slate-200 mb-1">Technical Approach:</p>
-                                <p class="text-slate-600 dark:text-slate-300">Complete reverse engineering of legacy analog sensor interfaces, decoding proprietary control loops and feedback mechanisms through circuit analysis and signal tracing. Designed modern 24-bit ADC front-end with precision voltage references, low-noise amplifiers, and multi-stage anti-aliasing filters to preserve signal integrity. Implemented advanced IIR filtering algorithms with adaptive coefficients to dynamically separate gravity signals from environmental noise sources including vibrations, temperature fluctuations, and electromagnetic interference. Created temperature compensation algorithms using thermal modeling and multi-point calibration data to correct for sensor drift across operating temperature range. Added modern GPS integration with NMEA protocol parsing for precise positioning coordinates and timing synchronization for data logging and remote monitoring capabilities.</p>
-                            </div>
-                            <div>
-                                <p class="font-medium text-slate-700 dark:text-slate-200 mb-1">Results:</p>
-                                <p class="text-slate-600 dark:text-slate-300">Achieved 10-15% better precision than original system with consistent 1µGal resolution. Added modern capabilities: GPS positioning, digital display, remote monitoring, and data logging. Saved client $150K+ compared to full system replacement. Equipment now provides another 15+ years of service life with improved reliability. Completed within 4-month timeline and $8K budget.</p>
+                            
+                            <button class="mt-4 text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300 font-medium text-sm flex items-center expand-btn" >
+                                <span>Show Technical Details</span>
+                                <svg class="w-4 h-4 ml-1 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            
+                            <div class="hidden mt-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 expand-content">
+                                <h4 class="font-medium text-slate-800 dark:text-slate-200 mb-3">Technical Implementation:</h4>
+                                <div class="grid md:grid-cols-2 gap-4 text-sm text-slate-600 dark:text-slate-400">
+                                    <div>
+                                        <p class="font-medium text-slate-700 dark:text-slate-300 mb-1">System Architecture:</p>
+                                        <ul class="space-y-1 ml-2">
+                                            <li>• 5-axis precision motion control</li>
+                                            <li>• 6-layer PCB stackup for EMI control</li>
+                                            <li>• Dedicated power supply filtering</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-slate-700 dark:text-slate-300 mb-1">Key Problems Solved:</p>
+                                        <ul class="space-y-1 ml-2">
+                                            <li>• Motor ripple interference elimination</li>
+                                            <li>• Power supply noise reduction</li>
+                                            <li>• Medical device EMC compliance</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p class="mt-3 text-xs text-slate-500 dark:text-slate-500">Similar precision control systems used in robotics, semiconductor manufacturing, and medical imaging equipment.</p>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Consumer Project -->
-                    <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/10 p-5 rounded-xl border border-emerald-200 dark:border-emerald-800/50">
-                        <div class="mb-3">
-                            <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wide">Consumer Electronics • $8.6K • 4 months</span>
+                        
+                        <!-- Industrial IoT Project -->
+                        <div class="bg-slate-50 dark:bg-slate-800 p-6 rounded-2xl border-2 border-slate-200 dark:border-slate-700 shadow-lg hover:scale-[1.03] hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-500 dark:hover:border-orange-400 hover:bg-white dark:hover:bg-slate-700 transition-all duration-400 group">
+                            <div class="flex items-center mb-4">
+                                <span class="px-4 py-2 bg-slate-600 dark:bg-slate-400 text-white dark:text-slate-900 text-sm font-bold rounded-full shadow-md group-hover:shadow-lg group-hover:scale-105 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">Industrial IoT</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-3">Smart Power Distribution</h3>
+                            <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                                PDU manufacturer's legacy units were just glorified power strips. We retrofitted them with custom hardware for current monitoring, embedded Linux controller, and web dashboard. Now they compete with the smart PDU companies.
+                            </p>
+                            <div class="bg-white dark:bg-neutral-900 p-3 rounded-lg border border-slate-200 dark:border-slate-700">
+                                <p class="text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Results:</p>
+                                <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1">
+                                    <li>• Real-time power monitoring and alerts</li>
+                                    <li>• Major sales increase from direct customer sales</li>
+                                    <li>• Competitive with modern smart PDU vendors</li>
+                                </ul>
+                            </div>
+                            
+                            <button class="mt-4 text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300 font-medium text-sm flex items-center expand-btn" >
+                                <span>Show Technical Details</span>
+                                <svg class="w-4 h-4 ml-1 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            
+                            <div class="hidden mt-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 expand-content">
+                                <h4 class="font-medium text-slate-800 dark:text-slate-200 mb-3">Technical Implementation:</h4>
+                                <div class="grid md:grid-cols-2 gap-4 text-sm text-slate-600 dark:text-slate-400">
+                                    <div>
+                                        <p class="font-medium text-slate-700 dark:text-slate-300 mb-1">Communications:</p>
+                                        <ul class="space-y-1 ml-2">
+                                            <li>• MODBUS RTU/TCP protocols</li>
+                                            <li>• BACnet for building automation</li>
+                                            <li>• RS-485 industrial networking</li>
+                                            <li>• TCP/IP web interface</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-slate-700 dark:text-slate-300 mb-1">Performance:</p>
+                                        <ul class="space-y-1 ml-2">
+                                            <li>• 0.1% current measurement accuracy</li>
+                                            <li>• Predictive maintenance algorithms</li>
+                                            <li>• Automatic alarm conditions</li>
+                                            <li>• Less than 1 year ROI from completion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-3">Audio-Reactive LED System</h3>
-                        <div class="space-y-3 text-sm">
-                            <div>
-                                <p class="font-medium text-slate-700 dark:text-slate-200 mb-1">Challenge:</p>
-                                <p class="text-slate-600 dark:text-slate-300">Startup needed unique audio visualization product for competitive market entry. System had to process multiple audio sources in real-time with sub-5ms latency to generate dynamic, customizable LED animations. Required BLE mobile control, 4+ hour battery life in compact form factor, and FCC Class B compliance. No existing comparable products on market.</p>
+                        
+                        <!-- Scientific Instrument Project -->
+                        <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 border-2 border-slate-200 dark:border-slate-700 shadow-lg hover:scale-[1.03] hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-500 dark:hover:border-orange-400 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all duration-400 group">
+                            <div class="flex items-center mb-4">
+                                <span class="px-4 py-2 bg-slate-600 dark:bg-slate-500 text-white text-sm font-bold rounded-full shadow-md group-hover:shadow-lg group-hover:scale-105 group-hover:bg-orange-500 transition-all duration-300">Scientific Instrument</span>
                             </div>
-                            <div>
-                                <p class="font-medium text-slate-700 dark:text-slate-200 mb-1">Technical Approach:</p>
-                                <p class="text-slate-600 dark:text-slate-300">Designed real-time audio processing algorithms using high-performance microcontroller with DSP capabilities, implementing adaptive filtering and processing techniques to achieve sub-5ms latency with more flexibility than traditional FFT approaches. Developed custom visualization patterns with beat detection algorithms, tempo tracking, and dynamic range compression for consistent visual response across different audio sources. Implemented full BLE 5.0 stack with custom GATT services, designed for easy mobile app integration with real-time pattern customization, color scheme selection, and sensitivity adjustments. Power management uses switching regulators, dynamic voltage scaling, and intelligent sleep modes to achieve 4+ hour continuous operation from compact 12Wh lithium battery. Custom 4-layer PCB design with controlled impedance traces and EMI reduction for FCC Class B compliance. Created unique animation algorithms with multiple visualization modes responding to frequency bands, beat detection, tempo analysis, and volume dynamics with smooth transitions and customizable sensitivity parameters.</p>
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-3">Gravitometer Controller Replacement</h3>
+                            <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                                30-year-old gravitometer controller died. Original company was out of business, no documentation, and a new system would cost $200K+. Had to save $150K worth of analog sensors.
+                            </p>
+                            <div class="bg-white dark:bg-neutral-900 p-3 rounded-lg border border-slate-200 dark:border-slate-700">
+                                <p class="text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Results:</p>
+                                <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1">
+                                    <li>• Better precision than the original</li>
+                                    <li>• Saved $150K+ in equipment costs</li>
+                                    <li>• 15+ years additional operational life</li>
+                                </ul>
                             </div>
-                            <div>
-                                <p class="font-medium text-slate-700 dark:text-slate-200 mb-1">Results:</p>
-                                <p class="text-slate-600 dark:text-slate-300">Delivered audio visualization product with sub-5ms response time within 4-month timeline and $8.6K budget. Design built for FCC Class B compliance with EMI reduction. Achieved target battery life with room for expansion. Project completed on-time and on-budget, enabling founder to enter competitive audio visualization market. Unique feature set developed as specified positions product for direct sales success.</p>
+                            
+                            <button class="mt-4 text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300 font-medium text-sm flex items-center expand-btn">
+                                <span>Show Technical Details</span>
+                                <svg class="w-4 h-4 ml-1 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            
+                            <div class="hidden mt-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 expand-content">
+                                <h4 class="font-medium text-slate-800 dark:text-slate-200 mb-3">Technical Implementation:</h4>
+                                <div class="grid md:grid-cols-2 gap-4 text-sm text-slate-600 dark:text-slate-400">
+                                    <div>
+                                        <p class="font-medium text-slate-700 dark:text-slate-300 mb-1">Precision Achievement:</p>
+                                        <ul class="space-y-1 ml-2">
+                                            <li>• Improved from 2µGal to less than 1µGal</li>
+                                            <li>• 24-bit ADC implementation</li>
+                                            <li>• Adaptive digital filtering</li>
+                                            <li>• Extensive analog pre-filtering</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-slate-700 dark:text-slate-300 mb-1">Modern Features Added:</p>
+                                        <ul class="space-y-1 ml-2">
+                                            <li>• GPS synchronization</li>
+                                            <li>• LCD display interface</li>
+                                            <li>• LED status indicators</li>
+                                            <li>• Extension ports for expansion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p class="mt-3 text-xs text-slate-500 dark:text-slate-500">Required reverse-engineering undocumented gravity signal relationships and complex digital filter design for 30-year-old analog components.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Consumer Electronics Project -->
+                        <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 border-2 border-slate-200 dark:border-slate-700 shadow-lg hover:scale-[1.03] hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-500 dark:hover:border-orange-400 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all duration-400 group">
+                            <div class="flex items-center mb-4">
+                                <span class="px-4 py-2 bg-slate-600 dark:bg-slate-500 text-white text-sm font-bold rounded-full shadow-md group-hover:shadow-lg group-hover:scale-105 group-hover:bg-orange-500 transition-all duration-300">Consumer Electronics</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-3">Audio-Reactive LED System</h3>
+                            <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                                Startup wanted to build LED lights that react to music in real-time. Needed sub-5ms response, 4+ hour battery, mobile app control, and FCC compliance.
+                            </p>
+                            <div class="bg-white dark:bg-neutral-900 p-3 rounded-lg border border-slate-200 dark:border-slate-700">
+                                <p class="text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Results:</p>
+                                <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1">
+                                    <li>• Sub-5ms audio response achieved</li>
+                                    <li>• 4+ hour battery life delivered</li>
+                                    <li>• FCC compliance testing ready</li>
+                                </ul>
+                            </div>
+                            
+                            <button class="mt-4 text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300 font-medium text-sm flex items-center expand-btn">
+                                <span>Show Technical Details</span>
+                                <svg class="w-4 h-4 ml-1 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            
+                            <div class="hidden mt-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 expand-content">
+                                <h4 class="font-medium text-slate-800 dark:text-slate-200 mb-3">Technical Implementation:</h4>
+                                <div class="grid md:grid-cols-2 gap-4 text-sm text-slate-600 dark:text-slate-400">
+                                    <div>
+                                        <p class="font-medium text-slate-700 dark:text-slate-300 mb-1">Audio Processing:</p>
+                                        <ul class="space-y-1 ml-2">
+                                            <li>• Dynamic IIR filter banks</li>
+                                            <li>• Real-time beat detection</li>
+                                            <li>• Complex DSP algorithms</li>
+                                            <li>• Sub-5ms response optimization</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-slate-700 dark:text-slate-300 mb-1">System Specs:</p>
+                                        <ul class="space-y-1 ml-2">
+                                            <li>• 160 strips x 4 channels = 640 zones</li>
+                                            <li>• 100ft Bluetooth range</li>
+                                            <li>• Mobile app control interface</li>
+                                            <li>• FCC EMI compliance design</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p class="mt-3 text-xs text-slate-500 dark:text-slate-500">Main challenge: DSP processing complexity for real-time control of 640+ LED zones while maintaining sub-5ms audio latency.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+
             <!-- How We Work -->
-            <div class="bg-white dark:bg-neutral-900 rounded-2xl p-8 mb-12 border border-slate-200 dark:border-slate-700">
+            <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-10 mb-16 border-2 border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-orange-500/20 dark:hover:shadow-none hover:border-orange-500 dark:hover:border-orange-400 hover:scale-[1.01] transition-all duration-500">
                 <div class="max-w-4xl mx-auto text-center">
-                    <h2 class="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-4">Why Projects Succeed</h2>
-                    <p class="text-lg text-slate-600 dark:text-slate-300 mb-4">
-                        <strong>We write the requirements, specifications, and test plans before any coding starts.</strong>
-                    </p>
-                    <p class="text-slate-600 dark:text-slate-300 mb-12">
-                        This prevents expensive scope changes and ensures everyone knows exactly what success looks like. Test-driven development saves months on complex projects, especially in regulated industries.
+                    <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-8">How We Avoid Project Disasters</h2>
+                    <div class="bg-white dark:bg-slate-900 rounded-xl p-6 mb-8">
+                        <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                            Most projects fail because nobody defines what "done" means.
+                        </p>
+                        <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                            We figure out exactly what you need upfront, then build that.
+                        </p>
+                    </div>
+                    <p class="text-slate-800 dark:text-slate-100 font-bold text-xl">
+                        Plan first, build second. <span class="text-slate-600 dark:text-slate-400 font-normal">Boring but it works.</span>
                     </p>
                 </div>
                 
-                <div class="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span class="text-xl font-bold text-white">1</span>
-                        </div>
-                        <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-3">Define Success</h3>
-                        <p class="text-sm text-slate-600 dark:text-slate-400">Complete requirements, specifications, and test criteria generated collaboratively with your team</p>
-                    </div>
-                    
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span class="text-xl font-bold text-white">2</span>
-                        </div>
-                        <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-3">Design Right</h3>
-                        <p class="text-sm text-slate-600 dark:text-slate-400">Multiple engineering reviews catch problems when they're cheap to fix</p>
-                    </div>
-                    
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span class="text-xl font-bold text-white">3</span>
-                        </div>
-                        <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-3">Build Fast</h3>
-                        <p class="text-sm text-slate-600 dark:text-slate-400">Test-driven development with continuous validation ensures rapid, reliable progress</p>
-                    </div>
-                    
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span class="text-xl font-bold text-white">4</span>
-                        </div>
-                        <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-3">Transfer Everything</h3>
-                        <p class="text-sm text-slate-600 dark:text-slate-400">Manufacturing files, source code, documentation - complete IP ownership transfers to you</p>
-                    </div>
-                </div>
-                
-                <div class="mt-10 text-center space-x-8">
-                    <a href="/REQ0_Template.pdf" target="_blank" class="inline-flex items-center text-orange-600 dark:text-orange-400 hover:underline font-medium">
+                <div class="mt-12 text-center space-y-4 md:space-y-0 md:space-x-8 flex flex-col md:flex-row justify-center items-center">
+                    <a href="/REQ0_Template.pdf" target="_blank" class="inline-flex items-center text-orange-600 dark:text-orange-400 hover:underline font-medium text-lg">
                         <span>See our requirements template</span>
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                         </svg>
                     </a>
-                    <a href="https://github.com/crablabsllc" target="_blank" class="inline-flex items-center text-orange-600 dark:text-orange-400 hover:underline font-medium">
+                    <a href="https://github.com/crablabsllc" target="_blank" class="inline-flex items-center text-orange-600 dark:text-orange-400 hover:underline font-medium text-lg">
                         <span>View code repositories</span>
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
@@ -239,43 +320,78 @@ import Layout from "../layouts/Layout.astro";
                 </div>
             </div>
 
-            <!-- Our Guarantees -->
-            <div class="bg-slate-50 dark:bg-neutral-800 rounded-2xl p-6 mb-12 border border-slate-200 dark:border-slate-700">
-                <h2 class="text-xl font-bold text-slate-800 dark:text-slate-100 text-center mb-6">Our Guarantees</h2>
+            <!-- Our Promises -->
+            <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-10 mb-16 border-2 border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-orange-500/20 dark:hover:shadow-none hover:border-orange-500 dark:hover:border-orange-400 hover:scale-[1.01] transition-all duration-500">
+                <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 text-center mb-8">Two Simple Promises</h2>
                 <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-                    <div class="bg-white dark:bg-neutral-900 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
-                        <h3 class="font-semibold text-slate-800 dark:text-slate-100 mb-2">No Surprises</h3>
-                        <p class="text-sm text-slate-600 dark:text-slate-300">Fixed-price quotes. <strong>We fix our mistakes at no cost.</strong></p>
+                    <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 border-2 border-slate-200 dark:border-slate-700 hover:scale-[1.02] hover:shadow-xl hover:shadow-orange-500/20 hover:border-orange-500 dark:hover:border-orange-400 transition-all duration-300">
+                        <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-3 text-lg">Predictable Pricing</h3>
+                        <p class="text-slate-600 dark:text-slate-300">If we screw up the estimate, that's our problem, not yours.</p>
                     </div>
-                    <div class="bg-white dark:bg-neutral-900 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
-                        <h3 class="font-semibold text-slate-800 dark:text-slate-100 mb-2">Your IP is Sacred</h3>
-                        <p class="text-sm text-slate-600 dark:text-slate-300">Complete confidentiality. <strong>All IP transfers upon completion.</strong></p>
+                    <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 border-2 border-slate-200 dark:border-slate-700 hover:scale-[1.02] hover:shadow-xl hover:shadow-orange-500/20 hover:border-orange-500 dark:hover:border-orange-400 transition-all duration-300">
+                        <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-3 text-lg">Your Stuff Stays Your Stuff</h3>
+                        <p class="text-slate-600 dark:text-slate-300">All code, designs, and IP transfer to you when we're done. No licensing, no strings attached.</p>
                     </div>
                 </div>
             </div>
 
-
             <!-- Contact -->
-            <div class="bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-6 text-center text-white">
-                <h2 class="text-3xl font-bold mb-4">Let's Solve Your Problem</h2>
+            <div class="bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-10 text-center text-white border-2 border-orange-500 shadow-2xl hover:shadow-orange-500/40 hover:scale-[1.01] hover:from-orange-600 hover:to-orange-700 transition-all duration-500 group">
+                <h2 class="text-3xl font-bold mb-4">Ready to Start Your Project?</h2>
                 <p class="text-lg mb-8 opacity-95">
-                    30-minute technical call with the engineer who'll build it. No sales pitch, just solutions.
+                    Talk directly with a senior engineer about your requirements.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
-                    <a href="tel:+14242715569" class="px-8 py-3 bg-white text-orange-600 font-bold text-lg rounded-xl hover:bg-orange-50 transition-all duration-200 flex items-center">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                        </svg>
-                        (424) 271-5569
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6 max-w-md mx-auto">
+                    <a href="/quote" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-white to-gray-100 text-orange-600 font-bold rounded-xl hover:from-gray-100 hover:to-white hover:scale-105 shadow-lg transition-all duration-200 border-2 border-orange-200">
+                        Get Project Quote
                     </a>
-                    <a href="/quote" class="px-8 py-3 bg-orange-700 text-white font-bold text-lg rounded-xl hover:bg-orange-800 transition-all duration-200">
-                        Request Quote
+                    <a href="tel:+14242715569" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-orange-700 to-red-700 text-white font-bold rounded-xl hover:from-red-700 hover:to-orange-700 hover:scale-105 shadow-lg transition-all duration-200 border-2 border-orange-600">
+                        Call (424) 271-5569
                     </a>
                 </div>
-                <p class="text-sm opacity-90">
-                    <strong>Long Beach, CA</strong> • We work nationwide
+                <p class="text-sm opacity-90 bg-black/20 rounded-full px-4 py-2 inline-block">
+                    Long Beach, CA • Response within 24 hours
                 </p>
             </div>
         </div>
     </Container>
 </Layout>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const expandButtons = document.querySelectorAll('.expand-btn');
+        
+        expandButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const icon = this.querySelector('svg');
+                const span = this.querySelector('span');
+                const isCurrentlyOpen = !content.classList.contains('hidden');
+                
+                // Close all other expanded sections first
+                expandButtons.forEach(otherButton => {
+                    if (otherButton !== this) {
+                        const otherContent = otherButton.nextElementSibling;
+                        const otherIcon = otherButton.querySelector('svg');
+                        const otherSpan = otherButton.querySelector('span');
+                        
+                        otherContent.classList.add('hidden');
+                        otherIcon.style.transform = 'rotate(0deg)';
+                        otherSpan.textContent = 'Show Technical Details';
+                    }
+                });
+                
+                // Toggle current section
+                if (isCurrentlyOpen) {
+                    content.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                    span.textContent = 'Show Technical Details';
+                } else {
+                    content.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                    span.textContent = 'Hide Technical Details';
+                }
+            });
+        });
+    });
+</script>

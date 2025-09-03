@@ -4,163 +4,117 @@ import Container from "../components/Container.astro";
 import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
 ---
 
-<!-- Page Layout -->
 <Layout title="Our Services | PCB Design & Electronic Product Development | Medical Device Compliance | Crab Labs">
-  <Container>
-
-    <!-- Header Section -->
-    <div class="max-w-4xl px-4 pt-16 pb-12 mx-auto text-center">
-      <h1 class="text-4xl font-bold text-slate-800 dark:text-slate-100 mb-4">Our Services</h1>
-      <p class="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-        Senior engineers with high-tech startup experience who ship products fast. Talk directly to senior engineers - no PMs, no delays.
-      </p>
-      
-      
-      <!-- Value Prop -->
-      <div class="bg-slate-100 dark:bg-neutral-800 rounded-lg p-4 max-w-3xl mx-auto mt-6">
-        <p class="text-sm text-slate-600 dark:text-slate-300">
-          <strong>Why Choose Us:</strong> Senior engineers with startup speed and enterprise experience. No PM layers, no junior staff - direct access to the people who build your product.
-        </p>
-        <div class="border-t border-slate-200 dark:border-slate-600 pt-3 mt-3">
-          <p class="text-xs text-slate-500 dark:text-slate-400 text-center">
-            <strong>Our Promise:</strong> Fixed-price quotes, no scope creep for our mistakes, and all IP transfers to you upon project completion.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Services Grid -->
-    <div class="max-w-6xl px-4 pb-8 mx-auto">
-      
-      <!-- 1. Consulting & Strategy -->
-      <div class="mb-8">
-        <div class="bg-white dark:bg-neutral-900 rounded-xl p-6 border border-slate-200 dark:border-slate-700">
-          <div class="flex items-start space-x-4 mb-4">
-            <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
-              <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-              </svg>
+    <Container>
+        <div class="max-w-6xl px-4 pt-16 pb-12 mx-auto">
+            
+            <!-- Header Section -->
+            <div class="text-center mb-16">
+                <h1 class="text-5xl font-bold text-slate-800 dark:text-slate-100 mb-16">Our Services</h1>
             </div>
-            <div class="flex-1">
-              <h2 class="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-3">Technical Consulting & Design Review</h2>
-              <p class="text-lg text-slate-600 dark:text-slate-300 mb-4">
-                Senior engineers analyze your designs, catch problems before they become expensive, and guide critical technical decisions.
-              </p>
+
+            <!-- Design Review & Consulting -->
+            <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-10 mb-16 border-2 border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-orange-500/20 dark:hover:shadow-none hover:border-orange-500 dark:hover:border-orange-400 hover:scale-[1.01] transition-all duration-500">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4">Design Review & Consulting</h2>
+                    <p class="text-lg text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
+                        Your design's not working and you need someone to figure out why. Or you want a second opinion before you commit to production.
+                    </p>
+                    <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                        <strong>Good for:</strong> Troubleshooting prototypes, design reviews, component selection, and "does this make sense?" questions.
+                    </p>
+                    <PrimaryArrowButton href="/quote?service=consulting">Get Expert Analysis</PrimaryArrowButton>
+                </div>
             </div>
-          </div>
-          
-          <div class="mb-6">
-            <ul class="grid md:grid-cols-2 gap-2 text-sm text-slate-600 dark:text-slate-400">
-              <li>• Requirements development</li>
-              <li>• Design review & validation</li>
-              <li>• Component selection guidance</li>
-              <li>• Failure analysis & troubleshooting</li>
-              <li>• Compliance strategy</li>
-              <li>• Risk assessment</li>
-            </ul>
-          </div>
-          
-          <PrimaryArrowButton href="/quote?service=consulting">Get Expert Analysis</PrimaryArrowButton>
-        </div>
-      </div>
 
-      <!-- 2. Product Development -->
-      <div class="mb-8">
-        <div class="bg-white dark:bg-neutral-900 rounded-xl p-6 border border-slate-200 dark:border-slate-700">
-          <div class="flex items-start space-x-4 mb-4">
-            <div class="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
-              <svg class="w-6 h-6 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-              </svg>
+            <!-- Complete Product Development -->
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-10 mb-16 border-2 border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-orange-500/20 dark:hover:shadow-none hover:border-orange-500 dark:hover:border-orange-400 hover:scale-[1.01] transition-all duration-500">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4">Complete Product Development</h2>
+                    <p class="text-lg text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
+                        You have an idea and need someone to turn it into actual hardware. We handle the whole thing - circuits, firmware, testing, documentation, and getting it ready for production.
+                    </p>
+                    <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                        <strong>Good for:</strong> New products, upgrading old systems, or when your internal team is swamped and needs backup.
+                    </p>
+                    <PrimaryArrowButton href="/quote?service=product-development">Start Your Product</PrimaryArrowButton>
+                </div>
             </div>
-            <div class="flex-1">
-              <h2 class="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-3">Electronic Product Development</h2>
-              <p class="text-lg text-slate-600 dark:text-slate-300 mb-4">
-                Full-stack development: custom PCBs, embedded firmware, mechanical integration, and production-ready documentation.
-              </p>
+
+            <!-- Testing & Documentation -->
+            <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-10 mb-16 border-2 border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-orange-500/20 dark:hover:shadow-none hover:border-orange-500 dark:hover:border-orange-400 hover:scale-[1.01] transition-all duration-500">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4">Testing & Documentation</h2>
+                    <p class="text-lg text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
+                        Your product works but you need to prove it meets safety standards. We run pre-compliance EMC testing, safety validation, write the reports, and get everything documented for regulatory submissions.
+                    </p>
+                    <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                        <strong>Good for:</strong> Medical device compliance (IEC 60601), pre-compliance EMC testing, safety documentation, and getting ready for regulatory review.
+                    </p>
+                    <PrimaryArrowButton href="/quote?service=testing-documentation">Get Support</PrimaryArrowButton>
+                </div>
             </div>
-          </div>
-          
-          <div class="mb-6">
-            <ul class="grid md:grid-cols-2 gap-2 text-sm text-slate-600 dark:text-slate-400">
-              <li>• Custom PCB design</li>
-              <li>• Embedded firmware</li>
-              <li>• Analog circuit design</li>
-              <li>• System architecture</li>
-              <li>• Manufacturing documentation</li>
-              <li>• Legacy product updates</li>
-            </ul>
-          </div>
-          
-          <PrimaryArrowButton href="/quote?service=product-development">Start Your Product</PrimaryArrowButton>
-        </div>
-      </div>
 
-      <!-- 3. Testing & Validation -->
-      <div class="mb-8">
-        <div class="bg-white dark:bg-neutral-900 rounded-xl p-6 border border-slate-200 dark:border-slate-700">
-          <div class="flex items-start space-x-4 mb-4">
-            <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
-              <svg class="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-              </svg>
+            <!-- Pricing Section -->
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-10 mb-16 border-2 border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-orange-500/20 dark:hover:shadow-none hover:border-orange-500 dark:hover:border-orange-400 hover:scale-[1.01] transition-all duration-500">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4">Pricing</h2>
+                    <p class="text-lg text-slate-600 dark:text-slate-300 mb-12 leading-relaxed">
+                        Three pricing models to fit your project needs.
+                    </p>
+                    
+                    <div class="grid gap-6 md:grid-cols-3">
+                        <!-- Fixed Price -->
+                        <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 border-2 border-slate-200 dark:border-slate-700 hover:scale-[1.03] hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-500 dark:hover:border-orange-400 transition-all duration-400 group">
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 group-hover:text-orange-500 dark:group-hover:text-orange-400 mb-3 transition-colors duration-300">Fixed Price</h3>
+                            <div class="text-3xl font-black text-slate-800 dark:text-slate-100 group-hover:text-orange-500 dark:group-hover:text-orange-400 mb-4 transition-colors duration-300">$2,500+</div>
+                            <p class="text-slate-600 dark:text-slate-300 mb-3 leading-relaxed text-sm">
+                                Price based on project scope, timeline, and complexity. No surprise billing.
+                            </p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Most common for defined projects</p>
+                        </div>
+
+                        <!-- Hourly -->
+                        <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 border-2 border-orange-500 dark:border-orange-400 hover:scale-[1.03] hover:shadow-2xl hover:shadow-orange-500/40 hover:border-orange-600 dark:hover:border-orange-300 transition-all duration-400 group">
+                            <h3 class="text-xl font-bold text-orange-600 dark:text-orange-400 group-hover:text-orange-700 dark:group-hover:text-orange-300 mb-3 transition-colors duration-300">Hourly</h3>
+                            <div class="text-3xl font-black text-orange-600 dark:text-orange-400 group-hover:text-orange-700 dark:group-hover:text-orange-300 mb-4 transition-colors duration-300">$125 - $175/hr</div>
+                            <p class="text-slate-600 dark:text-slate-300 mb-3 leading-relaxed text-sm">
+                                For consulting, troubleshooting, and design reviews.
+                            </p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Senior engineer rates</p>
+                        </div>
+
+                        <!-- Retainers -->
+                        <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 border-2 border-slate-200 dark:border-slate-700 hover:scale-[1.03] hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-500 dark:hover:border-orange-400 transition-all duration-400 group">
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 group-hover:text-orange-500 dark:group-hover:text-orange-400 mb-3 transition-colors duration-300">Retainers</h3>
+                            <div class="text-3xl font-black text-slate-800 dark:text-slate-100 group-hover:text-orange-500 dark:group-hover:text-orange-400 mb-4 transition-colors duration-300">Available</div>
+                            <p class="text-slate-600 dark:text-slate-300 mb-3 leading-relaxed text-sm">
+                                Monthly retainer for ongoing support and priority access.
+                            </p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">For long-term partnerships</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="flex-1">
-              <h2 class="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-3">Testing & Compliance Engineering</h2>
-              <p class="text-lg text-slate-600 dark:text-slate-300 mb-4">
-                Rigorous validation, regulatory compliance, and failure analysis so your product works reliably in the real world.
-              </p>
+
+            <!-- Contact CTA -->
+            <div class="bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-10 text-center text-white border-2 border-orange-500 shadow-2xl hover:shadow-orange-500/40 hover:scale-[1.01] hover:from-orange-600 hover:to-orange-700 transition-all duration-500 group mt-16">
+                <h2 class="text-3xl font-bold mb-4">Ready to Start Your Project?</h2>
+                <p class="text-lg mb-8 opacity-95">
+                    Talk directly with a senior engineer about your requirements.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6 max-w-md mx-auto">
+                    <a href="/quote" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-white to-gray-100 text-orange-600 font-bold rounded-xl hover:from-gray-100 hover:to-white hover:scale-105 shadow-lg transition-all duration-200 border-2 border-orange-200">
+                        Get Project Quote
+                    </a>
+                    <a href="tel:+14242715569" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-orange-700 to-red-700 text-white font-bold rounded-xl hover:from-red-700 hover:to-orange-700 hover:scale-105 shadow-lg transition-all duration-200 border-2 border-orange-600">
+                        Call (424) 271-5569
+                    </a>
+                </div>
+                <p class="text-sm opacity-90 bg-black/20 rounded-full px-4 py-2 inline-block">
+                    Long Beach, CA • Response within 24 hours
+                </p>
             </div>
-          </div>
-          
-          <div class="mb-6">
-            <ul class="grid md:grid-cols-2 gap-2 text-sm text-slate-600 dark:text-slate-400">
-              <li>• Pre-compliance testing</li>
-              <li>• Environmental validation</li>
-              <li>• Failure analysis & troubleshooting</li>
-              <li>• Regulatory strategy</li>
-              <li>• Production test development</li>
-              <li>• First-time certification success</li>
-            </ul>
-          </div>
-          
-          <PrimaryArrowButton href="/quote?service=testing-validation">Validate Your Design</PrimaryArrowButton>
         </div>
-      </div>
-    </div>
-
-    <!-- Pricing Section -->
-    <div class="max-w-4xl px-4 py-12 mx-auto">
-      <div class="text-center mb-8">
-        <h2 class="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-4">
-          Pricing
-        </h2>
-        <p class="text-slate-600 dark:text-slate-300">Transparent pricing with no hourly billing surprises. Most projects are fixed-price after initial consultation.</p>
-      </div>
-
-      <div class="grid gap-6 md:grid-cols-2 max-w-3xl mx-auto">
-        <!-- Fixed Price -->
-        <div class="bg-white dark:bg-neutral-900 rounded-xl p-6 border border-slate-200 dark:border-slate-700">
-          <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-3">Fixed Price</h3>
-          <div class="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-2">$2,500 - $25,000</div>
-          <p class="text-slate-600 dark:text-slate-300 mb-4">
-            Most projects fall in this range. Scope determines price, not hours worked.
-          </p>
-          <p class="text-sm text-slate-500 dark:text-slate-400">Examples: Circuit analysis ($2,500), PCB design ($8-15K), full product ($15-25K)</p>
-        </div>
-
-        <!-- Hourly -->
-        <div class="bg-white dark:bg-neutral-900 rounded-xl p-6 border border-slate-200 dark:border-slate-700">
-          <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-3">Hourly</h3>
-          <div class="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-2">$125 - $175/hr</div>
-          <p class="text-slate-600 dark:text-slate-300 mb-4">
-            For consulting, troubleshooting, and design review work.
-          </p>
-          <p class="text-sm text-slate-500 dark:text-slate-400">Senior engineer rates without big firm overhead</p>
-        </div>
-      </div>
-
-    </div>
-    <!-- End Pricing -->
-  </Container>
+    </Container>
 </Layout>
