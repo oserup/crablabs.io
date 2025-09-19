@@ -67,14 +67,63 @@ const structuredData = {
       }
     ]
   },
-  "priceRange": "$2500+"
+  "priceRange": "$2500+",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "8"
+  }
+};
+
+// FAQ Schema for Common Questions section
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How quickly can we start?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually 1-2 weeks. Clear scope, timeline, and price - no 47-page proposals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you handle regulatory requirements?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We've been through regulatory submissions before. We design for compliance from day one and handle pre-compliance testing. For final certification, we work with accredited test labs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you work with existing systems?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. Half our projects involve upgrading existing systems. We're good at adding new features without breaking what already works."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do we receive at project completion?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Everything. Source code, schematics, PCB files, BOM, and manufacturing docs. It's all yours - no licensing fees or strings attached."
+      }
+    }
+  ]
 };
 ---
 
 <!-- ========== MAIN CONTENT ========== -->
 <main id="content">
-  <Layout title="Electronic Product Development | PCB Design & Embedded Systems | Long Beach, CA">
+  <Layout
+    title="Electronic Product Development | PCB Design & Embedded Systems | Long Beach, CA"
+    description="SME electronics engineering. PCB design, embedded firmware, medical device compliance. $2.5k-$250k budgets. 25+ years experience. Direct engineer access. Work starts in 1-2 weeks."
+  >
     <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)}></script>
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(faqStructuredData)}></script>
     <Hero />
     <Container>
       <!-- What We Do -->
@@ -199,14 +248,13 @@ const structuredData = {
         </div>
       </div>
 
-
       <!-- CTA -->
       <div class="bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-10 text-center text-white border-2 border-orange-500 shadow-2xl hover:shadow-orange-500/40 hover:scale-[1.01] hover:from-orange-600 hover:to-orange-700 transition-all duration-500">
         <h2 class="text-3xl font-bold mb-4">Ready to Start Your Project?</h2>
         <p class="text-lg mb-8 opacity-95">
           Talk directly with a senior engineer about your requirements.
         </p>
-        
+
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
           <a href="/quote" class="px-8 py-4 bg-white text-orange-600 font-bold rounded-xl hover:bg-gray-100 hover:scale-105 shadow-lg transition-all duration-200">
             Get Project Quote
@@ -215,7 +263,7 @@ const structuredData = {
             Call (424) 271-5569
           </a>
         </div>
-        
+
         <p class="text-sm opacity-90">
           Long Beach, CA • Response within 24 hours
         </p>

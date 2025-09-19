@@ -1,0 +1,162 @@
+---
+export interface Props {
+  headings: Array<{
+    depth: number;
+    slug: string;
+    text: string;
+  }>;
+}
+
+const { headings } = Astro.props;
+
+// Filter to only show h2 and h3 headings for a cleaner TOC
+const tocHeadings = headings.filter(heading => heading.depth <= 3);
+---
+
+{tocHeadings.length > 3 && (
+  <div class="mb-12 bg-gradient-to-br from-slate-900/60 to-slate-800/60 backdrop-blur-sm rounded-2xl border-2 border-slate-700/50 shadow-2xl overflow-hidden">
+    <button 
+      id="toc-toggle"
+      class="w-full text-left p-6 pb-3 flex items-center justify-between hover:bg-slate-800/30 transition-all duration-200 group focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:ring-inset"
+      aria-expanded="false"
+      aria-controls="toc-content"
+    >
+      <div class="flex items-center">
+        <div class="flex items-center justify-center w-8 h-8 bg-orange-500/20 rounded-lg mr-3">
+          <svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+          </svg>
+        </div>
+        <span class="text-lg font-semibold text-white group-hover:text-orange-300 transition-colors">
+          Table of Contents
+        </span>
+      </div>
+      <svg 
+        id="toc-chevron"
+        class="w-5 h-5 text-slate-400 group-hover:text-orange-400 transition-all duration-300 transform flex-shrink-0"
+        fill="none" 
+        stroke="currentColor" 
+        viewBox="0 0 24 24"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </button>
+    <nav 
+      id="toc-content"
+      class="px-6 pb-6 transition-all duration-300 ease-in-out overflow-hidden"
+    >
+      <div class="border-t border-slate-700/50 pt-4 space-y-1">
+        {tocHeadings.map((heading) => (
+          <a 
+            href={`#${heading.slug}`}
+            class={`group flex items-center py-2 px-3 rounded-lg hover:bg-slate-800/40 transition-all duration-200 border-l-2 border-transparent hover:border-orange-500/50 ${
+              heading.depth === 1 ? 'text-slate-100 font-bold text-base' :
+              heading.depth === 2 ? 'text-slate-200 font-medium text-sm ml-2' : 
+              heading.depth === 3 ? 'text-slate-300 text-sm ml-6' : 'text-slate-400 text-xs ml-8'
+            }`}
+          >
+            <span class={`flex-shrink-0 w-2 h-2 rounded-full mr-3 transition-colors ${
+              heading.depth === 1 ? 'bg-orange-500' :
+              heading.depth === 2 ? 'bg-orange-400' :
+              heading.depth === 3 ? 'bg-slate-400' : 'bg-slate-500'
+            }`}>
+            </span>
+            <span class="group-hover:text-orange-300 transition-colors leading-relaxed">
+              {heading.text}
+            </span>
+          </a>
+        ))}
+      </div>
+    </nav>
+  </div>
+)}
+
+<style>
+  /* Smooth scroll for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Add scroll offset to account for any fixed headers */
+  :target {
+    scroll-margin-top: 2rem;
+  }
+
+  /* Collapsed state */
+  .toc-collapsed {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  /* Expanded state */
+  .toc-expanded {
+    max-height: 2000px;
+    opacity: 1;
+  }
+
+  /* Enhanced hover effects */
+  .toc-item:hover {
+    transform: translateX(4px);
+  }
+
+  /* Active link styling */
+  .toc-item.active {
+    background: rgba(251, 146, 60, 0.1);
+    border-left-color: rgb(251, 146, 60);
+    color: rgb(251, 146, 60);
+  }
+
+  /* Smooth backdrop blur */
+  .toc-container {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.getElementById('toc-toggle');
+    const content = document.getElementById('toc-content');
+    const chevron = document.getElementById('toc-chevron');
+    
+    if (!toggle || !content || !chevron) return;
+
+    // Set initial state - collapsed by default
+    content.classList.add('toc-collapsed');
+    chevron.style.transform = 'rotate(-90deg)';
+    
+    toggle.addEventListener('click', function() {
+      const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+      
+      if (isExpanded) {
+        // Collapse
+        content.classList.remove('toc-expanded');
+        content.classList.add('toc-collapsed');
+        chevron.style.transform = 'rotate(-90deg)';
+        toggle.setAttribute('aria-expanded', 'false');
+      } else {
+        // Expand
+        content.classList.remove('toc-collapsed');
+        content.classList.add('toc-expanded');
+        chevron.style.transform = 'rotate(0deg)';
+        toggle.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    // Remember user preference - if they previously expanded it, show expanded
+    const savedState = localStorage.getItem('toc-collapsed');
+    if (savedState === 'false') {
+      toggle.click(); // Trigger expand (since default is collapsed)
+    }
+
+    // Save state on change
+    toggle.addEventListener('click', function() {
+      const isCollapsed = toggle.getAttribute('aria-expanded') === 'false';
+      localStorage.setItem('toc-collapsed', isCollapsed.toString());
+    });
+  });
+</script>
