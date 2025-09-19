@@ -49,8 +49,6 @@ We turn down projects that don't interest us. We only develop technology that he
 
 I wanted something memorable that rhymed and had an available domain. "Crab Labs" stuck. Sometimes naming is just about finding something that works and isn't taken.
 
-## The Lab
+## The Setup
 
-I work out of a 1,000 sq ft fully-equipped lab in Long Beach, CA. Reflow oven, pick-and-place, oscilloscopes, spectrum analyzer, environmental chamber, signal generators - the same equipment larger firms use. We can prototype, test, and validate designs in-house without sending work elsewhere.
-
-Electronics runs three generations deep in my family. My grandfather started it, my father continued it. Every failed project I've seen could have succeeded with a different approach. That's what we're building.
+I work out of a 1,000 sq ft lab in Long Beach, CA. Full prototyping setup, reflow oven, oscilloscopes, spectrum analyzer, environmental chamber.
