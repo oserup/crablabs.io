@@ -1,9 +1,9 @@
 ---
 title: "Firmware Development Costs"
-description: "Estimated firmware development costs and cost drivers for embedded projects."
+description: "A guide for estimating firmware development costs with analyses of cost drivers for embedded projects."
 pubDate: 2025-03-15
 author: "Orion Serup"
-heroImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+heroImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop&q=60"
 tags: ["firmware", "embedded-systems", "pricing", "budget"]
 featured: true
 draft: false
@@ -162,5 +162,7 @@ When you need multiple features, you often get cost breaks:
 - Combined testing phases
 - Single integration effort
 - Vendor ecosystem advantages
+
+For complete project budgeting, see our [hardware design cost guide](/blog/pcb-design-cost-calculator-2025) covering PCB design, fabrication, and assembly costs.
 
 **Disclaimer:** All costs and timelines are industry averages based on 2024 data. Actual project costs vary significantly based on specific requirements, team experience, market conditions, and chosen technology stacks. Regional development costs vary 20-60% depending on location and quality requirements.

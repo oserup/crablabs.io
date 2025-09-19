@@ -1,11 +1,11 @@
 ---
-title: "Comprehesive PCB Design Review Checklist"
-description: "47-point PCB design review checklist covering common failure modes."
+title: "Comprehensive PCB Design Review Checklist"
+description: "Complete PCB design review checklist for manufacturing"
 pubDate: 2024-10-28
 author: "Orion Serup"
 heroImage: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
 tags: ["PCB-design", "checklist", "manufacturing", "quality"]
-featured: true
+featured: false
 draft: false
 ---
 

@@ -5,7 +5,7 @@ pubDate: 2024-07-12
 author: "Orion Serup"
 heroImage: "/images/BusinessCardFront.jpg"
 tags: ["nfc", "pcb", "rfid", "kicad", "tutorial"]
-featured: true
+featured: false
 draft: false
 ---
 

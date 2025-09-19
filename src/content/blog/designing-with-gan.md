@@ -3,7 +3,7 @@ title: "Tips for Working with GaNFETs"
 description: "Learn the basics of designing electronics with GaN FETs for better efficiency, smaller size, and superior performance."
 pubDate: 2024-07-12
 author: "Orion Serup"
-heroImage: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+heroImage: "https://imgs.search.brave.com/F_7bgq_eAFs6dgfQpBO2zm-7Ga5vHSeSVfSg7p20EP0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9lcGMt/Y28uY29tL2VwYy9w/b3J0YWxzLzAvZXBj/L3doYXQtaXMtR2FO/LUdhbGxpdW0tTml0/cmlkZS5wbmc"
 tags: ["gan", "power electronics", "semiconductors", "design"]
 featured: false
 draft: false

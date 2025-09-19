@@ -1,12 +1,12 @@
 ---
 title: "Medical Device Compliance Cost Analysis"
-description: "Cost analysis for medical device compliance"
+description: "Medical device compliance costs and budget planning"
 pubDate: 2024-09-15
 author: "Orion Serup"
-heroImage: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+heroImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&auto=format&fit=crop&q=60"
 tags: ["medical-devices", "compliance", "IEC-60601", "FDA", "budget"]
-featured: true
-draft: false
+featured: false
+draft: true
 ---
 
 Medical device compliance runs $300k-$800k. Here's where the money goes:

@@ -1,9 +1,9 @@
 ---
-title: "Hardware Design and Manufacturing Costs: Complete PCBA Guide"
-description: "Approximate PCB design, fabrication, and assembly costs with real project examples."
+title: "Hardware Design and Manufacturing Costs"
+description: "A guide for approximating PCB design, fabrication, and assembly costs with examples"
 pubDate: 2024-12-03
 author: "Orion Serup"
-heroImage: "https://images.unsplash.com/photo-1518709414423-cce7d8887465?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+heroImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop&q=60"
 tags: ["PCBA", "hardware-design", "PCB-design", "manufacturing", "cost-analysis"]
 featured: true
 draft: false
@@ -171,5 +171,7 @@ Wide ranges reflect differences in engineer rates, efficiency, and project compl
 | **Testing and rework** | +10% | Debug time, ECO changes |
 
 **Reality check:** A $15k design that works beats an $8k design that needs $20k in fixes.
+
+For firmware development costs that complement your hardware budget, see our [firmware cost analysis](/blog/firmware-project-pricing-analysis).
 
 **Disclaimer:** All costs are industry averages based on 2024 data. Every project is different - actual costs vary significantly based on specific requirements, supplier relationships, market conditions, component availability, and unique project constraints. Regional costs vary 20-60% depending on location and quality requirements.
