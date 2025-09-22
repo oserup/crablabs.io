@@ -29,6 +29,14 @@ const links = [
 		href: "/services",
 	},
 	{
+		text: "Capabilities",
+		href: "/capabilities",
+	},
+	{
+		text: "Case Studies",
+		href: "/case-studies",
+	},
+	{
 		text: "Blog",
 		href: "/blog",
 	},
@@ -60,7 +68,7 @@ const currentUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
 
 <!-- HTML layout -->
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -147,8 +155,15 @@ const currentUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
 
 	<!-- CSS -->
 	<style is:global>
+		@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700,800,900&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 		html {
-			background: #13151a;
+			background: #ffffff;
+		}
+
+		* {
+			font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 		}
 	</style>
 

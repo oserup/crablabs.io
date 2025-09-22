@@ -5,12 +5,12 @@ const { href } = Astro.props;
 
 <div class="mt-7 grid gap-3 w-full sm:inline-flex">
     <a
-        class="py-4 px-6 inline-flex justify-center items-center gap-x-3 text-base font-bold rounded-2xl border border-transparent bg-gradient-to-r from-orange-600 to-orange-700 text-white hover:from-orange-500 hover:to-orange-600 hover:shadow-2xl hover:scale-105 disabled:opacity-50 disabled:pointer-events-none ring-orange-500 transition-all duration-500 focus-visible:ring shadow-lg"
+        class="py-4 px-8 inline-flex justify-center items-center gap-x-3 text-base font-semibold rounded-full border-0 bg-gradient-to-r from-orange-600 to-orange-700 text-white hover:from-orange-700 hover:to-orange-800 hover:shadow-lg hover:scale-[1.02] disabled:opacity-50 disabled:pointer-events-none transition-all duration-200 shadow-md"
         href={href}
     >
         <slot />
         <svg
-            class="flex-shrink-0 size-4"
+            class="flex-shrink-0 size-4 ml-1"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"

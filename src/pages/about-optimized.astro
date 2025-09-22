@@ -1,0 +1,404 @@
+---
+import Container from "../components/Container.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="About Us - Crab Labs">
+    <!-- Clean Typography Styles -->
+    <style is:inline>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 1.6;
+        color: #374151;
+      }
+
+      h1 {
+        font-weight: 700;
+        font-size: 3.5rem;
+        letter-spacing: -0.025em;
+        line-height: 1.1;
+        color: #111827;
+      }
+
+      h2 {
+        font-weight: 600;
+        font-size: 2rem;
+        letter-spacing: -0.015em;
+        line-height: 1.25;
+        color: #111827;
+      }
+
+      h3, h4, h5, h6 {
+        font-weight: 500;
+        font-size: 1.25rem;
+        line-height: 1.4;
+        color: #1f2937;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.7;
+      }
+    </style>
+
+    <Container>
+        <div class="max-w-6xl px-4 pt-16 pb-12 mx-auto">
+
+            <!-- Hero with immediate value prop -->
+            <div class="text-center mb-16">
+                <h1 class="text-5xl font-bold text-gray-900 mb-6">About Crab Labs</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    5 senior engineers. No juniors. No overhead. Just deep technical expertise solving problems others can't.
+                </p>
+            </div>
+
+            <!-- Impact Stats - Immediate credibility -->
+            <div class="bg-gradient-to-br from-orange-600 to-orange-700 rounded-3xl p-8 mb-16 text-white">
+                <div class="grid md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="text-3xl font-bold">$10K-250K</div>
+                        <div class="text-sm opacity-90">Project Range</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold">15+ Years</div>
+                        <div class="text-sm opacity-90">Individual Experience</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold">FDA/CE/IEC</div>
+                        <div class="text-sm opacity-90">Regulatory Experience</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold">100%</div>
+                        <div class="text-sm opacity-90">IP Transfer to You</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why We Exist + Founder -->
+            <div class="bg-white/90 backdrop-blur-xl rounded-3xl p-16 mb-16 shadow-lg shadow-gray-900/5 border border-gray-200/40">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Why We Exist</h2>
+
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <!-- The Problem -->
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-6">The Problem We Saw</h3>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start gap-3">
+                                    <span class="text-red-500 mt-1">✗</span>
+                                    <span>Firms charging senior rates for junior work</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-red-500 mt-1">✗</span>
+                                    <span>Account managers who don't understand the tech</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-red-500 mt-1">✗</span>
+                                    <span>Missed deadlines and blown budgets</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-red-500 mt-1">✗</span>
+                                    <span>IP licensing traps and ongoing fees</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-red-500 mt-1">✗</span>
+                                    <span>Designs that fail regulatory testing</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Founder Story -->
+                        <div class="bg-orange-50 border border-orange-200 rounded-2xl p-8">
+                            <div class="flex items-center gap-4 mb-6">
+                                <img
+                                    src="/orion.jpeg"
+                                    alt="Orion Serup, Founder"
+                                    class="w-20 h-20 rounded-full object-cover object-center border-2 border-orange-300"
+                                    style="object-position: center 20%;"
+                                />
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Orion Serup</h4>
+                                    <p class="text-sm text-gray-600">Founder & Lead Engineer</p>
+                                    <p class="text-xs text-orange-600">3rd Generation Electronics</p>
+                                </div>
+                            </div>
+                            <p class="italic text-orange-800 mb-4">
+                                "I was tired of seeing clients get fleeced by incompetent firms that didn't care about the client or the product."
+                            </p>
+                            <p class="text-sm text-orange-700">
+                                Founded May 2024 to do engineering the right way: Senior talent only. Fixed pricing. Your IP stays yours.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What Makes Us Different - Clear differentiation -->
+            <div class="bg-white/90 backdrop-blur-xl rounded-3xl p-16 mb-16 shadow-lg shadow-gray-900/5 border border-gray-200/40">
+                <div class="max-w-5xl mx-auto">
+                    <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">What Makes Us Different</h2>
+
+                    <div class="grid lg:grid-cols-3 gap-8">
+                        <!-- Speed -->
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-bold text-gray-900 mb-3">Faster</h3>
+                            <p class="text-sm text-gray-600 mb-4">Small team. Direct communication. No bureaucracy. No account managers.</p>
+                            <div class="text-xs bg-green-50 text-green-700 rounded-lg p-2">
+                                Typical: 8-12 week projects
+                            </div>
+                        </div>
+
+                        <!-- Cost -->
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-bold text-gray-900 mb-3">Cheaper</h3>
+                            <p class="text-sm text-gray-600 mb-4">No overhead. No junior billing. Fixed pricing after scope.</p>
+                            <div class="text-xs bg-blue-50 text-blue-700 rounded-lg p-2">
+                                30-50% less than big firms
+                            </div>
+                        </div>
+
+                        <!-- Quality -->
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <h3 class="font-bold text-gray-900 mb-3">Better</h3>
+                            <p class="text-sm text-gray-600 mb-4">Latest tech. ISO 9001/13485 capable QMS. Full traceability.</p>
+                            <div class="text-xs bg-purple-50 text-purple-700 rounded-lg p-2">
+                                Pass regulatory first time
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key differentiators -->
+                    <div class="mt-12 bg-gray-50 rounded-2xl p-8">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-4">Our Approach</h4>
+                                <ul class="space-y-2 text-sm text-gray-700">
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-orange-600">✓</span>
+                                        Requirements defined before any work starts
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-orange-600">✓</span>
+                                        Senior engineers only (10+ years each)
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-orange-600">✓</span>
+                                        Weekly progress updates
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-orange-600">✓</span>
+                                        Complete IP transfer, no licensing
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-4">Quality Systems</h4>
+                                <ul class="space-y-2 text-sm text-gray-700">
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-orange-600">✓</span>
+                                        ISO 9001/13485 capable QMS
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-orange-600">✓</span>
+                                        Industry standard test procedures
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-orange-600">✓</span>
+                                        Full project traceability
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-orange-600">✓</span>
+                                        EMC pre-compliance testing
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Who We Work With -->
+            <div class="bg-white/90 backdrop-blur-xl rounded-3xl p-16 mb-16 shadow-lg shadow-gray-900/5 border border-gray-200/40">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Who We Work With</h2>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Perfect Fit -->
+                        <div class="bg-green-50 border border-green-200 rounded-2xl p-6">
+                            <h3 class="text-lg font-bold text-green-900 mb-4 text-center">Perfect Fit</h3>
+                            <ul class="text-sm text-green-800 space-y-2">
+                                <li>• $10K - $250K budgets</li>
+                                <li>• Medical devices</li>
+                                <li>• Industrial automation</li>
+                                <li>• Scientific instruments</li>
+                                <li>• Regulatory compliance needed</li>
+                                <li>• Complex EMC requirements</li>
+                                <li>• Previous attempts failed</li>
+                            </ul>
+                        </div>
+
+                        <!-- Industries -->
+                        <div class="bg-blue-50 border border-blue-200 rounded-2xl p-6">
+                            <h3 class="text-lg font-bold text-blue-900 mb-4 text-center">Industries</h3>
+                            <ul class="text-sm text-blue-800 space-y-2">
+                                <li>• Medical devices</li>
+                                <li>• Industrial robotics</li>
+                                <li>• Test & measurement</li>
+                                <li>• Scientific instruments</li>
+                                <li>• Defense systems</li>
+                                <li>• Power electronics</li>
+                                <li>• Motor control</li>
+                            </ul>
+                        </div>
+
+                        <!-- Not a Fit -->
+                        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+                            <h3 class="text-lg font-bold text-gray-700 mb-4 text-center">Not a Fit</h3>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• Consumer electronics</li>
+                                <li>• Projects under $5K</li>
+                                <li>• Software-only</li>
+                                <li>• High-volume manufacturing</li>
+                                <li>• Simple PCB layouts</li>
+                                <li>• Basic Arduino projects</li>
+                                <li>• App development</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proof - Project Examples -->
+            <div class="bg-white/90 backdrop-blur-xl rounded-3xl p-16 mb-16 shadow-lg shadow-gray-900/5 border border-gray-200/40">
+                <div class="max-w-5xl mx-auto">
+                    <h2 class="text-3xl font-bold text-gray-900 text-center mb-4">Proof We Deliver</h2>
+                    <p class="text-center text-gray-600 mb-12">Real projects. Real challenges. Real results.</p>
+
+                    <!-- Condensed project cards -->
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Medical -->
+                        <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl transition-all">
+                            <div class="text-center mb-4">
+                                <span class="px-3 py-1 bg-orange-600 text-white text-xs font-bold rounded-full">MEDICAL</span>
+                            </div>
+                            <h3 class="font-bold text-gray-900 mb-3">5-Axis Ultrasound Control</h3>
+                            <div class="text-sm text-gray-600 space-y-2 mb-4">
+                                <p><strong>Problem:</strong> Failed EMC 3 times, ±0.5mm accuracy</p>
+                                <p><strong>Solution:</strong> Redesigned control, custom filtering</p>
+                                <p><strong>Result:</strong> Sub-0.1mm, passed IEC 60601</p>
+                            </div>
+                            <div class="text-center pt-4 border-t">
+                                <div class="text-2xl font-bold text-orange-600">$50K+</div>
+                                <div class="text-xs text-gray-600">Saved vs replacement</div>
+                            </div>
+                        </div>
+
+                        <!-- Scientific -->
+                        <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl transition-all">
+                            <div class="text-center mb-4">
+                                <span class="px-3 py-1 bg-orange-600 text-white text-xs font-bold rounded-full">SCIENTIFIC</span>
+                            </div>
+                            <h3 class="font-bold text-gray-900 mb-3">30-Year-Old Gravitometer</h3>
+                            <div class="text-sm text-gray-600 space-y-2 mb-4">
+                                <p><strong>Problem:</strong> Controller died, no docs</p>
+                                <p><strong>Solution:</strong> Reverse-engineered, modernized</p>
+                                <p><strong>Result:</strong> 2x precision, GPS sync added</p>
+                            </div>
+                            <div class="text-center pt-4 border-t">
+                                <div class="text-2xl font-bold text-orange-600">$150K+</div>
+                                <div class="text-xs text-gray-600">Equipment saved</div>
+                            </div>
+                        </div>
+
+                        <!-- Industrial -->
+                        <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl transition-all">
+                            <div class="text-center mb-4">
+                                <span class="px-3 py-1 bg-orange-600 text-white text-xs font-bold rounded-full">INDUSTRIAL</span>
+                            </div>
+                            <h3 class="font-bold text-gray-900 mb-3">Power Monitoring Retrofit</h3>
+                            <div class="text-sm text-gray-600 space-y-2 mb-4">
+                                <p><strong>Problem:</strong> Legacy equipment, no monitoring</p>
+                                <p><strong>Solution:</strong> Non-invasive sensors, cloud</p>
+                                <p><strong>Result:</strong> 0.1% accuracy, predictive maint</p>
+                            </div>
+                            <div class="text-center pt-4 border-t">
+                                <div class="text-2xl font-bold text-orange-600">< 1 Year</div>
+                                <div class="text-xs text-gray-600">ROI achieved</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Team -->
+            <div class="bg-white/90 backdrop-blur-xl rounded-3xl p-16 mb-16 shadow-lg shadow-gray-900/5 border border-gray-200/40">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">The Team</h2>
+
+                    <div class="grid md:grid-cols-3 gap-8 text-center">
+                        <div>
+                            <div class="text-4xl font-bold text-orange-600 mb-2">5</div>
+                            <div class="font-semibold text-gray-900">Senior Engineers</div>
+                            <div class="text-sm text-gray-600">4 EE/CE, 1 ME</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold text-orange-600 mb-2">15+</div>
+                            <div class="font-semibold text-gray-900">Years Experience</div>
+                            <div class="text-sm text-gray-600">Each engineer</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold text-orange-600 mb-2">1,000</div>
+                            <div class="font-semibold text-gray-900">Sq Ft Lab</div>
+                            <div class="text-sm text-gray-600">Long Beach, CA</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 bg-orange-50 border border-orange-200 rounded-xl p-6 text-center">
+                        <p class="text-orange-800">
+                            <strong>On-site anywhere in US</strong> • 24-hour response • Working on ISO 9001 & 13485
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="bg-gradient-to-br from-orange-600 to-orange-700 rounded-3xl p-16 text-center text-white shadow-2xl">
+                <h2 class="text-4xl font-bold mb-4">Ready to Start?</h2>
+                <p class="text-xl mb-8 opacity-95 max-w-2xl mx-auto">
+                    Talk directly with a senior engineer about your project. No sales team.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="https://cal.com/crablabsllc/consultation" class="px-8 py-4 bg-white text-orange-600 font-bold rounded-xl hover:bg-gray-100 hover:scale-105 shadow-lg transition-all">
+                        Schedule Consultation
+                    </a>
+                    <a href="/services#rfq" class="px-8 py-4 bg-orange-800 text-white font-bold rounded-xl hover:bg-orange-900 hover:scale-105 shadow-lg transition-all">
+                        Request Quote
+                    </a>
+                    <a href="tel:+14242715569" class="px-8 py-4 bg-orange-700 text-white font-bold rounded-xl hover:bg-orange-800 hover:scale-105 shadow-lg transition-all">
+                        (424) 271-5569
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </Container>
+</Layout>

@@ -5,8 +5,8 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
 ---
 
 <Layout
-    title="Our Services | PCB Design & Electronic Product Development | Medical Device Compliance | Crab Labs"
-    description="Electronics engineering services for SMEs. PCB design $2.5k+, complete product development, medical device compliance. Direct engineer access. 1-2 week start times."
+    title="Services | Electronic Product Development | Crab Labs"
+    description="Electronic product development services. Design review, PCB design, firmware development, compliance testing. Direct engineer access."
 >
     <Container>
         <div class="max-w-6xl px-4 pt-16 pb-12 mx-auto">
@@ -18,52 +18,216 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
 
             <!-- Design Review & Consulting -->
             <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-10 mb-16 border-2 border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-orange-500/20 dark:hover:shadow-none hover:border-orange-500 dark:hover:border-orange-400 hover:scale-[1.01] transition-all duration-500">
-                <div class="max-w-4xl mx-auto text-center">
-                    <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4">Design Review & Consulting</h2>
-                    <p class="text-lg text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
-                        Your design's not working and you need someone to figure out why. Or you want a second opinion before you commit to production.
-                    </p>
-                    <p class="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
-                        <strong>Good for:</strong> Troubleshooting prototypes, design reviews, component selection, and "does this make sense?" questions.
-                    </p>
-                    <p class="text-sm text-slate-500 dark:text-slate-500 mb-8">
-                        <strong>Timeline:</strong> 1-2 weeks • <strong>Start time:</strong> 1-2 weeks
-                    </p>
-                    <PrimaryArrowButton href="/quote?service=consulting">Get Expert Analysis</PrimaryArrowButton>
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4">Design Review & Consulting</h2>
+                        <p class="text-lg text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+                            Technical review of existing designs. Find problems before production.
+                        </p>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-4">What We Review</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                                    <div>
+                                        <p class="font-medium text-slate-700 dark:text-slate-300">Circuit Analysis</p>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400">Schematic review, signal integrity, power distribution, thermal analysis</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                                    <div>
+                                        <p class="font-medium text-slate-700 dark:text-slate-300">PCB Layout Review</p>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400">Layer stackup, routing, component placement, EMC considerations</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                                    <div>
+                                        <p class="font-medium text-slate-700 dark:text-slate-300">Firmware Architecture</p>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400">Code structure, real-time performance, memory usage, safety systems</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                                    <div>
+                                        <p class="font-medium text-slate-700 dark:text-slate-300">Component Selection</p>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400">Part lifecycle, cost optimization, supply chain risk assessment</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-4">Common Issues We Fix</h3>
+                            <div class="space-y-3">
+                                <div class="bg-white dark:bg-slate-900 rounded-lg p-4 border-2 border-slate-200 dark:border-slate-700">
+                                    <p class="font-medium text-slate-700 dark:text-slate-300 mb-1">EMC Test Failures</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Radiated emissions, conducted immunity, ESD protection issues</p>
+                                </div>
+                                <div class="bg-white dark:bg-slate-900 rounded-lg p-4 border-2 border-slate-200 dark:border-slate-700">
+                                    <p class="font-medium text-slate-700 dark:text-slate-300 mb-1">Performance Problems</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Timing issues, signal degradation, power consumption, thermal problems</p>
+                                </div>
+                                <div class="bg-white dark:bg-slate-900 rounded-lg p-4 border-2 border-slate-200 dark:border-slate-700">
+                                    <p class="font-medium text-slate-700 dark:text-slate-300 mb-1">Production Issues</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Yield problems, test failures, assembly difficulties, cost overruns</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <PrimaryArrowButton href="/quote?service=consulting">Get Expert Analysis</PrimaryArrowButton>
+                    </div>
                 </div>
             </div>
 
             <!-- Complete Product Development -->
             <div class="bg-white dark:bg-slate-900 rounded-2xl p-10 mb-16 border-2 border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-orange-500/20 dark:hover:shadow-none hover:border-orange-500 dark:hover:border-orange-400 hover:scale-[1.01] transition-all duration-500">
-                <div class="max-w-4xl mx-auto text-center">
-                    <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4">Complete Product Development</h2>
-                    <p class="text-lg text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
-                        You have an idea and need someone to turn it into actual hardware. We handle the whole thing - circuits, firmware, testing, documentation, and getting it ready for production.
-                    </p>
-                    <p class="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
-                        <strong>Good for:</strong> New products, upgrading old systems, or when your internal team is swamped and needs backup.
-                    </p>
-                    <p class="text-sm text-slate-500 dark:text-slate-500 mb-8">
-                        <strong>Timeline:</strong> Project-dependent • <strong>Start time:</strong> 1-2 weeks
-                    </p>
-                    <PrimaryArrowButton href="/quote?service=product-development">Start Your Product</PrimaryArrowButton>
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4">Complete Product Development</h2>
+                        <p class="text-lg text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+                            From concept to production-ready hardware. Circuits, firmware, testing, documentation.
+                        </p>
+                    </div>
+
+                    <div class="grid lg:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-6 border-2 border-slate-200 dark:border-slate-700">
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-4">Phase 1: Requirements & Architecture</h3>
+                            <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                                <li>• Requirements analysis and specification</li>
+                                <li>• System architecture design</li>
+                                <li>• Technology selection and risk assessment</li>
+                                <li>• Regulatory compliance planning</li>
+                                <li>• Project timeline and milestones</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-6 border-2 border-slate-200 dark:border-slate-700">
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-4">Phase 2: Design & Development</h3>
+                            <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                                <li>• Schematic design and simulation</li>
+                                <li>• PCB layout and signal integrity</li>
+                                <li>• Firmware development and testing</li>
+                                <li>• Prototype assembly and bring-up</li>
+                                <li>• Initial validation testing</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-6 border-2 border-slate-200 dark:border-slate-700">
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-4">Phase 3: Validation & Production</h3>
+                            <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                                <li>• Design verification testing</li>
+                                <li>• EMC and safety compliance</li>
+                                <li>• Manufacturing documentation</li>
+                                <li>• Production test procedures</li>
+                                <li>• Supplier qualification support</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 rounded-xl p-6 border-2 border-orange-200 dark:border-orange-700 mb-8">
+                        <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-4">What You Get</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold text-slate-700 dark:text-slate-300 mb-2">Design Files</h4>
+                                <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1">
+                                    <li>• Complete schematics and PCB layouts</li>
+                                    <li>• 3D models and mechanical drawings</li>
+                                    <li>• Full source code and documentation</li>
+                                    <li>• Bill of materials with suppliers</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-700 dark:text-slate-300 mb-2">Production Support</h4>
+                                <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1">
+                                    <li>• Manufacturing assembly drawings</li>
+                                    <li>• Test procedures and fixtures</li>
+                                    <li>• Compliance documentation</li>
+                                    <li>• Supplier contact information</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <PrimaryArrowButton href="/quote?service=product-development">Start Your Product</PrimaryArrowButton>
+                    </div>
                 </div>
             </div>
 
             <!-- Testing & Documentation -->
             <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-10 mb-16 border-2 border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-orange-500/20 dark:hover:shadow-none hover:border-orange-500 dark:hover:border-orange-400 hover:scale-[1.01] transition-all duration-500">
-                <div class="max-w-4xl mx-auto text-center">
-                    <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4">Testing & Documentation</h2>
-                    <p class="text-lg text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
-                        Your product works but you need to prove it meets safety standards. We run pre-compliance EMC testing, safety validation, write the reports, and get everything documented for regulatory submissions.
-                    </p>
-                    <p class="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
-                        <strong>Good for:</strong> Medical device compliance (IEC 60601), pre-compliance EMC testing, safety documentation, and getting ready for regulatory review.
-                    </p>
-                    <p class="text-sm text-slate-500 dark:text-slate-500 mb-8">
-                        <strong>Timeline:</strong> 2-6 weeks • <strong>Start time:</strong> 1-2 weeks
-                    </p>
-                    <PrimaryArrowButton href="/quote?service=testing-documentation">Get Support</PrimaryArrowButton>
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4">Testing & Documentation</h2>
+                        <p class="text-lg text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+                            Pre-compliance testing and documentation for regulatory submissions.
+                        </p>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-4">Testing Services</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                                    <div>
+                                        <p class="font-medium text-slate-700 dark:text-slate-300">EMC Pre-compliance</p>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400">Conducted and radiated emissions, immunity testing</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                                    <div>
+                                        <p class="font-medium text-slate-700 dark:text-slate-300">Safety Validation</p>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400">IEC 60601 medical device safety testing</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                                    <div>
+                                        <p class="font-medium text-slate-700 dark:text-slate-300">Environmental Testing</p>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400">Temperature cycling, humidity, vibration tests</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                                    <div>
+                                        <p class="font-medium text-slate-700 dark:text-slate-300">Functional Testing</p>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400">Design verification, performance validation</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-4">Documentation</h3>
+                            <div class="space-y-3">
+                                <div class="bg-white dark:bg-slate-900 rounded-lg p-4 border-2 border-slate-200 dark:border-slate-700">
+                                    <p class="font-medium text-slate-700 dark:text-slate-300 mb-1">Test Reports</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Detailed results for regulatory submission</p>
+                                </div>
+                                <div class="bg-white dark:bg-slate-900 rounded-lg p-4 border-2 border-slate-200 dark:border-slate-700">
+                                    <p class="font-medium text-slate-700 dark:text-slate-300 mb-1">Risk Analysis</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">ISO 14971 risk management documentation</p>
+                                </div>
+                                <div class="bg-white dark:bg-slate-900 rounded-lg p-4 border-2 border-slate-200 dark:border-slate-700">
+                                    <p class="font-medium text-slate-700 dark:text-slate-300 mb-1">Design Files</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Technical documentation package</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <PrimaryArrowButton href="/quote?service=testing-documentation">Get Compliance Support</PrimaryArrowButton>
+                    </div>
                 </div>
             </div>
 
@@ -72,7 +236,7 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
                 <div class="max-w-4xl mx-auto text-center">
                     <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4">Pricing</h2>
                     <p class="text-lg text-slate-600 dark:text-slate-300 mb-12 leading-relaxed">
-                        Three pricing models to fit your project needs.
+                        Fixed price, hourly, or retainer.
                     </p>
                     
                     <div class="grid gap-6 md:grid-cols-3">
@@ -81,19 +245,19 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
                             <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 group-hover:text-orange-500 dark:group-hover:text-orange-400 mb-3 transition-colors duration-300">Fixed Price</h3>
                             <div class="text-3xl font-black text-slate-800 dark:text-slate-100 group-hover:text-orange-500 dark:group-hover:text-orange-400 mb-4 transition-colors duration-300">$2,500+</div>
                             <p class="text-slate-600 dark:text-slate-300 mb-3 leading-relaxed text-sm">
-                                Price based on project scope, timeline, and complexity. No surprise billing.
+                                Quoted per project scope.
                             </p>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Most common for defined projects</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Most common</p>
                         </div>
 
                         <!-- Hourly -->
                         <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 border-2 border-orange-500 dark:border-orange-400 hover:scale-[1.03] hover:shadow-2xl hover:shadow-orange-500/40 hover:border-orange-600 dark:hover:border-orange-300 transition-all duration-400 group">
                             <h3 class="text-xl font-bold text-orange-600 dark:text-orange-400 group-hover:text-orange-700 dark:group-hover:text-orange-300 mb-3 transition-colors duration-300">Hourly</h3>
-                            <div class="text-3xl font-black text-orange-600 dark:text-orange-400 group-hover:text-orange-700 dark:group-hover:text-orange-300 mb-4 transition-colors duration-300">$125 - $175/hr</div>
+                            <div class="text-3xl font-black text-orange-600 dark:text-orange-400 group-hover:text-orange-700 dark:group-hover:text-orange-300 mb-4 transition-colors duration-300">$150/hr</div>
                             <p class="text-slate-600 dark:text-slate-300 mb-3 leading-relaxed text-sm">
-                                For consulting, troubleshooting, and design reviews.
+                                Consulting and troubleshooting.
                             </p>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Senior engineer rates</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Minimum 4 hours</p>
                         </div>
 
                         <!-- Retainers -->
@@ -101,9 +265,109 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
                             <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 group-hover:text-orange-500 dark:group-hover:text-orange-400 mb-3 transition-colors duration-300">Retainers</h3>
                             <div class="text-3xl font-black text-slate-800 dark:text-slate-100 group-hover:text-orange-500 dark:group-hover:text-orange-400 mb-4 transition-colors duration-300">Available</div>
                             <p class="text-slate-600 dark:text-slate-300 mb-3 leading-relaxed text-sm">
-                                Monthly retainer for ongoing support and priority access.
+                                Ongoing support.
                             </p>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">For long-term partnerships</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Long-term projects</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Discounts Section -->
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-10 mb-16 border-2 border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-orange-500/20 dark:hover:shadow-none hover:border-orange-500 dark:hover:border-orange-400 hover:scale-[1.01] transition-all duration-500">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-4">Discounts & Incentives</h2>
+                        <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                            We offer several ways to reduce project costs for qualifying clients.
+                        </p>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                        <!-- Volume Discounts -->
+                        <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-8 border-2 border-slate-200 dark:border-slate-700">
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-6">Project Size Discounts</h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center p-4 bg-white dark:bg-slate-900 rounded-lg border-2 border-slate-200 dark:border-slate-700">
+                                    <div>
+                                        <p class="font-medium text-slate-700 dark:text-slate-300">$25k - $50k projects</p>
+                                        <p class="text-sm text-slate-500 dark:text-slate-500">Medium complexity projects</p>
+                                    </div>
+                                    <div class="text-xl font-bold text-green-600 dark:text-green-400">5% off</div>
+                                </div>
+                                <div class="flex justify-between items-center p-4 bg-white dark:bg-slate-900 rounded-lg border-2 border-slate-200 dark:border-slate-700">
+                                    <div>
+                                        <p class="font-medium text-slate-700 dark:text-slate-300">$50k - $100k projects</p>
+                                        <p class="text-sm text-slate-500 dark:text-slate-500">Large development projects</p>
+                                    </div>
+                                    <div class="text-xl font-bold text-green-600 dark:text-green-400">8% off</div>
+                                </div>
+                                <div class="flex justify-between items-center p-4 bg-white dark:bg-slate-900 rounded-lg border-2 border-green-200 dark:border-green-700">
+                                    <div>
+                                        <p class="font-medium text-slate-700 dark:text-slate-300">$100k+ projects</p>
+                                        <p class="text-sm text-slate-500 dark:text-slate-500">Multi-phase or complex systems</p>
+                                    </div>
+                                    <div class="text-xl font-bold text-green-600 dark:text-green-400">12% off</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Early Payment & Loyalty -->
+                        <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-8 border-2 border-slate-200 dark:border-slate-700">
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-6">Additional Savings</h3>
+                            <div class="space-y-4">
+                                <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border-2 border-slate-200 dark:border-slate-700">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <p class="font-medium text-slate-700 dark:text-slate-300">Early Payment</p>
+                                        <div class="text-lg font-bold text-blue-600 dark:text-blue-400">2% off</div>
+                                    </div>
+                                    <p class="text-sm text-slate-500 dark:text-slate-500">Payment within 10 days of invoice</p>
+                                </div>
+                                <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border-2 border-slate-200 dark:border-slate-700">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <p class="font-medium text-slate-700 dark:text-slate-300">Repeat Client</p>
+                                        <div class="text-lg font-bold text-blue-600 dark:text-blue-400">5% off</div>
+                                    </div>
+                                    <p class="text-sm text-slate-500 dark:text-slate-500">Second project within 12 months</p>
+                                </div>
+                                <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border-2 border-orange-200 dark:border-orange-700">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <p class="font-medium text-slate-700 dark:text-slate-300">Startup Discount</p>
+                                        <div class="text-lg font-bold text-orange-600 dark:text-orange-400">15% off</div>
+                                    </div>
+                                    <p class="text-sm text-slate-500 dark:text-slate-500">Pre-revenue startups, first $15k only</p>
+                                </div>
+                                <div class="p-4 bg-white dark:bg-slate-900 rounded-lg border-2 border-purple-200 dark:border-purple-700">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <p class="font-medium text-slate-700 dark:text-slate-300">Academic/Non-profit</p>
+                                        <div class="text-lg font-bold text-purple-600 dark:text-purple-400">10% off</div>
+                                    </div>
+                                    <p class="text-sm text-slate-500 dark:text-slate-500">Universities and qualified non-profits</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Discount Terms -->
+                    <div class="bg-gradient-to-r from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-700 rounded-xl p-6 border-2 border-slate-200 dark:border-slate-700">
+                        <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-4">Discount Terms</h3>
+                        <div class="grid md:grid-cols-2 gap-6 text-sm text-slate-600 dark:text-slate-400">
+                            <div>
+                                <ul class="space-y-2">
+                                    <li>• Volume discounts apply to total project value</li>
+                                    <li>• Early payment discount on individual invoices</li>
+                                    <li>• Startup discount requires verification of funding status</li>
+                                    <li>• Academic discount requires .edu email or documentation</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul class="space-y-2">
+                                    <li>• Discounts cannot be combined (highest applies)</li>
+                                    <li>• Volume pricing determined at project start</li>
+                                    <li>• Rush projects may have surcharges</li>
+                                    <li>• Contact us for multi-year agreements</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -111,9 +375,9 @@ import PrimaryArrowButton from "../components/buttons/PrimaryArrowButton.astro";
 
             <!-- Contact CTA -->
             <div class="bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-10 text-center text-white border-2 border-orange-500 shadow-2xl hover:shadow-orange-500/40 hover:scale-[1.01] hover:from-orange-600 hover:to-orange-700 transition-all duration-500 group mt-16">
-                <h2 class="text-3xl font-bold mb-4">Ready to Start Your Project?</h2>
+                <h2 class="text-3xl font-bold mb-4">Get Started</h2>
                 <p class="text-lg mb-8 opacity-95">
-                    Talk directly with a senior engineer about your requirements.
+                    Schedule a technical consultation.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6 max-w-md mx-auto">
                     <a href="/quote" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-white to-gray-100 text-orange-600 font-bold rounded-xl hover:from-gray-100 hover:to-white hover:scale-105 shadow-lg transition-all duration-200 border-2 border-orange-200">
