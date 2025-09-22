@@ -93,7 +93,7 @@ draft: false
 | **Certification costs** | +$8-20k | FCC, CE, carrier approvals |
 | **Maintenance/support** | +$6-15k/year | Post-deployment updates, bug fixes |
 
-## Step 4: Reality Check - Code Reuse Changes Everything
+## Step 4: Code Reuse Changes Everything
 
 Modern firmware development relies heavily on existing code:
 - Vendor SDKs (Nordic, ST, TI)

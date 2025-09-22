@@ -35,27 +35,30 @@ import Layout from "../layouts/Layout.astro";
     }
     </script>
 
-    <div class="pt-16 bg-white">
+    <div class="pt-16 bg-gray-50">
       <Container>
-        <article class="max-w-4xl px-4 py-16 mx-auto">
+        <article class="max-w-6xl px-4 py-16 mx-auto">
 
-            <!-- Hero -->
-            <header class="text-center mb-20">
-                <h1 class="text-5xl font-light mb-6 text-gray-900">Regulatory Engineering</h1>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            <!-- Hero Section -->
+            <div class="text-center mb-16">
+                <h1 class="text-4xl font-light text-gray-900 sm:text-5xl lg:text-6xl lg:leading-tight tracking-tight">
+                    Regulatory Engineering
+                </h1>
+                <p class="mt-8 text-xl text-gray-600 leading-relaxed font-light max-w-3xl mx-auto">
                     We develop hardware and software for biomedical, industrial, and robotic applications—with regulatory expertise when you need it.
                 </p>
-            </header>
+            </div>
 
             <!-- What We Do -->
-            <section class="mb-20">
-                <h2 class="text-3xl font-light text-center mb-12">What We Do</h2>
+            <section class="relative mb-16">
+              <div class="bg-white rounded-2xl p-12 shadow-sm border border-gray-100">
+                <h2 class="text-4xl font-light text-gray-900 mb-12 text-center tracking-tight">What We Do</h2>
                 <p class="text-lg text-gray-700 text-center mb-12 max-w-2xl mx-auto">
                     Hardware and software development for biomedical, industrial, and robotic applications. Regulatory compliance when required.
                 </p>
 
                 <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-gray-50 rounded-xl p-8">
+                    <div class="bg-white rounded-xl p-8 border border-gray-100">
                         <h3 class="text-xl font-semibold mb-4">Hardware & Firmware</h3>
                         <ul class="space-y-2 text-gray-700">
                             <li>• Medical-grade component selection</li>
@@ -65,7 +68,7 @@ import Layout from "../layouts/Layout.astro";
                         </ul>
                     </div>
 
-                    <div class="bg-gray-50 rounded-xl p-8">
+                    <div class="bg-white rounded-xl p-8 border border-gray-100">
                         <h3 class="text-xl font-semibold mb-4">Regulatory Compliance</h3>
                         <ul class="space-y-2 text-gray-700">
                             <li>• FDA, CE, and safety standards</li>
@@ -75,11 +78,13 @@ import Layout from "../layouts/Layout.astro";
                         </ul>
                     </div>
                 </div>
+              </div>
             </section>
 
             <!-- Industries -->
-            <section class="mb-20">
-                <h2 class="text-3xl font-light text-center mb-12">Industries</h2>
+            <section class="relative mb-16">
+              <div class="bg-white rounded-2xl p-12 shadow-sm border border-gray-100">
+                <h2 class="text-4xl font-light text-gray-900 mb-12 text-center tracking-tight">Industries</h2>
                 <div class="grid md:grid-cols-3 gap-6">
                     <div class="text-center">
                         <h3 class="font-semibold mb-2">Biomedical Devices</h3>
@@ -94,13 +99,15 @@ import Layout from "../layouts/Layout.astro";
                         <p class="text-gray-600">Research-grade data acquisition</p>
                     </div>
                 </div>
+              </div>
             </section>
 
             <!-- Team -->
-            <section class="mb-20">
-                <h2 class="text-3xl font-light text-center mb-12">Team</h2>
+            <section class="relative mb-16">
+              <div class="bg-white rounded-2xl p-12 shadow-sm border border-gray-100">
+                <h2 class="text-4xl font-light text-gray-900 mb-12 text-center tracking-tight">Team</h2>
                 <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-blue-50 rounded-xl p-8">
+                    <div class="bg-white rounded-xl p-8 border border-gray-100">
                         <h3 class="text-xl font-semibold mb-4">Engineering Team</h3>
                         <div class="space-y-3">
                             <div class="flex justify-between">
@@ -122,7 +129,7 @@ import Layout from "../layouts/Layout.astro";
                         </div>
                     </div>
 
-                    <div class="bg-green-50 rounded-xl p-8">
+                    <div class="bg-white rounded-xl p-8 border border-gray-100">
                         <h3 class="text-xl font-semibold mb-4">Standards & Risk</h3>
                         <div class="space-y-4">
                             <div>
@@ -144,13 +151,15 @@ import Layout from "../layouts/Layout.astro";
                         </div>
                     </div>
                 </div>
+              </div>
             </section>
 
             <!-- Recent Projects -->
-            <section class="mb-20">
-                <h2 class="text-3xl font-light text-center mb-12">Recent Projects</h2>
+            <section class="relative mb-16">
+              <div class="bg-white rounded-2xl p-12 shadow-sm border border-gray-100">
+                <h2 class="text-4xl font-light text-gray-900 mb-12 text-center tracking-tight">Recent Projects</h2>
                 <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                    <div class="bg-white border border-gray-100 rounded-xl p-6">
                         <div class="flex justify-between items-start mb-3">
                             <h3 class="font-semibold">Medical Device EMC</h3>
                             <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Medical</span>
@@ -162,7 +171,7 @@ import Layout from "../layouts/Layout.astro";
                         </div>
                     </div>
 
-                    <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                    <div class="bg-white border border-gray-100 rounded-xl p-6">
                         <div class="flex justify-between items-start mb-3">
                             <h3 class="font-semibold">Gravitometer Modernization</h3>
                             <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Research</span>
@@ -174,7 +183,7 @@ import Layout from "../layouts/Layout.astro";
                         </div>
                     </div>
 
-                    <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                    <div class="bg-white border border-gray-100 rounded-xl p-6">
                         <div class="flex justify-between items-start mb-3">
                             <h3 class="font-semibold">Industrial IoT Safety</h3>
                             <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Industrial</span>
@@ -186,11 +195,13 @@ import Layout from "../layouts/Layout.astro";
                         </div>
                     </div>
                 </div>
+              </div>
             </section>
 
             <!-- How We Work -->
-            <section class="mb-20">
-                <h2 class="text-3xl font-light text-center mb-12">How We Work</h2>
+            <section class="relative mb-16">
+              <div class="bg-white rounded-2xl p-12 shadow-sm border border-gray-100">
+                <h2 class="text-4xl font-light text-gray-900 mb-12 text-center tracking-tight">How We Work</h2>
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="text-center">
                         <h3 class="font-semibold mb-4">Process</h3>
@@ -223,7 +234,7 @@ import Layout from "../layouts/Layout.astro";
                     </div>
                 </div>
 
-                <div class="bg-orange-50 border border-orange-200 rounded-xl p-8 mt-12 text-center">
+                <div class="bg-white border border-gray-100 rounded-xl p-8 mt-12 text-center">
                     <h3 class="font-semibold mb-4">Typical Timeline: 3-4 months</h3>
                     <div class="grid md:grid-cols-3 gap-6 text-sm">
                         <div>
@@ -240,14 +251,16 @@ import Layout from "../layouts/Layout.astro";
                         </div>
                     </div>
                 </div>
+              </div>
             </section>
 
             <!-- When You Need Us -->
-            <section class="mb-20">
-                <h2 class="text-3xl font-light text-center mb-12">When You Need Us</h2>
+            <section class="relative mb-16">
+              <div class="bg-white rounded-2xl p-12 shadow-sm border border-gray-100">
+                <h2 class="text-4xl font-light text-gray-900 mb-12 text-center tracking-tight">When You Need Us</h2>
 
                 <!-- Critical Situations -->
-                <div class="bg-red-50 border border-red-200 rounded-xl p-8 mb-8">
+                <div class="bg-white border border-gray-100 rounded-xl p-8 mb-8">
                     <h3 class="font-semibold mb-4 text-red-900">Critical Situations (Call Immediately)</h3>
                     <div class="grid md:grid-cols-2 gap-6">
                         <ul class="space-y-3 text-sm text-gray-700">
@@ -267,7 +280,7 @@ import Layout from "../layouts/Layout.astro";
 
                 <!-- Planning Situations -->
                 <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-green-50 border border-green-200 rounded-xl p-8">
+                    <div class="bg-white border border-gray-100 rounded-xl p-8">
                         <h3 class="font-semibold mb-4 text-green-900">Planning Ahead (Smart Move)</h3>
                         <ul class="space-y-2 text-sm text-gray-700">
                             <li>• Starting a new FDA Class II/III medical device</li>
@@ -279,7 +292,7 @@ import Layout from "../layouts/Layout.astro";
                         </ul>
                     </div>
 
-                    <div class="bg-orange-50 border border-orange-200 rounded-xl p-8">
+                    <div class="bg-white border border-gray-100 rounded-xl p-8">
                         <h3 class="font-semibold mb-4 text-orange-900">We're Not Your Solution</h3>
                         <ul class="space-y-2 text-sm text-gray-700">
                             <li>• Simple consumer electronics projects under $25K</li>
@@ -292,9 +305,9 @@ import Layout from "../layouts/Layout.astro";
                     </div>
                 </div>
 
-                <!-- Cost Reality Check -->
-                <div class="bg-blue-50 border border-blue-200 rounded-xl p-8 mt-8 text-center">
-                    <h3 class="font-semibold mb-4 text-blue-900">Cost Reality Check</h3>
+                <!-- Project Investment -->
+                <div class="bg-white border border-gray-100 rounded-xl p-8 mt-8 text-center">
+                    <h3 class="font-semibold mb-4 text-blue-900">Project Investment</h3>
                     <div class="grid md:grid-cols-3 gap-6 text-sm">
                         <div>
                             <div class="font-semibold text-blue-600 text-lg">$50K+</div>
@@ -310,21 +323,23 @@ import Layout from "../layouts/Layout.astro";
                         </div>
                     </div>
                 </div>
+              </div>
             </section>
 
             <!-- Contact -->
-            <section class="text-center bg-gray-50 rounded-xl p-12">
-                <h2 class="text-3xl font-light mb-6">Contact</h2>
+            <section class="relative">
+              <div class="bg-white rounded-2xl p-12 text-center shadow-sm border border-gray-100">
+                <h2 class="text-4xl font-light text-gray-900 mb-6 tracking-tight">Contact</h2>
                 <p class="text-gray-700 mb-8">Direct access to engineers.</p>
 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="/rfq" class="px-8 py-3 bg-orange-600 text-white font-semibold rounded-full hover:bg-orange-700 transition-colors">
+                    <a href="/quote" class="px-12 py-4 bg-white border border-gray-300 text-gray-900 font-semibold rounded-full hover:bg-gray-50 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-gray-400 shadow-sm hover:shadow-md transition-all duration-200">
                         Get a Quote
                     </a>
-                    <a href="https://cal.com/crablabsllc/consultation" class="px-8 py-3 bg-white border border-gray-300 text-gray-900 font-semibold rounded-full hover:bg-gray-50 transition-colors">
+                    <a href="https://cal.com/crablabsllc/consultation" class="px-12 py-4 bg-gradient-to-r from-orange-600 to-orange-700 text-white font-semibold rounded-full hover:from-orange-700 hover:to-orange-800 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-orange-400 shadow-md transition-all duration-200">
                         Schedule Consultation
                     </a>
-                    <a href="tel:+14242715569" class="px-8 py-3 bg-white border border-gray-300 text-gray-900 font-semibold rounded-full hover:bg-gray-50 transition-colors">
+                    <a href="tel:+14242715569" class="px-12 py-4 bg-white border border-gray-300 text-gray-900 font-semibold rounded-full hover:bg-gray-50 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-gray-400 shadow-sm hover:shadow-md transition-all duration-200">
                         Call (424) 271-5569
                     </a>
                 </div>
@@ -332,6 +347,7 @@ import Layout from "../layouts/Layout.astro";
                 <p class="text-gray-500 mt-6 text-sm">
                     Long Beach, CA • Response within 24 hours
                 </p>
+              </div>
             </section>
 
         </article>

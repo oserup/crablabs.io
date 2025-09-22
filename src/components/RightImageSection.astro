@@ -38,13 +38,13 @@ interface Props {
   <div>
     <!-- Title of the section -->
     <h2
-      class="mb-4 text-balance text-4xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200"
+      class="mb-4 text-balance text-4xl font-extrabold tracking-tight text-gray-800"
     >
       {title}
     </h2>
     <!-- Subtitle of the section -->
     <p
-      class="mb-4 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-lg"
+      class="mb-4 max-w-prose text-pretty font-light text-gray-600 sm:text-lg"
     >
       {subTitle}
     </p>
@@ -54,7 +54,7 @@ interface Props {
           <ul class="space-y-1 sm:space-y-2">
               {content.map((item) => (
                   <li class="flex space-x-2">
-                      <span class="mb-4 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-lg">
+                      <span class="mb-4 max-w-prose text-pretty font-light text-gray-600 sm:text-lg">
                           {item}
                       </span>
                   </li>

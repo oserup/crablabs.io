@@ -26,13 +26,15 @@ function formatDate(date: Date) {
 ---
 
 <Layout title={`${post.data.title} | Crab Labs Blog`}>
-  <Container>
-    <article class="py-12 md:py-20">
+  <div class="pt-16 bg-gray-50">
+    <Container>
+      <div class="max-w-6xl px-4 py-16 mx-auto">
+        <article class="bg-white rounded-2xl p-12 shadow-sm border border-gray-100">
       <div class="max-w-4xl mx-auto">
         <!-- Back Navigation -->
         <div class="mb-10">
-          <a href="/blog" class="inline-flex items-center text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-300 font-medium transition-all duration-200 group">
-            <svg class="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <a href="/blog" class="inline-flex items-center text-orange-500 hover:text-orange-600  font-medium transition-all duration-200 group">
+            <svg class="w-5 h-5 mr-2 transform " fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
             </svg>
             Back to All Posts
@@ -51,17 +53,17 @@ function formatDate(date: Date) {
           )}
           
           <!-- Title -->
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
+          <h1 class="text-4xl font-light text-gray-900 mb-6 text-center tracking-tight">
             {post.data.title}
           </h1>
-          
+
           <!-- Description -->
-          <p class="text-xl text-slate-700 dark:text-slate-300 mb-8 leading-relaxed">
+          <p class="text-lg text-gray-600 mb-8 leading-relaxed text-center">
             {post.data.description}
           </p>
           
           <!-- Meta Information -->
-          <div class="flex flex-wrap items-center gap-6 text-base text-slate-600 dark:text-slate-400 pb-8 border-b-2 border-slate-200 dark:border-slate-700">
+          <div class="flex flex-wrap items-center gap-6 text-base text-gray-600  pb-8 border-b-2 border-gray-200 ">
             <div class="flex items-center">
               <svg class="w-5 h-5 mr-2 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -92,7 +94,7 @@ function formatDate(date: Date) {
           {post.data.tags.length > 0 && (
             <div class="flex flex-wrap gap-3 mt-6">
               {post.data.tags.map((tag: string) => (
-                <span class="px-4 py-2 text-sm font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-orange-100 dark:hover:bg-orange-900/20 hover:text-orange-600 dark:hover:text-orange-400 transition-colors cursor-pointer">
+                <span class="px-4 py-2 text-sm font-medium bg-gray-100  text-gray-700  rounded-lg hover:bg-orange-100  hover:text-orange-600  transition-colors cursor-pointer">
                   #{tag}
                 </span>
               ))}
@@ -107,7 +109,7 @@ function formatDate(date: Date) {
               <img 
                 src={post.data.heroImage} 
                 alt={post.data.title}
-                class="w-full h-auto max-h-[400px] object-contain rounded-2xl shadow-2xl bg-white dark:bg-slate-800 p-8"
+                class="w-full h-auto max-h-[400px] object-contain rounded-2xl shadow-2xl bg-white  p-8"
               />
             </div>
           </div>
@@ -118,35 +120,35 @@ function formatDate(date: Date) {
 
         <!-- Article Content -->
         <div class="max-w-none">
-          <div class="prose prose-lg prose-invert max-w-4xl mx-auto
-                      prose-headings:text-white prose-headings:font-bold
-                      prose-h1:text-3xl prose-h1:mb-6 prose-h1:mt-8
-                      prose-h2:text-2xl prose-h2:mb-6 prose-h2:mt-12 prose-h2:border-l-4 prose-h2:border-orange-400 prose-h2:pl-4
-                      prose-h3:text-xl prose-h3:mb-4 prose-h3:mt-8 prose-h3:text-orange-200 prose-h3:border-b prose-h3:border-orange-500/30 prose-h3:pb-2
-                      prose-h4:text-lg prose-h4:mb-3 prose-h4:mt-6 prose-h4:text-orange-300 prose-h4:font-semibold
-                      prose-p:text-slate-100 prose-p:leading-relaxed prose-p:mb-5
-                      prose-p:first-of-type:text-xl prose-p:first-of-type:font-medium prose-p:first-of-type:mb-8 prose-p:first-of-type:text-slate-200
-                      prose-li:text-slate-100 prose-li:mb-2 prose-li:leading-relaxed
+          <div class="prose prose-lg max-w-4xl mx-auto
+                      prose-headings:text-gray-900 prose-headings:font-light
+                      prose-h1:text-3xl prose-h1:mb-6 prose-h1:mt-8 prose-h1:tracking-tight
+                      prose-h2:text-2xl prose-h2:mb-6 prose-h2:mt-12 prose-h2:border-l-4 prose-h2:border-orange-600 prose-h2:pl-4 prose-h2:tracking-tight
+                      prose-h3:text-xl prose-h3:mb-4 prose-h3:mt-8 prose-h3:text-gray-900 prose-h3:font-medium
+                      prose-h4:text-lg prose-h4:mb-3 prose-h4:mt-6 prose-h4:text-gray-900 prose-h4:font-medium
+                      prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6
+                      prose-p:first-of-type:text-xl prose-p:first-of-type:font-light prose-p:first-of-type:mb-8 prose-p:first-of-type:text-gray-600
+                      prose-li:text-gray-700 prose-li:mb-2 prose-li:leading-relaxed
                       prose-ul:my-6 prose-ol:my-6 prose-ul:space-y-2 prose-ol:space-y-2
-                      prose-strong:text-orange-200 prose-strong:font-bold
-                      prose-em:text-orange-300 prose-em:font-medium
-                      prose-a:text-orange-400 prose-a:underline prose-a:decoration-orange-400/60 hover:prose-a:text-orange-300 hover:prose-a:decoration-orange-300
-                      prose-code:text-orange-300 prose-code:bg-slate-800/70 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm prose-code:font-medium prose-code:border prose-code:border-orange-500/20
-                      prose-pre:bg-slate-900 prose-pre:border prose-pre:border-slate-700 prose-pre:rounded-lg prose-pre:shadow-xl
-                      prose-blockquote:border-l-4 prose-blockquote:border-orange-400 prose-blockquote:pl-6 prose-blockquote:text-orange-100 prose-blockquote:italic prose-blockquote:bg-orange-500/5 prose-blockquote:py-4 prose-blockquote:rounded-r-lg
-                      prose-img:rounded-lg prose-img:border prose-img:border-slate-600 prose-img:shadow-xl
-                      prose-table:border prose-table:border-slate-600 prose-table:rounded-lg prose-table:overflow-hidden prose-table:shadow-xl prose-table:bg-slate-800/30
-                      prose-th:bg-gradient-to-r prose-th:from-slate-700 prose-th:to-slate-600 prose-th:text-white prose-th:font-bold prose-th:px-6 prose-th:py-4
-                      prose-td:text-slate-100 prose-td:border-slate-600 prose-td:px-6 prose-td:py-4 prose-td:bg-slate-800/20
-                      prose-tr:border-slate-600 prose-tr:hover:bg-slate-700/20 prose-tr:transition-colors">
+                      prose-strong:text-gray-900 prose-strong:font-medium
+                      prose-em:text-orange-600 prose-em:font-medium
+                      prose-a:text-orange-600 prose-a:underline prose-a:decoration-orange-500/60 hover:prose-a:text-orange-700 hover:prose-a:decoration-orange-600
+                      prose-code:text-orange-700 prose-code:bg-orange-50 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm prose-code:font-medium prose-code:border prose-code:border-orange-200
+                      prose-pre:bg-gray-50 prose-pre:border prose-pre:border-gray-200 prose-pre:rounded-lg prose-pre:p-4
+                      prose-blockquote:border-l-4 prose-blockquote:border-orange-500 prose-blockquote:pl-6 prose-blockquote:text-gray-600 prose-blockquote:italic prose-blockquote:bg-orange-50 prose-blockquote:py-4 prose-blockquote:rounded-r-lg
+                      prose-img:rounded-lg prose-img:border prose-img:border-gray-200 prose-img:shadow-sm
+                      prose-table:border prose-table:border-gray-200 prose-table:rounded-lg prose-table:overflow-hidden prose-table:shadow-sm prose-table:bg-white
+                      prose-th:bg-gray-50 prose-th:text-gray-900 prose-th:font-medium prose-th:px-6 prose-th:py-4
+                      prose-td:text-gray-700 prose-td:border-gray-200 prose-td:px-6 prose-td:py-4 prose-td:bg-white">
             <Content />
           </div>
         </div>
 
       </div>
-    </article>
-
-  </Container>
+        </article>
+      </div>
+    </Container>
+  </div>
 </Layout>
 
 <style>

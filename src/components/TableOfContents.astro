@@ -14,54 +14,54 @@ const tocHeadings = headings.filter(heading => heading.depth <= 3);
 ---
 
 {tocHeadings.length > 3 && (
-  <div class="mb-12 bg-gradient-to-br from-slate-900/60 to-slate-800/60 backdrop-blur-sm rounded-2xl border-2 border-slate-700/50 shadow-2xl overflow-hidden">
-    <button 
+  <div class="mb-12 bg-white border border-gray-200 rounded-2xl shadow-lg overflow-hidden">
+    <button
       id="toc-toggle"
-      class="w-full text-left p-6 pb-3 flex items-center justify-between hover:bg-slate-800/30 transition-all duration-200 group focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:ring-inset"
+      class="w-full text-left p-6 pb-3 flex items-center justify-between hover:bg-gray-50 transition-all duration-200 group focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:ring-inset"
       aria-expanded="false"
       aria-controls="toc-content"
     >
       <div class="flex items-center">
-        <div class="flex items-center justify-center w-8 h-8 bg-orange-500/20 rounded-lg mr-3">
-          <svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="flex items-center justify-center w-8 h-8 bg-orange-100 rounded-lg mr-3">
+          <svg class="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
           </svg>
         </div>
-        <span class="text-lg font-semibold text-white group-hover:text-orange-300 transition-colors">
+        <span class="text-lg font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">
           Table of Contents
         </span>
       </div>
-      <svg 
+      <svg
         id="toc-chevron"
-        class="w-5 h-5 text-slate-400 group-hover:text-orange-400 transition-all duration-300 transform flex-shrink-0"
-        fill="none" 
-        stroke="currentColor" 
+        class="w-5 h-5 text-gray-400 group-hover:text-orange-500 transition-all duration-300 transform flex-shrink-0"
+        fill="none"
+        stroke="currentColor"
         viewBox="0 0 24 24"
       >
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
       </svg>
     </button>
-    <nav 
+    <nav
       id="toc-content"
       class="px-6 pb-6 transition-all duration-300 ease-in-out overflow-hidden"
     >
-      <div class="border-t border-slate-700/50 pt-4 space-y-1">
+      <div class="border-t border-gray-200 pt-4 space-y-1">
         {tocHeadings.map((heading) => (
-          <a 
+          <a
             href={`#${heading.slug}`}
-            class={`group flex items-center py-2 px-3 rounded-lg hover:bg-slate-800/40 transition-all duration-200 border-l-2 border-transparent hover:border-orange-500/50 ${
-              heading.depth === 1 ? 'text-slate-100 font-bold text-base' :
-              heading.depth === 2 ? 'text-slate-200 font-medium text-sm ml-2' : 
-              heading.depth === 3 ? 'text-slate-300 text-sm ml-6' : 'text-slate-400 text-xs ml-8'
+            class={`group flex items-center py-2 px-3 rounded-lg hover:bg-gray-50 transition-all duration-200 border-l-2 border-transparent hover:border-orange-500/50 ${
+              heading.depth === 1 ? 'text-gray-900 font-bold text-base' :
+              heading.depth === 2 ? 'text-gray-700 font-medium text-sm ml-2' :
+              heading.depth === 3 ? 'text-gray-600 text-sm ml-6' : 'text-gray-500 text-xs ml-8'
             }`}
           >
             <span class={`flex-shrink-0 w-2 h-2 rounded-full mr-3 transition-colors ${
               heading.depth === 1 ? 'bg-orange-500' :
               heading.depth === 2 ? 'bg-orange-400' :
-              heading.depth === 3 ? 'bg-slate-400' : 'bg-slate-500'
+              heading.depth === 3 ? 'bg-gray-400' : 'bg-gray-500'
             }`}>
             </span>
-            <span class="group-hover:text-orange-300 transition-colors leading-relaxed">
+            <span class="group-hover:text-orange-600 transition-colors leading-relaxed">
               {heading.text}
             </span>
           </a>

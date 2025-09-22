@@ -8,432 +8,349 @@ const phone = "(424) 271-5569";
 const phoneHref = "tel:+14242715569";
 ---
 
-<main id="content">
-  <!-- Page Layout -->
-  <Layout title="Get Project Quote | PCB Design & Embedded Systems | Fixed Price $2.5k+ | Crab Labs">
-    <Container>
-      <div class="max-w-6xl px-4 pt-16 pb-12 mx-auto">
+<Layout title="Get Project Quote | PCB Design & Embedded Systems | Fixed Price $2.5k+ | Crab Labs">
+    <div class="pt-16 bg-gray-50">
+      <Container>
+        <div class="max-w-6xl px-4 py-16 mx-auto">
 
-        <!-- Header Section -->
-        <div class="text-center mb-12">
-          <h1 class="text-5xl font-bold text-slate-800 dark:text-slate-100 mb-6">Request Quote</h1>
-          <p class="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Get an instant estimate with our smart calculator, then submit your detailed requirements for a formal quote.
-          </p>
-        </div>
-
-        <!-- Calculator Section -->
-        <div class="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-8 mb-12 border-2 border-orange-200 dark:border-slate-600">
-          <h2 class="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-6 text-center">
-            Smart Project Calculator
-          </h2>
-
-          <!-- Project Type Selection -->
-          <div class="mb-8">
-            <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-4">Project Type</h3>
-            <div class="grid md:grid-cols-3 gap-4">
-              <label class="cursor-pointer">
-                <input type="radio" name="calc-project-type" value="consulting" class="calc-project-type sr-only"
-                       data-base-hours="15" data-description="Design review and analysis">
-                <div class="p-4 border-2 border-slate-200 dark:border-slate-600 rounded-lg hover:border-orange-500 transition-colors calc-option-card bg-white dark:bg-slate-900">
-                  <h4 class="font-bold text-slate-900 dark:text-white mb-2">Design Review & Consulting</h4>
-                  <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">Troubleshooting, design analysis, expert consultation</p>
-                  <div class="text-sm text-orange-600 font-semibold">15-50 hours typical</div>
-                </div>
-              </label>
-
-              <label class="cursor-pointer">
-                <input type="radio" name="calc-project-type" value="development" class="calc-project-type sr-only"
-                       data-base-hours="200" data-description="Complete product development">
-                <div class="p-4 border-2 border-slate-200 dark:border-slate-600 rounded-lg hover:border-orange-500 transition-colors calc-option-card bg-white dark:bg-slate-900">
-                  <h4 class="font-bold text-slate-900 dark:text-white mb-2">Product Development</h4>
-                  <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">Complete PCB design and firmware development</p>
-                  <div class="text-sm text-orange-600 font-semibold">200-500 hours typical</div>
-                </div>
-              </label>
-
-              <label class="cursor-pointer">
-                <input type="radio" name="calc-project-type" value="testing" class="calc-project-type sr-only"
-                       data-base-hours="40" data-description="Testing and documentation">
-                <div class="p-4 border-2 border-slate-200 dark:border-slate-600 rounded-lg hover:border-orange-500 transition-colors calc-option-card bg-white dark:bg-slate-900">
-                  <h4 class="font-bold text-slate-900 dark:text-white mb-2">Testing & Documentation</h4>
-                  <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">Compliance testing, validation, documentation</p>
-                  <div class="text-sm text-orange-600 font-semibold">40-120 hours typical</div>
-                </div>
-              </label>
+            <!-- Hero Section -->
+            <div class="text-center mb-16">
+                <h1 class="text-4xl font-light text-gray-900 sm:text-5xl lg:text-6xl lg:leading-tight tracking-tight">
+                    Request Quote
+                </h1>
+                <p class="mt-8 text-xl text-gray-600 leading-relaxed font-light">
+                    Submit your detailed requirements for a comprehensive project quote. We'll respond within 24 hours.
+                </p>
             </div>
-          </div>
 
-          <!-- Project Details -->
-          <div id="calc-details" style="display: none;">
-            <div class="grid md:grid-cols-2 gap-8">
 
-              <!-- Left Column -->
-              <div>
-                <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-4">Project Scope</h3>
+            <!-- RFQ Form -->
+            <section class="relative mb-16">
+              <div class="bg-white rounded-2xl p-12 shadow-sm border border-gray-100">
+                <h2 class="text-4xl font-light text-gray-900 mb-8 text-center tracking-tight">
+                  Quote Request
+                </h2>
 
-                <!-- Complexity -->
-                <div class="mb-6">
-                  <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-3">Complexity Level</label>
-                  <div class="space-y-2">
-                    <label class="flex items-center cursor-pointer">
-                      <input type="radio" name="complexity" value="simple" class="mr-3" data-multiplier="0.7">
-                      <div class="flex-1">
-                        <span class="font-medium text-slate-900 dark:text-white">Simple</span>
-                        <span class="text-sm text-slate-600 dark:text-slate-400 block">Basic I/O, single MCU, minimal processing</span>
+                <form action="https://usebasin.com/f/00c426b2708e" method="POST">
+
+                  <!-- Company & Contact Information -->
+                  <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 border-b border-gray-200 pb-2">
+                      Company & Contact Information
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <!-- Company Name -->
+                      <div>
+                        <label for="company" class="block text-sm font-medium text-gray-700 mb-2">
+                          Company Name *
+                        </label>
+                        <input
+                          type="text"
+                          name="company"
+                          id="company"
+                          class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 placeholder:text-gray-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
+                          placeholder="Your Company Name"
+                          required
+                        />
                       </div>
-                    </label>
-                    <label class="flex items-center cursor-pointer">
-                      <input type="radio" name="complexity" value="moderate" class="mr-3" data-multiplier="1.0">
-                      <div class="flex-1">
-                        <span class="font-medium text-slate-900 dark:text-white">Moderate</span>
-                        <span class="text-sm text-slate-600 dark:text-slate-400 block">Multiple sensors, communication protocols</span>
+
+                      <!-- Industry -->
+                      <div>
+                        <label for="industry" class="block text-sm font-medium text-gray-700 mb-2">
+                          Industry
+                        </label>
+                        <select
+                          name="industry"
+                          id="industry"
+                          class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
+                        >
+                          <option value="">Select Industry</option>
+                          <option value="healthcare-medical">Healthcare & Medical Devices</option>
+                          <option value="industrial-automation">Industrial Automation</option>
+                          <option value="robotics">Robotics</option>
+                          <option value="iot-connected-devices">IoT & Connected Devices</option>
+                          <option value="automotive">Automotive</option>
+                          <option value="aerospace-defense">Aerospace & Defense</option>
+                          <option value="consumer-electronics">Consumer Electronics</option>
+                          <option value="renewable-energy">Renewable Energy</option>
+                          <option value="telecommunications">Telecommunications</option>
+                          <option value="transportation">Transportation</option>
+                          <option value="other">Other</option>
+                        </select>
                       </div>
-                    </label>
-                    <label class="flex items-center cursor-pointer">
-                      <input type="radio" name="complexity" value="complex" class="mr-3" data-multiplier="1.5">
-                      <div class="flex-1">
-                        <span class="font-medium text-slate-900 dark:text-white">Complex</span>
-                        <span class="text-sm text-slate-600 dark:text-slate-400 block">High-speed signals, advanced processing, multiple protocols</span>
+
+                      <!-- Contact Name -->
+                      <div>
+                        <label for="contact-name" class="block text-sm font-medium text-gray-700 mb-2">
+                          Your Name *
+                        </label>
+                        <input
+                          type="text"
+                          name="contact-name"
+                          id="contact-name"
+                          class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 placeholder:text-gray-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
+                          placeholder="Your Full Name"
+                          required
+                        />
                       </div>
-                    </label>
+
+                      <!-- Title/Role -->
+                      <div>
+                        <label for="title" class="block text-sm font-medium text-gray-700 mb-2">
+                          Title/Role
+                        </label>
+                        <input
+                          type="text"
+                          name="title"
+                          id="title"
+                          class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 placeholder:text-gray-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
+                          placeholder="e.g., Engineering Manager, CTO"
+                        />
+                      </div>
+
+                      <!-- Email -->
+                      <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                          Email Address *
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          id="email"
+                          class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 placeholder:text-gray-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
+                          placeholder="your.email@company.com"
+                          required
+                        />
+                      </div>
+
+                      <!-- Phone -->
+                      <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+                          Phone Number
+                        </label>
+                        <input
+                          type="tel"
+                          name="phone"
+                          id="phone"
+                          class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 placeholder:text-gray-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
+                          placeholder="(555) 123-4567"
+                        />
+                      </div>
+                    </div>
                   </div>
-                </div>
 
-                <!-- PCB Layers -->
-                <div class="mb-6">
-                  <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-3">PCB Layers</label>
-                  <select name="pcb-layers" class="w-full p-3 border-2 border-slate-200 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white">
-                    <option value="2" data-hours="0">2 Layer (+0 hrs)</option>
-                    <option value="4" data-hours="15">4 Layer (+15 hrs)</option>
-                    <option value="6" data-hours="25">6 Layer (+25 hrs)</option>
-                    <option value="8" data-hours="40">8+ Layer (+40 hrs)</option>
-                  </select>
-                </div>
+                  <!-- Project Information -->
+                  <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 border-b border-gray-200 pb-2">
+                      Project Information
+                    </h3>
 
-                <!-- Component Count -->
-                <div class="mb-6">
-                  <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-3">Approximate Component Count</label>
-                  <select name="component-count" class="w-full p-3 border-2 border-slate-200 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white">
-                    <option value="50" data-hours="0">Under 50 components (+0 hrs)</option>
-                    <option value="100" data-hours="20">50-100 components (+20 hrs)</option>
-                    <option value="200" data-hours="40">100-200 components (+40 hrs)</option>
-                    <option value="300" data-hours="70">200+ components (+70 hrs)</option>
-                  </select>
-                </div>
+                    <!-- Project Type -->
+                    <div class="mb-4">
+                      <label for="project-type" class="block text-sm font-medium text-gray-700 mb-2">
+                        Project Type *
+                      </label>
+                      <select
+                        name="project-type"
+                        id="project-type"
+                        class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
+                        required
+                      >
+                        <option value="">Select Project Type</option>
+                        <option value="design-review">Design Review & Consulting</option>
+                        <option value="pcb-design">PCB Design Only</option>
+                        <option value="firmware-only">Firmware Development Only</option>
+                        <option value="complete-development">Complete Product Development</option>
+                        <option value="testing-validation">Testing & Validation</option>
+                        <option value="compliance">Compliance & Documentation</option>
+                        <option value="troubleshooting">Troubleshooting Existing Design</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+
+                    <!-- Project Description -->
+                    <div class="mb-4">
+                      <label for="project-description" class="block text-sm font-medium text-gray-700 mb-2">
+                        Project Description *
+                      </label>
+                      <textarea
+                        name="project-description"
+                        id="project-description"
+                        rows="4"
+                        class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 placeholder:text-gray-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
+                        placeholder="Describe your project, what problem it solves, key requirements..."
+                        required
+                      ></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <!-- Budget Range -->
+                      <div>
+                        <label for="budget" class="block text-sm font-medium text-gray-700 mb-2">
+                          Budget Range
+                        </label>
+                        <select
+                          name="budget"
+                          id="budget"
+                          class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
+                        >
+                          <option value="">Select Budget Range</option>
+                          <option value="under-5k">Under $5,000</option>
+                          <option value="5k-10k">$5,000 - $10,000</option>
+                          <option value="10k-25k">$10,000 - $25,000</option>
+                          <option value="25k-50k">$25,000 - $50,000</option>
+                          <option value="50k-100k">$50,000 - $100,000</option>
+                          <option value="over-100k">Over $100,000</option>
+                          <option value="discuss">Prefer to discuss</option>
+                        </select>
+                      </div>
+
+                      <!-- Timeline -->
+                      <div>
+                        <label for="timeline" class="block text-sm font-medium text-gray-700 mb-2">
+                          Target Timeline
+                        </label>
+                        <select
+                          name="timeline"
+                          id="timeline"
+                          class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
+                        >
+                          <option value="">Select Timeline</option>
+                          <option value="asap">ASAP (Rush job)</option>
+                          <option value="1month">1 month</option>
+                          <option value="1-3months">1-3 months</option>
+                          <option value="3-6months">3-6 months</option>
+                          <option value="6months-plus">6+ months</option>
+                          <option value="flexible">Flexible</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <!-- Special Requirements (Optional) -->
+                  <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 border-b border-gray-200 pb-2">
+                      Special Requirements <span class="text-sm font-normal text-gray-500">(Optional)</span>
+                    </h3>
+
+                    <!-- Compliance Requirements -->
+                    <div class="mb-4">
+                      <label class="block text-sm font-medium text-gray-700 mb-3">
+                        Compliance Requirements <span class="text-xs text-gray-500">(Select all that apply)</span>
+                      </label>
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <label class="flex items-center cursor-pointer">
+                          <input type="checkbox" name="compliance[]" value="fcc-part15" class="mr-2">
+                          <span class="text-sm text-gray-700">FCC Part 15 (EMC)</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                          <input type="checkbox" name="compliance[]" value="ce-marking" class="mr-2">
+                          <span class="text-sm text-gray-700">CE Marking (Europe)</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                          <input type="checkbox" name="compliance[]" value="iec-60601" class="mr-2">
+                          <span class="text-sm text-gray-700">IEC 60601 (Medical)</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                          <input type="checkbox" name="compliance[]" value="iso-13485" class="mr-2">
+                          <span class="text-sm text-gray-700">ISO 13485 (Medical QMS)</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                          <input type="checkbox" name="compliance[]" value="rohs" class="mr-2">
+                          <span class="text-sm text-gray-700">RoHS Compliance</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                          <input type="checkbox" name="compliance[]" value="other-compliance" class="mr-2">
+                          <span class="text-sm text-gray-700">Other (specify in comments)</span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <!-- Environmental Requirements -->
+                      <div>
+                        <label for="environmental" class="block text-sm font-medium text-gray-700 mb-2">
+                          Environmental Requirements
+                        </label>
+                        <input
+                          type="text"
+                          name="environmental"
+                          id="environmental"
+                          class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 placeholder:text-gray-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
+                          placeholder="e.g., -40°C to +85°C, IP67, medical grade"
+                        />
+                      </div>
+
+                      <!-- Production Volume -->
+                      <div>
+                        <label for="production-volume" class="block text-sm font-medium text-gray-700 mb-2">
+                          Expected Production Volume
+                        </label>
+                        <select
+                          name="production-volume"
+                          id="production-volume"
+                          class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
+                        >
+                          <option value="">Select Volume</option>
+                          <option value="prototype">Prototype only</option>
+                          <option value="1-10">1-10 units</option>
+                          <option value="10-100">10-100 units</option>
+                          <option value="100-1000">100-1,000 units</option>
+                          <option value="1000-10000">1,000-10,000 units</option>
+                          <option value="10000+">10,000+ units</option>
+                          <option value="unknown">Not determined yet</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Additional Information -->
+                  <div class="mb-8">
+                    <label for="additional-info" class="block text-sm font-medium text-gray-700 mb-2">
+                      Additional Information
+                    </label>
+                    <textarea
+                      name="additional-info"
+                      id="additional-info"
+                      rows="3"
+                      class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 placeholder:text-gray-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
+                      placeholder="Any special requirements, constraints, or questions..."
+                    ></textarea>
+                  </div>
+
+                  <!-- Hidden Calculator Data -->
+                  <input type="hidden" name="calculator-estimate" id="calc-estimate-hidden" value="">
+
+                  <!-- Submit Button -->
+                  <div class="text-center">
+                    <button
+                      type="submit"
+                      class="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-8 py-4 text-base font-semibold text-white shadow-lg transition-all duration-200 hover:from-orange-600 hover:to-orange-700 hover:shadow-xl hover:scale-105 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
+                    >
+                      Submit Quote Request
+                      <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                      </svg>
+                    </button>
+                  </div>
+
+                  <div class="text-center mt-4">
+                    <p class="text-sm text-gray-600">
+                      We'll respond within 24 hours with a detailed proposal. Questions? Call <a href="{phoneHref}" class="text-orange-500 hover:text-orange-600 font-medium">{phone}</a>
+                    </p>
+                  </div>
+                </form>
               </div>
-
-              <!-- Right Column -->
-              <div>
-                <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-4">Additional Features</h3>
-
-                <div class="space-y-3">
-                  <label class="flex items-center cursor-pointer">
-                    <input type="checkbox" name="features" value="wireless" class="mr-3" data-hours="25">
-                    <span class="text-slate-700 dark:text-slate-300">Wireless Connectivity (BLE/WiFi/Cellular) <span class="text-orange-600">+25 hrs</span></span>
-                  </label>
-
-                  <label class="flex items-center cursor-pointer">
-                    <input type="checkbox" name="features" value="battery" class="mr-3" data-hours="15">
-                    <span class="text-slate-700 dark:text-slate-300">Battery Optimization <span class="text-orange-600">+15 hrs</span></span>
-                  </label>
-
-                  <label class="flex items-center cursor-pointer">
-                    <input type="checkbox" name="features" value="display" class="mr-3" data-hours="20">
-                    <span class="text-slate-700 dark:text-slate-300">Display/UI Implementation <span class="text-orange-600">+20 hrs</span></span>
-                  </label>
-
-                  <label class="flex items-center cursor-pointer">
-                    <input type="checkbox" name="features" value="motor-control" class="mr-3" data-hours="35">
-                    <span class="text-slate-700 dark:text-slate-300">Motor Control/Drive Circuits <span class="text-orange-600">+35 hrs</span></span>
-                  </label>
-
-                  <label class="flex items-center cursor-pointer">
-                    <input type="checkbox" name="features" value="analog-frontend" class="mr-3" data-hours="30">
-                    <span class="text-slate-700 dark:text-slate-300">Precision Analog Frontend <span class="text-orange-600">+30 hrs</span></span>
-                  </label>
-
-                  <label class="flex items-center cursor-pointer">
-                    <input type="checkbox" name="features" value="safety" class="mr-3" data-hours="50">
-                    <span class="text-slate-700 dark:text-slate-300">Safety/Medical Compliance <span class="text-orange-600">+50 hrs</span></span>
-                  </label>
-
-                  <label class="flex items-center cursor-pointer">
-                    <input type="checkbox" name="features" value="enclosure" class="mr-3" data-hours="25">
-                    <span class="text-slate-700 dark:text-slate-300">Custom Enclosure Design <span class="text-orange-600">+25 hrs</span></span>
-                  </label>
-
-                  <label class="flex items-center cursor-pointer">
-                    <input type="checkbox" name="features" value="testing" class="mr-3" data-hours="20">
-                    <span class="text-slate-700 dark:text-slate-300">Extended Testing/Validation <span class="text-orange-600">+20 hrs</span></span>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Results -->
-          <div id="calc-results" style="display: none;" class="mt-8">
-            <div class="bg-white dark:bg-slate-900 rounded-xl p-6 border-2 border-slate-200 dark:border-slate-600">
-              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4 text-center">Project Estimate</h3>
-
-              <div class="grid md:grid-cols-3 gap-6 mb-6">
-                <div class="text-center">
-                  <div class="text-2xl font-bold text-orange-600 mb-1" id="total-hours">0 hours</div>
-                  <div class="text-sm text-slate-600 dark:text-slate-400">Total Engineering Time</div>
-                  <div class="text-xs text-slate-500 dark:text-slate-500">(10% less than typical)</div>
-                </div>
-                <div class="text-center">
-                  <div class="text-2xl font-bold text-green-600 mb-1" id="total-cost">$0</div>
-                  <div class="text-sm text-slate-600 dark:text-slate-400">Engineering Cost</div>
-                  <div class="text-xs text-slate-500 dark:text-slate-500">@$140/hr</div>
-                </div>
-                <div class="text-center">
-                  <div class="text-2xl font-bold text-blue-600 mb-1" id="timeline">0 weeks</div>
-                  <div class="text-sm text-slate-600 dark:text-slate-400">Estimated Timeline</div>
-                  <div class="text-xs text-slate-500 dark:text-slate-500">Start in 1-2 weeks</div>
-                </div>
-              </div>
-
-              <div class="bg-slate-50 dark:bg-slate-800 rounded-lg p-4">
-                <h4 class="font-bold text-slate-900 dark:text-white mb-2">Estimate Includes:</h4>
-                <ul class="text-sm text-slate-700 dark:text-slate-300 space-y-1" id="included-items">
-                  <li>• Requirements analysis and feasibility study</li>
-                  <li>• Complete design and development</li>
-                  <li>• Testing and validation</li>
-                  <li>• Documentation package</li>
-                </ul>
-
-                <div class="mt-4 text-xs text-slate-600 dark:text-slate-400">
-                  <strong>Note:</strong> This excludes component costs, PCB fabrication, and assembly.
-                  Add 20-40% for complete project budget including materials.
-                </div>
-              </div>
-            </div>
-          </div>
+            </section>
         </div>
-
-        <!-- RFQ Form -->
-        <div class="bg-white dark:bg-slate-900 rounded-2xl p-10 mb-16 border-2 border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:shadow-orange-500/20 dark:hover:shadow-none hover:border-orange-500 dark:hover:border-orange-400 hover:scale-[1.01] transition-all duration-500">
-          <h2 class="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-8 text-center">
-            Detailed Quote Request
-          </h2>
-
-          <form action="https://usebasin.com/f/00c426b2708e" method="POST">
-
-            <!-- Company & Contact Information -->
-            <div class="mb-6">
-              <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2">
-                Company & Contact Information
-              </h3>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <!-- Company Name -->
-                <div>
-                  <label for="company" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                    Company Name *
-                  </label>
-                  <input
-                    type="text"
-                    name="company"
-                    id="company"
-                    class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
-                    placeholder="Your Company Name"
-                    required
-                  />
-                </div>
-
-                <!-- Industry -->
-                <div>
-                  <label for="industry" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                    Industry
-                  </label>
-                  <select
-                    name="industry"
-                    id="industry"
-                    class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
-                  >
-                    <option value="">Select Industry</option>
-                    <option value="healthcare-medical">Healthcare & Medical Devices</option>
-                    <option value="industrial-automation">Industrial Automation</option>
-                    <option value="robotics">Robotics</option>
-                    <option value="iot-connected-devices">IoT & Connected Devices</option>
-                    <option value="automotive">Automotive</option>
-                    <option value="aerospace-defense">Aerospace & Defense</option>
-                    <option value="consumer-electronics">Consumer Electronics</option>
-                    <option value="renewable-energy">Renewable Energy</option>
-                    <option value="telecommunications">Telecommunications</option>
-                    <option value="transportation">Transportation</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <!-- Contact Name -->
-                <div>
-                  <label for="contact-name" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                    Your Name *
-                  </label>
-                  <input
-                    type="text"
-                    name="contact-name"
-                    id="contact-name"
-                    class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
-                    placeholder="Your Full Name"
-                    required
-                  />
-                </div>
-
-                <!-- Title/Role -->
-                <div>
-                  <label for="title" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                    Title/Role
-                  </label>
-                  <input
-                    type="text"
-                    name="title"
-                    id="title"
-                    class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
-                    placeholder="e.g., Engineering Manager, CTO"
-                  />
-                </div>
-
-                <!-- Email -->
-                <div>
-                  <label for="email" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
-                    placeholder="your.email@company.com"
-                    required
-                  />
-                </div>
-
-                <!-- Phone -->
-                <div>
-                  <label for="phone" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    id="phone"
-                    class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
-                    placeholder="(555) 123-4567"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <!-- Project Information -->
-            <div class="mb-6">
-              <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2">
-                Project Information
-              </h3>
-
-              <!-- Project Description -->
-              <div class="mb-4">
-                <label for="project-description" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                  Project Description *
-                </label>
-                <textarea
-                  name="project-description"
-                  id="project-description"
-                  rows="4"
-                  class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
-                  placeholder="Describe your project, what problem it solves, key requirements..."
-                  required
-                ></textarea>
-              </div>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <!-- Budget Range -->
-                <div>
-                  <label for="budget" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                    Budget Range
-                  </label>
-                  <select
-                    name="budget"
-                    id="budget"
-                    class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
-                  >
-                    <option value="">Select Budget Range</option>
-                    <option value="under-10k">Under $10,000</option>
-                    <option value="10k-25k">$10,000 - $25,000</option>
-                    <option value="25k-50k">$25,000 - $50,000</option>
-                    <option value="50k-100k">$50,000 - $100,000</option>
-                    <option value="over-100k">Over $100,000</option>
-                  </select>
-                </div>
-
-                <!-- Timeline -->
-                <div>
-                  <label for="timeline" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                    Target Timeline
-                  </label>
-                  <select
-                    name="timeline"
-                    id="timeline"
-                    class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
-                  >
-                    <option value="">Select Timeline</option>
-                    <option value="asap">ASAP (Rush job)</option>
-                    <option value="1-3months">1-3 months</option>
-                    <option value="3-6months">3-6 months</option>
-                    <option value="6months-plus">6+ months</option>
-                    <option value="flexible">Flexible</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            <!-- Additional Information -->
-            <div class="mb-8">
-              <label for="additional-info" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                Additional Information
-              </label>
-              <textarea
-                name="additional-info"
-                id="additional-info"
-                rows="3"
-                class="block w-full rounded-xl border border-slate-200/50 bg-white/50 backdrop-blur-sm px-4 py-3 text-sm text-slate-700 placeholder:text-slate-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 dark:border-slate-600/50 dark:bg-neutral-700/30 dark:text-slate-300 dark:placeholder:text-slate-400 dark:focus:border-orange-400 dark:focus:ring-orange-400/20"
-                placeholder="Any special requirements, constraints, or questions..."
-              ></textarea>
-            </div>
-
-            <!-- Hidden Calculator Data -->
-            <input type="hidden" name="calculator-estimate" id="calc-estimate-hidden" value="">
-
-            <!-- Submit Button -->
-            <div class="text-center">
-              <button
-                type="submit"
-                class="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-8 py-4 text-base font-bold text-white shadow-lg transition-all duration-200 hover:from-orange-600 hover:to-orange-700 hover:shadow-xl hover:scale-105 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
-              >
-                Submit Quote Request
-                <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                </svg>
-              </button>
-            </div>
-
-            <div class="text-center mt-4">
-              <p class="text-sm text-slate-600 dark:text-slate-400">
-                We'll respond within 24 hours with a detailed proposal. Questions? Call <a href="{phoneHref}" class="text-orange-500 hover:text-orange-600 font-medium">{phone}</a>
-              </p>
-            </div>
-          </form>
-        </div>
-      </div>
-    </Container>
-  </Layout>
-</main>
+      </Container>
+    </div>
+</Layout>
 
 <style>
   .calc-option-card.selected {
-    @apply border-orange-500 bg-orange-50 dark:bg-orange-900/20;
+    @apply border-orange-500 bg-orange-50;
   }
 </style>
 

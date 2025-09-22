@@ -4,7 +4,7 @@
 
 <div 
   id="cookie-banner" 
-  class="fixed bottom-0 left-0 right-0 bg-white dark:bg-neutral-900 border-t border-gray-200 dark:border-neutral-700 shadow-lg z-50 transform translate-y-full transition-transform duration-300 ease-in-out"
+  class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 transform translate-y-full transition-transform duration-300 ease-in-out"
   style="display: none;"
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -27,7 +27,7 @@
           
           <!-- Text Content -->
           <div class="min-w-0 flex-1">
-            <p class="text-sm text-gray-800 dark:text-neutral-200 leading-relaxed">
+            <p class="text-sm text-gray-800 leading-relaxed">
               We use cookies and similar technologies to enhance your experience, analyze website traffic, and provide personalized content. 
               By continuing to use our site, you consent to our use of cookies.
               <a href="/privacy" class="text-orange-600 hover:text-orange-500 underline font-medium ml-1">Learn more</a>
@@ -40,7 +40,7 @@
       <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 flex-shrink-0">
         <button 
           id="cookie-settings-btn"
-          class="px-4 py-2 text-sm font-medium text-gray-600 dark:text-neutral-400 hover:text-gray-800 dark:hover:text-neutral-200 border border-gray-300 dark:border-neutral-600 rounded-lg hover:bg-gray-50 dark:hover:bg-neutral-800 transition-colors duration-200"
+          class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-800 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors duration-200"
         >
           Cookie Settings
         </button>
@@ -62,15 +62,15 @@
   class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
   style="display: none;"
 >
-  <div class="bg-white dark:bg-neutral-900 rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+  <div class="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
     
     <!-- Modal Header -->
-    <div class="border-b border-gray-200 dark:border-neutral-700 p-6">
+    <div class="border-b border-gray-200 p-6">
       <div class="flex items-center justify-between">
-        <h2 class="text-xl font-semibold text-gray-800 dark:text-white">Cookie Preferences</h2>
+        <h2 class="text-xl font-semibold text-gray-800">Cookie Preferences</h2>
         <button 
           id="cookie-modal-close"
-          class="text-gray-400 hover:text-gray-600 dark:hover:text-neutral-300"
+          class="text-gray-400 hover:text-gray-600"
         >
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
@@ -83,11 +83,11 @@
     <div class="p-6 space-y-6">
       
       <!-- Essential Cookies -->
-      <div class="border border-gray-200 dark:border-neutral-700 rounded-lg p-4">
+      <div class="border border-gray-200 rounded-lg p-4">
         <div class="flex items-center justify-between mb-3">
           <div>
-            <h3 class="font-medium text-gray-800 dark:text-white">Essential Cookies</h3>
-            <p class="text-sm text-gray-600 dark:text-neutral-400 mt-1">Required for basic website functionality</p>
+            <h3 class="font-medium text-gray-800">Essential Cookies</h3>
+            <p class="text-sm text-gray-600 mt-1">Required for basic website functionality</p>
           </div>
           <div class="flex items-center">
             <input 
@@ -100,17 +100,17 @@
             <label for="essential-cookies" class="ml-2 text-sm text-gray-500">Always On</label>
           </div>
         </div>
-        <p class="text-sm text-gray-600 dark:text-neutral-400">
+        <p class="text-sm text-gray-600">
           These cookies are necessary for the website to function and cannot be switched off. They include session management, security features, and basic functionality.
         </p>
       </div>
 
       <!-- Analytics Cookies -->
-      <div class="border border-gray-200 dark:border-neutral-700 rounded-lg p-4">
+      <div class="border border-gray-200 rounded-lg p-4">
         <div class="flex items-center justify-between mb-3">
           <div>
-            <h3 class="font-medium text-gray-800 dark:text-white">Analytics Cookies</h3>
-            <p class="text-sm text-gray-600 dark:text-neutral-400 mt-1">Help us understand how visitors use our website</p>
+            <h3 class="font-medium text-gray-800">Analytics Cookies</h3>
+            <p class="text-sm text-gray-600 mt-1">Help us understand how visitors use our website</p>
           </div>
           <div class="flex items-center">
             <input 
@@ -120,17 +120,17 @@
             >
           </div>
         </div>
-        <p class="text-sm text-gray-600 dark:text-neutral-400">
+        <p class="text-sm text-gray-600">
           These cookies collect information about how you use our website, such as which pages you visit and any errors you encounter. This data helps us improve our website performance.
         </p>
       </div>
 
       <!-- Marketing Cookies -->
-      <div class="border border-gray-200 dark:border-neutral-700 rounded-lg p-4">
+      <div class="border border-gray-200 rounded-lg p-4">
         <div class="flex items-center justify-between mb-3">
           <div>
-            <h3 class="font-medium text-gray-800 dark:text-white">Marketing Cookies</h3>
-            <p class="text-sm text-gray-600 dark:text-neutral-400 mt-1">Used to track visitors and display relevant ads</p>
+            <h3 class="font-medium text-gray-800">Marketing Cookies</h3>
+            <p class="text-sm text-gray-600 mt-1">Used to track visitors and display relevant ads</p>
           </div>
           <div class="flex items-center">
             <input 
@@ -140,7 +140,7 @@
             >
           </div>
         </div>
-        <p class="text-sm text-gray-600 dark:text-neutral-400">
+        <p class="text-sm text-gray-600">
           These cookies are used to make advertising messages more relevant to you and your interests. They also perform functions like preventing the same ad from appearing repeatedly.
         </p>
       </div>
@@ -148,11 +148,11 @@
     </div>
 
     <!-- Modal Footer -->
-    <div class="border-t border-gray-200 dark:border-neutral-700 p-6">
+    <div class="border-t border-gray-200 p-6">
       <div class="flex flex-col sm:flex-row gap-3 sm:justify-end">
         <button 
           id="cookie-save-preferences"
-          class="px-6 py-2 text-sm font-medium text-gray-700 dark:text-neutral-300 border border-gray-300 dark:border-neutral-600 rounded-lg hover:bg-gray-50 dark:hover:bg-neutral-800 transition-colors"
+          class="px-6 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
         >
           Save Preferences
         </button>

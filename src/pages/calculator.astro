@@ -12,43 +12,43 @@ import Container from '../components/Container.astro';
 
       <!-- Header -->
       <div class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
           PCB Project Cost Calculator
         </h1>
-        <p class="text-xl text-slate-700 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
+        <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
           Get a quick estimate for your hardware development project. This calculator provides ballpark pricing based on project complexity and scope.
         </p>
       </div>
 
       <!-- Calculator -->
       <div class="max-w-4xl mx-auto">
-        <div class="bg-white dark:bg-slate-900 rounded-2xl p-8 border-2 border-slate-200 dark:border-slate-700 shadow-lg">
+        <div class="bg-white rounded-2xl p-8 border-2 border-gray-200 shadow-lg">
 
           <!-- Project Type -->
           <div class="mb-8">
-            <label class="block text-lg font-bold text-slate-900 dark:text-white mb-4">
+            <label class="block text-lg font-bold text-gray-900 mb-4">
               Project Type
             </label>
             <div class="grid md:grid-cols-3 gap-4">
               <label class="cursor-pointer">
                 <input type="radio" name="projectType" value="simple" class="project-type sr-only">
-                <div class="p-4 border-2 border-slate-200 dark:border-slate-700 rounded-lg hover:border-orange-500 transition-colors option-card">
-                  <h3 class="font-bold text-slate-900 dark:text-white mb-2">Simple Controller</h3>
-                  <p class="text-sm text-slate-600 dark:text-slate-400">Basic I/O, simple sensors, minimal processing</p>
+                <div class="p-4 border-2 border-gray-200 rounded-lg hover:border-orange-500 transition-colors option-card">
+                  <h3 class="font-bold text-gray-900 mb-2">Simple Controller</h3>
+                  <p class="text-sm text-gray-600 I/O, simple sensors, minimal processing</p>
                 </div>
               </label>
               <label class="cursor-pointer">
                 <input type="radio" name="projectType" value="moderate" class="project-type sr-only">
-                <div class="p-4 border-2 border-slate-200 dark:border-slate-700 rounded-lg hover:border-orange-500 transition-colors option-card">
-                  <h3 class="font-bold text-slate-900 dark:text-white mb-2">Moderate Complexity</h3>
-                  <p class="text-sm text-slate-600 dark:text-slate-400">Multiple sensors, processing, communication</p>
+                <div class="p-4 border-2 border-gray-200 rounded-lg hover:border-orange-500 transition-colors option-card">
+                  <h3 class="font-bold text-gray-900 mb-2">Moderate Complexity</h3>
+                  <p class="text-sm text-gray-600 sensors, processing, communication</p>
                 </div>
               </label>
               <label class="cursor-pointer">
                 <input type="radio" name="projectType" value="complex" class="project-type sr-only">
-                <div class="p-4 border-2 border-slate-200 dark:border-slate-700 rounded-lg hover:border-orange-500 transition-colors option-card">
-                  <h3 class="font-bold text-slate-900 dark:text-white mb-2">Complex System</h3>
-                  <p class="text-sm text-slate-600 dark:text-slate-400">High-speed signals, advanced processing, multiple protocols</p>
+                <div class="p-4 border-2 border-gray-200 rounded-lg hover:border-orange-500 transition-colors option-card">
+                  <h3 class="font-bold text-gray-900 mb-2">Complex System</h3>
+                  <p class="text-sm text-gray-600 signals, advanced processing, multiple protocols</p>
                 </div>
               </label>
             </div>
@@ -56,43 +56,43 @@ import Container from '../components/Container.astro';
 
           <!-- Features -->
           <div class="mb-8">
-            <label class="block text-lg font-bold text-slate-900 dark:text-white mb-4">
+            <label class="block text-lg font-bold text-gray-900 mb-4">
               Required Features
             </label>
             <div class="grid md:grid-cols-2 gap-4">
               <label class="flex items-center cursor-pointer">
                 <input type="checkbox" name="features" value="wireless" class="feature-checkbox">
-                <span class="ml-3 text-slate-700 dark:text-slate-300">Wireless Connectivity (WiFi, BLE, Cellular)</span>
+                <span class="ml-3 text-gray-700 Connectivity (WiFi, BLE, Cellular)</span>
               </label>
               <label class="flex items-center cursor-pointer">
                 <input type="checkbox" name="features" value="battery" class="feature-checkbox">
-                <span class="ml-3 text-slate-700 dark:text-slate-300">Battery Powered Operation</span>
+                <span class="ml-3 text-gray-700 Powered Operation</span>
               </label>
               <label class="flex items-center cursor-pointer">
                 <input type="checkbox" name="features" value="medical" class="feature-checkbox">
-                <span class="ml-3 text-slate-700 dark:text-slate-300">Medical Device Compliance</span>
+                <span class="ml-3 text-gray-700 Device Compliance</span>
               </label>
               <label class="flex items-center cursor-pointer">
                 <input type="checkbox" name="features" value="industrial" class="feature-checkbox">
-                <span class="ml-3 text-slate-700 dark:text-slate-300">Industrial Environment Rating</span>
+                <span class="ml-3 text-gray-700 Environment Rating</span>
               </label>
               <label class="flex items-center cursor-pointer">
                 <input type="checkbox" name="features" value="enclosure" class="feature-checkbox">
-                <span class="ml-3 text-slate-700 dark:text-slate-300">Custom Enclosure Design</span>
+                <span class="ml-3 text-gray-700 Enclosure Design</span>
               </label>
               <label class="flex items-center cursor-pointer">
                 <input type="checkbox" name="features" value="testing" class="feature-checkbox">
-                <span class="ml-3 text-slate-700 dark:text-slate-300">Comprehensive Testing & Validation</span>
+                <span class="ml-3 text-gray-700 Testing & Validation</span>
               </label>
             </div>
           </div>
 
           <!-- Timeline -->
           <div class="mb-8">
-            <label class="block text-lg font-bold text-slate-900 dark:text-white mb-4">
+            <label class="block text-lg font-bold text-gray-900 mb-4">
               Target Timeline
             </label>
-            <select name="timeline" class="w-full md:w-1/2 p-3 border-2 border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white">
+            <select name="timeline" class="w-full md:w-1/2 p-3 border-2 border-gray-200 rounded-lg bg-white text-gray-900
               <option value="">Select timeline...</option>
               <option value="rushed">Under 2 months (rush job)</option>
               <option value="normal">2-4 months (normal)</option>
@@ -108,18 +108,18 @@ import Container from '../components/Container.astro';
               <div class="text-orange-100" id="cost-description">Based on your selections</div>
             </div>
 
-            <div class="bg-slate-50 dark:bg-slate-800 rounded-lg p-6 mb-8">
-              <h4 class="font-bold text-slate-900 dark:text-white mb-3">This estimate includes:</h4>
-              <ul class="space-y-2 text-slate-700 dark:text-slate-300" id="included-items">
+            <div class="bg-gray-50 rounded-lg p-6 mb-8">
+              <h4 class="font-bold text-gray-900 mb-3">This estimate includes:</h4>
+              <ul class="space-y-2 text-gray-700 id="included-items">
               </ul>
             </div>
 
             <!-- CTA -->
             <div class="text-center">
-              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">
+              <h3 class="text-xl font-bold text-gray-900 mb-4">
                 Get a Detailed Quote
               </h3>
-              <p class="text-slate-700 dark:text-slate-300 mb-6">
+              <p class="text-gray-700 mb-6">
                 This is a rough estimate. For a detailed quote based on your specific requirements, let's talk.
               </p>
               <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -131,7 +131,7 @@ import Container from '../components/Container.astro';
                 </a>
                 <a
                   href="tel:+14242715569"
-                  class="border-2 border-orange-500 text-orange-500 px-8 py-4 rounded-lg font-bold hover:bg-orange-50 dark:hover:bg-orange-900/20 transition-colors"
+                  class="border-2 border-orange-500 text-orange-500 px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition-colors"
                 >
                   Call (424) 271-5569
                 </a>
@@ -143,7 +143,7 @@ import Container from '../components/Container.astro';
 
         <!-- Disclaimer -->
         <div class="mt-8 text-center">
-          <p class="text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          <p class="text-sm text-gray-600 max-w-2xl mx-auto">
             <strong>Disclaimer:</strong> This calculator provides rough estimates based on typical project parameters.
             Actual costs may vary significantly based on specific requirements, component availability,
             regulatory needs, and project scope. All estimates are for budgeting purposes only.
@@ -157,11 +157,11 @@ import Container from '../components/Container.astro';
 
 <style>
   .option-card.selected {
-    @apply border-orange-500 bg-orange-50 dark:bg-orange-900/20;
+    @apply border-orange-500 bg-orange-50
   }
 
   .feature-checkbox {
-    @apply w-5 h-5 text-orange-500 border-2 border-slate-300 rounded focus:ring-orange-500 focus:ring-2;
+    @apply w-5 h-5 text-orange-500 border-2 border-gray-300 rounded focus:ring-orange-500 focus:ring-2;
   }
 </style>
 

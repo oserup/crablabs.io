@@ -13,7 +13,7 @@ interface Props {
 }
 
 // Define SVG marker to be used in the component
-const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-0.5 h-6 w-6 text-orange-400 dark:text-orange-600 flex-none"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>`;
+const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-0.5 h-6 w-6 text-orange-500 flex-none"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>`;
 ---
 
 <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
@@ -25,10 +25,10 @@ const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-widt
         <div class="mt-5 sm:mt-10 lg:col-span-5 lg:mt-0">
             <div class="space-y-6 sm:space-y-8">
                 <div class="space-y-2 md:space-y-4">
-                    <h2 class="text-balance text-3xl font-bold text-neutral-800 dark:text-neutral-200 lg:text-4xl">
+                    <h2 class="text-balance text-3xl font-bold text-gray-800 lg:text-4xl">
                         {title}
                     </h2>
-                    {subTitle && <p class="text-pretty text-neutral-600 dark:text-neutral-400">{subTitle}</p>}
+                    {subTitle && <p class="text-pretty text-gray-600">{subTitle}</p>}
                 </div>
                 {
                     benefits && (
@@ -36,7 +36,7 @@ const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-widt
                             {benefits.map((item) => (
                                 <li class="flex space-x-3">
                                     <Fragment set:html={ListItemMarker} />
-                                    <span class="text-pretty text-base font-medium text-neutral-600 dark:text-neutral-400">
+                                    <span class="text-pretty text-base font-medium text-gray-600">
                                         {item}
                                     </span>
                                 </li>
