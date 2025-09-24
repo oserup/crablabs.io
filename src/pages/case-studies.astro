@@ -5,182 +5,301 @@ import Container from '../components/Container.astro';
 
 <Layout
   title="Case Studies | Crab Labs"
-  description="Real project examples from our biomedical and industrial electronics work."
+  description="Engineering case studies showcasing medical device compliance, scientific instrument modernization, and industrial power system development. Real project examples with technical details."
 >
-  <div class="pt-16 bg-gray-50">
-    <Container>
-      <div class="max-w-6xl px-4 py-16 mx-auto">
+    <!-- DEMO 3: Premium Editorial - Satoshi -->
+    <style is:inline>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-        <!-- Hero Section -->
-        <div class="text-center mb-16">
-          <h1 class="text-4xl font-light text-gray-900 sm:text-5xl lg:text-6xl lg:leading-tight tracking-tight">
-            Case Studies
-          </h1>
-          <p class="mt-8 text-xl text-gray-600 leading-relaxed font-light max-w-3xl mx-auto">
-            Real projects from our biomedical and industrial electronics work. Each project shows how we solve practical engineering problems.
-          </p>
-        </div>
+      /* Base font for everything */
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 1.65;
+        color: #374151;
+      }
 
-        <!-- Case Studies -->
-        <div class="space-y-16">
+      /* Headers - clear hierarchy with better readability */
+      h1 {
+        font-weight: 600;
+        font-size: 3rem;
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+        color: #111827;
+        margin-bottom: 1.5rem;
+      }
+
+      h2 {
+        font-weight: 600;
+        font-size: 2.25rem;
+        letter-spacing: -0.015em;
+        line-height: 1.3;
+        color: #111827;
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        font-weight: 600;
+        font-size: 1.5rem;
+        line-height: 1.4;
+        color: #1f2937;
+        margin-bottom: 0.75rem;
+      }
+
+      /* Optimized text for readability */
+      p {
+        font-size: 17px;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+        max-width: 65ch;
+      }
+    </style>
+
+    <!-- Content with proper spacing for fixed navbar -->
+    <div class="pt-24">
+      <!-- Clean Minimal Background -->
+      <div class="absolute inset-0 -z-10 bg-white"></div>
+
+      <Container>
+        <div class="max-w-6xl px-4 py-16 mx-auto">
+
+          <!-- Hero Section -->
+          <section class="relative">
+            <div class="bg-white p-16">
+              <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-5xl font-light text-gray-900 tracking-tight mb-16">Case Studies</h1>
+              </div>
+            </div>
+          </section>
 
           <!-- Medical Device Project -->
-          <section class="relative mb-16">
-            <div class="bg-white rounded-2xl p-12 shadow-sm border border-gray-100">
-          <div class="flex items-center mb-6">
-            <span class="px-4 py-2 bg-green-600 text-white text-sm font-semibold rounded-full shadow-md">Medical Device</span>
-          </div>
-          <h2 class="text-4xl font-light text-gray-900 mb-8 text-center tracking-tight">Ultrasound Imaging System Motor Control</h2>
+          <section class="relative mb-24">
+            <div class="bg-gray-50 p-16">
+              <div class="max-w-6xl mx-auto">
+                <div class="bg-white rounded-lg border border-gray-100 p-12 hover:shadow-md hover:border-orange-200 transition-all duration-200">
+                  <div class="flex items-center mb-6">
+                    <span class="px-4 py-2 bg-green-600 text-white text-sm font-semibold rounded-full shadow-md">Medical Device</span>
+                  </div>
+                  <h2 class="text-5xl font-light text-gray-900 mb-12 text-center tracking-tight">Ultrasound Imaging System Motor Control</h2>
 
-          <div class="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 class="font-semibold text-gray-800 mb-3">Challenge</h3>
-              <p class="text-gray-600 mb-4 leading-relaxed">
-                Existing ultrasound probe positioning system had excessive vibration and poor repeatability. Required sub-millimeter precision for accurate imaging and IEC 60601-1 compliance.
-              </p>
+                  <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
+                    <div>
+                      <h3 class="text-xl font-semibold text-gray-800 mb-4">Challenge</h3>
+                      <ul class="text-gray-600 space-y-2 mb-6">
+                        <li>• Failed IEC 60601 EMC requirements (radiated and conducted emissions)</li>
+                        <li>• Signal integrity issues on high-speed circuits</li>
+                        <li>• Poor PCB layout and component placement</li>
+                        <li>• Required sub-millimeter accuracy with regulatory compliance</li>
+                      </ul>
 
-              <h3 class="font-semibold text-gray-800 mb-3">Solution</h3>
-              <p class="text-gray-600 leading-relaxed">
-                Designed closed-loop servo control with optical encoders and advanced filtering. Implemented safety monitoring and fault detection to meet medical device standards.
-              </p>
-            </div>
+                      <h3 class="text-xl font-semibold text-gray-800 mb-4">Solution</h3>
+                      <ul class="text-gray-600 space-y-2">
+                        <li>• Complete control architecture redesign</li>
+                        <li>• Implemented proper grounding and filtering</li>
+                        <li>• Optimized high-speed signal routing</li>
+                        <li>• PCB layout redesign for EMC compliance</li>
+                      </ul>
+                    </div>
 
-            <div>
-              <h3 class="font-semibold text-gray-800 mb-3">Results</h3>
-              <ul class="space-y-2 text-gray-600 mb-4">
-                <li>• Reduced positioning error to ±0.1mm</li>
-                <li>• 90% reduction in vibration</li>
-                <li>• IEC 60601-1 electrical safety compliance</li>
-                <li>• 40% faster scan acquisition times</li>
-              </ul>
+                    <div class="bg-gray-50 rounded-lg p-8 border border-gray-200">
+                      <h3 class="text-xl font-semibold text-gray-800 mb-4">Results</h3>
+                      <ul class="space-y-3 text-gray-600 mb-6">
+                        <li class="flex items-start space-x-3">
+                          <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                          <span>Achieved full IEC 60601-1-2 compliance • Avoided 6-month launch delay</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                          <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                          <span>Maintained sub-millimeter positioning accuracy • Met clinical requirements</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                          <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                          <span>70% reduction in PCB footprint • Enabled smaller device form factor</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                          <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                          <span>40% fewer components • Reduced manufacturing cost and improved reliability</span>
+                        </li>
+                      </ul>
 
-              <div class="bg-gray-50 rounded-lg p-4">
-                <h4 class="font-semibold text-gray-800 mb-2">Technical Details</h4>
-                <div class="text-sm text-gray-600">
-                  <p><strong>Platform:</strong> STM32F4 with custom sensor interface</p>
-                  <p><strong>Key Technologies:</strong> Real-time motor control, precision positioning</p>
-                  <p><strong>Timeline:</strong> 8 months development</p>
+                      <div class="bg-white rounded-lg p-4 border border-gray-200">
+                        <h4 class="font-semibold text-gray-800 mb-3">Technical Details</h4>
+                        <div class="text-sm text-gray-600 space-y-1">
+                          <p><strong>Platform:</strong> TI C2000</p>
+                          <p><strong>Key Technologies:</strong> PID control, trajectory planning</p>
+                          <p><strong>Timeline:</strong> 8 months development + testing</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        </section>
+          </section>
 
-        <!-- Scientific Instrument Project -->
-        <section class="relative mb-16">
-        <div class="bg-white rounded-2xl p-12 shadow-sm border border-gray-100">
-          <div class="flex items-center mb-6">
-            <span class="px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-full shadow-md">Scientific Instrument</span>
-          </div>
-          <h2 class="text-4xl font-light text-gray-900 mb-8 text-center tracking-tight">Precision Gravity Sensor Modernization</h2>
+          <!-- Scientific Instrument Project -->
+          <section class="relative mb-24">
+            <div class="bg-white p-16">
+              <div class="max-w-6xl mx-auto">
+                <div class="bg-gray-50 rounded-lg border border-gray-100 p-12 hover:shadow-md hover:border-orange-200 transition-all duration-200">
+                  <div class="flex items-center mb-6">
+                    <span class="px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-full shadow-md">Scientific Instrument</span>
+                  </div>
+                  <h2 class="text-5xl font-light text-gray-900 mb-12 text-center tracking-tight">Precision Gravity Sensor Modernization</h2>
 
-          <div class="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 class="font-semibold text-gray-800 mb-3">Challenge</h3>
-              <p class="text-gray-600 mb-4 leading-relaxed">
-                Legacy gravity sensor from the 1980s with analog outputs and proprietary interfaces. Client needed modern digital interfaces while maintaining the original precision and calibration.
-              </p>
+                  <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
+                    <div>
+                      <h3 class="text-xl font-semibold text-gray-800 mb-4">Challenge</h3>
+                      <ul class="text-gray-600 space-y-2 mb-6">
+                        <li>• Legacy 1980s gravity sensor with analog outputs</li>
+                        <li>• Proprietary interfaces limiting modern integration</li>
+                        <li>• Required maintaining original precision and calibration</li>
+                        <li>• Needed modern digital interfaces and features</li>
+                      </ul>
 
-              <h3 class="font-semibold text-gray-800 mb-3">Solution</h3>
-              <p class="text-gray-600 leading-relaxed">
-                Designed new signal conditioning board with high-resolution ADCs and USB interface. Reverse-engineered original calibration algorithms and implemented digital filtering for improved stability.
-              </p>
-            </div>
+                      <h3 class="text-xl font-semibold text-gray-800 mb-4">Solution</h3>
+                      <ul class="text-gray-600 space-y-2">
+                        <li>• New signal conditioning board with high-resolution ADCs</li>
+                        <li>• Reverse-engineered original calibration algorithms</li>
+                        <li>• Added modern connectivity and interfaces</li>
+                        <li>• Comprehensive feature set with data logging and monitoring</li>
+                      </ul>
+                    </div>
 
-            <div>
-              <h3 class="font-semibold text-gray-800 mb-3">Results</h3>
-              <ul class="space-y-2 text-gray-600 mb-4">
-                <li>• Maintained original ±1 μGal precision</li>
-                <li>• Added USB and Ethernet connectivity</li>
-                <li>• Reduced noise by 40% through digital filtering</li>
-                <li>• Modern software interface with data logging</li>
-              </ul>
+                    <div class="bg-white rounded-lg p-8 border border-gray-200">
+                      <h3 class="text-xl font-semibold text-gray-800 mb-4">Results</h3>
+                      <ul class="space-y-3 text-gray-600 mb-6">
+                        <li class="flex items-start space-x-3">
+                          <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                          <span>Improved measurement resolution • Better than original 1980s specifications</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                          <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                          <span>Added modern connectivity • 75% faster data collection vs manual logging</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                          <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                          <span>Cost savings • 50% less than buying new equivalent instrument</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                          <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                          <span>Extended asset life • Avoided $150k replacement cost</span>
+                        </li>
+                      </ul>
 
-              <div class="bg-gray-50 rounded-lg p-4">
-                <h4 class="font-semibold text-gray-800 mb-2">Technical Details</h4>
-                <div class="text-sm text-gray-600">
-                  <p><strong>Platform:</strong> STM32H7 with 24-bit ADCs</p>
-                  <p><strong>Key Technologies:</strong> Digital signal processing, USB/Ethernet</p>
-                  <p><strong>Timeline:</strong> 6 months development</p>
+                      <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                        <h4 class="font-semibold text-gray-800 mb-3">Technical Details</h4>
+                        <div class="text-sm text-gray-600 space-y-1">
+                          <p><strong>Platform:</strong> ESP32S3</p>
+                          <p><strong>Key Technologies:</strong> Analog signal conditioning, user interface, USB/BLE connectivity</p>
+                          <p><strong>Timeline:</strong> 6 months development</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        </section>
+          </section>
 
-        <!-- Consumer Electronics Project -->
-        <section class="relative mb-16">
-        <div class="bg-white rounded-2xl p-12 shadow-sm border border-gray-100">
-          <div class="flex items-center mb-6">
-            <span class="px-4 py-2 bg-purple-600 text-white text-sm font-semibold rounded-full shadow-md">Consumer Electronics</span>
-          </div>
-          <h2 class="text-4xl font-light text-gray-900 mb-8 text-center tracking-tight">Audio-Reactive LED System</h2>
+          <!-- Industrial Power Project -->
+          <section class="relative mb-24">
+            <div class="bg-gray-50 p-16">
+              <div class="max-w-6xl mx-auto">
+                <div class="bg-white rounded-lg border border-gray-100 p-12 hover:shadow-md hover:border-orange-200 transition-all duration-200">
+                  <div class="flex items-center mb-6">
+                    <span class="px-4 py-2 bg-purple-600 text-white text-sm font-semibold rounded-full shadow-md">Industrial Power</span>
+                  </div>
+                  <h2 class="text-5xl font-light text-gray-900 mb-12 text-center tracking-tight">Smart PDU Retrofit</h2>
 
-          <div class="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 class="font-semibold text-gray-800 mb-3">Challenge</h3>
-              <p class="text-gray-600 mb-4 leading-relaxed">
-                Design battery-powered LED strips that respond to music in real-time with wireless synchronization. Required 8+ hour battery life and FCC compliance for wireless features.
-              </p>
+                  <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
+                    <div>
+                      <h3 class="text-xl font-semibold text-gray-800 mb-4">Challenge</h3>
+                      <ul class="text-gray-600 space-y-2 mb-6">
+                        <li>• Legacy PDU product line lacking smart features</li>
+                        <li>• Customers demanding real-time power monitoring</li>
+                        <li>• Required retrofit without redesigning existing hardware</li>
+                        <li>• Needed comprehensive sensing and remote access</li>
+                      </ul>
 
-              <h3 class="font-semibold text-gray-800 mb-3">Solution</h3>
-              <p class="text-gray-600 leading-relaxed">
-                Implemented FFT-based audio analysis with optimized algorithms for low power. Used Nordic nRF52 for BLE mesh networking and custom power management for extended battery life.
-              </p>
-            </div>
+                      <h3 class="text-xl font-semibold text-gray-800 mb-4">Solution</h3>
+                      <ul class="text-gray-600 space-y-2">
+                        <li>• Custom hardware design with integrated power monitoring</li>
+                        <li>• Purpose-built enclosure for seamless PDU integration</li>
+                        <li>• Intuitive user interface with local display and controls</li>
+                        <li>• Advanced monitoring with intelligent alerts and analytics</li>
+                        <li>• Wireless connectivity for remote monitoring and control</li>
+                      </ul>
+                    </div>
 
-            <div>
-              <h3 class="font-semibold text-gray-800 mb-3">Results</h3>
-              <ul class="space-y-2 text-gray-600 mb-4">
-                <li>• 50ms audio latency with real-time processing</li>
-                <li>• 12+ hour battery life achieved</li>
-                <li>• FCC Part 15 compliance obtained</li>
-                <li>• Seamless wireless sync across 20+ devices</li>
-              </ul>
+                    <div class="bg-gray-50 rounded-lg p-8 border border-gray-200">
+                      <h3 class="text-xl font-semibold text-gray-800 mb-4">Results</h3>
+                      <ul class="space-y-3 text-gray-600 mb-6">
+                        <li class="flex items-start space-x-3">
+                          <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                          <span>Modernized entire product line • Restored competitive positioning</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                          <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                          <span>Smart features added • Matched competitor capabilities without redesign</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                          <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                          <span>Predictive analytics • Reduced customer downtime and service calls</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                          <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                          <span>Revenue recovery • Sales turnaround within 9 months of launch</span>
+                        </li>
+                      </ul>
 
-              <div class="bg-gray-50 rounded-lg p-4">
-                <h4 class="font-semibold text-gray-800 mb-2">Technical Details</h4>
-                <div class="text-sm text-gray-600">
-                  <p><strong>Platform:</strong> Nordic nRF52840 with ARM Cortex-M4</p>
-                  <p><strong>Key Technologies:</strong> Real-time FFT, BLE mesh, WS2812B LEDs</p>
-                  <p><strong>Timeline:</strong> 10 months development</p>
+                      <div class="bg-white rounded-lg p-4 border border-gray-200">
+                        <h4 class="font-semibold text-gray-800 mb-3">Technical Details</h4>
+                        <div class="text-sm text-gray-600 space-y-1">
+                          <p><strong>Platform:</strong> Embedded Linux SBC with custom power monitoring</p>
+                          <p><strong>Key Technologies:</strong> Custom PCB design, analytics algorithms, alert systems, wireless protocols</p>
+                          <p><strong>Timeline:</strong> 12 months development</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </section>
+
+          <!-- Contact CTA -->
+          <section class="relative">
+            <div class="bg-gradient-to-b from-gray-50 to-gray-100 p-16 text-center">
+              <div class="max-w-2xl mx-auto">
+                <h2 class="text-5xl font-light text-gray-900 mb-16 tracking-tight">Ready to Start Your Project?</h2>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                  Talk directly with a senior engineer about your technical requirements and regulatory pathway.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-10">
+                  <a href="/quote" class="px-12 py-4 bg-white border border-gray-300 text-gray-900 font-semibold rounded-full hover:bg-gray-50 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-gray-400 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer relative z-20 whitespace-nowrap">
+                    Get a Quote
+                  </a>
+                  <a href="https://cal.com/crablabsllc/consultation" class="px-12 py-4 bg-gradient-to-r from-orange-600 to-orange-700 text-white font-semibold rounded-full hover:from-orange-700 hover:to-orange-800 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-orange-400 shadow-md transition-all duration-200 inline-flex items-center gap-x-2 cursor-pointer relative z-20 whitespace-nowrap">
+                    Schedule a Consultation
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m9 18 6-6-6-6"></path>
+                    </svg>
+                  </a>
+                  <a href="tel:+14242715569" class="px-12 py-4 bg-white border border-gray-300 text-gray-900 font-semibold rounded-full hover:bg-gray-50 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-gray-400 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer relative z-20 whitespace-nowrap">
+                    Call (424) 271-5569
+                  </a>
+                </div>
+
+                <p class="text-gray-500 mt-8 text-base font-light">
+                  Long Beach, CA • Response within 24 hours
+                </p>
+              </div>
+            </div>
+          </section>
+
         </div>
-        </section>
-
-      </div>
-
-      <!-- CTA Section -->
-      <div class="mt-20 text-center">
-        <div class="bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl p-10 text-white">
-          <h3 class="text-2xl font-semibold mb-4">
-            Have a Similar Project?
-          </h3>
-          <p class="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
-            We specialize in biomedical and industrial electronics projects. Let's discuss your specific requirements.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/quote"
-              class="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-orange-50 transition-colors"
-            >
-              Get Project Quote
-            </a>
-            <a
-              href="tel:+14242715569"
-              class="border border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors"
-            >
-              Call (424) 271-5569
-            </a>
-          </div>
-        </div>
-      </div>
-
+      </Container>
     </div>
-  </Container>
 </Layout>

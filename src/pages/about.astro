@@ -4,353 +4,748 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
-    title="About Crab Labs - Regulatory Engineering"
-    description="Engineering firm specializing in regulatory-compliant systems for biomedical devices, industrial safety, and compliance-critical applications."
+    title="About Crab Labs - Electronic Device Engineering"
+    description="Senior embedded systems engineers helping companies build reliable, compliant electronic devices across medical, industrial, and scientific applications."
 >
-    <!-- Structured Data -->
-    <script type="application/ld+json" is:inline>
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Crab Labs",
-      "url": "https://crablabs.io",
-      "logo": "https://crablabs.io/logo.svg",
-      "description": "Engineering firm specializing in regulatory-compliant systems for medical devices, industrial safety, and compliance-critical applications.",
-      "foundingDate": "2024-05",
-      "founder": {
-        "@type": "Person",
-        "name": "Orion Serup"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Long Beach",
-        "addressRegion": "CA",
-        "addressCountry": "US"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+1-424-271-5569",
-        "contactType": "customer service"
+    <!-- Clean Typography -->
+    <style is:inline>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+      /* Base font for everything */
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 1.65;
+        color: #374151;
       }
-    }
-    </script>
 
-    <div class="pt-16 bg-gray-50">
-      <Container>
-        <article class="max-w-6xl px-4 py-16 mx-auto">
+      /* Headers - clear hierarchy */
+      h1 {
+        font-weight: 600;
+        font-size: 3rem;
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+        color: #111827;
+        margin-bottom: 1.5rem;
+      }
 
-            <!-- Hero Section -->
-            <div class="text-center mb-16">
-                <h1 class="text-4xl font-light text-gray-900 sm:text-5xl lg:text-6xl lg:leading-tight tracking-tight">
-                    Regulatory Engineering
-                </h1>
-                <p class="mt-8 text-xl text-gray-600 leading-relaxed font-light max-w-3xl mx-auto">
-                    We develop hardware and software for biomedical, industrial, and robotic applications—with regulatory expertise when you need it.
-                </p>
+      h2 {
+        font-weight: 600;
+        font-size: 2.25rem;
+        letter-spacing: -0.015em;
+        line-height: 1.3;
+        color: #111827;
+        margin-bottom: 1rem;
+      }
+
+      h3, h4, h5, h6 {
+        font-weight: 500;
+        font-size: 1.25rem;
+        line-height: 1.4;
+        color: #1f2937;
+      }
+
+      /* Optimized text for readability */
+      p {
+        font-size: 17px;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+        max-width: 65ch;
+      }
+    </style>
+
+    <!-- Content with proper spacing for fixed navbar -->
+    <div class="pt-16"></div>
+
+    <!-- Clean Minimal Background -->
+    <div class="absolute inset-0 -z-10 bg-white"></div>
+
+    <Container>
+
+      <!-- What We Do -->
+      <section class="relative mb-24">
+        <div class="bg-white p-16">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-light text-gray-900 mb-16 text-center tracking-tight">What We Do</h2>
+
+            <div class="max-w-6xl mx-auto">
+              <div class="grid md:grid-cols-3 gap-12 mb-16">
+                <div class="bg-white rounded-xl border border-gray-200 p-8 hover:shadow-md hover:border-orange-200 transition-all duration-200">
+                  <div class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-4">Hardware Design</h3>
+                  <p class="text-gray-600 mb-4">Complete PCB design from concept to manufacturing-ready files</p>
+                  <ul class="text-sm text-gray-600 space-y-2">
+                    <li>• Schematic design and component selection</li>
+                    <li>• PCB layout with signal integrity optimization</li>
+                    <li>• EMC/EMI compliance design</li>
+                    <li>• Power management and thermal analysis</li>
+                    <li>• Manufacturing DFM and assembly support</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white rounded-xl border border-gray-200 p-8 hover:shadow-md hover:border-orange-200 transition-all duration-200">
+                  <div class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-4">Firmware Development</h3>
+                  <p class="text-gray-600 mb-4">Real-time embedded software for reliable device operation</p>
+                  <ul class="text-sm text-gray-600 space-y-2">
+                    <li>• Real-time operating systems (FreeRTOS, Zephyr)</li>
+                    <li>• Device drivers and HAL development</li>
+                    <li>• Communication protocols (USB, CAN, Ethernet)</li>
+                    <li>• Safety-critical software (IEC 62304)</li>
+                    <li>• Over-the-air update systems</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white rounded-xl border border-gray-200 p-8 hover:shadow-md hover:border-orange-200 transition-all duration-200">
+                  <div class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-4">Testing & Validation</h3>
+                  <p class="text-gray-600 mb-4">Comprehensive testing and regulatory compliance support</p>
+                  <ul class="text-sm text-gray-600 space-y-2">
+                    <li>• Automated testing frameworks and CI/CD</li>
+                    <li>• Hardware-in-the-loop (HIL) testing</li>
+                    <li>• EMC testing and signal integrity validation</li>
+                    <li>• FDA 510(k) and IEC 62304 compliance</li>
+                    <li>• Design controls and risk management</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Industries We Serve -->
+      <section class="relative mb-24">
+        <div class="bg-gray-50 p-16">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-light text-gray-900 mb-16 text-center tracking-tight">Industries We Serve</h2>
+
+            <div class="max-w-6xl mx-auto">
+              <!-- Experience Distribution -->
+              <div class="grid md:grid-cols-4 gap-8 mb-16">
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-orange-600 mb-2">42%</div>
+                  <div class="text-lg font-semibold text-gray-900">Medical Devices</div>
+                  <div class="text-sm text-gray-600">FDA 510(k) • IEC 62304</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-gray-600 mb-2">35%</div>
+                  <div class="text-lg font-semibold text-gray-900">Industrial</div>
+                  <div class="text-sm text-gray-600">Automation • Robotics</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-gray-600 mb-2">20%</div>
+                  <div class="text-lg font-semibold text-gray-900">Scientific</div>
+                  <div class="text-sm text-gray-600">Research instruments</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-gray-500 mb-2">3%</div>
+                  <div class="text-lg font-semibold text-gray-900">Other</div>
+                  <div class="text-sm text-gray-600">Consumer • IoT</div>
+                </div>
+              </div>
+
+              <!-- Industry Details -->
+              <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl border border-gray-200 p-8">
+                  <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
+                      <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                      </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">Medical Devices</h3>
+                  </div>
+                  <ul class="text-gray-600 space-y-2 text-sm">
+                    <li>• Diagnostic imaging systems</li>
+                    <li>• Patient monitoring equipment</li>
+                    <li>• Therapeutic devices</li>
+                    <li>• Surgical instruments</li>
+                    <li>• Point-of-care diagnostics</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white rounded-xl border border-gray-200 p-8">
+                  <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mr-4">
+                      <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">Industrial & Robotics</h3>
+                  </div>
+                  <ul class="text-gray-600 space-y-2 text-sm">
+                    <li>• Manufacturing automation</li>
+                    <li>• Process control systems</li>
+                    <li>• Robotic controllers</li>
+                    <li>• Power distribution units</li>
+                    <li>• Environmental monitoring</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white rounded-xl border border-gray-200 p-8">
+                  <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mr-4">
+                      <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                      </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">Scientific Instruments</h3>
+                  </div>
+                  <ul class="text-gray-600 space-y-2 text-sm">
+                    <li>• Precision measurement devices</li>
+                    <li>• Laboratory equipment</li>
+                    <li>• Environmental sensors</li>
+                    <li>• Research instruments</li>
+                    <li>• Data acquisition systems</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white rounded-xl border border-gray-200 p-8">
+                  <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mr-4">
+                      <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                      </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">Other Applications</h3>
+                  </div>
+                  <ul class="text-gray-600 space-y-2 text-sm">
+                    <li>• Consumer electronics</li>
+                    <li>• IoT devices</li>
+                    <li>• Smart sensors</li>
+                    <li>• Wearable devices</li>
+                    <li>• Connected products</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Client Results Section -->
+      <section class="relative mb-24">
+        <div class="bg-gray-50 p-16">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-light text-gray-900 mb-16 text-center tracking-tight">Client Results</h2>
+
+            <div class="max-w-4xl mx-auto">
+              <!-- Testimonials -->
+              <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                  <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                      <span class="text-orange-600 font-semibold">[INIT]</span>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-gray-900">[CLIENT NAME]</div>
+                      <div class="text-sm text-gray-600">[TITLE, COMPANY]</div>
+                    </div>
+                  </div>
+                  <p class="text-gray-700 italic">
+                    "[TESTIMONIAL QUOTE]"
+                  </p>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                  <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                      <span class="text-orange-600 font-semibold">[INIT]</span>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-gray-900">[CLIENT NAME]</div>
+                      <div class="text-sm text-gray-600">[TITLE, COMPANY]</div>
+                    </div>
+                  </div>
+                  <p class="text-gray-700 italic">
+                    "[TESTIMONIAL QUOTE]"
+                  </p>
+                </div>
+              </div>
+
+              <!-- Results Cards -->
+              <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-orange-50 rounded-xl p-6 border border-orange-200 text-center">
+                  <div class="text-2xl font-bold text-orange-600 mb-2">6-month</div>
+                  <div class="text-sm text-gray-700">Launch delay prevented</div>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 text-center">
+                  <div class="text-2xl font-bold text-gray-600 mb-2">$150k</div>
+                  <div class="text-sm text-gray-700">Equipment replacement cost avoided</div>
+                </div>
+                <div class="bg-orange-50 rounded-xl p-6 border border-orange-200 text-center">
+                  <div class="text-2xl font-bold text-orange-600 mb-2">70%</div>
+                  <div class="text-sm text-gray-700">PCB footprint reduction achieved</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Separator -->
+      <div class="max-w-6xl mx-auto px-16 mb-24">
+        <div class="h-px bg-gray-200"></div>
+      </div>
+
+      <!-- Problem/Solution Section -->
+      <section class="relative mb-24">
+        <div class="bg-gray-50 p-16">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-light text-gray-900 mb-16 text-center tracking-tight">The Problem We Solve</h2>
+
+            <div class="max-w-5xl mx-auto">
+              <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <!-- Problem Side -->
+                <div>
+                  <h3 class="text-2xl font-semibold text-gray-900 mb-6">What Companies Tell Us:</h3>
+                  <div class="space-y-4">
+                    <div class="bg-orange-50 border-l-4 border-orange-400 p-4">
+                      <p class="text-gray-700">"Our junior engineers keep hitting roadblocks on complex designs"</p>
+                    </div>
+                    <div class="bg-orange-50 border-l-4 border-orange-400 p-4">
+                      <p class="text-gray-700">"Large consulting firms want $300k minimum and 6-month contracts"</p>
+                    </div>
+                    <div class="bg-orange-50 border-l-4 border-orange-400 p-4">
+                      <p class="text-gray-700">"We're burning through budget on compliance issues we could have avoided"</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Solution Side -->
+                <div>
+                  <h3 class="text-2xl font-semibold text-gray-900 mb-6">Our Solution:</h3>
+                  <div class="space-y-4">
+                    <div class="bg-orange-50 border-l-4 border-orange-400 p-4">
+                      <p class="text-gray-700"><strong>Senior engineers from day one</strong> - No learning curve, immediate problem-solving</p>
+                    </div>
+                    <div class="bg-orange-50 border-l-4 border-orange-400 p-4">
+                      <p class="text-gray-700"><strong>Project-based pricing</strong> - Clear scope, fixed costs, no minimum commitments</p>
+                    </div>
+                    <div class="bg-orange-50 border-l-4 border-orange-400 p-4">
+                      <p class="text-gray-700"><strong>Regulatory expertise built-in</strong> - Avoid costly delays and redesigns</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Industry Experience -->
+              <div class="bg-white rounded-xl p-8 border border-gray-200">
+                <h3 class="text-xl font-semibold text-gray-900 mb-6 text-center">Our Experience Across Industries</h3>
+                <div class="grid md:grid-cols-4 gap-6">
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-orange-600 mb-2">42%</div>
+                    <div class="text-sm font-semibold text-gray-900">Medical Devices</div>
+                    <div class="text-xs text-gray-600">FDA/CE compliance</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-gray-600 mb-2">35%</div>
+                    <div class="text-sm font-semibold text-gray-900">Industrial</div>
+                    <div class="text-xs text-gray-600">Automation & control</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-gray-600 mb-2">20%</div>
+                    <div class="text-sm font-semibold text-gray-900">Scientific</div>
+                    <div class="text-xs text-gray-600">Precision instruments</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-gray-500 mb-2">3%</div>
+                    <div class="text-sm font-semibold text-gray-900">Other</div>
+                    <div class="text-xs text-gray-600">Consumer & IoT</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Separator -->
+      <div class="max-w-6xl mx-auto px-16 mb-24">
+        <div class="h-px bg-gray-200"></div>
+      </div>
+
+      <!-- Competitive Comparison -->
+      <section class="relative mb-24">
+        <div class="bg-white p-16">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-light text-gray-900 mb-16 text-center tracking-tight">Why Companies Choose Us</h2>
+
+            <div class="max-w-5xl mx-auto">
+              <!-- Comparison Table -->
+              <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 mb-12">
+                <div class="grid md:grid-cols-3 gap-8">
+                  <div class="text-center">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Large Consulting Firms</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                      <li>• Account managers, not engineers</li>
+                      <li>• $200k+ minimum projects</li>
+                      <li>• Hourly billing uncertainty</li>
+                      <li>• Junior staff learning on your dime</li>
+                      <li>• Complex approval processes</li>
+                    </ul>
+                  </div>
+
+                  <div class="text-center border-l border-r border-gray-300 px-8">
+                    <h3 class="text-lg font-semibold text-orange-600 mb-4">Crab Labs</h3>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                      <li>• Direct access to senior engineers</li>
+                      <li>• Projects from $10k+</li>
+                      <li>• Fixed-price contracts</li>
+                      <li>• 15+ years experience from day one</li>
+                      <li>• Decisions made quickly</li>
+                    </ul>
+                  </div>
+
+                  <div class="text-center">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Hiring In-House</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                      <li>• 6+ month hiring process</li>
+                      <li>• $150k+ annual salary + benefits</li>
+                      <li>• Limited experience breadth</li>
+                      <li>• Learning curve on your project</li>
+                      <li>• Long-term employment risk</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Key Differentiators -->
+              <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 text-center">
+                  <div class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-3">Faster Time to Market</h3>
+                  <p class="text-gray-600 text-sm">Start immediately with experienced engineers. No hiring delays or learning curves.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 text-center">
+                  <div class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-3">Predictable Costs</h3>
+                  <p class="text-gray-600 text-sm">Fixed-price contracts with clear scope. No hourly billing surprises or scope creep.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 text-center">
+                  <div class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-3">Complete Ownership</h3>
+                  <p class="text-gray-600 text-sm">All IP, source code, and documentation transferred to you. No vendor lock-in.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Separator -->
+      <div class="max-w-6xl mx-auto px-16 mb-24">
+        <div class="h-px bg-gray-200"></div>
+      </div>
+
+      <!-- Team & Credibility -->
+      <section class="relative mb-24">
+        <div class="bg-gray-50 p-16">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-light text-gray-900 mb-16 text-center tracking-tight">The Team</h2>
+
+            <div class="max-w-4xl mx-auto">
+              <div class="bg-white rounded-xl p-8 border border-gray-200 mb-8">
+                <div class="grid md:grid-cols-3 gap-8 items-center">
+                  <!-- Profile Photo Placeholder -->
+                  <div class="text-center">
+                    <div class="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
+                      <img src="/orion.jpeg" alt="Orion Serup" class="w-full h-full object-cover" />
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">Orion Serup</h3>
+                    <p class="text-gray-600">Founder & Lead Engineer</p>
+                  </div>
+
+                  <!-- Bio & Quote -->
+                  <div class="md:col-span-2">
+                    <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                      <p class="text-gray-700 italic mb-4">
+                        "I started Crab Labs after seeing too many companies struggle with embedded systems projects. Either they hire junior engineers who get stuck on complex problems, or they pay premium rates to large consulting firms for work that could be done more efficiently."
+                      </p>
+                      <p class="text-gray-600 text-sm">
+                        15+ years embedded systems engineering, former team lead at medical device and industrial automation companies.
+                      </p>
+                    </div>
+
+                    <!-- Credentials -->
+                    <div class="grid md:grid-cols-2 gap-4">
+                      <div class="bg-gray-50 rounded-lg p-4">
+                        <h4 class="font-semibold text-gray-900 mb-2">Medical Device Experience</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                          <li>• 12+ FDA 510(k) submissions</li>
+                          <li>• IEC 60601 compliance expert</li>
+                          <li>• EMC testing and optimization</li>
+                        </ul>
+                      </div>
+                      <div class="bg-gray-50 rounded-lg p-4">
+                        <h4 class="font-semibold text-gray-900 mb-2">Industrial & Scientific</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                          <li>• CE marking for safety systems</li>
+                          <li>• Power electronics and motor controls</li>
+                          <li>• Precision instruments and IoT</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Company Values/Culture -->
+              <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center bg-white rounded-xl p-6 border border-gray-200">
+                  <div class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-2">Speed & Efficiency</h3>
+                  <p class="text-gray-600 text-sm">Get to market faster with experienced engineers who know how to avoid common pitfalls.</p>
+                </div>
+
+                <div class="text-center bg-white rounded-xl p-6 border border-gray-200">
+                  <div class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-2">Quality & Reliability</h3>
+                  <p class="text-gray-600 text-sm">Build products that work reliably in the field, with proper testing and validation.</p>
+                </div>
+
+                <div class="text-center bg-white rounded-xl p-6 border border-gray-200">
+                  <div class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-2">Fair & Transparent</h3>
+                  <p class="text-gray-600 text-sm">Clear pricing and scope upfront. No surprises, no vendor lock-in, no hidden costs.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Separator -->
+      <div class="max-w-6xl mx-auto px-16 mb-24">
+        <div class="h-px bg-gray-200"></div>
+      </div>
+
+      <!-- FAQ Section -->
+      <section class="relative mb-24">
+        <div class="bg-white p-16">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-light text-gray-900 mb-16 text-center tracking-tight">Common Questions</h2>
+
+            <div class="max-w-3xl mx-auto">
+              <div class="space-y-6">
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                  <h3 class="font-semibold text-gray-900 mb-3">How do you handle IP and confidentiality?</h3>
+                  <p class="text-gray-600 text-sm">We sign NDAs before any technical discussions. All work product, designs, and code are transferred to you upon project completion. We don't retain any rights to your IP.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                  <h3 class="font-semibold text-gray-900 mb-3">What if the project scope changes during development?</h3>
+                  <p class="text-gray-600 text-sm">We handle scope changes through formal change orders with clear pricing. Small adjustments are often accommodated within the original scope. Major changes get a separate proposal.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                  <h3 class="font-semibold text-gray-900 mb-3">Do you provide ongoing support after project completion?</h3>
+                  <p class="text-gray-600 text-sm">Yes. All projects include 30 days of post-delivery support. We also offer retainer agreements for ongoing support, updates, or future development phases.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                  <h3 class="font-semibold text-gray-900 mb-3">How do you ensure quality and meet deadlines?</h3>
+                  <p class="text-gray-600 text-sm">We use milestone-based development with regular check-ins. Each milestone has specific deliverables and acceptance criteria. This approach ensures quality and keeps projects on track.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Separator -->
+      <div class="max-w-6xl mx-auto px-16 mb-24">
+        <div class="h-px bg-gray-200"></div>
+      </div>
+
+      <!-- Working with Us -->
+      <section class="relative mb-24">
+        <div class="bg-gray-50 p-16">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-light text-gray-900 mb-16 text-center tracking-tight">Working with Us</h2>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-white rounded-xl p-6 border border-gray-200">
+                        <h3 class="font-semibold text-gray-900 mb-4">Ideal Projects</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li>• Companies needing embedded system development</li>
+                            <li>• Products requiring compliance or certification</li>
+                            <li>• Technical leaders who can make decisions quickly</li>
+                            <li>• Projects $10,000+ with clear scope</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border border-gray-200">
+                        <h3 class="font-semibold text-gray-900 mb-4">Project Timeline</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li>• Consultation: Within 48 hours</li>
+                            <li>• Proposal: 3-5 business days</li>
+                            <li>• Typical project: 2-6 months</li>
+                            <li>• Currently accepting new projects</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-white rounded-xl p-6 border border-gray-200">
+                        <h3 class="font-semibold text-gray-900 mb-4">Our Process</h3>
+                        <ol class="space-y-2 text-sm text-gray-700">
+                            <li><span class="font-semibold text-orange-600">1.</span> Free consultation & technical roadmap</li>
+                            <li><span class="font-semibold text-orange-600">2.</span> Fixed-price proposal with clear deliverables</li>
+                            <li><span class="font-semibold text-orange-600">3.</span> Parallel development & testing</li>
+                            <li><span class="font-semibold text-orange-600">4.</span> Complete documentation and support</li>
+                            <li><span class="font-semibold text-orange-600">5.</span> Support through production launch</li>
+                        </ol>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border border-gray-200">
+                        <h3 class="font-semibold text-gray-900 mb-4">Risk Mitigation</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li>• Fixed-price contracts (no cost overruns)</li>
+                            <li>• Milestone-based payments</li>
+                            <li>• Complete IP transfer to you</li>
+                            <li>• 30-day post-delivery support included</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center">
+                    <p class="text-sm text-gray-700">
+                        <strong>Based in Long Beach, CA.</strong> We work with companies nationwide. Remote collaboration with on-site visits as needed.
+                    </p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Separator -->
+      <div class="max-w-6xl mx-auto px-16 mb-24">
+        <div class="h-px bg-gray-200"></div>
+      </div>
+
+      <!-- Explore More -->
+      <section class="relative mb-24">
+        <div class="bg-white p-16">
+          <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-5xl font-light text-gray-900 mb-16 text-center tracking-tight">Explore More</h2>
+
+            <div class="grid md:grid-cols-4 gap-6">
+              <a href="/services" class="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md hover:border-orange-200 transition-all duration-200">
+                <div class="w-20 h-20 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-8 hover:bg-orange-200 hover:scale-105 transition-all duration-200">
+                  <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-5 9l2 2 4-4"/>
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-medium text-gray-900 mb-4">Services</h3>
+                <p class="text-gray-600 text-lg leading-relaxed">What we do and pricing</p>
+              </a>
+
+              <a href="/capabilities" class="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md hover:border-orange-200 transition-all duration-200">
+                <div class="w-20 h-20 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-8 hover:bg-orange-200 hover:scale-105 transition-all duration-200">
+                  <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-medium text-gray-900 mb-4">Capabilities</h3>
+                <p class="text-gray-600 text-lg leading-relaxed">Tools and testing lab</p>
+              </a>
+
+              <a href="/case-studies" class="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md hover:border-orange-200 transition-all duration-200">
+                <div class="w-20 h-20 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-8 hover:bg-orange-200 hover:scale-105 transition-all duration-200">
+                  <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-medium text-gray-900 mb-4">Case Studies</h3>
+                <p class="text-gray-600 text-lg leading-relaxed">Real project examples</p>
+              </a>
+
+              <a href="/blog" class="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md hover:border-orange-200 transition-all duration-200">
+                <div class="w-20 h-20 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-8 hover:bg-orange-200 hover:scale-105 transition-all duration-200">
+                  <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-medium text-gray-900 mb-4">Blog</h3>
+                <p class="text-gray-600 text-lg leading-relaxed">Technical insights</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section class="relative">
+        <div class="bg-gradient-to-b from-gray-50 to-gray-100 p-16 text-center">
+          <div class="max-w-2xl mx-auto">
+            <h2 class="text-5xl font-light text-gray-900 mb-16 text-center tracking-tight">Ready to Start Your Project?</h2>
+            <p class="text-lg text-gray-700 mb-12 leading-relaxed">
+              Talk directly with a senior engineer about your technical requirements and project timeline.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-10">
+              <a href="/quote" class="px-12 py-4 bg-white border border-gray-300 text-gray-900 font-semibold rounded-full hover:bg-gray-50 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-gray-400 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer relative z-20 whitespace-nowrap">
+                Get a Quote
+              </a>
+              <a href="https://cal.com/crablabsllc/consultation" class="px-12 py-4 bg-gradient-to-r from-orange-600 to-orange-700 text-white font-semibold rounded-full hover:from-orange-700 hover:to-orange-800 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-orange-400 shadow-md transition-all duration-200 inline-flex items-center gap-x-2 cursor-pointer relative z-20 whitespace-nowrap">
+                Schedule a Consultation
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m9 18 6-6-6-6"></path>
+                </svg>
+              </a>
+              <a href="tel:+14242715569" class="px-12 py-4 bg-white border border-gray-300 text-gray-900 font-semibold rounded-full hover:bg-gray-50 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-gray-400 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer relative z-20 whitespace-nowrap">
+                Call (424) 271-5569
+              </a>
             </div>
 
-            <!-- What We Do -->
-            <section class="relative mb-16">
-              <div class="bg-white rounded-2xl p-12 shadow-sm border border-gray-100">
-                <h2 class="text-4xl font-light text-gray-900 mb-12 text-center tracking-tight">What We Do</h2>
-                <p class="text-lg text-gray-700 text-center mb-12 max-w-2xl mx-auto">
-                    Hardware and software development for biomedical, industrial, and robotic applications. Regulatory compliance when required.
-                </p>
+            <p class="text-gray-500 mt-8 text-base font-light">
+              Long Beach, CA • Response within 24 hours
+            </p>
+          </div>
+        </div>
+      </section>
 
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-white rounded-xl p-8 border border-gray-100">
-                        <h3 class="text-xl font-semibold mb-4">Hardware & Firmware</h3>
-                        <ul class="space-y-2 text-gray-700">
-                            <li>• Medical-grade component selection</li>
-                            <li>• EMC-optimized PCB layouts</li>
-                            <li>• Safety-critical firmware</li>
-                            <li>• IEC 62304 compliant software</li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-white rounded-xl p-8 border border-gray-100">
-                        <h3 class="text-xl font-semibold mb-4">Regulatory Compliance</h3>
-                        <ul class="space-y-2 text-gray-700">
-                            <li>• FDA, CE, and safety standards</li>
-                            <li>• Pre-compliance testing</li>
-                            <li>• Risk analysis and documentation</li>
-                            <li>• Submission coordination</li>
-                        </ul>
-                    </div>
-                </div>
-              </div>
-            </section>
-
-            <!-- Industries -->
-            <section class="relative mb-16">
-              <div class="bg-white rounded-2xl p-12 shadow-sm border border-gray-100">
-                <h2 class="text-4xl font-light text-gray-900 mb-12 text-center tracking-tight">Industries</h2>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="text-center">
-                        <h3 class="font-semibold mb-2">Biomedical Devices</h3>
-                        <p class="text-gray-600">FDA-regulated medical systems</p>
-                    </div>
-                    <div class="text-center">
-                        <h3 class="font-semibold mb-2">Industrial & Robotics</h3>
-                        <p class="text-gray-600">Control systems, automation, and robotics hardware/software</p>
-                    </div>
-                    <div class="text-center">
-                        <h3 class="font-semibold mb-2">Scientific Instruments</h3>
-                        <p class="text-gray-600">Research-grade data acquisition</p>
-                    </div>
-                </div>
-              </div>
-            </section>
-
-            <!-- Team -->
-            <section class="relative mb-16">
-              <div class="bg-white rounded-2xl p-12 shadow-sm border border-gray-100">
-                <h2 class="text-4xl font-light text-gray-900 mb-12 text-center tracking-tight">Team</h2>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-white rounded-xl p-8 border border-gray-100">
-                        <h3 class="text-xl font-semibold mb-4">Engineering Team</h3>
-                        <div class="space-y-3">
-                            <div class="flex justify-between">
-                                <span>Team Size:</span>
-                                <span class="font-semibold">5 engineers</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span>Experience:</span>
-                                <span class="font-semibold">10+ years each</span>
-                            </div>
-                        </div>
-                        <div class="mt-6">
-                            <h4 class="font-semibold mb-2">Expertise</h4>
-                            <ul class="text-sm space-y-1 text-gray-700">
-                                <li>• FDA Class II/III medical devices</li>
-                                <li>• SIL-rated industrial safety systems</li>
-                                <li>• Research-grade instrumentation</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="bg-white rounded-xl p-8 border border-gray-100">
-                        <h3 class="text-xl font-semibold mb-4">Standards & Risk</h3>
-                        <div class="space-y-4">
-                            <div>
-                                <h4 class="font-semibold mb-2">Standards</h4>
-                                <ul class="text-sm space-y-1 text-gray-700">
-                                    <li>• IEC 62304 software lifecycle</li>
-                                    <li>• ISO 13485 quality systems</li>
-                                    <li>• IEC 61508 functional safety (SIL)</li>
-                                    <li>• ISO 14971 risk management</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-2">Insurance</h4>
-                                <ul class="text-sm space-y-1 text-gray-700">
-                                    <li>• $1M professional liability</li>
-                                    <li>• $1M general liability</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              </div>
-            </section>
-
-            <!-- Recent Projects -->
-            <section class="relative mb-16">
-              <div class="bg-white rounded-2xl p-12 shadow-sm border border-gray-100">
-                <h2 class="text-4xl font-light text-gray-900 mb-12 text-center tracking-tight">Recent Projects</h2>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-white border border-gray-100 rounded-xl p-6">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="font-semibold">Medical Device EMC</h3>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Medical</span>
-                        </div>
-                        <p class="text-gray-600 text-sm mb-4">Motor controller failed IEC 60601-1-2 testing, blocking FDA submission.</p>
-                        <div class="text-center">
-                            <div class="font-semibold text-blue-600 text-sm">FDA approved • $175K saved</div>
-                            <div class="text-xs text-gray-500">4 months</div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white border border-gray-100 rounded-xl p-6">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="font-semibold">Gravitometer Modernization</h3>
-                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Research</span>
-                        </div>
-                        <p class="text-gray-600 text-sm mb-4">Legacy system with obsolete components and failing accuracy.</p>
-                        <div class="text-center">
-                            <div class="font-semibold text-blue-600 text-sm">$200K saved vs. new equipment</div>
-                            <div class="text-xs text-gray-500">6 months</div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white border border-gray-100 rounded-xl p-6">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="font-semibold">Industrial IoT Safety</h3>
-                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Industrial</span>
-                        </div>
-                        <p class="text-gray-600 text-sm mb-4">Robotics equipment required safety-certified predictive maintenance.</p>
-                        <div class="text-center">
-                            <div class="font-semibold text-blue-600 text-sm">Safety certified • 40% uptime</div>
-                            <div class="text-xs text-gray-500">8 months</div>
-                        </div>
-                    </div>
-                </div>
-              </div>
-            </section>
-
-            <!-- How We Work -->
-            <section class="relative mb-16">
-              <div class="bg-white rounded-2xl p-12 shadow-sm border border-gray-100">
-                <h2 class="text-4xl font-light text-gray-900 mb-12 text-center tracking-tight">How We Work</h2>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="text-center">
-                        <h3 class="font-semibold mb-4">Process</h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <div>1. Requirements analysis</div>
-                            <div>2. Fixed-price proposal</div>
-                            <div>3. Development</div>
-                            <div>4. Delivery</div>
-                        </div>
-                    </div>
-
-                    <div class="text-center">
-                        <h3 class="font-semibold mb-4">Requirements</h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <div>• Technical stakeholder</div>
-                            <div>• Clear requirements</div>
-                            <div>• Budget $10K+</div>
-                            <div>• Production focus</div>
-                        </div>
-                    </div>
-
-                    <div class="text-center">
-                        <h3 class="font-semibold mb-4">Delivery</h3>
-                        <div class="space-y-2 text-sm text-gray-700">
-                            <div>• Direct engineer access</div>
-                            <div>• Fixed pricing</div>
-                            <div>• Weekly reviews</div>
-                            <div>• Complete IP transfer</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white border border-gray-100 rounded-xl p-8 mt-12 text-center">
-                    <h3 class="font-semibold mb-4">Typical Timeline: 3-4 months</h3>
-                    <div class="grid md:grid-cols-3 gap-6 text-sm">
-                        <div>
-                            <div class="font-semibold text-orange-600">1-2 months</div>
-                            <div class="text-gray-700">Firmware updates</div>
-                        </div>
-                        <div>
-                            <div class="font-semibold text-orange-600">6+ months</div>
-                            <div class="text-gray-700">Complete redesigns</div>
-                        </div>
-                        <div>
-                            <div class="font-semibold text-orange-600">Rush jobs</div>
-                            <div class="text-gray-700">When needed</div>
-                        </div>
-                    </div>
-                </div>
-              </div>
-            </section>
-
-            <!-- When You Need Us -->
-            <section class="relative mb-16">
-              <div class="bg-white rounded-2xl p-12 shadow-sm border border-gray-100">
-                <h2 class="text-4xl font-light text-gray-900 mb-12 text-center tracking-tight">When You Need Us</h2>
-
-                <!-- Critical Situations -->
-                <div class="bg-white border border-gray-100 rounded-xl p-8 mb-8">
-                    <h3 class="font-semibold mb-4 text-red-900">Critical Situations (Call Immediately)</h3>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <ul class="space-y-3 text-sm text-gray-700">
-                            <li>• Your device failed FDA/CE testing and launch is at risk</li>
-                            <li>• Your prototype works but keeps failing EMC compliance</li>
-                            <li>• Your industrial system is causing safety shutdowns</li>
-                            <li>• FDA is asking for documentation you don't have</li>
-                        </ul>
-                        <ul class="space-y-3 text-sm text-gray-700">
-                            <li>• Your medical device software doesn't meet IEC 62304</li>
-                            <li>• Your safety system needs SIL rating and you're behind schedule</li>
-                            <li>• Your robotics controller is unreliable in production</li>
-                            <li>• You're 6 months from launch with no regulatory strategy</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Planning Situations -->
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-white border border-gray-100 rounded-xl p-8">
-                        <h3 class="font-semibold mb-4 text-green-900">Planning Ahead (Smart Move)</h3>
-                        <ul class="space-y-2 text-sm text-gray-700">
-                            <li>• Starting a new FDA Class II/III medical device</li>
-                            <li>• Designing industrial automation that needs safety certification</li>
-                            <li>• Building robotics systems for manufacturing</li>
-                            <li>• Modernizing legacy medical/industrial equipment</li>
-                            <li>• Your current team lacks regulatory experience</li>
-                            <li>• You want to avoid expensive compliance surprises</li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-white border border-gray-100 rounded-xl p-8">
-                        <h3 class="font-semibold mb-4 text-orange-900">We're Not Your Solution</h3>
-                        <ul class="space-y-2 text-sm text-gray-700">
-                            <li>• Simple consumer electronics projects under $25K</li>
-                            <li>• Pure software (web, mobile apps, databases)</li>
-                            <li>• Projects without hardware/firmware components</li>
-                            <li>• Requirements that change weekly</li>
-                            <li>• Hobby projects or academic research</li>
-                            <li>• You need work done for free or "equity only"</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Project Investment -->
-                <div class="bg-white border border-gray-100 rounded-xl p-8 mt-8 text-center">
-                    <h3 class="font-semibold mb-4 text-blue-900">Project Investment</h3>
-                    <div class="grid md:grid-cols-3 gap-6 text-sm">
-                        <div>
-                            <div class="font-semibold text-blue-600 text-lg">$50K+</div>
-                            <div class="text-gray-700">Regulatory compliance projects</div>
-                        </div>
-                        <div>
-                            <div class="font-semibold text-blue-600 text-lg">$25K+</div>
-                            <div class="text-gray-700">Non-regulated hardware/software</div>
-                        </div>
-                        <div>
-                            <div class="font-semibold text-blue-600 text-lg">$200K+</div>
-                            <div class="text-gray-700">Cost of FDA/CE delays we prevent</div>
-                        </div>
-                    </div>
-                </div>
-              </div>
-            </section>
-
-            <!-- Contact -->
-            <section class="relative">
-              <div class="bg-white rounded-2xl p-12 text-center shadow-sm border border-gray-100">
-                <h2 class="text-4xl font-light text-gray-900 mb-6 tracking-tight">Contact</h2>
-                <p class="text-gray-700 mb-8">Direct access to engineers.</p>
-
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="/quote" class="px-12 py-4 bg-white border border-gray-300 text-gray-900 font-semibold rounded-full hover:bg-gray-50 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-gray-400 shadow-sm hover:shadow-md transition-all duration-200">
-                        Get a Quote
-                    </a>
-                    <a href="https://cal.com/crablabsllc/consultation" class="px-12 py-4 bg-gradient-to-r from-orange-600 to-orange-700 text-white font-semibold rounded-full hover:from-orange-700 hover:to-orange-800 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-orange-400 shadow-md transition-all duration-200">
-                        Schedule Consultation
-                    </a>
-                    <a href="tel:+14242715569" class="px-12 py-4 bg-white border border-gray-300 text-gray-900 font-semibold rounded-full hover:bg-gray-50 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-gray-400 shadow-sm hover:shadow-md transition-all duration-200">
-                        Call (424) 271-5569
-                    </a>
-                </div>
-
-                <p class="text-gray-500 mt-6 text-sm">
-                    Long Beach, CA • Response within 24 hours
-                </p>
-              </div>
-            </section>
-
-        </article>
-      </Container>
-    </div>
+    </Container>
 </Layout>
