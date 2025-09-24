@@ -29,13 +29,13 @@ import Container from "../components/Container.astro";
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
                     </svg>
                   </div>
-                  <h2 class="heading-section">Hardware Design</h2>
+                  <h2 class="heading-with-icon">Hardware Design</h2>
                 </div>
 
                 <div class="grid lg:grid-cols-4 gap-6">
                   <!-- Tools -->
-                  <div class="bg-white rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Tools</h3>
+                  <div class="card">
+                    <h3 class="heading-subsection">Tools</h3>
                     <ul class="text-sm text-gray-600 space-y-2">
                       <li>• Altium Designer</li>
                       <li>• KiCad EDA</li>
@@ -45,8 +45,8 @@ import Container from "../components/Container.astro";
                   </div>
 
                   <!-- Applications -->
-                  <div class="bg-white rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Applications</h3>
+                  <div class="card">
+                    <h3 class="heading-subsection">Applications</h3>
                     <ul class="text-sm text-gray-600 space-y-2">
                       <li>• High-speed digital</li>
                       <li>• Analog circuits</li>
@@ -57,8 +57,8 @@ import Container from "../components/Container.astro";
                   </div>
 
                   <!-- Regulatory -->
-                  <div class="bg-white rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Regulatory</h3>
+                  <div class="card">
+                    <h3 class="heading-subsection">Regulatory</h3>
                     <ul class="text-sm text-gray-600 space-y-2">
                       <li>• IEC 60601-1-2 (medical)</li>
                       <li>• IEC 61000 (EMC)</li>
@@ -69,8 +69,8 @@ import Container from "../components/Container.astro";
                   </div>
 
                   <!-- Limitations -->
-                  <div class="bg-gray-50 rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Limitations</h3>
+                  <div class="card bg-gray-50">
+                    <h3 class="heading-subsection">Limitations</h3>
                     <ul class="text-sm text-gray-600 space-y-2">
                       <li>• No custom RF design</li>
                       <li>• 12-layer PCB max</li>
@@ -94,12 +94,12 @@ import Container from "../components/Container.astro";
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
                     </svg>
                   </div>
-                  <h2 class="heading-section">Firmware Development</h2>
+                  <h2 class="heading-with-icon">Firmware Development</h2>
                 </div>
                 <div class="grid lg:grid-cols-4 gap-6">
                   <!-- Platforms -->
-                  <div class="bg-white rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Platforms</h3>
+                  <div class="card">
+                    <h3 class="heading-subsection">Platforms</h3>
                     <ul class="text-sm text-gray-600 space-y-2">
                       <li>• Nordic nRF5 series</li>
                       <li>• ESP32</li>
@@ -110,8 +110,8 @@ import Container from "../components/Container.astro";
                   </div>
 
                   <!-- Applications -->
-                  <div class="bg-white rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Applications</h3>
+                  <div class="card">
+                    <h3 class="heading-subsection">Applications</h3>
                     <ul class="text-sm text-gray-600 space-y-2">
                       <li>• Device drivers</li>
                       <li>• Wireless interfaces</li>
@@ -122,8 +122,8 @@ import Container from "../components/Container.astro";
                   </div>
 
                   <!-- Regulatory -->
-                  <div class="bg-white rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Regulatory</h3>
+                  <div class="card">
+                    <h3 class="heading-subsection">Regulatory</h3>
                     <ul class="text-sm text-gray-600 space-y-2">
                       <li>• IEC 62304 (medical SW)</li>
                       <li>• IEC 61508 (industrial safety)</li>
@@ -133,8 +133,8 @@ import Container from "../components/Container.astro";
                   </div>
 
                   <!-- Limitations -->
-                  <div class="bg-gray-50 rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Limitations</h3>
+                  <div class="card bg-gray-50">
+                    <h3 class="heading-subsection">Limitations</h3>
                     <ul class="text-sm text-gray-600 space-y-2">
                       <li>• No Linux kernel</li>
                       <li>• No Android/iOS</li>
@@ -157,13 +157,13 @@ import Container from "../components/Container.astro";
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
                     </svg>
                   </div>
-                  <h2 class="text-5xl font-light text-gray-900 tracking-tight">Test Equipment & Lab</h2>
+                  <h2 class="heading-with-icon">Test Equipment & Lab</h2>
                 </div>
 
                 <div class="grid lg:grid-cols-3 gap-8">
                   <!-- Lab Equipment -->
-                  <div class="bg-white rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Lab Equipment</h3>
+                  <div class="card">
+                    <h3 class="heading-subsection">Lab Equipment</h3>
                     <ul class="text-sm text-gray-600 space-y-2">
                       <li>• 8 GHz oscilloscope</li>
                       <li>• 6 GHz spectrum analyzer</li>
@@ -174,8 +174,8 @@ import Container from "../components/Container.astro";
                   </div>
 
                   <!-- EMC Equipment -->
-                  <div class="bg-white rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-4">EMC Equipment</h3>
+                  <div class="card">
+                    <h3 class="heading-subsection">EMC Equipment</h3>
                     <ul class="text-sm text-gray-600 space-y-2">
                       <li>• EMC tent & antennas</li>
                       <li>• LISN & current probes</li>
@@ -186,8 +186,8 @@ import Container from "../components/Container.astro";
                   </div>
 
                   <!-- Facility -->
-                  <div class="bg-white rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Facility</h3>
+                  <div class="card">
+                    <h3 class="heading-subsection">Facility</h3>
                     <ul class="text-sm text-gray-600 space-y-2">
                       <li>• 1,000 sq ft lab space</li>
                       <li>• Temperature chamber</li>
@@ -211,13 +211,13 @@ import Container from "../components/Container.astro";
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
                     </svg>
                   </div>
-                  <h2 class="text-5xl font-light text-gray-900 tracking-tight">Assembly & Manufacturing</h2>
+                  <h2 class="heading-with-icon">Assembly & Manufacturing</h2>
                 </div>
 
                 <div class="grid lg:grid-cols-3 gap-6">
                   <!-- Assembly Equipment -->
-                  <div class="bg-white rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Assembly Equipment</h3>
+                  <div class="card">
+                    <h3 class="heading-subsection">Assembly Equipment</h3>
                     <ul class="text-sm text-gray-600 space-y-2">
                       <li>• Pick & place machine</li>
                       <li>• Reflow oven</li>
@@ -228,8 +228,8 @@ import Container from "../components/Container.astro";
                   </div>
 
                   <!-- Testing Equipment -->
-                  <div class="bg-white rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Testing Equipment</h3>
+                  <div class="card">
+                    <h3 class="heading-subsection">Testing Equipment</h3>
                     <ul class="text-sm text-gray-600 space-y-2">
                       <li>• In-circuit test fixtures</li>
                       <li>• Functional test jigs</li>
@@ -240,8 +240,8 @@ import Container from "../components/Container.astro";
                   </div>
 
                   <!-- Capabilities -->
-                  <div class="bg-white rounded-lg p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Capabilities</h3>
+                  <div class="card">
+                    <h3 class="heading-subsection">Capabilities</h3>
                     <ul class="text-sm text-gray-600 space-y-2">
                       <li>• 0402 to BGA packages</li>
                       <li>• Lead-free & leaded processes</li>
@@ -258,23 +258,23 @@ import Container from "../components/Container.astro";
 
           <!-- Contact CTA -->
           <section class="relative">
-            <div class="bg-gradient-to-b from-gray-50 to-gray-100 p-16 text-center">
+            <div class="cta-section">
               <div class="max-w-2xl mx-auto">
-                <h2 class="text-5xl font-light text-gray-900 mb-16 tracking-tight">Ready to Start Your Project?</h2>
-                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                <h2 class="heading-section">Ready to Start Your Project?</h2>
+                <p class="text-body-center">
                   Talk directly with a senior engineer about your technical requirements and regulatory pathway.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-10">
-                  <a href="/quote" class="px-12 py-4 bg-white border border-gray-300 text-gray-900 font-semibold rounded-full hover:bg-gray-50 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-gray-400 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer relative z-20 whitespace-nowrap">
+                  <a href="/quote" class="cta-button-secondary">
                     Get a Quote
                   </a>
-                  <a href="https://cal.com/crablabsllc/consultation" class="px-12 py-4 bg-gradient-to-r from-orange-600 to-orange-700 text-white font-semibold rounded-full hover:from-orange-700 hover:to-orange-800 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-orange-400 shadow-md transition-all duration-200 inline-flex items-center gap-x-2 cursor-pointer relative z-20 whitespace-nowrap">
+                  <a href="https://cal.com/crablabsllc/consultation" class="cta-button-primary">
                     Schedule a Consultation
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m9 18 6-6-6-6"></path>
                     </svg>
                   </a>
-                  <a href="tel:+14242715569" class="px-12 py-4 bg-white border border-gray-300 text-gray-900 font-semibold rounded-full hover:bg-gray-50 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-gray-400 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer relative z-20 whitespace-nowrap">
+                  <a href="tel:+14242715569" class="cta-button-secondary">
                     Call (424) 271-5569
                   </a>
                 </div>
