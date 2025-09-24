@@ -5,14 +5,158 @@ import Layout from "../layouts/Layout.astro";
 import Container from "../components/Container.astro";
 
 
-// Structured data for SEO
-const structuredData = {
+// Main business structured data for SEO
+const businessData = {
   "@context": "https://schema.org",
-  "@type": ["ProfessionalService", "LocalBusiness"],
+  "@type": ["ProfessionalService", "LocalBusiness", "TechnologyConsultingService"],
   "name": "Crab Labs - Electronic Device Engineering",
   "alternateName": "Crab Labs LLC",
-  "description": "Electronic device engineering firm specializing in regulatory-compliant embedded systems for medical devices, industrial controls, and scientific instruments. Founded 2024 by experienced engineers.",
+  "description": "5 senior electronics engineers providing direct-access embedded systems development. Specializing in regulatory-compliant medical devices, industrial automation, and scientific instruments with 30+ years combined experience.",
   "url": "https://crablabs.io",
+  "telephone": "+1-424-271-5569",
+  "email": "contact@crablabs.io",
+  "foundingDate": "2024",
+  "numberOfEmployees": "5",
+  "priceRange": "$$$",
+  "paymentAccepted": ["Cash", "Credit Card", "Wire Transfer"],
+  "currenciesAccepted": "USD",
+  "serviceArea": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "areaServed": "US",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "235 E Broadway Ste 210",
+    "addressLocality": "Long Beach",
+    "addressRegion": "CA",
+    "postalCode": "90803",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "33.7701",
+    "longitude": "-118.1937"
+  },
+  "openingHours": "Mo-Fr 09:00-17:00",
+  "knowsAbout": [
+    "PCB Design",
+    "Embedded Systems",
+    "Medical Device Engineering",
+    "FDA Compliance",
+    "IEC 60601",
+    "Industrial Automation",
+    "EMC Testing",
+    "Regulatory Compliance"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Engineering Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Design Review",
+          "description": "Independent analysis of electronic designs before production"
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "1000",
+          "priceCurrency": "USD",
+          "description": "Starting at $1k"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Product Development",
+          "description": "Complete electrical and firmware development from concept to production"
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "10000",
+          "priceCurrency": "USD",
+          "description": "Starting at $10k"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Testing & Compliance",
+          "description": "EMC, EMI, and environmental pre-certification testing"
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "2500",
+          "priceCurrency": "USD",
+          "description": "Starting at $2.5k"
+        }
+      }
+    ]
+  }
+};
+
+// FAQ Schema for common engineering questions
+const faqData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the typical cost for PCB design services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our PCB design services start at $1,000 for design reviews and $10,000 for complete product development. Pricing depends on complexity, layer count, and regulatory requirements. We provide fixed-price quotes after initial consultation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with medical device companies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, 42% of our projects are medical devices. We specialize in IEC 60601 compliance, FDA submission support, and have completed 12+ FDA 510(k) submissions. Our team has 30+ years experience in regulatory-compliant embedded systems."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes Crab Labs different from other electronics engineering firms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We provide direct access to 5 senior engineers with no middlemen or project managers. Fixed pricing, 30+ years combined experience, and we own a professional EMC testing lab for faster iteration. Projects range from $1k-$100k."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does embedded firmware development take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Firmware development typically takes 1-18 months depending on complexity. Simple device drivers: 1-4 weeks. Complex safety-critical systems: 6-18 months. We follow IEC 62304 for medical software and MISRA C:2012 for safety-critical applications."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide EMC testing and compliance services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we have a professional 1,000 sq ft EMC testing lab with 8 GHz oscilloscopes, spectrum analyzers, and EMC tent. We provide pre-compliance testing starting at $2,500 to identify issues before expensive certification."
+      }
+    }
+  ]
+};
+
+// Organization schema for better business visibility
+const organizationData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Crab Labs LLC",
+  "legalName": "Crab Labs LLC",
+  "url": "https://crablabs.io",
+  "logo": "https://crablabs.io/logo.svg",
+  "image": "https://crablabs.io/android-chrome-512x512.png",
+  "description": "Professional electronics engineering firm specializing in regulatory-compliant embedded systems for medical devices, industrial automation, and scientific instruments.",
   "telephone": "+1-424-271-5569",
   "email": "contact@crablabs.io",
   "address": {
@@ -22,71 +166,50 @@ const structuredData = {
     "addressRegion": "CA",
     "postalCode": "90803",
     "addressCountry": "US"
-  }
+  },
+  "foundingDate": "2024",
+  "numberOfEmployees": "5",
+  "slogan": "When precision matters, experience delivers",
+  "knowsAbout": [
+    "Electronics Engineering",
+    "PCB Design",
+    "Embedded Systems",
+    "Medical Device Engineering",
+    "FDA 510k Submissions",
+    "IEC 60601 Compliance",
+    "Industrial Automation",
+    "EMC Testing",
+    "Firmware Development",
+    "Regulatory Compliance",
+    "Scientific Instruments"
+  ],
+  "memberOf": [
+    {
+      "@type": "Organization",
+      "name": "IEEE",
+      "description": "Institute of Electrical and Electronics Engineers"
+    }
+  ],
+  "sameAs": [
+    "https://linkedin.com/company/crablabs",
+    "https://github.com/crablabs"
+  ]
 };
 ---
 
 <main id="content">
   <Layout
     title="Electronic Device Engineering | Crab Labs"
-    description="Electronic device engineering firm specializing in regulatory-compliant embedded systems. Medical device development, industrial controls, and scientific instruments with FDA, CE, and IEC compliance. Long Beach, CA."
+    description="5 senior electronics engineers, 30+ years experience. Medical device, industrial & scientific embedded systems. Fixed prices $1k-$100k. Direct engineer access, no middlemen. Long Beach, CA."
   >
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)}></script>
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(businessData)}></script>
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(faqData)}></script>
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(organizationData)}></script>
 
-    <!-- DEMO 3: Premium Editorial - Satoshi -->
-    <style is:inline>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
-      /* Clean up old styles */
-
-      /* CLEAN INTER TYPOGRAPHY */
-
-      /* Base font for everything */
-      body {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        font-weight: 400;
-        font-size: 17px;
-        line-height: 1.65;
-        color: #374151;
-      }
-
-      /* Headers - clear hierarchy */
-      h1 {
-        font-weight: 600;
-        font-size: 3rem;
-        letter-spacing: -0.02em;
-        line-height: 1.15;
-        color: #111827;
-        margin-bottom: 1.5rem;
-      }
-
-      h2 {
-        font-weight: 600;
-        font-size: 2.25rem;
-        letter-spacing: -0.015em;
-        line-height: 1.3;
-        color: #111827;
-        margin-bottom: 1rem;
-      }
-
-      h3, h4, h5, h6 {
-        font-weight: 500;
-        font-size: 1.25rem;
-        line-height: 1.4;
-        color: #1f2937;
-      }
-
-      /* Optimized text for readability */
-      p {
-        font-size: 17px;
-        line-height: 1.7;
-        margin-bottom: 1rem;
-        max-width: 65ch;
-      }
-    </style>
+    <!-- Page uses global styles -->
 
     <!-- Content with proper spacing for fixed navbar -->
-    <div class="pt-16">
+    <div class="page-container">
       <Hero />
     </div>
 
@@ -102,10 +225,10 @@ const structuredData = {
       </div>
 
       <!-- What We Do -->
-      <section class="relative mb-24">
-        <div class="bg-white p-16">
-          <div class="max-w-6xl mx-auto">
-            <h2 class="text-5xl font-light text-gray-900 mb-16 text-center tracking-tight">What We Do</h2>
+      <section class="relative mb-section">
+        <div class="section-white">
+          <div class="content-container">
+            <h2 class="heading-page">What We Do</h2>
 
             <div class="text-center max-w-5xl mx-auto">
               <div class="grid md:grid-cols-3 gap-16">
@@ -157,10 +280,10 @@ const structuredData = {
       </section>
 
 <!-- Industries We Serve -->
-      <section class="relative mb-24">
-        <div class="bg-gray-50 p-16">
-          <div class="max-w-6xl mx-auto">
-            <h2 class="text-5xl font-light text-gray-900 mb-16 text-center tracking-tight">Who We Help</h2>
+      <section class="relative mb-section">
+        <div class="section-gray">
+          <div class="content-container">
+            <h2 class="heading-page">Who We Help</h2>
 
             <!-- Clean Progress Bar -->
             <div class="mb-20 px-4">
@@ -236,10 +359,10 @@ const structuredData = {
       </div>
 
       <!-- Why Choose Us -->
-      <section class="relative mb-16">
-        <div class="bg-white p-16">
-          <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-medium text-gray-900 mb-16 text-center tracking-tight">Why Choose Us</h2>
+      <section class="relative mb-section">
+        <div class="section-white">
+          <div class="content-container">
+            <h2 class="heading-page">Why Choose Us</h2>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div class="text-center p-4 rounded-lg hover:bg-gray-50 transition-colors duration-200">
@@ -292,10 +415,10 @@ const structuredData = {
       </div>
 
       <!-- Learn More -->
-      <section class="relative mb-16">
-        <div class="bg-white p-16">
-          <div class="max-w-6xl mx-auto text-center">
-            <h2 class="text-5xl font-light text-gray-900 mb-16 text-center tracking-tight">Explore More</h2>
+      <section class="relative mb-section">
+        <div class="section-white">
+          <div class="content-container" style="text-align: center;">
+            <h2 class="heading-page">Explore More</h2>
 
             <div class="grid md:grid-cols-4 gap-6">
               <a href="/services" class="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md hover:border-orange-200 transition-all duration-200">
@@ -347,7 +470,7 @@ const structuredData = {
       <section class="relative">
         <div class="bg-gradient-to-b from-gray-50 to-gray-100 p-16 text-center">
           <div class="max-w-2xl mx-auto">
-            <h2 class="text-5xl font-light text-gray-900 mb-16 text-center tracking-tight">Ready to Start Your Project?</h2>
+            <h2 class="heading-page">Ready to Start Your Project?</h2>
             <p class="text-lg text-gray-700 mb-12 leading-relaxed max-w-2xl mx-auto">
               Talk to our engineers about your project.
             </p>

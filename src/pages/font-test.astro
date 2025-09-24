@@ -1,0 +1,163 @@
+---
+// Font comparison page
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Comparison - Crab Labs</title>
+    <style>
+        /* Import all fonts for comparison */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap');
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background: white;
+            line-height: 1.6;
+        }
+
+        .font-sample {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+        }
+
+        .font-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ea580c;
+            margin-bottom: 10px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .sample-h1 { font-size: 2.5rem; font-weight: 600; margin: 10px 0; color: #111827; }
+        .sample-h2 { font-size: 1.8rem; font-weight: 500; margin: 10px 0; color: #374151; }
+        .sample-body { font-size: 17px; font-weight: 400; margin: 10px 0; color: #374151; }
+        .sample-small { font-size: 14px; font-weight: 400; margin: 10px 0; color: #6b7280; }
+
+        .inter { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+        .ibm-plex { font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif; }
+        .source-sans { font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif; }
+        .roboto { font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif; }
+        .poppins { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; }
+        .montserrat { font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif; }
+        .space-grotesk { font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif; }
+        .work-sans { font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif; }
+        .dm-sans { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; }
+        .nunito-sans { font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif; }
+    </style>
+</head>
+<body>
+    <h1 style="font-family: 'Inter', sans-serif; color: #ea580c; text-align: center; margin-bottom: 40px;">
+        Crab Labs - Font Comparison
+    </h1>
+
+    <!-- Inter -->
+    <div class="font-sample inter">
+        <div class="font-name">1. Inter (Current - Modern, Tech Standard)</div>
+        <h1 class="sample-h1">Electronic Device Engineering</h1>
+        <h2 class="sample-h2">Regulatory-Compliant Embedded Systems</h2>
+        <p class="sample-body">Custom electronics design, embedded systems development, and product testing for medical devices, industrial automation, and scientific instruments. Direct access to senior engineers with 30+ years experience.</p>
+        <p class="sample-small">Contact: +1-424-271-5569 • Long Beach, CA</p>
+    </div>
+
+    <!-- IBM Plex Sans -->
+    <div class="font-sample ibm-plex" style="border: 3px solid #ea580c; background-color: #fef3f2;">
+        <div class="font-name">2. IBM Plex Sans ✅ CURRENTLY ACTIVE (Technical, Clean, Engineered)</div>
+        <h1 class="sample-h1">Electronic Device Engineering</h1>
+        <h2 class="sample-h2">Regulatory-Compliant Embedded Systems</h2>
+        <p class="sample-body">Custom electronics design, embedded systems development, and product testing for medical devices, industrial automation, and scientific instruments. Direct access to senior engineers with 30+ years experience.</p>
+        <p class="sample-small">Contact: +1-424-271-5569 • Long Beach, CA</p>
+    </div>
+
+    <!-- Source Sans Pro -->
+    <div class="font-sample source-sans">
+        <div class="font-name">3. Source Sans Pro (Adobe's Clean Design)</div>
+        <h1 class="sample-h1">Electronic Device Engineering</h1>
+        <h2 class="sample-h2">Regulatory-Compliant Embedded Systems</h2>
+        <p class="sample-body">Custom electronics design, embedded systems development, and product testing for medical devices, industrial automation, and scientific instruments. Direct access to senior engineers with 30+ years experience.</p>
+        <p class="sample-small">Contact: +1-424-271-5569 • Long Beach, CA</p>
+    </div>
+
+    <!-- Roboto -->
+    <div class="font-sample roboto">
+        <div class="font-name">4. Roboto (Google Material Design)</div>
+        <h1 class="sample-h1">Electronic Device Engineering</h1>
+        <h2 class="sample-h2">Regulatory-Compliant Embedded Systems</h2>
+        <p class="sample-body">Custom electronics design, embedded systems development, and product testing for medical devices, industrial automation, and scientific instruments. Direct access to senior engineers with 30+ years experience.</p>
+        <p class="sample-small">Contact: +1-424-271-5569 • Long Beach, CA</p>
+    </div>
+
+    <!-- Poppins -->
+    <div class="font-sample poppins">
+        <div class="font-name">5. Poppins (Modern, Friendly, Approachable)</div>
+        <h1 class="sample-h1">Electronic Device Engineering</h1>
+        <h2 class="sample-h2">Regulatory-Compliant Embedded Systems</h2>
+        <p class="sample-body">Custom electronics design, embedded systems development, and product testing for medical devices, industrial automation, and scientific instruments. Direct access to senior engineers with 30+ years experience.</p>
+        <p class="sample-small">Contact: +1-424-271-5569 • Long Beach, CA</p>
+    </div>
+
+    <!-- Montserrat -->
+    <div class="font-sample montserrat">
+        <div class="font-name">6. Montserrat (Elegant, Agency Favorite)</div>
+        <h1 class="sample-h1">Electronic Device Engineering</h1>
+        <h2 class="sample-h2">Regulatory-Compliant Embedded Systems</h2>
+        <p class="sample-body">Custom electronics design, embedded systems development, and product testing for medical devices, industrial automation, and scientific instruments. Direct access to senior engineers with 30+ years experience.</p>
+        <p class="sample-small">Contact: +1-424-271-5569 • Long Beach, CA</p>
+    </div>
+
+    <!-- Space Grotesk -->
+    <div class="font-sample space-grotesk">
+        <div class="font-name">7. Space Grotesk (Unique, Distinctive, Modern)</div>
+        <h1 class="sample-h1">Electronic Device Engineering</h1>
+        <h2 class="sample-h2">Regulatory-Compliant Embedded Systems</h2>
+        <p class="sample-body">Custom electronics design, embedded systems development, and product testing for medical devices, industrial automation, and scientific instruments. Direct access to senior engineers with 30+ years experience.</p>
+        <p class="sample-small">Contact: +1-424-271-5569 • Long Beach, CA</p>
+    </div>
+
+    <!-- Work Sans -->
+    <div class="font-sample work-sans">
+        <div class="font-name">8. Work Sans (Professional but Friendly)</div>
+        <h1 class="sample-h1">Electronic Device Engineering</h1>
+        <h2 class="sample-h2">Regulatory-Compliant Embedded Systems</h2>
+        <p class="sample-body">Custom electronics design, embedded systems development, and product testing for medical devices, industrial automation, and scientific instruments. Direct access to senior engineers with 30+ years experience.</p>
+        <p class="sample-small">Contact: +1-424-271-5569 • Long Beach, CA</p>
+    </div>
+
+    <!-- DM Sans -->
+    <div class="font-sample dm-sans">
+        <div class="font-name">9. DM Sans (Geometric, Clean)</div>
+        <h1 class="sample-h1">Electronic Device Engineering</h1>
+        <h2 class="sample-h2">Regulatory-Compliant Embedded Systems</h2>
+        <p class="sample-body">Custom electronics design, embedded systems development, and product testing for medical devices, industrial automation, and scientific instruments. Direct access to senior engineers with 30+ years experience.</p>
+        <p class="sample-small">Contact: +1-424-271-5569 • Long Beach, CA</p>
+    </div>
+
+    <!-- Nunito Sans -->
+    <div class="font-sample nunito-sans">
+        <div class="font-name">10. Nunito Sans (Rounded, Friendly)</div>
+        <h1 class="sample-h1">Electronic Device Engineering</h1>
+        <h2 class="sample-h2">Regulatory-Compliant Embedded Systems</h2>
+        <p class="sample-body">Custom electronics design, embedded systems development, and product testing for medical devices, industrial automation, and scientific instruments. Direct access to senior engineers with 30+ years experience.</p>
+        <p class="sample-small">Contact: +1-424-271-5569 • Long Beach, CA</p>
+    </div>
+
+    <div style="margin-top: 60px; text-align: center; font-family: 'Inter', sans-serif; color: #6b7280;">
+        <p>Visit <strong>yoursite.com/font-test</strong> to see this comparison page</p>
+        <p>Once you pick your favorite, I'll update the main site!</p>
+    </div>
+</body>
+</html>

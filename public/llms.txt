@@ -5,6 +5,7 @@
 Crab Labs is a professional engineering services company founded in 2024, specializing in custom electronics design, embedded systems development, software development, and product testing. We serve clients across multiple industries including medical devices, industrial automation, robotics, IoT, and consumer electronics.
 
 ## Services Offered
+### Core Engineering Services
 - Electronics Design & Circuit Development
 - Embedded Systems & Firmware Development
 - Software Development & Applications
@@ -13,12 +14,17 @@ Crab Labs is a professional engineering services company founded in 2024, specia
 - System Integration
 - Engineering Consulting
 - Prototype Development
+
+### Specialized Capabilities
 - Motor Control Systems
 - Power Electronics Design
 - IoT Solutions Development
 - Industrial Automation Systems
 - Medical Device Engineering
 - Robotics Engineering
+- Regulatory Compliance Engineering
+- EMC/EMI Testing & Design
+- Thermal Management Solutions
 
 ## Current Projects (Examples)
 1. Industrial Power Distribution Control System
@@ -69,6 +75,16 @@ United States nationwide, with headquarters in Long Beach, California.
 - Email: contact@crablabs.io
 - Phone: +1-424-271-5569
 - Address: 235 E Broadway Ste 210, Long Beach, CA 90803
+
+## Website Structure
+The company website includes the following sections:
+- Home page with company overview and capabilities
+- Services page detailing engineering offerings
+- Capabilities page showcasing technical expertise
+- Case Studies showcasing completed projects
+- About page with company background
+- Request for Quote (RFQ) system for project inquiries
+- Contact page with location and contact details
 
 ## Company Philosophy
 We focus on solving complex engineering challenges where precision and reliability matter. Our approach emphasizes direct communication between clients and engineers, ensuring technical requirements are clearly understood and met. We work on projects ranging from small consulting engagements to complete product development cycles.

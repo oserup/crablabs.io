@@ -1,8 +1,8 @@
 ---
-import "@fontsource-variable/oxanium";
 import NavBar from "../components/NavBar.astro";
 import Footer from "../components/Footer.astro";
 import CookieBanner from "../components/CookieBanner.astro";
+import "../styles/global.css";
 
 // interface type-check properties
 interface Props {
@@ -56,8 +56,8 @@ const links = [
 
 const {
 	title,
-	description = "SME-focused electronics engineering. PCB design, embedded firmware, medical device compliance. $2.5k-$250k projects. Direct engineer access, no middlemen. 25+ years experience building products that work.",
-	image = "https://crablabs.io/logo.svg",
+	description = "5 senior electronics engineers, 30+ years experience. Direct access PCB design, embedded firmware, medical device compliance. Fixed-price projects $1k-$100k. No middlemen, Long Beach CA.",
+	image = "https://crablabs.io/android-chrome-512x512.png",
 	canonical,
 	noindex = false,
 	type = "website"
@@ -72,11 +72,22 @@ const currentUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
-		<meta name="keywords" content="PCB design services, embedded firmware development, electronic product development, medical device engineering, biomedical electronics design, robotics electronics, custom PCB design, embedded systems consulting, electronics engineering services, FCC compliance testing, IEC 60601 medical devices, Long Beach electronics engineering" />
+		<meta name="keywords" content="senior electronics engineers, direct engineer access PCB design, medical device engineering Long Beach, embedded systems consulting, IEC 60601 compliance, FDA device development, industrial automation engineering, scientific instrument design, fixed price electronics projects, regulatory compliant embedded systems, EMC testing Long Beach" />
 		<meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
-		<meta name="author" content="Crab Labs" />
+		<meta name="author" content="Crab Labs LLC" />
+		<meta name="publisher" content="Crab Labs LLC" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="format-detection" content="telephone=yes" />
+		<meta name="geo.region" content="US-CA" />
+		<meta name="geo.placename" content="Long Beach, California" />
+		<meta name="geo.position" content="33.7701;-118.1937" />
+		<meta name="ICBM" content="33.7701, -118.1937" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="manifest" href="/site.webmanifest" />
 		<meta name="generator" content={Astro.generator} />
 
 		<!-- Canonical URL -->
@@ -120,16 +131,19 @@ const currentUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
 		<script is:inline>
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
-			dataLayer.push(arguments);
+				dataLayer.push(arguments);
 			}
 			gtag("js", new Date());
-	
-			gtag("config", "G-VS3TXE9GHY");
+			gtag("config", "G-VS3TXE9GHY", {
+				'anonymize_ip': true,
+				'cookie_flags': 'SameSite=None;Secure'
+			});
 		</script>
 		<!-- Analytics Tracking Code -->
-		<script 
-			async 
-			src="https://cdn.jsdelivr.net/gh/leadinglydevelopment/pixel-tracking@latest/pixel.js" 
+		<script
+			is:inline
+			async
+			src="https://cdn.jsdelivr.net/gh/leadinglydevelopment/pixel-tracking@latest/pixel.js"
 			data-site-id="crablabs.io"
 			data-user-id="1741290011679_18954e29-5214-4eea-89ec-8a8d7f7cfafe"
 		></script>
@@ -155,15 +169,8 @@ const currentUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
 
 	<!-- CSS -->
 	<style is:global>
-		@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700,800,900&display=swap');
-		@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
 		html {
 			background: #ffffff;
-		}
-
-		* {
-			font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 		}
 	</style>
 
