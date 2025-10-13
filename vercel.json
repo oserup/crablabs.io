@@ -13,5 +13,12 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/:path((?!.well-known).*)",
+      "destination": "https://www.crablabs.io/:path*",
+      "permanent": false
+    }
   ]
 }
