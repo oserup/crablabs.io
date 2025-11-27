@@ -2,10 +2,9 @@
 // Cookie Banner Component
 ---
 
-<div 
-  id="cookie-banner" 
-  class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 transform translate-y-full transition-transform duration-300 ease-in-out"
-  style="display: none;"
+<div
+  id="cookie-banner"
+  class="hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 transform translate-y-full transition-transform duration-300 ease-in-out"
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
@@ -57,10 +56,9 @@
 </div>
 
 <!-- Cookie Settings Modal -->
-<div 
-  id="cookie-settings-modal" 
-  class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
-  style="display: none;"
+<div
+  id="cookie-settings-modal"
+  class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
 >
   <div class="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
     
@@ -68,11 +66,12 @@
     <div class="border-b border-gray-200 p-6">
       <div class="flex items-center justify-between">
         <h2 class="text-xl font-semibold text-gray-800">Cookie Preferences</h2>
-        <button 
+        <button
           id="cookie-modal-close"
           class="text-gray-400 hover:text-gray-600"
+          aria-label="Close cookie settings"
         >
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
           </svg>
         </button>
@@ -183,13 +182,11 @@
     const cookiesAccepted = localStorage.getItem('cookiesAccepted');
     
     if (!cookiesAccepted) {
-      // Show banner after a short delay
-      setTimeout(() => {
-        if (banner) {
-          banner.style.display = 'block';
-          banner.classList.remove('translate-y-full');
-        }
-      }, 1000);
+      // Show banner immediately
+      if (banner) {
+        banner.classList.remove('hidden');
+        banner.classList.remove('translate-y-full');
+      }
     }
 
     // Accept all cookies
@@ -225,31 +222,74 @@
       if (banner) {
         banner.classList.add('translate-y-full');
         setTimeout(() => {
-          banner.style.display = 'none';
+          banner.classList.add('hidden');
         }, 300);
+      }
+    }
+
+    // Focus trap for modal
+    function trapFocus(element: HTMLElement) {
+      const focusableElements = element.querySelectorAll<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === 'Tab') {
+          if (e.shiftKey && document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement?.focus();
+          } else if (!e.shiftKey && document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement?.focus();
+          }
+        }
+        if (e.key === 'Escape') {
+          hideModal();
+        }
+      };
+
+      element.addEventListener('keydown', handleKeyDown);
+      firstElement?.focus();
+
+      // Store the handler so we can remove it later
+      (element as any)._focusTrapHandler = handleKeyDown;
+    }
+
+    // Remove focus trap
+    function removeFocusTrap(element: HTMLElement) {
+      const handler = (element as any)._focusTrapHandler;
+      if (handler) {
+        element.removeEventListener('keydown', handler);
+        delete (element as any)._focusTrapHandler;
       }
     }
 
     // Show modal
     function showModal() {
       if (modal) {
-        modal.style.display = 'flex';
+        modal.classList.remove('hidden');
         // Load current preferences
         const analyticsEnabled = localStorage.getItem('analyticsEnabled') === 'true';
         const marketingEnabled = localStorage.getItem('marketingEnabled') === 'true';
-        
+
         const analyticsCheckbox = document.getElementById('analytics-cookies') as HTMLInputElement;
         const marketingCheckbox = document.getElementById('marketing-cookies') as HTMLInputElement;
-        
+
         if (analyticsCheckbox) analyticsCheckbox.checked = analyticsEnabled;
         if (marketingCheckbox) marketingCheckbox.checked = marketingEnabled;
+
+        // Enable focus trap
+        trapFocus(modal);
       }
     }
 
     // Hide modal
     function hideModal() {
       if (modal) {
-        modal.style.display = 'none';
+        removeFocusTrap(modal);
+        modal.classList.add('hidden');
       }
     }
 
@@ -263,22 +303,34 @@
       }
     }
 
-    // Event listeners
-    acceptBtn?.addEventListener('click', acceptAllCookies);
-    settingsBtn?.addEventListener('click', showModal);
-    modalClose?.addEventListener('click', hideModal);
-    savePreferencesBtn?.addEventListener('click', saveCookiePreferences);
-    acceptAllBtn?.addEventListener('click', () => {
-      acceptAllCookies();
-      hideModal();
-    });
+    // Event listeners - only add if elements exist
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', acceptAllCookies);
+    }
+    if (settingsBtn) {
+      settingsBtn.addEventListener('click', showModal);
+    }
+    if (modalClose) {
+      modalClose.addEventListener('click', hideModal);
+    }
+    if (savePreferencesBtn) {
+      savePreferencesBtn.addEventListener('click', saveCookiePreferences);
+    }
+    if (acceptAllBtn) {
+      acceptAllBtn.addEventListener('click', () => {
+        acceptAllCookies();
+        hideModal();
+      });
+    }
 
     // Close modal when clicking outside
-    modal?.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        hideModal();
-      }
-    });
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          hideModal();
+        }
+      });
+    }
 
     // Initialize analytics consent based on stored preferences
     if (cookiesAccepted) {

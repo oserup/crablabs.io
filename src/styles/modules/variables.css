@@ -1,0 +1,35 @@
+/* ========================================
+   CSS CUSTOM PROPERTIES
+   ======================================== */
+
+:root {
+  /* Typography */
+  --font-display: 'Inter Tight', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', ui-monospace, monospace;
+
+  /* Colors - Neutral Scale */
+  --neutral-50: #fafafa;
+  --neutral-100: #f5f5f5;
+  --neutral-200: #e5e5e5;
+  --neutral-300: #d4d4d4;
+  --neutral-400: #a3a3a3;
+  --neutral-500: #737373;
+  --neutral-600: #525252;
+  --neutral-700: #404040;
+  --neutral-800: #262626;
+  --neutral-900: #171717;
+  --neutral-950: #0a0a0a;
+
+  /* Colors - Brand (Orange) */
+  --brand-50: #fff7ed;
+  --brand-100: #ffedd5;
+  --brand-400: #fb923c;
+  --brand-500: #f97316;
+  --brand-600: #ea580c;
+  --brand-700: #c2410c;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+}

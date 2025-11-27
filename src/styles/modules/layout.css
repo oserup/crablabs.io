@@ -1,0 +1,20 @@
+/* ========================================
+   LAYOUT
+   ======================================== */
+
+.page-container {
+  padding-top: 5rem;
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding-top: 4rem;
+  }
+}
+
+.content-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}

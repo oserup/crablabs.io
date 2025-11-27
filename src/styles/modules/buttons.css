@@ -1,0 +1,114 @@
+/* ========================================
+   BUTTON SYSTEM
+   ======================================== */
+
+/* Primary brand button - orange */
+.btn-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background: var(--brand-600);
+  color: white;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--transition-base);
+}
+
+.btn-brand:hover {
+  background: var(--brand-700);
+}
+
+/* Primary dark button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background: var(--neutral-900);
+  color: white;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  border: 1px solid var(--neutral-900);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-base);
+}
+
+.btn-primary:hover {
+  background: white;
+  color: var(--neutral-900);
+}
+
+/* Secondary button - outlined */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background: white;
+  color: var(--neutral-700);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  border: 1px solid var(--neutral-300);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-base);
+}
+
+.btn-secondary:hover {
+  border-color: var(--neutral-900);
+  color: var(--neutral-900);
+}
+
+/* Dark background button variants */
+.btn-secondary-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background: transparent;
+  color: white;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  border: 1px solid var(--neutral-600);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-base);
+}
+
+.btn-secondary-dark:hover {
+  background: white;
+  color: var(--neutral-900);
+  border-color: white;
+}
+
+/* Button sizes */
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}

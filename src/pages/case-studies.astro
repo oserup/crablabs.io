@@ -1,249 +1,170 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Container from '../components/Container.astro';
+
+// Case study data organized by industry
+const industries = [
+  {
+    id: 'medical',
+    name: 'Medical',
+    color: 'red',
+    studies: [
+      {
+        id: 'medical-imaging',
+        title: 'Ultrasound Positioning Controller',
+        subtitle: 'Precision 5-axis motion system for medical imaging equipment',
+        scope: 'Hardware + Firmware',
+        timeline: '6 mo',
+        context: 'A client came to us after another firm delivered a board with electromagnetic interference issues and manufacturing defects. The original design used five separate driver boards connected by custom cables.',
+        work: 'We consolidated everything onto a single 6-layer PCB with integrated motor drivers for all five axes. USB-C handles both power and communication.',
+        outcome: 'Achieved +/-0.1mm positioning accuracy. Passed IEC 60601 medical pre-compliance on first attempt. Final design was 3x smaller and 10x cheaper than the original.'
+      },
+      {
+        id: 'neonatal-monitor',
+        title: 'Neonatal Biomarker Patch',
+        subtitle: 'Wireless wearable sensor for infant monitoring studies',
+        scope: 'Hardware + Firmware',
+        timeline: '4 mo',
+        context: 'A medical device startup needed hardware for an investigational study. The device had to be small enough for neonatal skin, run for extended periods, and survive repeated sterilization.',
+        work: 'We designed an ultra-compact board with a multi-sensor front-end and Bluetooth connectivity. Aggressive power management extends battery life significantly. We collaborated with a partner firm on the enclosure.',
+        outcome: 'Delivered a rechargeable, reusable device suitable for long-term clinical use. Used successfully in the client\'s pilot study.'
+      }
+    ]
+  },
+  {
+    id: 'industrial',
+    name: 'Industrial',
+    color: 'blue',
+    studies: [
+      {
+        id: 'industrial-power',
+        title: 'Intelligent PDU Controller',
+        subtitle: 'Connected power distribution with remote monitoring',
+        scope: 'Hardware + Firmware + UI',
+        timeline: '11 mo',
+        context: 'An industrial equipment manufacturer needed to modernize their power distribution unit product line. Existing units had no remote monitoring, and customers wanted connectivity and building automation integration.',
+        work: 'We built a dual-processor architecture combining a Linux system-on-module with a microcontroller. A 13-inch touchscreen provides local control. The system supports Modbus, SNMP, BACnet, and HTTPS for broad compatibility, plus ground fault monitoring and temperature sensing.',
+        outcome: 'Client launched an updated product line with fleet management capabilities. Now deployed in datacenters and commercial buildings.'
+      },
+      {
+        id: 'bldc-motor-controller',
+        title: 'GaN Motor Controller',
+        subtitle: 'Compact 4kW brushless motor driver',
+        scope: 'Hardware + Firmware',
+        timeline: '6 mo',
+        context: 'A client needed a 4kW brushless motor controller in a smaller form factor than existing solutions. The application required fast torque response and low acoustic noise.',
+        work: 'We used gallium nitride (GaN) transistors for high efficiency in a compact package. The PCB layout was optimized for heat dissipation, and a high-bandwidth control loop ensures smooth, quiet operation.',
+        outcome: 'Delivered higher efficiency and lower acoustic noise than the predecessor. Compact enough to mount directly on the motor housing.'
+      }
+    ]
+  },
+  {
+    id: 'scientific',
+    name: 'Scientific',
+    color: 'purple',
+    studies: [
+      {
+        id: 'scientific-instrument',
+        title: 'Gravimeter Modernization',
+        subtitle: 'Digital upgrade for legacy gravity measurement instruments',
+        scope: 'Hardware + Firmware',
+        timeline: '4 mo',
+        context: 'LaCoste-Romberg gravimeters are precision instruments used in geophysical surveys to measure subtle variations in Earth\'s gravity. The original manufacturer went out of business, leaving critical components unavailable.',
+        work: 'We designed a two-part system. An internal module adds a precision analog-to-digital converter, OLED display, and expansion interface. An external data logger provides automatic data capture with GPS tagging and wireless connectivity.',
+        outcome: 'Extended the life of instruments that would otherwise be scrapped. The client can now perform automated surveys with GPS-tagged data.'
+      },
+      {
+        id: 'aeroponics-controller',
+        title: 'Aeroponics Research Platform',
+        subtitle: 'Precision misting system for soil-free plant cultivation',
+        scope: 'Hardware + Firmware',
+        timeline: '4 mo',
+        context: 'An ag-tech startup was developing an aeroponics system for plant research. Aeroponics grows plants by misting roots with nutrient solution instead of using soil. Off-the-shelf components could not achieve the flow stability needed for reproducible experiments.',
+        work: 'We designed custom driver boards with closed-loop flow control to maintain precise misting rates. Bluetooth connectivity enables wireless monitoring and parameter adjustment.',
+        outcome: 'Achieved 99%+ flow stability. Enabled the client to file patents and establish university research partnerships.'
+      }
+    ]
+  }
+];
+
+const colorClasses: Record<string, { accent: string; bg: string; gradient: string; light: string }> = {
+  red: { accent: 'text-red-600', bg: 'bg-red-600', gradient: 'from-red-500 to-red-600', light: 'bg-red-50' },
+  blue: { accent: 'text-blue-600', bg: 'bg-blue-600', gradient: 'from-blue-500 to-blue-600', light: 'bg-blue-50' },
+  purple: { accent: 'text-purple-600', bg: 'bg-purple-600', gradient: 'from-purple-500 to-purple-600', light: 'bg-purple-50' }
+};
 ---
 
 <Layout
   title="Case Studies | Crab Labs"
-  description="Real engineering projects: FDA 510k medical devices, scientific instrument modernization, industrial PDU development. Technical case studies with compliance details and business results."
+  description="Medical devices, industrial systems, scientific instruments. Hardware and firmware projects."
 >
-    <!-- Page uses global styles -->
+  <div class="page-container">
+    <Container>
+      <div class="py-16 lg:py-24">
 
-    <!-- Content with proper spacing for fixed navbar -->
-    <div class="page-container">
-      <!-- Clean Minimal Background -->
-      <div class="absolute inset-0 -z-10 bg-white"></div>
+        <!-- Header -->
+        <section class="max-w-xl mb-16">
+          <p class="text-sm font-mono text-brand-600 mb-2">Case Studies</p>
+          <h1 class="text-4xl lg:text-5xl font-display font-semibold text-neutral-900 mb-4">Our work</h1>
+          <p class="text-xl text-neutral-600">
+            Selected projects from medical devices, industrial systems, and scientific instruments.
+          </p>
+        </section>
 
-      <Container>
-        <div class="content-container py-16">
+        <!-- Industry Sections -->
+        {industries.map((industry) => (
+          <section class="mb-16" id={industry.id}>
+            <!-- Industry Header -->
+            <div class="flex items-center gap-3 mb-6">
+              <div class={`w-1 h-6 ${colorClasses[industry.color].bg} rounded-full`}></div>
+              <h2 class="text-xl font-display font-semibold text-neutral-900">{industry.name}</h2>
+            </div>
 
-          <!-- Medical Device Project -->
-          <section class="relative mb-section">
-            <div class="section-gray">
-              <div class="content-container">
-                <div class="card-hover">
-                  <div class="flex items-center mb-6">
-                    <span class="px-4 py-2 bg-green-600 text-white text-sm font-semibold rounded-full shadow-md">Medical Device</span>
-                  </div>
-                  <h2 class="heading-section">Ultrasound Imaging System Motor Control</h2>
+            <!-- Case Study Cards -->
+            <div class="space-y-6">
+              {industry.studies.map((study) => (
+                <article class="relative bg-white border border-neutral-200 rounded-lg overflow-hidden">
+                  <!-- Colored top bar -->
+                  <div class={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${colorClasses[industry.color].gradient}`}></div>
 
-                  <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
-                    <div>
-                      <h3 class="heading-subsection">Challenge</h3>
-                      <ul class="text-gray-600 space-y-2 mb-6">
-                        <li>• Failed IEC 60601 EMC requirements (radiated and conducted emissions)</li>
-                        <li>• Signal integrity issues on high-speed circuits</li>
-                        <li>• Poor PCB layout and component placement</li>
-                        <li>• Required sub-millimeter accuracy with regulatory compliance</li>
-                      </ul>
-
-                      <h3 class="heading-subsection">Solution</h3>
-                      <ul class="text-gray-600 space-y-2">
-                        <li>• Complete control architecture redesign</li>
-                        <li>• Implemented proper grounding and filtering</li>
-                        <li>• Optimized high-speed signal routing</li>
-                        <li>• PCB layout redesign for EMC compliance</li>
-                      </ul>
-                    </div>
-
-                    <div class="bg-gray-50 rounded-lg p-8 border border-gray-200">
-                      <h3 class="heading-subsection">Results</h3>
-                      <ul class="space-y-3 text-gray-600 mb-6">
-                        <li class="flex items-start space-x-3">
-                          <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
-                          <span>Achieved full IEC 60601-1-2 compliance • Avoided 6-month launch delay</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                          <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
-                          <span>Maintained sub-millimeter positioning accuracy • Met clinical requirements</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                          <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
-                          <span>70% reduction in PCB footprint • Enabled smaller device form factor</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                          <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
-                          <span>40% fewer components • Reduced manufacturing cost and improved reliability</span>
-                        </li>
-                      </ul>
-
-                      <div class="bg-white rounded-lg p-4 border border-gray-200">
-                        <h4 class="font-semibold text-gray-800 mb-3">Technical Details</h4>
-                        <div class="text-sm text-gray-600 space-y-1">
-                          <p><strong>Platform:</strong> TI C2000</p>
-                          <p><strong>Key Technologies:</strong> PID control, trajectory planning</p>
-                          <p><strong>Timeline:</strong> 8 months development + testing</p>
-                        </div>
+                  <!-- Header -->
+                  <div class="px-6 py-4 border-b border-neutral-100">
+                    <div class="flex items-start justify-between">
+                      <div>
+                        <h3 class="font-semibold text-neutral-900 text-lg">{study.title}</h3>
+                        <p class="text-sm text-neutral-500">{study.subtitle}</p>
+                      </div>
+                      <div class="text-right ml-4 flex-shrink-0">
+                        <span class="text-xs font-mono text-neutral-500 block">{study.timeline}</span>
+                        <span class="text-xs text-neutral-400">{study.scope}</span>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </section>
 
-          <!-- Scientific Instrument Project -->
-          <section class="relative mb-section">
-            <div class="section-white">
-              <div class="content-container">
-                <div class="bg-gray-50 rounded-lg border border-gray-100 p-12 hover:shadow-md hover:border-orange-200 transition-all duration-200">
-                  <div class="flex items-center mb-6">
-                    <span class="px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-full shadow-md">Scientific Instrument</span>
-                  </div>
-                  <h2 class="heading-section">Precision Gravity Sensor Modernization</h2>
-
-                  <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
+                  <!-- Content -->
+                  <div class="p-6 space-y-4">
                     <div>
-                      <h3 class="heading-subsection">Challenge</h3>
-                      <ul class="text-gray-600 space-y-2 mb-6">
-                        <li>• Legacy 1980s gravity sensor with analog outputs</li>
-                        <li>• Proprietary interfaces limiting modern integration</li>
-                        <li>• Required maintaining original precision and calibration</li>
-                        <li>• Needed modern digital interfaces and features</li>
-                      </ul>
-
-                      <h3 class="heading-subsection">Solution</h3>
-                      <ul class="text-gray-600 space-y-2">
-                        <li>• New signal conditioning board with high-resolution ADCs</li>
-                        <li>• Reverse-engineered original calibration algorithms</li>
-                        <li>• Added modern connectivity and interfaces</li>
-                        <li>• Comprehensive feature set with data logging and monitoring</li>
-                      </ul>
+                      <h4 class="text-xs font-mono text-neutral-400 uppercase tracking-wide mb-1">Context</h4>
+                      <p class="text-sm text-neutral-600 leading-relaxed">{study.context}</p>
                     </div>
 
-                    <div class="bg-white rounded-lg p-8 border border-gray-200">
-                      <h3 class="heading-subsection">Results</h3>
-                      <ul class="space-y-3 text-gray-600 mb-6">
-                        <li class="flex items-start space-x-3">
-                          <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
-                          <span>Improved measurement resolution • Better than original 1980s specifications</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                          <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
-                          <span>Added modern connectivity • 75% faster data collection vs manual logging</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                          <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
-                          <span>Cost savings • 50% less than buying new equivalent instrument</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                          <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
-                          <span>Extended asset life • Avoided $150k replacement cost</span>
-                        </li>
-                      </ul>
-
-                      <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                        <h4 class="font-semibold text-gray-800 mb-3">Technical Details</h4>
-                        <div class="text-sm text-gray-600 space-y-1">
-                          <p><strong>Platform:</strong> ESP32S3</p>
-                          <p><strong>Key Technologies:</strong> Analog signal conditioning, user interface, USB/BLE connectivity</p>
-                          <p><strong>Timeline:</strong> 6 months development</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- Industrial Power Project -->
-          <section class="relative mb-section">
-            <div class="section-gray">
-              <div class="content-container">
-                <div class="card-hover">
-                  <div class="flex items-center mb-6">
-                    <span class="px-4 py-2 bg-purple-600 text-white text-sm font-semibold rounded-full shadow-md">Industrial Power</span>
-                  </div>
-                  <h2 class="heading-section">Smart PDU Retrofit</h2>
-
-                  <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
                     <div>
-                      <h3 class="heading-subsection">Challenge</h3>
-                      <ul class="text-gray-600 space-y-2 mb-6">
-                        <li>• Legacy PDU product line lacking smart features</li>
-                        <li>• Customers demanding real-time power monitoring</li>
-                        <li>• Required retrofit without redesigning existing hardware</li>
-                        <li>• Needed comprehensive sensing and remote access</li>
-                      </ul>
-
-                      <h3 class="heading-subsection">Solution</h3>
-                      <ul class="text-gray-600 space-y-2">
-                        <li>• Custom hardware design with integrated power monitoring</li>
-                        <li>• Purpose-built enclosure for seamless PDU integration</li>
-                        <li>• Intuitive user interface with local display and controls</li>
-                        <li>• Advanced monitoring with intelligent alerts and analytics</li>
-                        <li>• Wireless connectivity for remote monitoring and control</li>
-                      </ul>
+                      <h4 class={`text-xs font-mono ${colorClasses[industry.color].accent} uppercase tracking-wide mb-1`}>What we built</h4>
+                      <p class="text-sm text-neutral-600 leading-relaxed">{study.work}</p>
                     </div>
 
-                    <div class="bg-gray-50 rounded-lg p-8 border border-gray-200">
-                      <h3 class="heading-subsection">Results</h3>
-                      <ul class="space-y-3 text-gray-600 mb-6">
-                        <li class="flex items-start space-x-3">
-                          <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
-                          <span>Modernized entire product line • Restored competitive positioning</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                          <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
-                          <span>Smart features added • Matched competitor capabilities without redesign</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                          <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
-                          <span>Predictive analytics • Reduced customer downtime and service calls</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                          <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
-                          <span>Revenue recovery • Sales turnaround within 9 months of launch</span>
-                        </li>
-                      </ul>
-
-                      <div class="bg-white rounded-lg p-4 border border-gray-200">
-                        <h4 class="font-semibold text-gray-800 mb-3">Technical Details</h4>
-                        <div class="text-sm text-gray-600 space-y-1">
-                          <p><strong>Platform:</strong> Embedded Linux SBC with custom power monitoring</p>
-                          <p><strong>Key Technologies:</strong> Custom PCB design, analytics algorithms, alert systems, wireless protocols</p>
-                          <p><strong>Timeline:</strong> 12 months development</p>
-                        </div>
-                      </div>
+                    <div>
+                      <h4 class="text-xs font-mono text-neutral-400 uppercase tracking-wide mb-1">Outcome</h4>
+                      <p class="text-sm text-neutral-700 leading-relaxed font-medium">{study.outcome}</p>
                     </div>
                   </div>
-                </div>
-              </div>
+                </article>
+              ))}
             </div>
           </section>
+        ))}
 
-          <!-- Contact CTA -->
-          <section class="relative">
-            <div class="cta-section">
-              <div class="max-w-2xl mx-auto">
-                <h2 class="heading-section">Ready to Start Your Project?</h2>
-                <p class="text-body-center">
-                  Talk directly with a senior engineer about your technical requirements and regulatory pathway.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-10">
-                  <a href="/quote" class="cta-button-secondary">
-                    Get a Quote
-                  </a>
-                  <a href="https://cal.com/crablabsllc/consultation" class="cta-button-primary">
-                    Schedule a Consultation
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m9 18 6-6-6-6"></path>
-                    </svg>
-                  </a>
-                  <a href="tel:+14242715569" class="cta-button-secondary">
-                    Call (424) 271-5569
-                  </a>
-                </div>
-
-                <p class="text-gray-500 mt-8 text-base font-light">
-                  Long Beach, CA • Response within 24 hours
-                </p>
-              </div>
-            </div>
-          </section>
-
-        </div>
-      </Container>
-    </div>
+      </div>
+    </Container>
+  </div>
 </Layout>

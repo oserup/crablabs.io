@@ -1,0 +1,25 @@
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--neutral-900);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.6;
+  color: var(--neutral-600);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+  letter-spacing: -0.02em;
+}

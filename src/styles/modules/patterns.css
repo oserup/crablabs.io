@@ -1,0 +1,219 @@
+/* ========================================
+   DESIGN PATTERNS
+   Industry cards, pricing cards, process steps, etc.
+   ======================================== */
+
+/* Industry Cards */
+.industry-card {
+  position: relative;
+  background: white;
+  border: 1px solid var(--neutral-200);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  overflow: hidden;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.industry-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.industry-card-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0.25rem;
+}
+
+.industry-card-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.industry-tag {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+}
+
+/* Industry color variants */
+.industry-red .industry-card-accent { background: linear-gradient(to right, #ef4444, #dc2626); }
+.industry-red .industry-card-icon { background: #fef2f2; }
+.industry-red .industry-card-icon svg { color: #dc2626; }
+.industry-red .industry-tag { background: #fef2f2; color: #b91c1c; }
+.industry-red:hover { border-color: #fca5a5; }
+
+.industry-blue .industry-card-accent { background: linear-gradient(to right, #3b82f6, #2563eb); }
+.industry-blue .industry-card-icon { background: #eff6ff; }
+.industry-blue .industry-card-icon svg { color: #2563eb; }
+.industry-blue .industry-tag { background: #eff6ff; color: #1d4ed8; }
+.industry-blue:hover { border-color: #93c5fd; }
+
+.industry-purple .industry-card-accent { background: linear-gradient(to right, #a855f7, #9333ea); }
+.industry-purple .industry-card-icon { background: #faf5ff; }
+.industry-purple .industry-card-icon svg { color: #9333ea; }
+.industry-purple .industry-tag { background: #faf5ff; color: #7e22ce; }
+.industry-purple:hover { border-color: #d8b4fe; }
+
+.industry-green .industry-card-accent { background: linear-gradient(to right, #22c55e, #16a34a); }
+.industry-green .industry-card-icon { background: #f0fdf4; }
+.industry-green .industry-card-icon svg { color: #16a34a; }
+.industry-green .industry-tag { background: #f0fdf4; color: #15803d; }
+.industry-green:hover { border-color: #86efac; }
+
+/* Process Steps */
+.process-step {
+  position: relative;
+}
+
+.process-step-number {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+.process-step-number-active {
+  background: var(--brand-600);
+  color: white;
+  box-shadow: 0 2px 4px rgba(234, 88, 12, 0.2);
+}
+
+.process-step-number-inactive {
+  background: white;
+  border: 2px solid var(--neutral-300);
+  color: var(--neutral-600);
+}
+
+.process-line {
+  position: absolute;
+  top: 1.5rem;
+  left: 12.5%;
+  right: 12.5%;
+  height: 1px;
+  background: var(--neutral-300);
+}
+
+/* Pricing Cards */
+.pricing-card {
+  background: var(--neutral-900);
+  border: 1px solid var(--neutral-800);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  color: white;
+}
+
+.pricing-rate {
+  font-family: var(--font-mono);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.pricing-rate-unit {
+  font-size: 1.25rem;
+  color: var(--neutral-500);
+}
+
+.pricing-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.625rem 0;
+  border-bottom: 1px solid var(--neutral-700);
+}
+
+.pricing-row:last-child {
+  border-bottom: none;
+}
+
+.pricing-label {
+  color: var(--neutral-400);
+}
+
+.pricing-value {
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+/* CTA Sections */
+.cta-section {
+  text-align: center;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.875rem, 4vw, 2.25rem);
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.cta-description {
+  font-size: 1.125rem;
+  color: var(--neutral-400);
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.cta-links {
+  color: var(--neutral-500);
+  font-size: 0.875rem;
+}
+
+.cta-links a {
+  color: var(--brand-500);
+  transition: color var(--transition-fast);
+}
+
+.cta-links a:hover {
+  color: var(--brand-400);
+}
+
+.cta-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--neutral-800);
+  font-size: 0.875rem;
+  color: var(--neutral-500);
+}
+
+.cta-contact a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--neutral-500);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.cta-contact a:hover {
+  color: white;
+}

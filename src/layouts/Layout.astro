@@ -14,49 +14,33 @@ interface Props {
 	type?: string;
 }
 
-// links for nav bar
+// links for nav bar - organized by user journey: what we do → proof → who we are
 const links = [
-	{
-		text: "Home",
-		href: "/",
-	},
-	{
-		text: "About Us",
-		href: "/about",
-	},
 	{
 		text: "Services",
 		href: "/services",
-	},
-	{
-		text: "Capabilities",
-		href: "/capabilities",
 	},
 	{
 		text: "Case Studies",
 		href: "/case-studies",
 	},
 	{
+		text: "Tooling",
+		href: "/tooling",
+	},
+	{
 		text: "Blog",
 		href: "/blog",
 	},
 	{
-		text: "Careers",
-		href: "/careers",
-	},
-	{
-		text: "Contact Us",
-		href: "/contact",
-	},
-	{
-		text: "Get a Quote",
-		href: "/quote",
+		text: "About",
+		href: "/about",
 	},
 ];
 
 const {
 	title,
-	description = "5 senior electronics engineers, 30+ years experience. Direct access PCB design, embedded firmware, medical device compliance. Fixed-price projects $1k-$100k. No middlemen, Long Beach CA.",
+	description = "Senior electronics engineers for medical, industrial, scientific devices. Fixed-price PCB design, embedded firmware, regulatory compliance. Long Beach, CA.",
 	image = "https://crablabs.io/android-chrome-512x512.png",
 	canonical,
 	noindex = false,
@@ -72,7 +56,7 @@ const currentUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
-		<meta name="keywords" content="senior electronics engineers, direct engineer access PCB design, medical device engineering Long Beach, embedded systems consulting, IEC 60601 compliance, FDA device development, industrial automation engineering, scientific instrument design, fixed price electronics projects, regulatory compliant embedded systems, EMC testing Long Beach" />
+		<meta name="keywords" content="electronics engineering, PCB design, embedded systems, medical device design, industrial automation, scientific instruments, EMC testing, compliance testing" />
 		<meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
 		<meta name="author" content="Crab Labs LLC" />
 		<meta name="publisher" content="Crab Labs LLC" />
@@ -149,14 +133,21 @@ const currentUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
 		></script>
 	<title>{title}</title>
 	</head>
-	<div class="flex flex-col h-screen">
-		<NavBar links={links} />
-		<div class="flex-grow">
-			<slot />
+	<body>
+		<!-- Skip to content link for accessibility -->
+		<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-600 focus:text-white focus:rounded">
+			Skip to main content
+		</a>
+
+		<div class="flex flex-col h-screen">
+			<NavBar links={links} />
+			<main id="main-content" class="flex-grow">
+				<slot />
+			</main>
+			<Footer />
+			<CookieBanner />
 		</div>
-		<Footer />
-		<CookieBanner />
-	</div>
+	</body>
 
 	<!-- <div class="flex flex-col h-screen">
 		<div class="bg-red-500">header</div>
@@ -165,7 +156,9 @@ const currentUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
 	</div> -->
 
 	<!-- Preline UI script -->
-	<script src="../../node_modules/preline/dist/preline.js"></script>
+	<script>
+		import "preline/dist/preline.js";
+	</script>
 
 	<!-- CSS -->
 	<style is:global>

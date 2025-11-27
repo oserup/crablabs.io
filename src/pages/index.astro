@@ -1,30 +1,16 @@
----
-// components
-import Hero from "../components/Hero.astro";
+yo---
 import Layout from "../layouts/Layout.astro";
 import Container from "../components/Container.astro";
+import TraceAnimation from "../components/TraceAnimation.astro";
 
-
-// Main business structured data for SEO
 const businessData = {
   "@context": "https://schema.org",
-  "@type": ["ProfessionalService", "LocalBusiness", "TechnologyConsultingService"],
-  "name": "Crab Labs - Electronic Device Engineering",
-  "alternateName": "Crab Labs LLC",
-  "description": "5 senior electronics engineers providing direct-access embedded systems development. Specializing in regulatory-compliant medical devices, industrial automation, and scientific instruments with 30+ years combined experience.",
+  "@type": "ProfessionalService",
+  "name": "Crab Labs",
+  "description": "Electronics engineering consultancy. PCB design, embedded firmware, compliance testing for industrial, scientific, and medical products.",
   "url": "https://crablabs.io",
   "telephone": "+1-424-271-5569",
   "email": "contact@crablabs.io",
-  "foundingDate": "2024",
-  "numberOfEmployees": "5",
-  "priceRange": "$$$",
-  "paymentAccepted": ["Cash", "Credit Card", "Wire Transfer"],
-  "currenciesAccepted": "USD",
-  "serviceArea": {
-    "@type": "Country",
-    "name": "United States"
-  },
-  "areaServed": "US",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "235 E Broadway Ste 210",
@@ -32,471 +18,390 @@ const businessData = {
     "addressRegion": "CA",
     "postalCode": "90803",
     "addressCountry": "US"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "33.7701",
-    "longitude": "-118.1937"
-  },
-  "openingHours": "Mo-Fr 09:00-17:00",
-  "knowsAbout": [
-    "PCB Design",
-    "Embedded Systems",
-    "Medical Device Engineering",
-    "FDA Compliance",
-    "IEC 60601",
-    "Industrial Automation",
-    "EMC Testing",
-    "Regulatory Compliance"
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Engineering Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Design Review",
-          "description": "Independent analysis of electronic designs before production"
-        },
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "1000",
-          "priceCurrency": "USD",
-          "description": "Starting at $1k"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Product Development",
-          "description": "Complete electrical and firmware development from concept to production"
-        },
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "10000",
-          "priceCurrency": "USD",
-          "description": "Starting at $10k"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Testing & Compliance",
-          "description": "EMC, EMI, and environmental pre-certification testing"
-        },
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "2500",
-          "priceCurrency": "USD",
-          "description": "Starting at $2.5k"
-        }
-      }
-    ]
   }
 };
 
-// FAQ Schema for common engineering questions
-const faqData = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is the typical cost for PCB design services?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Our PCB design services start at $1,000 for design reviews and $10,000 for complete product development. Pricing depends on complexity, layer count, and regulatory requirements. We provide fixed-price quotes after initial consultation."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you work with medical device companies?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, 42% of our projects are medical devices. We specialize in IEC 60601 compliance, FDA submission support, and have completed 12+ FDA 510(k) submissions. Our team has 30+ years experience in regulatory-compliant embedded systems."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What makes Crab Labs different from other electronics engineering firms?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We provide direct access to 5 senior engineers with no middlemen or project managers. Fixed pricing, 30+ years combined experience, and we own a professional EMC testing lab for faster iteration. Projects range from $1k-$100k."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long does embedded firmware development take?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Firmware development typically takes 1-18 months depending on complexity. Simple device drivers: 1-4 weeks. Complex safety-critical systems: 6-18 months. We follow IEC 62304 for medical software and MISRA C:2012 for safety-critical applications."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you provide EMC testing and compliance services?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, we have a professional 1,000 sq ft EMC testing lab with 8 GHz oscilloscopes, spectrum analyzers, and EMC tent. We provide pre-compliance testing starting at $2,500 to identify issues before expensive certification."
-      }
-    }
-  ]
-};
-
-// Organization schema for better business visibility
-const organizationData = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Crab Labs LLC",
-  "legalName": "Crab Labs LLC",
-  "url": "https://crablabs.io",
-  "logo": "https://crablabs.io/logo.svg",
-  "image": "https://crablabs.io/android-chrome-512x512.png",
-  "description": "Professional electronics engineering firm specializing in regulatory-compliant embedded systems for medical devices, industrial automation, and scientific instruments.",
-  "telephone": "+1-424-271-5569",
-  "email": "contact@crablabs.io",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "235 E Broadway Ste 210",
-    "addressLocality": "Long Beach",
-    "addressRegion": "CA",
-    "postalCode": "90803",
-    "addressCountry": "US"
-  },
-  "foundingDate": "2024",
-  "numberOfEmployees": "5",
-  "slogan": "When precision matters, experience delivers",
-  "knowsAbout": [
-    "Electronics Engineering",
-    "PCB Design",
-    "Embedded Systems",
-    "Medical Device Engineering",
-    "FDA 510k Submissions",
-    "IEC 60601 Compliance",
-    "Industrial Automation",
-    "EMC Testing",
-    "Firmware Development",
-    "Regulatory Compliance",
-    "Scientific Instruments"
-  ],
-  "memberOf": [
-    {
-      "@type": "Organization",
-      "name": "IEEE",
-      "description": "Institute of Electrical and Electronics Engineers"
-    }
-  ],
-  "sameAs": [
-    "https://linkedin.com/company/crablabs",
-    "https://github.com/crablabs"
-  ]
-};
+// Testimonials for social proof
+const testimonials = [
+  {
+    quote: "Crab Labs helped us refine and validate our product development process.",
+    author: "Myles Ainley",
+    title: "CEO",
+    company: "Atm0s Research and Development",
+    icon: "startup"
+  }
+];
 ---
 
 <main id="content">
-  <Layout
-    title="Crab Labs"
-    description="5 senior electronics engineers, 30+ years experience. Medical device, industrial & scientific embedded systems. Fixed prices $1k-$100k. Direct engineer access, no middlemen. Long Beach, CA."
-  >
+  <Layout title="Crab Labs - Electronics Engineering">
     <script type="application/ld+json" is:inline set:html={JSON.stringify(businessData)}></script>
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(faqData)}></script>
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(organizationData)}></script>
 
-    <!-- Page uses global styles -->
+    <!-- Hero -->
+    <section class="bg-neutral-950 relative overflow-hidden">
+      <Container>
+        <div class="relative z-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-16 py-16 lg:py-24">
 
-    <!-- Content with proper spacing for fixed navbar -->
-    <div class="page-container">
-      <Hero />
-    </div>
+          <!-- Left: Text content -->
+          <div class="flex-1 max-w-xl">
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-display font-semibold text-white mb-6 leading-[1.08] tracking-tight">
+              Electronics from<br/>
+              <span class="text-neutral-400">idea to production.</span>
+            </h1>
 
-    <!-- Clean Minimal Background -->
-    <div class="absolute inset-0 -z-10 bg-white"></div>
-
-    <div class="py-8"></div>
-
-    <Container>
-      <!-- Separator -->
-      <div class="content-container mb-24">
-        <div class="h-px bg-gray-200"></div>
-      </div>
-
-      <!-- What We Do -->
-      <section class="relative mb-section">
-        <div class="section-white">
-          <div class="content-container">
-            <h2 class="heading-section">What We Do</h2>
-
-            <div class="text-center max-w-5xl mx-auto">
-              <div class="grid md:grid-cols-3 gap-16">
-                <div class="flex flex-col items-center text-center p-4 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                  <div class="w-20 h-20 bg-orange-100 rounded-lg flex items-center justify-center mb-8 hover:bg-orange-200 hover:scale-105 transition-all duration-200">
-                    <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 class="heading-card">Hardware Design</h3>
-                    <p class="text-body">
-                      Circuit boards and component selection
-                    </p>
-                  </div>
-                </div>
-
-                <div class="flex flex-col items-center text-center p-4 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                  <div class="w-20 h-20 bg-orange-100 rounded-lg flex items-center justify-center mb-8 hover:bg-orange-200 hover:scale-105 transition-all duration-200">
-                    <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 class="heading-card">Firmware Development</h3>
-                    <p class="text-body">
-                      Code that controls your device
-                    </p>
-                  </div>
-                </div>
-
-                <div class="flex flex-col items-center text-center p-4 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                  <div class="w-20 h-20 bg-orange-100 rounded-lg flex items-center justify-center mb-8 hover:bg-orange-200 hover:scale-105 transition-all duration-200">
-                    <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 class="heading-card">Integration & Testing</h3>
-                    <p class="text-body">
-                      Making everything work together
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-<!-- Industries We Serve -->
-      <section class="relative mb-section">
-        <div class="section-gray">
-          <div class="content-container">
-            <h2 class="heading-section">Who We Help</h2>
-
-            <!-- Clean Progress Bar -->
-            <div class="mb-20 px-4">
-              <div class="flex h-20 rounded-xl overflow-hidden bg-white shadow-sm border border-gray-200">
-                <!-- Medical: 42% -->
-                <div class="bg-orange-500 flex items-center justify-center text-white font-semibold text-base" style="width: 42%">
-                  42% Medical
-                </div>
-                <!-- Industrial/Robotics: 35% -->
-                <div class="bg-gray-600 flex items-center justify-center text-white font-semibold text-base" style="width: 35%">
-                  35% Industrial
-                </div>
-                <!-- Scientific: 20% -->
-                <div class="bg-gray-700 flex items-center justify-center text-white font-semibold text-base" style="width: 20%">
-                  20% Scientific
-                </div>
-                <!-- Consumer Electronics: 3% -->
-                <div class="bg-gray-400 flex items-center justify-center text-white font-semibold text-sm" style="width: 3%">
-                  3%
-                </div>
-              </div>
-            </div>
-
-            <div class="grid md:grid-cols-4 gap-8">
-              <div class="text-center p-8 bg-white rounded-lg border border-gray-200 hover:shadow-md hover:border-orange-200 transition-all duration-200">
-                <div class="w-16 h-16 bg-orange-500 rounded-lg flex items-center justify-center mx-auto mb-6">
-                  <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                  </svg>
-                </div>
-                <h3 class="heading-subsection">Medical Devices</h3>
-                <p class="text-gray-600">Diagnostic and therapeutic devices</p>
-              </div>
-
-              <div class="text-center p-8 bg-white rounded-lg border border-gray-200 hover:shadow-md hover:border-orange-200 transition-all duration-200">
-                <div class="w-20 h-20 bg-gray-600 rounded-lg flex items-center justify-center mx-auto mb-6">
-                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                  </svg>
-                </div>
-                <h3 class="heading-subsection">Industrial</h3>
-                <p class="text-gray-600">Manufacturing automation, control systems</p>
-              </div>
-
-              <div class="text-center p-8 bg-white rounded-lg border border-gray-200 hover:shadow-md hover:border-orange-200 transition-all duration-200">
-                <div class="w-20 h-20 bg-gray-700 rounded-lg flex items-center justify-center mx-auto mb-6">
-                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                  </svg>
-                </div>
-                <h3 class="heading-subsection">Scientific Instruments</h3>
-                <p class="text-gray-600">Research equipment, test instruments</p>
-              </div>
-
-              <div class="text-center p-8 bg-white rounded-lg border border-gray-200 hover:shadow-md hover:border-orange-200 transition-all duration-200">
-                <div class="w-20 h-20 bg-gray-400 rounded-lg flex items-center justify-center mx-auto mb-6">
-                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-                  </svg>
-                </div>
-                <h3 class="heading-subsection">Consumer Electronics</h3>
-                <p class="text-gray-600">Smart devices, IoT products</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Separator -->
-      <div class="content-container">
-        <div class="h-px bg-gray-200"></div>
-      </div>
-
-      <!-- Why Choose Us -->
-      <section class="relative mb-section">
-        <div class="section-white">
-          <div class="content-container">
-            <h2 class="heading-section">Why Choose Us</h2>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div class="text-center p-4 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                <div class="w-20 h-20 bg-gray-100 rounded-lg flex items-center justify-center mb-8 mx-auto hover:bg-orange-100 transition-colors duration-200">
-                  <svg class="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                  </svg>
-                </div>
-                <h3 class="heading-card">We Know the Rules</h3>
-                <p class="text-body">Built-in regulatory compliance from the start</p>
-              </div>
-
-              <div class="text-center p-4 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                <div class="w-20 h-20 bg-gray-100 rounded-lg flex items-center justify-center mb-8 mx-auto hover:bg-orange-100 transition-colors duration-200">
-                  <svg class="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                  </svg>
-                </div>
-                <h3 class="heading-card">In-House Testing</h3>
-                <p class="text-body">Find problems early, save money later</p>
-              </div>
-
-              <div class="text-center p-4 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                <div class="w-20 h-20 bg-gray-100 rounded-lg flex items-center justify-center mb-8 mx-auto hover:bg-orange-100 transition-colors duration-200">
-                  <svg class="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                  </svg>
-                </div>
-                <h3 class="heading-card">No Sales Team</h3>
-                <p class="text-body">Work directly with the engineers</p>
-              </div>
-
-              <div class="text-center p-4 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                <div class="w-20 h-20 bg-gray-100 rounded-lg flex items-center justify-center mb-8 mx-auto hover:bg-orange-100 transition-colors duration-200">
-                  <svg class="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/>
-                  </svg>
-                </div>
-                <h3 class="heading-card">You Own Everything</h3>
-                <p class="text-body">Complete IP transfer upon delivery</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Separator -->
-      <div class="content-container">
-        <div class="h-px bg-gray-200"></div>
-      </div>
-
-      <!-- Learn More -->
-      <section class="relative mb-section">
-        <div class="section-white">
-          <div class="content-container" style="text-align: center;">
-            <h2 class="heading-section">Explore More</h2>
-
-            <div class="grid md:grid-cols-4 gap-6">
-              <a href="/services" class="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md hover:border-orange-200 transition-all duration-200">
-                <div class="w-20 h-20 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-8 hover:bg-orange-200 hover:scale-105 transition-all duration-200">
-                  <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-5 9l2 2 4-4"/>
-                  </svg>
-                </div>
-                <h3 class="heading-card">Services</h3>
-                <p class="text-body">What we do and how much it costs</p>
-              </a>
-
-              <a href="/capabilities" class="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md hover:border-orange-200 transition-all duration-200">
-                <div class="w-20 h-20 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-8 hover:bg-orange-200 hover:scale-105 transition-all duration-200">
-                  <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
-                  </svg>
-                </div>
-                <h3 class="heading-card">Capabilities</h3>
-                <p class="text-body">Our tools and testing lab</p>
-              </a>
-
-              <a href="/about" class="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md hover:border-orange-200 transition-all duration-200">
-                <div class="w-20 h-20 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-8 hover:bg-orange-200 hover:scale-105 transition-all duration-200">
-                  <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                  </svg>
-                </div>
-                <h3 class="heading-card">About</h3>
-                <p class="text-body">Our team and past projects</p>
-              </a>
-
-              <a href="/case-studies" class="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md hover:border-orange-200 transition-all duration-200">
-                <div class="w-20 h-20 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-8 hover:bg-orange-200 hover:scale-105 transition-all duration-200">
-                  <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                  </svg>
-                </div>
-                <h3 class="heading-card">Case Studies</h3>
-                <p class="text-body">Real project examples</p>
-              </a>
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CTA -->
-      <section class="relative">
-        <div class="cta-section">
-          <div class="max-w-2xl mx-auto">
-            <h2 class="heading-section">Ready to Start Your Project?</h2>
-            <p class="text-body-center">
-              Talk directly with a senior engineer about your technical requirements and regulatory pathway.
+            <p class="text-xl text-neutral-400 mb-8 max-w-lg">
+              Hardware, firmware, pre-compliance testing.
             </p>
 
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-10">
-              <a href="/quote" class="cta-button-secondary">
-                Get a Quote
-              </a>
-              <a href="https://cal.com/crablabsllc/consultation" class="cta-button-primary">
-                Schedule a Consultation
+            <!-- Single primary CTA -->
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-8">
+              <a href="https://cal.com/crablabsllc/consultation" class="btn-brand btn-lg inline-flex items-center justify-center gap-2">
+                Book a call
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m9 18 6-6-6-6"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 18 6-6-6-6"></path>
                 </svg>
               </a>
-              <a href="tel:+14242715569" class="cta-button-secondary">
-                Call (424) 271-5569
-              </a>
+              <p class="text-sm text-neutral-400">
+                or <a href="/quote" class="text-brand-500 hover:text-brand-400 underline transition-colors">send project details</a>
+              </p>
             </div>
+          </div>
 
-            <p class="text-gray-500 mt-8 text-base font-light">
-              Long Beach, CA • Response within 24 hours
+          <!-- Right: Trace animation -->
+          <div class="flex-1 hidden lg:flex items-center justify-center">
+            <div class="relative">
+              <div class="absolute inset-0 bg-brand-500/5 blur-xl rounded-full scale-75"></div>
+              <div class="relative">
+                <TraceAnimation />
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </Container>
+    </section>
+
+    <!-- Services -->
+    <section class="py-16 lg:py-24">
+      <Container>
+        <div class="flex flex-col lg:flex-row lg:items-start gap-10 lg:gap-16">
+          <div class="lg:w-1/3 lg:sticky lg:top-24">
+            <p class="text-sm font-mono text-brand-600 mb-2">Services</p>
+            <h2 class="text-3xl lg:text-4xl font-display font-semibold text-neutral-900 mb-4">What we do</h2>
+            <p class="text-neutral-600">
+              Full-stack hardware development from schematic to shipping.
             </p>
           </div>
-        </div>
-      </section>
 
-    </Container>
+          <div class="lg:w-2/3">
+            <a href="/services#product-development" class="group block py-6 border-b border-neutral-200 hover:bg-neutral-50 -mx-4 px-4 transition-colors first:border-t">
+              <div class="flex items-start justify-between gap-6">
+                <div class="flex-1">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="w-2 h-2 rounded-full bg-brand-500"></span>
+                    <h3 class="text-xl font-display font-semibold text-neutral-900 group-hover:text-brand-600 transition-colors">Product Development</h3>
+                  </div>
+                  <p class="text-neutral-600 text-sm ml-5">Schematic, layout, firmware, prototypes, manufacturing files. Concept to production.</p>
+                </div>
+                <div class="text-right flex-shrink-0">
+                  <span class="font-mono text-neutral-400 text-sm">from $10k</span>
+                  <svg class="w-5 h-5 text-neutral-300 group-hover:text-brand-500 group-hover:translate-x-1 transition-all mt-1 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 18 6-6-6-6"></path>
+                  </svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="/services#design-review" class="group block py-6 border-b border-neutral-200 hover:bg-neutral-50 -mx-4 px-4 transition-colors">
+              <div class="flex items-start justify-between gap-6">
+                <div class="flex-1">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="w-2 h-2 rounded-full bg-brand-500"></span>
+                    <h3 class="text-xl font-display font-semibold text-neutral-900 group-hover:text-brand-600 transition-colors">Design Review</h3>
+                  </div>
+                  <p class="text-neutral-600 text-sm ml-5">Independent review of your schematic, layout, or firmware. Detailed report with fixes.</p>
+                </div>
+                <div class="text-right flex-shrink-0">
+                  <span class="font-mono text-neutral-400 text-sm">from $1k</span>
+                  <svg class="w-5 h-5 text-neutral-300 group-hover:text-brand-500 group-hover:translate-x-1 transition-all mt-1 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 18 6-6-6-6"></path>
+                  </svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="/services#testing-compliance" class="group block py-6 border-b border-neutral-200 hover:bg-neutral-50 -mx-4 px-4 transition-colors">
+              <div class="flex items-start justify-between gap-6">
+                <div class="flex-1">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="w-2 h-2 rounded-full bg-brand-500"></span>
+                    <h3 class="text-xl font-display font-semibold text-neutral-900 group-hover:text-brand-600 transition-colors">Testing & Compliance</h3>
+                  </div>
+                  <p class="text-neutral-600 text-sm ml-5">EMC pre-compliance in our lab. Find problems before you pay for the real test.</p>
+                </div>
+                <div class="text-right flex-shrink-0">
+                  <span class="font-mono text-neutral-400 text-sm">from $2.5k</span>
+                  <svg class="w-5 h-5 text-neutral-300 group-hover:text-brand-500 group-hover:translate-x-1 transition-all mt-1 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 18 6-6-6-6"></path>
+                  </svg>
+                </div>
+              </div>
+            </a>
+
+            <a href="/services#team-augmentation" class="group block py-6 border-b border-neutral-200 hover:bg-neutral-50 -mx-4 px-4 transition-colors">
+              <div class="flex items-start justify-between gap-6">
+                <div class="flex-1">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="w-2 h-2 rounded-full bg-brand-500"></span>
+                    <h3 class="text-xl font-display font-semibold text-neutral-900 group-hover:text-brand-600 transition-colors">Team Augmentation</h3>
+                  </div>
+                  <p class="text-neutral-600 text-sm ml-5">Extra engineering capacity for a deadline. We work with your team, tools, and process.</p>
+                </div>
+                <div class="text-right flex-shrink-0">
+                  <span class="font-mono text-neutral-400 text-sm">hourly</span>
+                  <svg class="w-5 h-5 text-neutral-300 group-hover:text-brand-500 group-hover:translate-x-1 transition-all mt-1 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 18 6-6-6-6"></path>
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Industries -->
+    <section class="py-16 lg:py-24 bg-neutral-50">
+      <Container>
+        <div class="mb-10">
+          <p class="text-sm font-mono text-brand-600 mb-2">Industries</p>
+          <h2 class="text-3xl lg:text-4xl font-display font-semibold text-neutral-900 mb-4">Who we work with</h2>
+          <p class="text-neutral-600 max-w-2xl">Engineers and product teams building industrial, scientific, and medical devices.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5">
+          <!-- Industrial -->
+          <div class="relative bg-white border border-neutral-200 rounded-lg p-6 overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-600"></div>
+            <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 2v4m0 12v4M4 12h4m8 0h4"/>
+                <circle cx="12" cy="12" r="3" stroke-width="1.8"/>
+                <circle cx="12" cy="12" r="7" stroke-width="1.5" stroke-dasharray="2 2"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15.5 8.5l2-2m-11 11l2-2m0-7l-2-2m11 11l2 2"/>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Industrial</h3>
+            <p class="text-neutral-600 text-sm mb-4">Motor control, robotics, sensors, automation systems.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-mono rounded">IEC 61508</span>
+              <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-mono rounded">UL 508A</span>
+              <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-mono rounded">CE</span>
+            </div>
+          </div>
+
+          <!-- Scientific -->
+          <div class="relative bg-white border border-neutral-200 rounded-lg p-6 overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-purple-600"></div>
+            <div class="w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Scientific</h3>
+            <p class="text-neutral-600 text-sm mb-4">Data acquisition, precision measurement, lab automation.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-purple-50 text-purple-700 text-xs font-mono rounded">IEC 61010</span>
+              <span class="px-2 py-1 bg-purple-50 text-purple-700 text-xs font-mono rounded">ISO 17025</span>
+            </div>
+          </div>
+
+          <!-- Medical -->
+          <div class="relative bg-white border border-neutral-200 rounded-lg p-6 overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-red-600"></div>
+            <div class="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Medical</h3>
+            <p class="text-neutral-600 text-sm mb-4">Class I-II devices. Patient monitors, diagnostics, wearables. Design for compliance from day one.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-red-50 text-red-700 text-xs font-mono rounded">IEC 60601 design</span>
+              <span class="px-2 py-1 bg-red-50 text-red-700 text-xs font-mono rounded">IEC 62304</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social proof line -->
+        <div class="mt-10 pt-6 border-t border-neutral-200">
+          <a href="/case-studies" class="text-sm text-brand-600 hover:text-brand-700 transition-colors flex items-center gap-1">
+            See case studies
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 18 6-6-6-6"></path>
+            </svg>
+          </a>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-16 lg:py-24 bg-neutral-950">
+      <Container>
+        <div class="grid lg:grid-cols-[1fr,360px] gap-12 lg:gap-16 items-start">
+          <div>
+            <p class="text-sm font-mono text-brand-500 mb-2">Pricing</p>
+            <h2 class="text-3xl lg:text-4xl font-display font-semibold text-white mb-4">Transparent rates</h2>
+            <p class="text-neutral-400 mb-6">
+              Time and materials. Detailed logs with every invoice. No surprises.
+            </p>
+
+            <div class="space-y-3">
+              <div class="flex items-center gap-3 text-neutral-400 text-sm">
+                <svg class="w-4 h-4 text-brand-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Fixed-price available for defined scopes</span>
+              </div>
+              <div class="flex items-center gap-3 text-neutral-400 text-sm">
+                <svg class="w-4 h-4 text-brand-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Materials billed at cost + 10%</span>
+              </div>
+              <div class="flex items-center gap-3 text-neutral-400 text-sm">
+                <svg class="w-4 h-4 text-brand-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>You own all IP from day one</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-neutral-900 text-white rounded-xl p-6 border border-neutral-800">
+            <div class="text-center mb-6">
+              <p class="text-neutral-500 text-xs uppercase tracking-wider mb-1">Standard Rate</p>
+              <div class="text-4xl font-bold font-mono">$150<span class="text-xl text-neutral-500">/hr</span></div>
+            </div>
+
+            <div class="space-y-0 mb-6 text-sm">
+              <div class="flex justify-between items-center py-2.5 border-b border-neutral-700">
+                <span class="text-neutral-400">Startups & academia</span>
+                <span class="font-mono font-semibold text-white">$135/hr</span>
+              </div>
+              <div class="flex justify-between items-center py-2.5 border-b border-neutral-700">
+                <span class="text-neutral-400">Non-profits</span>
+                <span class="font-mono font-semibold text-white">$140/hr</span>
+              </div>
+              <div class="flex justify-between items-center py-2.5">
+                <span class="text-neutral-400">Rush (+50%)</span>
+                <span class="font-mono font-semibold text-brand-500">$225/hr</span>
+              </div>
+            </div>
+
+            <a href="/quote" class="block w-full text-center py-2.5 px-6 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium rounded-lg transition-colors">
+              Get a quote
+            </a>
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Process -->
+    <section class="py-16 lg:py-24 bg-neutral-50">
+      <Container>
+        <div class="mb-10 max-w-2xl">
+          <p class="text-sm font-mono text-brand-600 mb-2">Process</p>
+          <h2 class="text-3xl lg:text-4xl font-display font-semibold text-neutral-900 mb-4">How it works</h2>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-6 relative">
+          <!-- Connecting line -->
+          <div class="hidden md:block absolute top-6 left-[12.5%] right-[12.5%] h-px bg-neutral-300"></div>
+
+          <div class="relative">
+            <div class="w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center text-lg font-bold mb-4 relative z-10 shadow-sm">1</div>
+            <h3 class="font-semibold text-neutral-900 mb-1">Call</h3>
+            <p class="text-neutral-600 text-sm">20 minutes with an engineer. Tell us what you're building.</p>
+          </div>
+
+          <div class="relative">
+            <div class="w-12 h-12 rounded-full bg-white border-2 border-neutral-300 text-neutral-600 flex items-center justify-center text-lg font-bold mb-4 relative z-10">2</div>
+            <h3 class="font-semibold text-neutral-900 mb-1">Proposal</h3>
+            <p class="text-neutral-600 text-sm">Scope, timeline, and estimate within 48 hours.</p>
+          </div>
+
+          <div class="relative">
+            <div class="w-12 h-12 rounded-full bg-white border-2 border-neutral-300 text-neutral-600 flex items-center justify-center text-lg font-bold mb-4 relative z-10">3</div>
+            <h3 class="font-semibold text-neutral-900 mb-1">Build</h3>
+            <p class="text-neutral-600 text-sm">Weekly updates. Questions answered same-day.</p>
+          </div>
+
+          <div class="relative">
+            <div class="w-12 h-12 rounded-full bg-white border-2 border-neutral-300 text-neutral-600 flex items-center justify-center text-lg font-bold mb-4 relative z-10">4</div>
+            <h3 class="font-semibold text-neutral-900 mb-1">Deliver</h3>
+            <p class="text-neutral-600 text-sm">Full handoff. 30 days support included.</p>
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 lg:py-24 bg-neutral-950">
+      <Container>
+        <div class="mb-10">
+          <p class="text-sm font-mono text-brand-500 mb-2">Client feedback</p>
+          <h2 class="text-3xl lg:text-4xl font-display font-semibold text-white mb-4">What clients say</h2>
+        </div>
+
+        <div class="max-w-2xl">
+          {testimonials.map((testimonial) => (
+            <div class="bg-neutral-900 border border-neutral-800 rounded-lg p-8">
+              <div class="flex items-center gap-2 mb-4">
+                <svg class="w-5 h-5 text-brand-500" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                </svg>
+              </div>
+              <blockquote class="text-neutral-300 mb-6 leading-relaxed">
+                {testimonial.quote}
+              </blockquote>
+              <div class="flex items-center gap-3 pt-4 border-t border-neutral-800">
+                <div class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center">
+                  {testimonial.icon === "medical" && (
+                    <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path>
+                    </svg>
+                  )}
+                  {testimonial.icon === "startup" && (
+                    <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                  )}
+                  {testimonial.icon === "scientific" && (
+                    <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"></path>
+                    </svg>
+                  )}
+                </div>
+                <div>
+                  {testimonial.author ? (
+                    <>
+                      <div class="text-sm font-medium text-white">{testimonial.author}</div>
+                      <div class="text-xs text-neutral-500">{testimonial.title}, {testimonial.company}</div>
+                    </>
+                  ) : (
+                    <>
+                      <div class="text-sm font-medium text-white">{testimonial.title}</div>
+                      <div class="text-xs text-neutral-500">{testimonial.company}</div>
+                    </>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </section>
+
   </Layout>
 </main>

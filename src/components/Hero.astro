@@ -1,31 +1,40 @@
 ---
-import TraceAnimation from "../components/TraceAnimation.astro";
+import TraceAnimation from "./TraceAnimation.astro";
 import Container from "./Container.astro";
-import PrimaryArrowButton from "./buttons/PrimaryArrowButton.astro";
 ---
 
-<!-- Hero -->
-<Container>
-	<!-- Grid -->
-	<div class="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
-		<div>
-			<h1
-				class="mt-12 block text-4xl font-light text-gray-900 sm:text-5xl lg:text-6xl lg:leading-tight tracking-tight"
-			>
-				Regulatory-compliant electronic devices from concept to market
-			</h1>
-			<p class="mt-8 text-xl text-gray-600 leading-relaxed font-light">
-				When precision matters, experience delivers.
-			</p>
-			
-			<div class="mt-8">
-				<PrimaryArrowButton href="https://cal.com/crablabsllc/consultation">Schedule a Consultation</PrimaryArrowButton>
+<section class="section-white pt-8 pb-12 md:pt-12 md:pb-16">
+	<Container>
+		<div class="grid md:grid-cols-2 gap-8 md:gap-12 xl:gap-20 md:items-center">
+			<div>
+				<h1 class="text-hero font-display font-light text-neutral-900 mb-6">
+					Electronic devices from concept to production
+				</h1>
+
+				<p class="text-xl text-neutral-600 leading-relaxed font-light mb-8 max-w-xl">
+					PCB design, embedded firmware, and compliance testing for medical, industrial, and scientific products.
+				</p>
+
+				<div class="flex flex-col sm:flex-row gap-4 mb-8">
+					<a href="https://cal.com/crablabsllc/consultation" class="btn-brand btn-lg">
+						Schedule a Consultation
+						<svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 18 6-6-6-6"></path>
+						</svg>
+					</a>
+					<a href="/services" class="btn-secondary btn-lg">
+						View Services
+					</a>
+				</div>
+
+				<p class="text-sm text-neutral-500">
+					5 senior engineers | 30+ years combined experience | Transparent pricing
+				</p>
+			</div>
+
+			<div class="hidden md:block">
+				<TraceAnimation />
 			</div>
 		</div>
-		<div class="hidden md:block">
-			<TraceAnimation />
-		</div>
-	</div>
-	<!-- End Grid -->
-</Container>
-<!-- End Hero -->
+	</Container>
+</section>

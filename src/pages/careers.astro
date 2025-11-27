@@ -3,78 +3,112 @@ import Layout from "../layouts/Layout.astro";
 import Container from "../components/Container.astro";
 ---
 
-<main id="content">
-    <!-- Page Layout -->
-    <Layout title="Careers | Crab Labs">
+<Layout
+    title="Careers | Crab Labs"
+    description="Join Crab Labs - we're hiring senior electronics engineers for medical device, industrial, and scientific instrument design. Direct client work, technical autonomy, competitive compensation."
+>
+    <div class="page-container">
         <Container>
-            <div class="content-container pt-16 pb-12">
+            <div class="py-16 lg:py-24">
+
+                <!-- Header -->
+                <section class="max-w-4xl mx-auto text-center mb-12">
+                    <p class="text-sm font-mono text-brand-600 mb-2">Careers</p>
+                    <h1 class="text-4xl sm:text-5xl font-display font-semibold text-neutral-900 mb-4">Join the Team</h1>
+                    <p class="text-lg text-neutral-600 max-w-xl mx-auto">
+                        Direct client work. Technical autonomy. Varied projects.
+                    </p>
+                </section>
 
                 <!-- Senior Electrical Engineer Position -->
-                <section class="relative mb-16">
-                <div class="bg-white rounded-2xl p-12 shadow-sm border border-gray-100">
-                    <div class="max-w-4xl mx-auto">
-                        <div class="text-center mb-8">
-                            <h2 class="heading-section">Senior Electrical Engineer</h2>
-                            <p class="text-xl text-gray-600 leading-relaxed font-light max-w-2xl mx-auto">
-                                Lead electronics design for medical devices, robotics, and industrial automation.
+                <section class="max-w-4xl mx-auto mb-12">
+                    <div class="bg-white border border-neutral-200 rounded-lg overflow-hidden">
+                        <div class="bg-brand-600 px-6 py-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-white font-semibold">Open Position</span>
+                                <span class="text-brand-100 text-sm">Long Beach, CA</span>
+                            </div>
+                        </div>
+                        <div class="p-6 md:p-8">
+                            <h2 class="text-2xl font-display font-semibold text-neutral-900 mb-2">Senior Electrical Engineer</h2>
+                            <p class="text-neutral-600 mb-6">
+                                Design lead for medical, robotics, and industrial devices.
                             </p>
-                        </div>
-                        
-                        <div class="grid md:grid-cols-2 gap-8 mb-8">
-                            <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                                <h3 class="heading-subsection">Requirements</h3>
-                                <ul class="space-y-2 text-gray-600">
-                                    <li>• 7+ years electronics design experience</li>
-                                    <li>• Medical device regulations knowledge</li>
-                                    <li>• Altium Designer proficiency</li>
-                                    <li>• Power electronics expertise</li>
-                                </ul>
+
+                            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                                <div class="bg-neutral-50 rounded-lg p-5">
+                                    <h3 class="text-sm font-mono text-brand-600 mb-3 uppercase tracking-wide">Requirements</h3>
+                                    <ul class="space-y-2 text-sm text-neutral-600">
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-neutral-400 mt-0.5">-</span>
+                                            <span>7+ years electronics design</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-neutral-400 mt-0.5">-</span>
+                                            <span>Medical device regs (IEC 60601)</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-neutral-400 mt-0.5">-</span>
+                                            <span>Altium Designer expertise</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-neutral-400 mt-0.5">-</span>
+                                            <span>Power electronics experience</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-neutral-50 rounded-lg p-5">
+                                    <h3 class="text-sm font-mono text-brand-600 mb-3 uppercase tracking-wide">What We Offer</h3>
+                                    <ul class="space-y-2 text-sm text-neutral-600">
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-brand-500 mt-0.5">-</span>
+                                            <span>Competitive compensation</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-brand-500 mt-0.5">-</span>
+                                            <span>Direct client interaction</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-brand-500 mt-0.5">-</span>
+                                            <span>Technical autonomy</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-brand-500 mt-0.5">-</span>
+                                            <span>Diverse project portfolio</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            
-                            <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                                <h3 class="heading-subsection">What We Offer</h3>
-                                <ul class="space-y-2 text-gray-600">
-                                    <li>• Competitive compensation</li>
-                                    <li>• Direct client interaction</li>
-                                    <li>• Technical autonomy</li>
-                                    <li>• Diverse project portfolio</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="text-center">
+
                             <a href="mailto:jobs@crablabs.io?subject=Senior EE Application"
-                               class="inline-flex items-center px-8 py-4 bg-orange-600 text-white font-semibold rounded-xl hover:bg-orange-500 transition-colors shadow-md">
+                               class="btn-brand">
                                 Apply Now
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                                 </svg>
                             </a>
                         </div>
                     </div>
-                </div>
                 </section>
 
                 <!-- General Application -->
-                <section class="relative mb-16">
-                <div class="bg-white rounded-2xl p-12 shadow-sm border border-gray-100">
-                    <div class="max-w-4xl mx-auto text-center">
-                        <h2 class="heading-section">Don't See a Perfect Match?</h2>
-                        <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed font-light">
+                <section class="max-w-4xl mx-auto">
+                    <div class="bg-neutral-50 border border-neutral-200 rounded-lg p-6 md:p-8">
+                        <h2 class="text-xl font-display font-semibold text-neutral-900 mb-2">Don't See a Perfect Match?</h2>
+                        <p class="text-neutral-600 mb-6">
                             We're always looking for exceptional engineers. Send us your resume and tell us what you're passionate about.
                         </p>
                         <a href="mailto:jobs@crablabs.io?subject=General Application"
-                           class="inline-flex items-center px-8 py-4 bg-gray-600 text-white font-semibold rounded-xl hover:bg-gray-500 transition-colors shadow-md">
+                           class="btn-secondary-dark">
                             Send Resume
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                             </svg>
                         </a>
                     </div>
-                </div>
                 </section>
             </div>
         </Container>
-    </Layout>
-</main>
-
+    </div>
+</Layout>

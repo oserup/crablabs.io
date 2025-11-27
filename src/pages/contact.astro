@@ -6,335 +6,176 @@ const email = "contact@crablabs.io";
 const emailHref = "mailto:contact@crablabs.io";
 const phone = "(424) 271-5569";
 const phoneHref = "tel:+14242715569";
-const address = ["235 E Broadway Ste 210", "Long Beach, CA, United States of America"];
+const address = ["235 E Broadway Ste 210", "Long Beach, CA 90803"];
 ---
 
 <Layout
-    title="Contact Us | Long Beach, CA"
-    description="Get project quote from electronics engineers. SME budgets $2.5k-$250k. Direct engineer contact. PCB design, embedded systems, medical device compliance. Response in 24 hours."
+    title="Contact Us | Crab Labs"
+    description="Get a quote. SME budgets $2.5k-$250k. Direct engineer contact. PCB design, embedded systems, compliance."
 >
-    <!-- Page uses global styles for consistency -->
-
-    <!-- Content with proper spacing for fixed navbar -->
     <div class="page-container">
-      <!-- Clean Minimal Background -->
-      <div class="absolute inset-0 -z-10 bg-white"></div>
-
       <Container>
-        <div class="content-container py-16">
+        <div class="py-16 lg:py-24">
+
+            <!-- Header -->
+            <section class="max-w-4xl mx-auto text-center mb-12">
+              <p class="text-sm font-mono text-brand-600 mb-2">Contact</p>
+              <h1 class="text-4xl sm:text-5xl font-display font-semibold text-neutral-900 mb-4">Get in Touch</h1>
+              <p class="text-lg text-neutral-600 max-w-xl mx-auto">
+                Quote or consultation. Response same business day.
+              </p>
+            </section>
 
             <!-- Contact Form Section -->
-            <section class="relative mb-24">
-              <div class="section-gray">
-                <div class="content-container">
-                  <div class="bg-white rounded-lg border border-gray-100 p-12 hover:shadow-md hover:border-orange-200 transition-all duration-200">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-16">
-                  <div class="md:order-2">
-                    <!-- Contact Form -->
-                    <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                        <h2 class="heading-section">Send Us Your Project Details</h2>
-                        <form action="https://usebasin.com/f/00c426b2708e" method="POST">
-                        <!-- Container for the label and email input field -->
-                        <div class="grid gap-4">
-                          <!-- Input -->
-                          <div>
-                            <!-- Label for the name input field, visually hidden but accessible to screen readers -->
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name *</label>
-                            <!-- Name input field -->
-                            <input
-                              type="text"
-                              name="name"
-                              id="name"
-                              class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 placeholder:text-gray-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
-                              placeholder="Name"
-                              required
-                            />
-                          </div>
-                          <!-- End Input -->
+            <section class="max-w-5xl mx-auto">
+              <div class="bg-white border border-neutral-200 rounded-lg p-6 md:p-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
 
-                          <!-- Input -->
-                          <div>
-                            <!-- Label for the email input field, visually hidden but accessible to screen readers -->
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
-                            <!-- Email input field -->
-                            <input
-                              type="email"
-                              name="email"
-                              id="email"
-                              autocomplete="email"
-                              class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 placeholder:text-gray-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
-                              placeholder="Email"
-                              required
-                            />
-                          </div>
-                          <!-- End Input -->
-
-                          <!-- Input -->
-                          <div>
-                            <!-- Label for the phone input field, visually hidden but accessible to screen readers -->
-                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
-                            <!-- Phone input field -->
-                            <input
-                              type="tel"
-                              name="phone"
-                              id="phone"
-                              class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 placeholder:text-gray-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
-                              placeholder="Phone"
-                            />
-                          </div>
-                          <!-- End Input -->
-
-                          <!-- Service Type Dropdown -->
-                          <div>
-                            <label for="service-type" class="block text-sm font-medium text-gray-700 mb-2">Service Type *</label>
-                            <select
-                              name="service-type"
-                              id="service-type"
-                              class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50 [&>option]:bg-white [&>option]:text-gray-700"
-                              required
-                            >
-                              <option value="" disabled selected>What service are you interested in?</option>
-                              <option value="technical-consulting">Technical Consulting</option>
-                              <option value="design-review">Design Review & Analysis</option>
-                              <option value="product-development">New Product Development</option>
-                              <option value="design-retooling">Design Retooling & Upgrades</option>
-                              <option value="reverse-engineering">Reverse Engineering</option>
-                              <option value="pre-compliance-testing">Pre-Compliance Testing</option>
-                              <option value="multiple-services">Multiple Services</option>
-                              <option value="not-sure">Not Sure / Need Guidance</option>
-                            </select>
-                          </div>
-                          <!-- End Service Type Dropdown -->
-
-                          <!-- Input -->
-                          <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Tell us more about your project *</label>
-                            <!-- prettier-ignore -->
-                            <textarea
-                              id="message"
-                              name="message"
-                              rows="4"
-                              class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 placeholder:text-gray-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
-                              placeholder="Tell us more about your project"
-                            ></textarea>
-                          </div>
-                          <!-- End Input -->
+                  <!-- Contact Form -->
+                  <div class="lg:order-2">
+                    <h2 class="text-xl font-display font-semibold text-neutral-900 mb-6">Project Inquiry</h2>
+                    <form action="https://usebasin.com/f/00c426b2708e" method="POST">
+                      <div class="space-y-4">
+                        <div>
+                          <label for="name" class="block text-sm font-medium text-neutral-700 mb-1">Name *</label>
+                          <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            class="w-full px-4 py-3 border border-neutral-300 rounded-lg text-base focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors"
+                            placeholder="Your name"
+                            required
+                          />
                         </div>
 
-                        <div class="border-t border-gray-200 pt-6 mt-6">
-                          <p class="text-xs text-gray-500 mb-4">Required fields are marked with *</p>
-                          <button
-                            name="submit"
-                            class="cta-button-primary"
-                            type="submit">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
-                            </svg>
-                            Submit
-                          </button>
-                          <p class="text-xs text-gray-500 mt-4">Direct response from senior engineers within 4 hours</p>
+                        <div>
+                          <label for="email" class="block text-sm font-medium text-neutral-700 mb-1">Email *</label>
+                          <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            autocomplete="email"
+                            class="w-full px-4 py-3 border border-neutral-300 rounded-lg text-base focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors"
+                            placeholder="you@company.com"
+                            required
+                          />
                         </div>
-                        </form>
-                    </div>
-      
+
+                        <div>
+                          <label for="phone" class="block text-sm font-medium text-neutral-700 mb-1">Phone (Optional)</label>
+                          <input
+                            type="tel"
+                            name="phone"
+                            id="phone"
+                            class="w-full px-4 py-3 border border-neutral-300 rounded-lg text-base focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors"
+                            placeholder="(555) 123-4567"
+                          />
+                        </div>
+
+                        <div>
+                          <label for="message" class="block text-sm font-medium text-neutral-700 mb-1">Project Details *</label>
+                          <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            class="w-full px-4 py-3 border border-neutral-300 rounded-lg text-base focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors resize-none"
+                            placeholder="What are you building? What service do you need? What's your timeline and budget range?"
+                            required
+                          ></textarea>
+                          <input type="hidden" name="service-type" id="service-type" value="contact-form" />
+                        </div>
+                      </div>
+
+                      <div class="pt-6 mt-6 border-t border-neutral-200">
+                        <button type="submit" class="btn-brand btn-lg w-full">
+                          Send Inquiry
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                          </svg>
+                        </button>
+
+                      </div>
+                    </form>
                   </div>
-                  <!-- End Col -->
 
+                  <!-- Contact Info -->
                   <div class="space-y-8">
-                    <h2 class="heading-section">Get in Touch</h2>
+                    <h2 class="text-xl font-display font-semibold text-neutral-900 mb-6">Get in Touch</h2>
 
-                    <!-- Address Item -->
-                    <div class="flex gap-x-5">
-                      <svg
-                        class="flex-shrink-0 size-6 text-orange-500"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3">
-                        </circle>
-                      </svg>
-                      <div class="grow">
-                        <h4 class="text-gray-800 font-semibold">Our Address</h4>
-                        <address class="mt-1 text-gray-600 text-sm not-italic">
-                          {address[0]}
-                          <br />
+                    <!-- Address -->
+                    <div class="flex gap-4">
+                      <div class="w-10 h-10 bg-brand-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"></path>
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 class="text-sm font-semibold text-neutral-900 mb-1">Our Address</h4>
+                        <address class="text-sm text-neutral-600 not-italic">
+                          {address[0]}<br/>
                           {address[1]}
                         </address>
                       </div>
                     </div>
-                    <!-- End Address Item -->
 
-                    <!-- Email Item -->
-                    <div class="flex gap-x-5">
-                      <svg
-                        class="flex-shrink-0 size-6 text-orange-500"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path
-                          d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z"
-                        >
-                        </path><path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10"></path>
-                      </svg>
-                      <div class="grow">
-                        <h4 class="text-gray-800 font-semibold">Email Us</h4>
-                        <a class="mt-1 text-gray-600 text-sm hover:text-orange-600 transition-colors" href={emailHref}>
+                    <!-- Email -->
+                    <div class="flex gap-4">
+                      <div class="w-10 h-10 bg-brand-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 class="text-sm font-semibold text-neutral-900 mb-1">Email Us</h4>
+                        <a class="text-sm text-neutral-600 hover:text-brand-600 transition-colors" href={emailHref}>
                           {email}
                         </a>
                       </div>
                     </div>
-                    <!-- End Email Item -->
 
-                    <!-- Phone Item -->
-                    <div class="flex gap-x-5">
-                      <svg
-                        class="flex-shrink-0 size-6 text-orange-500"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                      </svg>
-                      <div class="grow">
-                        <h4 class="text-gray-800 font-semibold">Call or Text</h4>
-                        <a class="mt-1 text-gray-600 text-sm hover:text-orange-600 transition-colors" href={phoneHref}>
+                    <!-- Phone -->
+                    <div class="flex gap-4">
+                      <div class="w-10 h-10 bg-brand-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"></path>
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 class="text-sm font-semibold text-neutral-900 mb-1">Call or Text</h4>
+                        <a class="text-sm text-neutral-600 hover:text-brand-600 transition-colors" href={phoneHref}>
                           {phone}
                         </a>
                       </div>
                     </div>
-                    <!-- End Phone Item -->
 
-                    <!-- Consultation Item -->
-                    <div class="flex gap-x-5">
-                      <svg
-                        class="flex-shrink-0 size-6 text-orange-500"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                        <line x1="16" y1="2" x2="16" y2="6"></line>
-                        <line x1="8" y1="2" x2="8" y2="6"></line>
-                        <line x1="3" y1="10" x2="21" y2="10"></line>
-                      </svg>
-                      <div class="grow">
-                        <h4 class="text-gray-800 font-semibold">Schedule a Free Consultation</h4>
-                        <p class="mt-1 text-gray-600 text-sm">Let's discuss your project and how we can help.</p>
-                        <p class="mt-2">
-                          <a
-                            class="group inline-flex items-center gap-x-2 font-medium text-sm text-orange-600 decoration-2 hover:underline focus:outline-none focus:underline"
-                            href="https://cal.com/crablabsllc/consultation"
-                          >
-                            Book Now
-                            <svg
-                              class="flex-shrink-0 size-4 transition group-hover:translate-x-0.5 group-focus:translate-x-0.5"
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
-                            </svg>
-                          </a>
-                        </p>
-                      </div>
-                    </div>
-                    <!-- End Consultation Item -->
-                  </div>
-                  <!-- End Col -->
-                </div>
-                <!-- End Grid -->
                   </div>
                 </div>
               </div>
             </section>
-
-            <!-- Response Time Section -->
-            <section class="relative">
-              <div class="cta-section">
-                <div class="max-w-2xl mx-auto">
-                  <h2 class="heading-section">What to Expect</h2>
-                  <div class="grid md:grid-cols-2 gap-8 mb-8">
-                    <div class="text-center p-6 bg-white rounded-lg border border-gray-100 hover:shadow-md hover:border-orange-200 transition-all duration-200">
-                      <div class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-6 hover:bg-orange-200 hover:scale-105 transition-all duration-200">
-                        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                      </div>
-                      <h3 class="heading-subsection">Fast Response</h3>
-                      <p class="text-gray-600">Initial response within 4 hours during business days</p>
-                    </div>
-                    <div class="text-center p-6 bg-white rounded-lg border border-gray-100 hover:shadow-md hover:border-orange-200 transition-all duration-200">
-                      <div class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-6 hover:bg-orange-200 hover:scale-105 transition-all duration-200">
-                        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                      </div>
-                      <h3 class="heading-subsection">Fixed Price Quote</h3>
-                      <p class="text-gray-600">Clear project scope and pricing within 1-2 weeks</p>
-                    </div>
-                  </div>
-
-                  <p class="text-gray-500 text-base font-light">
-                    Long Beach, CA • Response within 24 hours
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            <script>
-              // Auto-select service type based on URL parameter
-              document.addEventListener('DOMContentLoaded', function() {
-                const urlParams = new URLSearchParams(window.location.search);
-                const serviceParam = urlParams.get('service');
-
-                if (serviceParam) {
-                  const serviceSelect = document.getElementById('service-type');
-                  // Try to find and select the matching option
-                  if (serviceSelect && serviceSelect instanceof HTMLSelectElement) {
-                    for (let option of serviceSelect.options) {
-                      if (option.value === serviceParam) {
-                        option.selected = true;
-                        break;
-                      }
-                    }
-                  }
-                }
-              });
-            </script>
 
         </div>
       </Container>
     </div>
 </Layout>
+
+<script>
+  // Auto-select service type based on URL parameter
+  document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const serviceParam = urlParams.get('service');
+
+    if (serviceParam) {
+      const serviceSelect = document.getElementById('service-type');
+      // Try to find and select the matching option
+      if (serviceSelect && serviceSelect instanceof HTMLSelectElement) {
+        for (let option of serviceSelect.options) {
+          if (option.value === serviceParam) {
+            option.selected = true;
+            break;
+          }
+        }
+      }
+    }
+  });
+</script>

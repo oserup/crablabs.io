@@ -2,341 +2,135 @@
 import Container from "../components/Container.astro";
 import Layout from "../layouts/Layout.astro";
 
-const email = "contact@crablabs.io";
-const emailHref = "mailto:contact@crablabs.io";
 const phone = "(424) 271-5569";
 const phoneHref = "tel:+14242715569";
 ---
 
 <Layout title="Get a Quote | Crab Labs"
-    description="Request fixed-price quote for PCB design, embedded firmware, medical device compliance. Senior engineers, 30+ years experience. Projects $1k-$100k. Response within 24 hours."
+    description="Fixed-price quotes for PCB design & firmware. Senior engineers. Projects $1k-$100k. Response < 24h."
 >
-    <!-- Page uses global styles -->
-
-    <!-- Content with proper spacing for fixed navbar -->
     <div class="page-container">
-      <!-- Clean Minimal Background -->
-      <div class="absolute inset-0 -z-10 bg-white"></div>
-
       <Container>
-        <div class="content-container py-16">
+        <div class="py-16 lg:py-24">
 
+            <!-- Header -->
+            <section class="max-w-4xl mx-auto text-center mb-12">
+              <p class="text-sm font-mono text-brand-600 mb-2">Quote</p>
+              <h1 class="text-4xl sm:text-5xl font-display font-semibold text-neutral-900 mb-4">Get a Quote</h1>
+              <p class="text-lg text-neutral-600 max-w-xl mx-auto">
+                Fixed-price quotes within 24 hours. You own all IP from day one.
+              </p>
+            </section>
 
-            <!-- RFQ Form -->
-            <section class="relative mb-16">
-              <div class="section-gray">
-                <div class="content-container">
-                  <div class="bg-white rounded-2xl p-12 shadow-sm border border-gray-100 hover:shadow-md hover:border-orange-200 transition-all duration-200">
+            <!-- Form -->
+            <section class="max-w-2xl mx-auto">
+              <div class="bg-white border border-neutral-200 rounded-lg p-6 md:p-8">
                 <form action="https://usebasin.com/f/00c426b2708e" method="POST">
 
-                  <!-- Company & Contact Information -->
-                  <div class="mb-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4 border-b border-gray-200 pb-2">
-                      Company & Contact Information
-                    </h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <!-- Company Name -->
-                      <div>
-                        <label for="company" class="block text-sm font-medium text-gray-700 mb-2">
-                          Company Name *
-                        </label>
-                        <input
-                          type="text"
-                          name="company"
-                          id="company"
-                          class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 placeholder:text-gray-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
-                          placeholder="Your Company Name"
-                          required
-                        />
-                      </div>
-
-                      <!-- Industry -->
-                      <div>
-                        <label for="industry" class="block text-sm font-medium text-gray-700 mb-2">
-                          Industry
-                        </label>
-                        <select
-                          name="industry"
-                          id="industry"
-                          class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
-                        >
-                          <option value="">Select Industry</option>
-                          <option value="healthcare-medical">Healthcare & Medical Devices</option>
-                          <option value="industrial-automation">Industrial Automation</option>
-                          <option value="robotics">Robotics</option>
-                          <option value="iot-connected-devices">IoT & Connected Devices</option>
-                          <option value="automotive">Automotive</option>
-                          <option value="aerospace-defense">Aerospace & Defense</option>
-                          <option value="consumer-electronics">Consumer Electronics</option>
-                          <option value="renewable-energy">Renewable Energy</option>
-                          <option value="telecommunications">Telecommunications</option>
-                          <option value="transportation">Transportation</option>
-                          <option value="other">Other</option>
-                        </select>
-                      </div>
-
-                      <!-- Contact Name -->
-                      <div>
-                        <label for="contact-name" class="block text-sm font-medium text-gray-700 mb-2">
-                          Your Name *
-                        </label>
-                        <input
-                          type="text"
-                          name="contact-name"
-                          id="contact-name"
-                          class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 placeholder:text-gray-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
-                          placeholder="Your Full Name"
-                          required
-                        />
-                      </div>
-
-                      <!-- Title/Role -->
-                      <div>
-                        <label for="title" class="block text-sm font-medium text-gray-700 mb-2">
-                          Title/Role
-                        </label>
-                        <input
-                          type="text"
-                          name="title"
-                          id="title"
-                          class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 placeholder:text-gray-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
-                          placeholder="e.g., Engineering Manager, CTO"
-                        />
-                      </div>
-
-                      <!-- Email -->
-                      <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
-                          Email Address *
-                        </label>
-                        <input
-                          type="email"
-                          name="email"
-                          id="email"
-                          class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 placeholder:text-gray-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
-                          placeholder="your.email@company.com"
-                          required
-                        />
-                      </div>
-
-                      <!-- Phone -->
-                      <div>
-                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
-                          Phone Number
-                        </label>
-                        <input
-                          type="tel"
-                          name="phone"
-                          id="phone"
-                          class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 placeholder:text-gray-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
-                          placeholder="(555) 123-4567"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Project Information -->
-                  <div class="mb-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4 border-b border-gray-200 pb-2">
-                      Project Information
-                    </h3>
-
-                    <!-- Project Type -->
-                    <div class="mb-4">
-                      <label for="project-type" class="block text-sm font-medium text-gray-700 mb-2">
-                        Project Type *
-                      </label>
-                      <select
-                        name="project-type"
-                        id="project-type"
-                        class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div>
+                      <label for="company" class="block text-sm font-medium text-neutral-700 mb-1">Company *</label>
+                      <input
+                        type="text"
+                        name="company"
+                        id="company"
+                        class="w-full px-4 py-2.5 border border-neutral-300 rounded-lg text-sm focus:border-brand-500 focus:ring-1 focus:ring-brand-500"
                         required
-                      >
-                        <option value="">Select Project Type</option>
-                        <option value="design-review">Design Review & Consulting</option>
-                        <option value="pcb-design">PCB Design Only</option>
-                        <option value="firmware-only">Firmware Development Only</option>
-                        <option value="complete-development">Complete Product Development</option>
-                        <option value="testing-validation">Testing & Validation</option>
-                        <option value="compliance">Compliance & Documentation</option>
-                        <option value="troubleshooting">Troubleshooting Existing Design</option>
-                        <option value="other">Other</option>
-                      </select>
+                      />
                     </div>
 
-                    <!-- Project Description -->
-                    <div class="mb-4">
-                      <label for="project-description" class="block text-sm font-medium text-gray-700 mb-2">
-                        Project Description *
-                      </label>
-                      <textarea
-                        name="project-description"
-                        id="project-description"
-                        rows="4"
-                        class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 placeholder:text-gray-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
-                        placeholder="Describe your project, what problem it solves, key requirements..."
+                    <div>
+                      <label for="email" class="block text-sm font-medium text-neutral-700 mb-1">Email *</label>
+                      <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        class="w-full px-4 py-2.5 border border-neutral-300 rounded-lg text-sm focus:border-brand-500 focus:ring-1 focus:ring-brand-500"
                         required
-                      ></textarea>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <!-- Budget Range -->
-                      <div>
-                        <label for="budget" class="block text-sm font-medium text-gray-700 mb-2">
-                          Budget Range
-                        </label>
-                        <select
-                          name="budget"
-                          id="budget"
-                          class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
-                        >
-                          <option value="">Select Budget Range</option>
-                          <option value="under-5k">Under $5,000</option>
-                          <option value="5k-10k">$5,000 - $10,000</option>
-                          <option value="10k-25k">$10,000 - $25,000</option>
-                          <option value="25k-50k">$25,000 - $50,000</option>
-                          <option value="50k-100k">$50,000 - $100,000</option>
-                          <option value="over-100k">Over $100,000</option>
-                          <option value="discuss">Prefer to discuss</option>
-                        </select>
-                      </div>
-
-                      <!-- Timeline -->
-                      <div>
-                        <label for="timeline" class="block text-sm font-medium text-gray-700 mb-2">
-                          Target Timeline
-                        </label>
-                        <select
-                          name="timeline"
-                          id="timeline"
-                          class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
-                        >
-                          <option value="">Select Timeline</option>
-                          <option value="asap">ASAP (Rush job)</option>
-                          <option value="1month">1 month</option>
-                          <option value="1-3months">1-3 months</option>
-                          <option value="3-6months">3-6 months</option>
-                          <option value="6months-plus">6+ months</option>
-                          <option value="flexible">Flexible</option>
-                        </select>
-                      </div>
+                      />
                     </div>
                   </div>
 
-
-                  <!-- Special Requirements (Optional) -->
                   <div class="mb-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4 border-b border-gray-200 pb-2">
-                      Special Requirements <span class="text-sm font-normal text-gray-500">(Optional)</span>
-                    </h3>
-
-                    <!-- Compliance Requirements -->
-                    <div class="mb-4">
-                      <label class="block text-sm font-medium text-gray-700 mb-3">
-                        Compliance Requirements <span class="text-xs text-gray-500">(Select all that apply)</span>
-                      </label>
-                      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        <label class="flex items-center cursor-pointer">
-                          <input type="checkbox" name="compliance[]" value="fcc-part15" class="mr-2">
-                          <span class="text-sm text-gray-700">FCC Part 15 (EMC)</span>
-                        </label>
-                        <label class="flex items-center cursor-pointer">
-                          <input type="checkbox" name="compliance[]" value="ce-marking" class="mr-2">
-                          <span class="text-sm text-gray-700">CE Marking (Europe)</span>
-                        </label>
-                        <label class="flex items-center cursor-pointer">
-                          <input type="checkbox" name="compliance[]" value="iec-60601" class="mr-2">
-                          <span class="text-sm text-gray-700">IEC 60601 (Medical)</span>
-                        </label>
-                        <label class="flex items-center cursor-pointer">
-                          <input type="checkbox" name="compliance[]" value="iso-13485" class="mr-2">
-                          <span class="text-sm text-gray-700">ISO 13485 (Medical QMS)</span>
-                        </label>
-                        <label class="flex items-center cursor-pointer">
-                          <input type="checkbox" name="compliance[]" value="rohs" class="mr-2">
-                          <span class="text-sm text-gray-700">RoHS Compliance</span>
-                        </label>
-                        <label class="flex items-center cursor-pointer">
-                          <input type="checkbox" name="compliance[]" value="other-compliance" class="mr-2">
-                          <span class="text-sm text-gray-700">Other (specify in comments)</span>
-                        </label>
-                      </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <!-- Environmental Requirements -->
-                      <div>
-                        <label for="environmental" class="block text-sm font-medium text-gray-700 mb-2">
-                          Environmental Requirements
-                        </label>
-                        <input
-                          type="text"
-                          name="environmental"
-                          id="environmental"
-                          class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 placeholder:text-gray-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
-                          placeholder="e.g., -40°C to +85°C, IP67, medical grade"
-                        />
-                      </div>
-
-                      <!-- Production Volume -->
-                      <div>
-                        <label for="production-volume" class="block text-sm font-medium text-gray-700 mb-2">
-                          Expected Production Volume
-                        </label>
-                        <select
-                          name="production-volume"
-                          id="production-volume"
-                          class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
-                        >
-                          <option value="">Select Volume</option>
-                          <option value="prototype">Prototype only</option>
-                          <option value="1-10">1-10 units</option>
-                          <option value="10-100">10-100 units</option>
-                          <option value="100-1000">100-1,000 units</option>
-                          <option value="1000-10000">1,000-10,000 units</option>
-                          <option value="10000+">10,000+ units</option>
-                          <option value="unknown">Not determined yet</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Additional Information -->
-                  <div class="mb-8">
-                    <label for="additional-info" class="block text-sm font-medium text-gray-700 mb-2">
-                      Additional Information
-                    </label>
+                    <label for="project-description" class="block text-sm font-medium text-neutral-700 mb-1">What are you building? *</label>
                     <textarea
-                      name="additional-info"
-                      id="additional-info"
-                      rows="3"
-                      class="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 placeholder:text-gray-500 focus:border-orange-300 focus:outline-none focus:ring focus:ring-orange-200/30 disabled:pointer-events-none disabled:opacity-50"
-                      placeholder="Any special requirements, constraints, or questions..."
+                      name="project-description"
+                      id="project-description"
+                      rows="5"
+                      class="w-full px-4 py-3 border border-neutral-300 rounded-lg text-base focus:border-brand-500 focus:ring-1 focus:ring-brand-500 resize-none"
+                      placeholder="Describe your project: function, requirements, compliance needs, timeline..."
+                      required
                     ></textarea>
+                    <p class="text-xs text-neutral-500 mt-1">Include budget range and timeline if known - helps us respond faster</p>
                   </div>
 
-                  <!-- Hidden Calculator Data -->
-                  <input type="hidden" name="calculator-estimate" id="calc-estimate-hidden" value="">
+                  <div class="mb-6">
+                    <label for="budget" class="block text-sm font-medium text-neutral-700 mb-1">Budget Range (Optional)</label>
+                    <select name="budget" id="budget" class="w-full px-4 py-3 border border-neutral-300 rounded-lg text-base focus:border-brand-500 focus:ring-1 focus:ring-brand-500">
+                      <option value="">Prefer to discuss</option>
+                      <option value="under-5k">Under $5k</option>
+                      <option value="5k-10k">$5k - $10k</option>
+                      <option value="10k-25k">$10k - $25k</option>
+                      <option value="25k-50k">$25k - $50k</option>
+                      <option value="50k-100k">$50k - $100k</option>
+                      <option value="over-100k">$100k+</option>
+                    </select>
+                  </div>
 
-                  <!-- Submit Button -->
-                  <div class="text-center">
-                    <button
-                      type="submit"
-                      class="cta-button-primary"
-                    >
-                      Submit Quote Request
+                  <input type="hidden" name="project-type" id="project-type" value="">
+                  <input type="hidden" name="industry" id="industry" value="">
+
+                  <div class="pt-4 border-t border-neutral-200">
+                    <button type="submit" class="btn-brand btn-lg w-full">
+                      Submit Request
                       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m9 18 6-6-6-6"></path>
                       </svg>
                     </button>
                   </div>
-
-                  <div class="text-center mt-6">
-                    <p class="text-base text-gray-600 font-light">
-                      We'll respond within 24 hours with a detailed proposal. Questions? Call <a href="{phoneHref}" class="text-orange-600 hover:text-orange-700 font-medium">{phone}</a>
-                    </p>
-                  </div>
                 </form>
+              </div>
+
+              <!-- Response commitment -->
+              <div class="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                <div class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                  </svg>
+                  <div class="text-sm">
+                    <p class="font-medium text-green-800 mb-1">What happens next:</p>
+                    <ul class="text-green-700 space-y-1">
+                      <li>1. We review your request within 4 hours</li>
+                      <li>2. If it's a fit, we schedule a brief call to clarify scope</li>
+                      <li>3. You receive a fixed-price proposal within 48 hours</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Additional context -->
+              <div class="mt-6 text-center text-sm text-neutral-500">
+                <p>Prefer to talk first? <a href="https://cal.com/crablabsllc/consultation" class="text-brand-600 hover:underline">Schedule a call</a> or phone <a href={phoneHref} class="text-brand-600 hover:underline">{phone}</a></p>
+              </div>
+
+              <!-- Trust signals -->
+              <div class="mt-8 pt-6 border-t border-neutral-200">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-xs text-neutral-500">
+                  <div>
+                    <div class="font-mono text-lg text-neutral-900 mb-1">100%</div>
+                    <div>IP Ownership</div>
+                  </div>
+                  <div>
+                    <div class="font-mono text-lg text-neutral-900 mb-1">30 days</div>
+                    <div>Post-delivery Support</div>
+                  </div>
+                  <div>
+                    <div class="font-mono text-lg text-neutral-900 mb-1">48h</div>
+                    <div>Quote Turnaround</div>
+                  </div>
+                  <div>
+                    <div class="font-mono text-lg text-neutral-900 mb-1">NDA</div>
+                    <div>Before Discussion</div>
                   </div>
                 </div>
               </div>
@@ -346,145 +140,19 @@ const phoneHref = "tel:+14242715569";
     </div>
 </Layout>
 
-<style>
-  .calc-option-card.selected {
-    @apply border-orange-500 bg-orange-50;
-  }
-</style>
-
 <script>
-  // Auto-select service from URL parameter
   document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const service = urlParams.get('service');
+    const industry = urlParams.get('industry');
 
     if (service) {
-      const projectTypeSelect = document.getElementById('project-type');
-      if (projectTypeSelect) {
-        switch(service) {
-          case 'design-review':
-            projectTypeSelect.value = 'design-review';
-            break;
-          case 'product-development':
-            projectTypeSelect.value = 'complete-development';
-            break;
-          case 'testing':
-            projectTypeSelect.value = 'testing-validation';
-            break;
-        }
-      }
+      const el = document.getElementById('project-type');
+      if (el) el.value = service;
+    }
+    if (industry) {
+      const el = document.getElementById('industry');
+      if (el) el.value = industry;
     }
   });
-
-  // Calculator Elements
-  const projectTypes = document.querySelectorAll('.calc-project-type');
-  const calcDetails = document.getElementById('calc-details');
-  const calcResults = document.getElementById('calc-results');
-  const totalHoursEl = document.getElementById('total-hours');
-  const totalCostEl = document.getElementById('total-cost');
-  const timelineEl = document.getElementById('timeline');
-  const includedItemsEl = document.getElementById('included-items');
-  const calcEstimateHidden = document.getElementById('calc-estimate-hidden');
-
-  const HOURLY_RATE = 140;
-  const EFFICIENCY_MULTIPLIER = 0.9; // 10% fewer hours than typical
-
-  // Project type selection
-  projectTypes.forEach(radio => {
-    radio.addEventListener('change', () => {
-      // Update UI
-      document.querySelectorAll('.calc-option-card').forEach(card => {
-        card.classList.remove('selected');
-      });
-      if (radio.checked) {
-        radio.closest('label').querySelector('.calc-option-card').classList.add('selected');
-        calcDetails.style.display = 'block';
-        updateCalculation();
-      }
-    });
-  });
-
-  // Listen for changes on all calculator inputs
-  document.addEventListener('change', (e) => {
-    if (e.target.matches('input[name="complexity"], select[name="pcb-layers"], select[name="component-count"], input[name="features"]')) {
-      updateCalculation();
-    }
-  });
-
-  function updateCalculation() {
-    const selectedType = document.querySelector('.calc-project-type:checked');
-    if (!selectedType) return;
-
-    let baseHours = parseInt(selectedType.dataset.baseHours);
-    let description = selectedType.dataset.description;
-
-    // Apply complexity multiplier
-    const complexity = document.querySelector('input[name="complexity"]:checked');
-    if (complexity) {
-      const multiplier = parseFloat(complexity.dataset.multiplier);
-      baseHours = Math.round(baseHours * multiplier);
-    }
-
-    // Add PCB layer complexity
-    const pcbLayers = document.querySelector('select[name="pcb-layers"]');
-    if (pcbLayers.value) {
-      const layerHours = parseInt(pcbLayers.selectedOptions[0].dataset.hours);
-      baseHours += layerHours;
-    }
-
-    // Add component count complexity
-    const componentCount = document.querySelector('select[name="component-count"]');
-    if (componentCount.value) {
-      const componentHours = parseInt(componentCount.selectedOptions[0].dataset.hours);
-      baseHours += componentHours;
-    }
-
-    // Add feature hours
-    const features = document.querySelectorAll('input[name="features"]:checked');
-    features.forEach(feature => {
-      const featureHours = parseInt(feature.dataset.hours);
-      baseHours += featureHours;
-    });
-
-    // Apply efficiency multiplier (10% fewer hours)
-    const finalHours = Math.round(baseHours * EFFICIENCY_MULTIPLIER);
-    const cost = finalHours * HOURLY_RATE;
-    const weeks = Math.ceil(finalHours / 35); // Assuming 35 hours/week
-
-    // Update display
-    totalHoursEl.textContent = `${finalHours} hours`;
-    totalCostEl.textContent = `$${cost.toLocaleString()}`;
-    timelineEl.textContent = `${weeks} weeks`;
-
-    // Update included items based on project type
-    const baseItems = [
-      '• Requirements analysis and feasibility study',
-      '• Complete design and development',
-      '• Testing and validation',
-      '• Documentation package'
-    ];
-
-    if (selectedType.value === 'development') {
-      baseItems.push('• PCB schematic and layout files');
-      baseItems.push('• Firmware source code');
-      baseItems.push('• Manufacturing documentation');
-    } else if (selectedType.value === 'testing') {
-      baseItems.push('• Test procedures and reports');
-      baseItems.push('• Compliance documentation');
-    }
-
-    includedItemsEl.innerHTML = baseItems.join('\n');
-
-    // Store estimate for form submission
-    const estimate = {
-      hours: finalHours,
-      cost: cost,
-      timeline: weeks,
-      projectType: selectedType.value,
-      description: description
-    };
-    calcEstimateHidden.value = JSON.stringify(estimate);
-
-    calcResults.style.display = 'block';
-  }
 </script>

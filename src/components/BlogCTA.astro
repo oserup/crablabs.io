@@ -1,0 +1,78 @@
+---
+interface Props {
+  variant?: 'default' | 'consultation' | 'review' | 'testing';
+}
+
+const { variant = 'default' } = Astro.props;
+
+const variants = {
+  default: {
+    title: "Need help with your project?",
+    description: "We've helped dozens of teams take hardware from concept to production. Let's talk about yours.",
+    primaryCta: { text: "Schedule a Call", href: "https://cal.com/crablabsllc/consultation" },
+    secondaryCta: { text: "Get a Quote", href: "/quote" }
+  },
+  consultation: {
+    title: "Have questions about your design?",
+    description: "20-minute call with an engineer. No sales pitch. We'll tell you if we can help.",
+    primaryCta: { text: "Book a Free Consultation", href: "https://cal.com/crablabsllc/consultation" },
+    secondaryCta: { text: "Learn About Our Services", href: "/services" }
+  },
+  review: {
+    title: "Want a second opinion on your design?",
+    description: "Our design review service catches issues before they become expensive problems. Starting at $1k.",
+    primaryCta: { text: "Get a Design Review Quote", href: "/quote?service=design-review" },
+    secondaryCta: { text: "See What's Included", href: "/services#design-review" }
+  },
+  testing: {
+    title: "Worried about EMC compliance?",
+    description: "Pre-compliance testing in our lab finds problems before you pay for the real test. Starting at $2.5k.",
+    primaryCta: { text: "Get a Testing Quote", href: "/quote?service=testing" },
+    secondaryCta: { text: "See Our Lab Equipment", href: "/tooling" }
+  }
+};
+
+const content = variants[variant];
+---
+
+<aside class="my-12 bg-neutral-50 border border-neutral-200 rounded-lg p-6 md:p-8 not-prose">
+  <div class="flex flex-col md:flex-row md:items-center gap-6">
+    <div class="flex-1">
+      <h3 class="text-lg font-display font-semibold text-neutral-900 mb-2">{content.title}</h3>
+      <p class="text-neutral-600 text-sm">{content.description}</p>
+    </div>
+    <div class="flex flex-col sm:flex-row gap-3 md:flex-shrink-0">
+      <a href={content.primaryCta.href} class="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium rounded-lg transition-colors">
+        {content.primaryCta.text}
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a>
+      <a href={content.secondaryCta.href} class="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-white border border-neutral-300 hover:border-neutral-400 text-neutral-700 text-sm font-medium rounded-lg transition-colors">
+        {content.secondaryCta.text}
+      </a>
+    </div>
+  </div>
+
+  <!-- Trust signals -->
+  <div class="mt-6 pt-4 border-t border-neutral-200 flex flex-wrap items-center gap-4 text-xs text-neutral-500">
+    <span class="flex items-center gap-1">
+      <svg class="w-3.5 h-3.5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+      </svg>
+      Response within 4 hours
+    </span>
+    <span class="flex items-center gap-1">
+      <svg class="w-3.5 h-3.5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+      </svg>
+      Talk directly to engineers
+    </span>
+    <span class="flex items-center gap-1">
+      <svg class="w-3.5 h-3.5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+      </svg>
+      No obligation
+    </span>
+  </div>
+</aside>

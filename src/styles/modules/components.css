@@ -1,0 +1,137 @@
+/* ========================================
+   REUSABLE COMPONENTS
+   ======================================== */
+
+/* Cards */
+.card {
+  background: white;
+  border: 1px solid var(--neutral-200);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--neutral-300);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.card-dark {
+  background: var(--neutral-900);
+  border-color: var(--neutral-800);
+  color: white;
+}
+
+/* Section Headers */
+.section-header {
+  margin-bottom: 2.5rem;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--brand-600);
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.875rem, 4vw, 2.25rem);
+  font-weight: 600;
+  color: var(--neutral-900);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.section-description {
+  color: var(--neutral-600);
+  max-width: 36rem;
+}
+
+/* Dark section variants */
+.section-dark .section-label {
+  color: var(--brand-500);
+}
+
+.section-dark .section-title {
+  color: white;
+}
+
+.section-dark .section-description {
+  color: var(--neutral-400);
+}
+
+/* Page Headers */
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page-header-label {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--brand-600);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.page-header-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  color: var(--neutral-900);
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.page-header-description {
+  font-size: 1.25rem;
+  color: var(--neutral-600);
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+/* List Items */
+.list-item {
+  display: block;
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid var(--neutral-200);
+  transition: background var(--transition-fast);
+}
+
+.list-item:hover {
+  background: var(--neutral-50);
+}
+
+.list-item:first-child {
+  border-top: 1px solid var(--neutral-200);
+}
+
+.list-item-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--brand-500);
+  flex-shrink: 0;
+}
+
+/* Icons */
+.icon-sm {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.icon-md {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+.icon-lg {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
