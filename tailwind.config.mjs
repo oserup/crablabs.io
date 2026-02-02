@@ -11,9 +11,9 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				// Display font: Inter Tight for headlines - tighter, more designed feel
-				display: ['Inter Tight', 'Inter', ...defaultTheme.fontFamily.sans],
-				// Primary font: Inter - clean, professional, highly legible
+				// Display font: Inter for headlines and display text
+				display: ['Inter', ...defaultTheme.fontFamily.sans],
+				// Primary font: Inter - clean, professional, consistent
 				sans: ['Inter', ...defaultTheme.fontFamily.sans],
 				// Mono font: JetBrains Mono for technical content
 				mono: ['JetBrains Mono', 'SF Mono', ...defaultTheme.fontFamily.mono],
@@ -36,9 +36,10 @@ export default {
 					400: '#fb923c',
 					500: '#f97316',
 					600: '#ea580c',  // PRIMARY - use this for most brand applications
-					700: '#c2410c',
+					700: '#c2410c',  // Use for text on white backgrounds (WCAG AA compliant)
 					800: '#9a3412',
 					900: '#7c2d12',
+					text: '#c2410c', // Semantic alias for accessible text
 				},
 				// Refined neutral scale - softer, more sophisticated
 				neutral: {

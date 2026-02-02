@@ -1,0 +1,76 @@
+---
+/**
+ * ExpertiseCard - Display team expertise/capability areas
+ * Emphasizes collective experience rather than individual team members
+ *
+ * Props:
+ * - title: Expertise area name (e.g., "Medical Device Experience")
+ * - description: Brief description of capabilities
+ * - stats: Key stat (e.g., "15+ projects")
+ * - icon?: Optional icon slot name
+ * - color?: Color variant (brand, blue, purple, red, green)
+ */
+
+interface Props {
+  title: string;
+  description: string;
+  stats: string;
+  color?: 'brand' | 'blue' | 'purple' | 'red' | 'green';
+}
+
+const { title, description, stats, color = 'brand' } = Astro.props;
+
+const colorClasses = {
+  brand: {
+    bg: 'bg-brand-50',
+    border: 'border-brand-200',
+    accent: 'text-brand-600',
+    statBg: 'bg-brand-100',
+    statText: 'text-brand-700',
+  },
+  blue: {
+    bg: 'bg-blue-50',
+    border: 'border-blue-200',
+    accent: 'text-blue-600',
+    statBg: 'bg-blue-100',
+    statText: 'text-blue-700',
+  },
+  purple: {
+    bg: 'bg-purple-50',
+    border: 'border-purple-200',
+    accent: 'text-purple-600',
+    statBg: 'bg-purple-100',
+    statText: 'text-purple-700',
+  },
+  red: {
+    bg: 'bg-red-50',
+    border: 'border-red-200',
+    accent: 'text-red-600',
+    statBg: 'bg-red-100',
+    statText: 'text-red-700',
+  },
+  green: {
+    bg: 'bg-green-50',
+    border: 'border-green-200',
+    accent: 'text-green-600',
+    statBg: 'bg-green-100',
+    statText: 'text-green-700',
+  },
+};
+
+const classes = colorClasses[color];
+---
+
+<div class={`${classes.bg} border ${classes.border} rounded-lg p-6 card-hover-lift`}>
+  <div class="flex items-start justify-between mb-3">
+    <h3 class="font-semibold text-neutral-900">{title}</h3>
+    <span class={`${classes.statBg} ${classes.statText} px-2.5 py-1 text-xs font-mono font-semibold rounded`}>
+      {stats}
+    </span>
+  </div>
+
+  <p class="text-sm text-neutral-600 leading-relaxed">{description}</p>
+
+  <!-- Optional icon slot -->
+  <slot name="icon" />
+</div>

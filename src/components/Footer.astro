@@ -1,77 +1,85 @@
-<!-- ========== FOOTER ========== -->
-<footer class="bg-neutral-50 border-t border-neutral-200">
-  <div class="w-full max-w-[90rem] px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-8 lg:py-10 mx-auto">
+---
+import { company } from '../config/company';
+---
 
-    <!-- Main Footer Content -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 mb-6">
-
-      <!-- Logo & Contact - Takes 4 columns on desktop -->
-      <div class="lg:col-span-4">
-        <a href="/" class="inline-flex items-center gap-x-2 text-xl text-neutral-900 mb-2" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; letter-spacing: 0.02em;">
-          <img class="w-10 h-auto" src="/logo.svg" alt="Crab Labs" />
-          CRAB LABS
-        </a>
-        <p class="text-sm text-neutral-500 mb-4">Long Beach, CA</p>
-        <div class="flex flex-col gap-1.5 text-sm text-neutral-600">
-          <a href="tel:+14242715569" class="hover:text-brand-600 transition-colors inline-flex items-center gap-2 py-1" aria-label="Call us at (424) 271-5569">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-            </svg>
-            (424) 271-5569
-          </a>
-          <a href="mailto:contact@crablabs.io" class="hover:text-brand-600 transition-colors inline-flex items-center gap-2 py-1" aria-label="Email us at contact@crablabs.io">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
-            contact@crablabs.io
-          </a>
-        </div>
-      </div>
-
-      <!-- Navigation Links - Takes 8 columns on desktop, split into 3 equal sections -->
-      <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-6">
-
-        <!-- Services -->
-        <div>
-          <h3 class="text-sm font-semibold text-neutral-900 mb-3">Services</h3>
-          <ul class="space-y-1.5 text-sm">
-            <li><a href="/services#product-development" class="text-neutral-600 hover:text-brand-600 transition-colors py-1 inline-block">Product Development</a></li>
-            <li><a href="/services#design-review" class="text-neutral-600 hover:text-brand-600 transition-colors py-1 inline-block">Design Review</a></li>
-            <li><a href="/services#testing-compliance" class="text-neutral-600 hover:text-brand-600 transition-colors py-1 inline-block">Testing & Compliance</a></li>
-          </ul>
-        </div>
-
-        <!-- Company -->
-        <div>
-          <h3 class="text-sm font-semibold text-neutral-900 mb-3">Company</h3>
-          <ul class="space-y-1.5 text-sm">
-            <li><a href="/case-studies" class="text-neutral-600 hover:text-brand-600 transition-colors py-1 inline-block">Case Studies</a></li>
-            <li><a href="/tooling" class="text-neutral-600 hover:text-brand-600 transition-colors py-1 inline-block">Tooling</a></li>
-            <li><a href="/blog" class="text-neutral-600 hover:text-brand-600 transition-colors py-1 inline-block">Blog</a></li>
-            <li><a href="/careers" class="text-neutral-600 hover:text-brand-600 transition-colors py-1 inline-block">Careers</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact -->
-        <div>
-          <h3 class="text-sm font-semibold text-neutral-900 mb-3">Contact</h3>
-          <ul class="space-y-1.5 text-sm">
-            <li><a href="/quote" class="text-neutral-600 hover:text-brand-600 transition-colors py-1 inline-block">Get a Quote</a></li>
-            <li><a href="/contact" class="text-neutral-600 hover:text-brand-600 transition-colors py-1 inline-block">Contact</a></li>
-          </ul>
-        </div>
-
-      </div>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <a href="/" class="footer-logo">
+        <img src="/android-chrome-192x192.png" alt="Crab Labs" width="20" height="20" />
+        <span>{company.name}</span>
+      </a>
+      <span class="footer-copyright">&copy; {new Date().getFullYear()} {company.legalName}</span>
     </div>
-
-    <!-- Bottom Bar -->
-    <div class="pt-4 border-t border-neutral-200">
-      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 text-xs text-neutral-400">
-        <p>&copy; 2025 Crab Labs LLC</p>
-        <a href="/privacy" class="hover:text-neutral-600 transition-colors">Privacy</a>
-      </div>
-    </div>
-
   </div>
 </footer>
-<!-- ========== END FOOTER ========== -->
+
+<style>
+  .footer {
+    background: var(--neutral-900);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10;
+  }
+
+  .footer-container {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .footer-container {
+      padding: 0 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .footer-container {
+      padding: 0 2rem;
+    }
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--neutral-800);
+  }
+
+  @media (min-width: 640px) {
+    .footer-content {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+
+  .footer-logo img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;
+  }
+
+  .footer-logo span {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.8125rem;
+    color: var(--neutral-500);
+  }
+
+  .footer-copyright {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    color: var(--neutral-600);
+    letter-spacing: 0.02em;
+  }
+</style>

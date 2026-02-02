@@ -14,7 +14,7 @@ interface Props {
 	type?: string;
 }
 
-// links for nav bar - organized by user journey: what we do → proof → who we are
+// links for nav bar - organized by user journey: what we do → proof → who we are → contact
 const links = [
 	{
 		text: "Services",
@@ -25,16 +25,20 @@ const links = [
 		href: "/case-studies",
 	},
 	{
-		text: "Tooling",
-		href: "/tooling",
-	},
-	{
-		text: "Blog",
-		href: "/blog",
+		text: "Capabilities",
+		href: "/capabilities",
 	},
 	{
 		text: "About",
 		href: "/about",
+	},
+	{
+		text: "Contact",
+		href: "/contact",
+	},
+	{
+		text: "Insights",
+		href: "/insights",
 	},
 ];
 
@@ -103,20 +107,43 @@ const currentUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
 		<meta name="application-name" content="Crab Labs" />
 
 		<!-- RSS Feed -->
-		<link rel="alternate" type="application/rss+xml" title="Crab Labs Blog" href="/rss.xml" />
+		<link rel="alternate" type="application/rss+xml" title="Crab Labs Insights" href="/rss.xml" />
 
 		<!-- Sitemap -->
 		<link rel="sitemap" href="/sitemap-index.xml" />
-	<!-- Google tag (gtag.js) -->
+	<!-- Google tag (gtag.js) - Consent mode enabled for GDPR compliance -->
+		<script is:inline>
+			// Initialize dataLayer and gtag function BEFORE loading gtag.js
+			window.dataLayer = window.dataLayer || [];
+			function gtag() { dataLayer.push(arguments); }
+
+			// Set default consent to denied - will be updated by CookieBanner
+			gtag('consent', 'default', {
+				'analytics_storage': 'denied',
+				'ad_storage': 'denied',
+				'wait_for_update': 500
+			});
+
+			// Check if user has previously consented (matches CookieBanner localStorage key)
+			try {
+				const hasConsent = localStorage.getItem('cookiesAccepted') === 'true';
+				const analyticsEnabled = localStorage.getItem('analyticsEnabled') === 'true';
+				if (hasConsent && analyticsEnabled) {
+					gtag('consent', 'update', {
+						'analytics_storage': 'granted',
+						'ad_storage': 'granted'
+					});
+				}
+			} catch (e) {
+				// localStorage may be unavailable in private browsing
+			}
+		</script>
 		<script
+			is:inline
 			async
 			src="https://www.googletagmanager.com/gtag/js?id=G-VS3TXE9GHY"
 		></script>
 		<script is:inline>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
-			}
 			gtag("js", new Date());
 			gtag("config", "G-VS3TXE9GHY", {
 				'anonymize_ip': true,
@@ -139,7 +166,7 @@ const currentUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
 			Skip to main content
 		</a>
 
-		<div class="flex flex-col h-screen">
+		<div class="flex flex-col min-h-screen">
 			<NavBar links={links} />
 			<main id="main-content" class="flex-grow">
 				<slot />
@@ -149,11 +176,6 @@ const currentUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
 		</div>
 	</body>
 
-	<!-- <div class="flex flex-col h-screen">
-		<div class="bg-red-500">header</div>
-		<div class="bg-green-500 flex-grow">content</div>
-		<div class="bg-blue-500">footer</div>
-	</div> -->
 
 	<!-- Preline UI script -->
 	<script>

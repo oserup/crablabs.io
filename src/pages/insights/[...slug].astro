@@ -1,0 +1,502 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Container from '../../components/Container.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post, allPosts: posts },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+  allPosts: CollectionEntry<'blog'>[];
+}
+
+const { post, allPosts } = Astro.props;
+const { Content, headings } = await post.render();
+
+const wordCount = post.body.split(/\s+/).length;
+const readingTime = Math.ceil(wordCount / 200);
+
+const relatedPosts = allPosts
+  .filter(p => !p.data.draft && p.slug !== post.slug)
+  .filter(p => p.data.tags.some(tag => post.data.tags.includes(tag)))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
+const contentTypeConfig: Record<string, { label: string; color: string; bgColor: string }> = {
+  tutorial: { label: 'Tutorial', color: '#059669', bgColor: '#ecfdf5' },
+  article: { label: 'Article', color: '#2563eb', bgColor: '#eff6ff' },
+  opinion: { label: 'Opinion', color: '#7c3aed', bgColor: '#f5f3ff' },
+};
+
+const typeConfig = contentTypeConfig[post.data.contentType || 'article'];
+
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  }).format(date);
+}
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": post.data.title,
+  "description": post.data.description,
+  "author": { "@type": "Person", "name": post.data.author },
+  "publisher": { "@type": "Organization", "name": "Crab Labs", "url": "https://crablabs.io" },
+  "datePublished": post.data.pubDate.toISOString(),
+  ...(post.data.updatedDate && { "dateModified": post.data.updatedDate.toISOString() }),
+  "mainEntityOfPage": { "@type": "WebPage", "@id": `https://crablabs.io/insights/${post.slug}/` },
+};
+---
+
+<Layout title={`${post.data.title} | Crab Labs Insights`} description={post.data.description}>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(articleSchema)}></script>
+
+  <style>
+    .section {
+      padding: 5rem 0;
+      position: relative;
+    }
+
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: repeating-linear-gradient(90deg, #e5e5e5 0px, #e5e5e5 4px, transparent 4px, transparent 8px);
+    }
+
+    .section-white { background: #ffffff; }
+    .section-gray { background: #fafafa; }
+    .section-first { padding-top: 3rem; padding-bottom: 3rem; }
+    .section-first::before { display: none; }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8125rem;
+      margin-bottom: 2rem;
+    }
+
+    .breadcrumb a {
+      color: #737373;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--brand-600);
+    }
+
+    .breadcrumb-sep {
+      color: #d4d4d4;
+    }
+
+    .breadcrumb-current {
+      color: #171717;
+    }
+
+    /* Article Header */
+    .article-header {
+      max-width: 48rem;
+      margin-bottom: 3rem;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .article-type {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      border-radius: 4px;
+    }
+
+    .article-featured {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      background: var(--brand-600);
+      color: #ffffff;
+      border-radius: 4px;
+    }
+
+    .article-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #171717;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .article-desc {
+      font-size: 1.125rem;
+      color: #525252;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #e5e5e5;
+      font-size: 0.8125rem;
+      color: #737373;
+    }
+
+    .article-info-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .article-info-item svg {
+      width: 1rem;
+      height: 1rem;
+      color: var(--brand-600);
+    }
+
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .article-tag {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.75rem;
+      background: #f5f5f5;
+      color: #525252;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    .article-tag:hover {
+      background: #e5e5e5;
+    }
+
+    /* Article Content */
+    .article-content {
+      max-width: 48rem;
+    }
+
+    .prose {
+      color: #374151;
+      line-height: 1.8;
+    }
+
+    .prose h2 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #171717;
+      margin: 2.5rem 0 1rem;
+      padding-left: 1rem;
+      border-left: 3px solid var(--brand-600);
+    }
+
+    .prose h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #171717;
+      margin: 2rem 0 0.75rem;
+    }
+
+    .prose h4 {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #171717;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .prose p {
+      margin-bottom: 1.25rem;
+    }
+
+    .prose a {
+      color: var(--brand-600);
+      text-decoration: underline;
+    }
+
+    .prose a:hover {
+      color: var(--brand-700);
+    }
+
+    .prose strong {
+      font-weight: 600;
+      color: #171717;
+    }
+
+    .prose code {
+      font-family: var(--font-mono);
+      font-size: 0.875em;
+      background: #f5f5f5;
+      padding: 0.125rem 0.375rem;
+      border-radius: 4px;
+      color: #c2410c;
+    }
+
+    .prose pre {
+      background: #1f2937;
+      color: #e5e7eb;
+      padding: 1rem 1.25rem;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+
+    .prose pre code {
+      background: none;
+      padding: 0;
+      color: inherit;
+    }
+
+    .prose blockquote {
+      border-left: 3px solid var(--brand-500);
+      padding: 1rem 1.25rem;
+      background: #fffbeb;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: #525252;
+    }
+
+    .prose ul, .prose ol {
+      margin: 1.25rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .prose li {
+      margin-bottom: 0.5rem;
+    }
+
+    .prose img {
+      border-radius: 4px;
+      margin: 1.5rem 0;
+    }
+
+    .prose table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+
+    .prose th, .prose td {
+      padding: 0.75rem 1rem;
+      border: 1px solid #e5e5e5;
+      text-align: left;
+    }
+
+    .prose th {
+      background: #f5f5f5;
+      font-weight: 600;
+    }
+
+    /* Related Posts */
+    .related-section {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    .related-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #171717;
+      margin-bottom: 1.5rem;
+    }
+
+    .related-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .related-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .related-card {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    .related-card:hover {
+      border-color: var(--brand-300);
+    }
+
+    .related-card-image {
+      aspect-ratio: 16/9;
+      background: #f5f5f5;
+      overflow: hidden;
+    }
+
+    .related-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .related-card-content {
+      padding: 1rem;
+    }
+
+    .related-card-type {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+    }
+
+    .related-card-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: #171717;
+      line-height: 1.4;
+    }
+
+    .related-card-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .related-card-title a:hover {
+      color: var(--brand-600);
+    }
+
+    .related-card-desc {
+      font-size: 0.8125rem;
+      color: #737373;
+      margin-top: 0.5rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  </style>
+
+  <!-- Article Header -->
+  <section class="section section-gray section-first">
+    <Container>
+      <nav class="breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="/insights">Insights</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">{post.data.title}</span>
+      </nav>
+
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="article-type" style={`background: ${typeConfig.bgColor}; color: ${typeConfig.color};`}>
+            {typeConfig.label}
+          </span>
+          {post.data.featured && <span class="article-featured">Featured</span>}
+        </div>
+
+        <h1 class="article-title">{post.data.title}</h1>
+        <p class="article-desc">{post.data.description}</p>
+
+        <div class="article-info">
+          <div class="article-info-item">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+            <span>{post.data.author}</span>
+          </div>
+          <div class="article-info-item">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
+          </div>
+          <div class="article-info-item">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>{readingTime} min read</span>
+          </div>
+        </div>
+
+        {post.data.tags.length > 0 && (
+          <div class="article-tags">
+            {post.data.tags.map((tag: string) => (
+              <a href={`/insights?tag=${encodeURIComponent(tag)}`} class="article-tag">#{tag}</a>
+            ))}
+          </div>
+        )}
+      </header>
+    </Container>
+  </section>
+
+  <!-- Article Content -->
+  <section class="section section-white">
+    <Container>
+      <div class="article-content">
+        <div class="prose">
+          <Content />
+        </div>
+
+        {relatedPosts.length > 0 && (
+          <div class="related-section">
+            <h2 class="related-title">Related Insights</h2>
+            <div class="related-grid">
+              {relatedPosts.map((relatedPost) => {
+                const relatedTypeConfig = contentTypeConfig[relatedPost.data.contentType || 'article'];
+                return (
+                  <article class="related-card">
+                    {relatedPost.data.heroImage && (
+                      <div class="related-card-image">
+                        <img src={relatedPost.data.heroImage} alt="" loading="lazy" />
+                      </div>
+                    )}
+                    <div class="related-card-content">
+                      <span class="related-card-type" style={`background: ${relatedTypeConfig.bgColor}; color: ${relatedTypeConfig.color};`}>
+                        {relatedTypeConfig.label}
+                      </span>
+                      <h3 class="related-card-title">
+                        <a href={`/insights/${relatedPost.slug}/`}>{relatedPost.data.title}</a>
+                      </h3>
+                      <p class="related-card-desc">{relatedPost.data.description}</p>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        )}
+      </div>
+    </Container>
+  </section>
+</Layout>

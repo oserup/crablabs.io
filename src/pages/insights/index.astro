@@ -1,0 +1,494 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Container from '../../components/Container.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const allTags = [...new Set(posts.flatMap(post => post.data.tags))].sort();
+
+const contentTypeConfig: Record<string, { label: string; color: string; bgColor: string }> = {
+  tutorial: { label: 'Tutorial', color: '#059669', bgColor: '#ecfdf5' },
+  article: { label: 'Article', color: '#2563eb', bgColor: '#eff6ff' },
+  opinion: { label: 'Opinion', color: '#7c3aed', bgColor: '#f5f3ff' },
+};
+
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
+  }).format(date);
+}
+---
+
+<Layout title="Electronics Engineering Insights - PCB Design, Firmware, Compliance | Crab Labs" description="Practical tutorials and articles from working engineers: PCB design best practices, firmware development, EMC testing, medical device compliance, and cost optimization.">
+  <style>
+    .section {
+      padding: 5rem 0;
+      position: relative;
+    }
+
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: repeating-linear-gradient(90deg, #e5e5e5 0px, #e5e5e5 4px, transparent 4px, transparent 8px);
+    }
+
+    .section-white { background: #ffffff; }
+    .section-gray { background: #fafafa; }
+    .section-first { padding-top: 3rem; padding-bottom: 3rem; }
+    .section-first::before { display: none; }
+
+    .section-header {
+      margin-bottom: 3rem;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #a3a3a3;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-label::before {
+      content: '//';
+      color: #d4d4d4;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #171717;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: #737373;
+      margin-top: 0.5rem;
+      max-width: 480px;
+    }
+
+    /* Filter Bar */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .search-input {
+      flex: 1;
+      min-width: 200px;
+      max-width: 280px;
+      padding: 0.5rem 0.75rem 0.5rem 2.25rem;
+      font-size: 0.875rem;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      background: #fafafa;
+      transition: all 0.15s ease;
+    }
+
+    .search-input:focus {
+      outline: none;
+      background: #ffffff;
+      border-color: var(--brand-500);
+    }
+
+    .search-wrapper {
+      position: relative;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1rem;
+      height: 1rem;
+      color: #a3a3a3;
+    }
+
+    .type-filters {
+      display: flex;
+      gap: 0.375rem;
+    }
+
+    .type-btn {
+      padding: 0.375rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .type-btn[data-type="all"] {
+      background: #171717;
+      color: #ffffff;
+    }
+
+    .type-btn[data-type="tutorial"] {
+      background: #ecfdf5;
+      color: #059669;
+    }
+
+    .type-btn[data-type="article"] {
+      background: #eff6ff;
+      color: #2563eb;
+    }
+
+    .type-btn[data-type="opinion"] {
+      background: #f5f3ff;
+      color: #7c3aed;
+    }
+
+    .type-btn.active {
+      background: #171717 !important;
+      color: #ffffff !important;
+    }
+
+    .results-info {
+      margin-left: auto;
+      font-size: 0.75rem;
+      color: #a3a3a3;
+    }
+
+    .clear-btn {
+      color: var(--brand-600);
+      background: none;
+      border: none;
+      font-size: 0.75rem;
+      cursor: pointer;
+      display: none;
+    }
+
+    .clear-btn:hover {
+      text-decoration: underline;
+    }
+
+    .clear-btn.visible {
+      display: inline;
+    }
+
+    /* Posts Grid */
+    .posts-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .posts-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .post-card {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.2s ease;
+    }
+
+    .post-card:hover {
+      border-color: var(--brand-300);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .post-image {
+      aspect-ratio: 16/9;
+      background: #f5f5f5;
+      overflow: hidden;
+    }
+
+    .post-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .post-content {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .post-type {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      border-radius: 4px;
+    }
+
+    .post-featured {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      background: var(--brand-600);
+      color: #ffffff;
+      border-radius: 4px;
+    }
+
+    .post-title {
+      font-family: var(--font-display);
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: #171717;
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .post-title a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .post-title a:hover {
+      color: var(--brand-600);
+    }
+
+    .post-desc {
+      font-size: 0.8125rem;
+      color: #737373;
+      line-height: 1.6;
+      flex-grow: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .post-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0.75rem;
+      margin-top: 0.75rem;
+      border-top: 1px solid #f5f5f5;
+    }
+
+    .post-date {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      color: #a3a3a3;
+    }
+
+    .post-link {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--brand-600);
+      text-decoration: none;
+    }
+
+    .post-link:hover {
+      text-decoration: underline;
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 3rem 0;
+      color: #737373;
+      display: none;
+    }
+
+    .no-results.visible {
+      display: block;
+    }
+  </style>
+
+  <!-- Page Header -->
+  <section class="section section-gray section-first">
+    <Container>
+      <div class="section-header">
+        <div class="section-label">Insights</div>
+        <h1 class="section-title">Engineering Knowledge</h1>
+        <p class="section-subtitle">PCB design, firmware, and compliance. Practical knowledge from working engineers.</p>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Posts Section -->
+  <section class="section section-white">
+    <Container>
+      <!-- Filter Bar -->
+      <div class="filter-bar">
+        <div class="search-wrapper">
+          <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input type="text" id="search" class="search-input" placeholder="Search posts..." />
+        </div>
+
+        <div class="type-filters">
+          <button class="type-btn active" data-type="all">All</button>
+          <button class="type-btn" data-type="tutorial">Tutorial</button>
+          <button class="type-btn" data-type="article">Article</button>
+          <button class="type-btn" data-type="opinion">Opinion</button>
+        </div>
+
+        <div class="results-info">
+          <span id="results-count">{posts.length}</span> posts
+          <button id="clear-filters" class="clear-btn">Clear</button>
+        </div>
+      </div>
+
+      <!-- No Results -->
+      <div id="no-results" class="no-results">
+        <p>No posts found matching your filters.</p>
+        <button id="clear-filters-main" class="clear-btn visible" style="margin-top: 1rem;">Clear filters</button>
+      </div>
+
+      <!-- Posts Grid -->
+      <div id="posts-grid" class="posts-grid">
+        {posts.map((post) => {
+          const typeConfig = contentTypeConfig[post.data.contentType || 'article'];
+          return (
+            <article
+              class="post-card"
+              data-title={post.data.title.toLowerCase()}
+              data-description={post.data.description.toLowerCase()}
+              data-tags={post.data.tags.join(',')}
+              data-date={post.data.pubDate.toISOString()}
+              data-content-type={post.data.contentType || 'article'}
+            >
+              {post.data.heroImage && (
+                <div class="post-image">
+                  <img src={post.data.heroImage} alt="" loading="lazy" />
+                </div>
+              )}
+
+              <div class="post-content">
+                <div class="post-meta">
+                  <span class="post-type" style={`background: ${typeConfig.bgColor}; color: ${typeConfig.color};`}>
+                    {typeConfig.label}
+                  </span>
+                  {post.data.featured && <span class="post-featured">Featured</span>}
+                </div>
+
+                <h2 class="post-title">
+                  <a href={`/insights/${post.slug}/`}>{post.data.title}</a>
+                </h2>
+
+                <p class="post-desc">{post.data.description}</p>
+
+                <div class="post-footer">
+                  <time class="post-date" datetime={post.data.pubDate.toISOString()}>
+                    {formatDate(post.data.pubDate)}
+                  </time>
+                  <a href={`/insights/${post.slug}/`} class="post-link">Read →</a>
+                </div>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </Container>
+  </section>
+</Layout>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search') as HTMLInputElement;
+  const typeButtons = document.querySelectorAll('.type-btn');
+  const postsGrid = document.getElementById('posts-grid');
+  const posts = document.querySelectorAll('.post-card');
+  const resultsCount = document.getElementById('results-count');
+  const noResults = document.getElementById('no-results');
+  const clearFiltersBtn = document.getElementById('clear-filters');
+  const clearFiltersMainBtn = document.getElementById('clear-filters-main');
+
+  let currentType = 'all';
+  let searchTerm = '';
+
+  searchInput?.addEventListener('input', (e) => {
+    searchTerm = (e.target as HTMLInputElement).value.toLowerCase();
+    filterPosts();
+  });
+
+  typeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      typeButtons.forEach(b => b.classList.remove('active'));
+      button.classList.add('active');
+      currentType = (button as HTMLElement).dataset.type || 'all';
+      filterPosts();
+    });
+  });
+
+  function clearAllFilters() {
+    if (searchInput) searchInput.value = '';
+    searchTerm = '';
+    currentType = 'all';
+    typeButtons.forEach(b => b.classList.remove('active'));
+    document.querySelector('[data-type="all"]')?.classList.add('active');
+    filterPosts();
+  }
+
+  clearFiltersBtn?.addEventListener('click', clearAllFilters);
+  clearFiltersMainBtn?.addEventListener('click', clearAllFilters);
+
+  function filterPosts() {
+    let visible = 0;
+    posts.forEach(post => {
+      const el = post as HTMLElement;
+      const title = el.dataset.title || '';
+      const desc = el.dataset.description || '';
+      const contentType = el.dataset.contentType || 'article';
+
+      const matchSearch = !searchTerm || title.includes(searchTerm) || desc.includes(searchTerm);
+      const matchType = currentType === 'all' || contentType === currentType;
+
+      if (matchSearch && matchType) {
+        el.style.display = 'flex';
+        visible++;
+      } else {
+        el.style.display = 'none';
+      }
+    });
+
+    if (resultsCount) resultsCount.textContent = visible.toString();
+    if (postsGrid && noResults) {
+      postsGrid.style.display = visible === 0 ? 'none' : 'grid';
+      noResults.classList.toggle('visible', visible === 0);
+    }
+
+    const hasFilters = searchTerm || currentType !== 'all';
+    clearFiltersBtn?.classList.toggle('visible', hasFilters);
+  }
+});
+</script>

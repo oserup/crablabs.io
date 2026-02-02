@@ -1,7 +1,46 @@
 /* ========================================
    UTILITY CLASSES
-   Accessibility, print styles, etc.
+   Accessibility, print styles, spacing, etc.
    ======================================== */
+
+/* Section Spacing - Standardized padding for page sections */
+.section-spacing {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .section-spacing {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.section-spacing-sm {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .section-spacing-sm {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+/* Common background patterns */
+.bg-section-alt {
+  background-color: var(--neutral-50);
+}
+
+.bg-section-dark {
+  background-color: var(--neutral-950);
+}
+
+/* Text utilities */
+.text-balance {
+  text-wrap: balance;
+}
 
 /* Accessibility */
 a:focus-visible,
@@ -39,13 +78,90 @@ button:focus-visible {
   body {
     color: black;
     background: white;
+    font-size: 11pt;
+    line-height: 1.5;
   }
 
+  /* Hide navigation and interactive elements */
+  nav,
+  footer,
+  .cookie-banner,
   .btn-brand,
   .btn-primary,
-  .btn-secondary {
-    border: 1px solid black;
-    background: white;
-    color: black;
+  .btn-secondary,
+  #toc-toggle,
+  #toc-content,
+  .not-prose,
+  [data-no-print] {
+    display: none !important;
+  }
+
+  /* Article styling for print */
+  article {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .prose {
+    max-width: 100% !important;
+  }
+
+  /* Ensure links show their URLs */
+  .prose a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  /* Keep tables intact */
+  table {
+    page-break-inside: avoid;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1px solid #ccc;
+    padding: 0.5em;
+  }
+
+  th {
+    background: #f5f5f5 !important;
+    font-weight: 600;
+  }
+
+  /* Prevent breaks inside key elements */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  pre, blockquote, table, figure {
+    page-break-inside: avoid;
+  }
+
+  /* Print header info */
+  .print-header {
+    display: block !important;
+    text-align: center;
+    margin-bottom: 2em;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1em;
+  }
+
+  /* Code blocks */
+  pre {
+    background: #f5f5f5 !important;
+    border: 1px solid #ccc;
+    padding: 1em;
+    font-size: 9pt;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  code {
+    background: #f5f5f5 !important;
+    padding: 0.1em 0.3em;
   }
 }

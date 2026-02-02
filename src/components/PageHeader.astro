@@ -1,0 +1,46 @@
+---
+/**
+ * PageHeader - Consistent page header component
+ * Used at the top of content pages (Services, About, Case Studies, etc.)
+ */
+interface Props {
+  label: string;
+  title: string;
+  description?: string;
+  centered?: boolean;
+  maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
+}
+
+const {
+  label,
+  title,
+  description,
+  centered = false,
+  maxWidth = 'lg'
+} = Astro.props;
+
+const maxWidthClasses = {
+  sm: 'max-w-xl',
+  md: 'max-w-2xl',
+  lg: 'max-w-3xl',
+  xl: 'max-w-4xl',
+  full: ''
+};
+---
+
+<section class:list={[
+  "pt-16 lg:pt-24 pb-8",
+  maxWidthClasses[maxWidth],
+  centered && "mx-auto text-center"
+]}>
+  <p class="text-sm font-mono text-brand-600 mb-2">{label}</p>
+  <h1 class="text-4xl lg:text-5xl font-display font-semibold text-neutral-900 mb-4">{title}</h1>
+  {description && (
+    <p class:list={[
+      "text-xl text-neutral-600",
+      centered && "max-w-xl mx-auto"
+    ]}>
+      {description}
+    </p>
+  )}
+</section>

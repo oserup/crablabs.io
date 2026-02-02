@@ -2,631 +2,578 @@
 import Container from "../components/Container.astro";
 import Layout from "../layouts/Layout.astro";
 
-// About page structured data
 const aboutData = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
   "mainEntity": {
     "@type": "LocalBusiness",
     "name": "Crab Labs LLC",
-    "description": "5 senior electronics engineers with 30+ years combined experience in regulatory-compliant embedded systems for medical devices, industrial automation, and scientific instruments.",
+    "description": "Electronics engineering consultancy specializing in embedded systems for medical devices, industrial automation, and scientific instruments.",
     "foundingDate": "2024",
-    "founder": [
-      {
-        "@type": "Person",
-        "name": "Engineering Team",
-        "description": "5 senior engineers with expertise in medical device compliance, industrial automation, and scientific instrumentation"
-      }
-    ],
-    "numberOfEmployees": "5",
-    "knowsAbout": [
-      "Medical Device Engineering",
-      "FDA 510k Submissions",
-      "IEC 60601 Compliance",
-      "Industrial Automation",
-      "Scientific Instruments",
-      "EMC Testing",
-      "PCB Design",
-      "Embedded Firmware"
-    ],
-    "hasCredential": [
-      {
-        "@type": "EducationalOccupationalCredential",
-        "name": "FDA 510k Submissions",
-        "description": "12+ successful FDA 510(k) medical device submissions"
-      },
-      {
-        "@type": "EducationalOccupationalCredential",
-        "name": "CE Marking Experience",
-        "description": "Industrial products with European CE compliance"
-      }
-    ]
+    "numberOfEmployees": "5"
   }
 };
 
-// Testimonial structured data
-const reviewData = {
-  "@context": "https://schema.org",
-  "@type": "Review",
-  "author": {
-    "@type": "Person",
-    "name": "Myles Ainley"
-  },
-  "datePublished": "2024",
-  "description": "Crab Labs played a key role in refining and validating our products development.",
-  "name": "Client Review",
-  "reviewBody": "Crab Labs played a key role in refining and validating our products development.",
-  "reviewRating": {
-    "@type": "Rating",
-    "bestRating": "5",
-    "ratingValue": "5",
-    "worstRating": "1"
-  },
-  "itemReviewed": {
-    "@type": "LocalBusiness",
-    "name": "Crab Labs LLC"
-  }
-};
+// The CrabLabs Experience - what we actually sell
+const experience = [
+  { num: "01", title: "Fast Start", desc: "Quote same day. Contract signed within a week. No waiting for resource allocation." },
+  { num: "02", title: "Fixed Pricing", desc: "No surprise bills. No change order battles. We absorb overruns." },
+  { num: "03", title: "Full Visibility", desc: "Weekly updates with demos, photos, and test results. You see progress as it happens." },
+  { num: "04", title: "Direct Access", desc: "Talk to the engineers doing the work. No account managers in between." },
+  { num: "05", title: "Clean Handoff", desc: "Documentation you can actually use. 30 days free support included." },
+  { num: "06", title: "Your IP", desc: "You own everything from day one. No licensing. No lock-in." },
+];
 
-// Breadcrumb for about page
-const breadcrumbData = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://crablabs.io"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "About Us",
-      "item": "https://crablabs.io/about"
-    }
-  ]
-};
+// Process steps
+const process = [
+  { num: "01", title: "Consultation", time: "30 min", desc: "We learn about your project, constraints, and goals. No sales pitch. We'll tell you if we're not the right fit." },
+  { num: "02", title: "Quote", time: "Same day", desc: "Fixed-price quote with clear scope and deliverables. Detailed enough to sign." },
+  { num: "03", title: "Build", time: "Weeks to months", desc: "Regular demos and updates. Photos, videos, test results. No black boxes." },
+  { num: "04", title: "Deliver", time: "On schedule", desc: "Manufacturing files, source code, documentation. Everything you need to walk away." },
+];
+
+// Pain points we solve
+const painPoints = [
+  { icon: "×", pain: "Endless meetings that go nowhere", solve: "Focused calls. Clear outcomes." },
+  { icon: "×", pain: "Fighting over change requests", solve: "Flexibility without fuss." },
+  { icon: "×", pain: "Being left in the dark", solve: "Weekly updates with real progress." },
+  { icon: "×", pain: "Documentation that sits in a drawer", solve: "Docs you can actually use." },
+  { icon: "×", pain: "Surprises at the end", solve: "Catch issues early, together." },
+];
+
+// Who we work best with - positive framing
+const bestFit = [
+  { title: "You need to move fast", desc: "We start next week. Quote same day, contract within a week." },
+  { title: "Your project is $10k-$100k", desc: "Right-sized for startups and SMBs. No corporate minimums." },
+  { title: "You want senior engineers", desc: "Every project gets our senior team. No juniors, no handoffs." },
+  { title: "Regulatory matters", desc: "Medical, industrial, scientific. We know the standards." },
+];
+
+// What makes us different - deeper details not covered elsewhere
+const differentiators = [
+  {
+    title: "We say no to bad fits",
+    desc: "If your project isn't right for us, we'll tell you upfront. No wasted time, no awkward exit six weeks in. We'd rather turn down work than deliver something we're not proud of.",
+  },
+  {
+    title: "Your team can maintain what we build",
+    desc: "Clean code, thorough documentation, no proprietary tools. When we hand off, your team or your next vendor can pick up where we left off without reverse-engineering anything.",
+  },
+  {
+    title: "Regulatory from day one",
+    desc: "FDA, CE, FCC compliance isn't an afterthought. We design with certification in mind from the start, so you don't get expensive surprises at the test lab.",
+  },
+  {
+    title: "We catch problems early",
+    desc: "Weekly check-ins mean misunderstandings surface in days, not months. If something's drifting off course, we fix it before it becomes expensive.",
+  },
+  {
+    title: "No offshore handoffs",
+    desc: "All engineering happens in our Long Beach lab. Same team, same timezone, same accountability from start to finish.",
+  },
+  {
+    title: "Manufacturing-ready deliverables",
+    desc: "Gerbers, pick-and-place files, test procedures, assembly instructions. You can take our files to any CM and start production without additional engineering work.",
+  },
+];
+
 ---
 
 <Layout
-    title="About Us | Crab Labs"
-    description="5 senior electronics engineers, 30+ years experience. 12+ FDA submissions, CE marked products. Direct access medical device, industrial & scientific engineering. Long Beach, California."
+  title="About Crab Labs - Electronics Engineering Without the Headaches | Long Beach, CA"
+  description="5 senior electronics engineers. 30+ years combined experience. Fixed pricing, weekly updates, you own all IP. Medical, industrial, scientific products. Long Beach, CA."
 >
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(aboutData)}></script>
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(reviewData)}></script>
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbData)}></script>
-    <!-- Page uses global styles -->
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(aboutData)}></script>
 
-    <!-- Clean Minimal Background -->
-    <div class="absolute inset-0 -z-10 bg-white"></div>
+  <style>
+    /* ==========================================
+       SECTIONS - Light backgrounds
+       ========================================== */
+    .section {
+      padding: 5rem 0;
+      position: relative;
+    }
 
-    <div class="page-container"></div>
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: repeating-linear-gradient(90deg, #e5e5e5 0px, #e5e5e5 4px, transparent 4px, transparent 8px);
+    }
 
+    .section-white { background: #ffffff; }
+    .section-gray { background: #fafafa; }
+    .section-light { background: #f5f5f5; }
+    .section-first { padding-top: 3rem; padding-bottom: 3rem; }
+    .section-first::before { display: none; }
+
+    .section-header {
+      margin-bottom: 3rem;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #a3a3a3;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-label::before {
+      content: '//';
+      color: #d4d4d4;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #171717;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: #737373;
+      margin-top: 0.5rem;
+      max-width: 480px;
+    }
+
+    /* ==========================================
+       EXPERIENCE GRID - matches homepage why-us
+       ========================================== */
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .experience-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .experience-item {
+      background: #fafafa;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      padding: 1.5rem;
+      transition: all 0.25s ease;
+    }
+
+    .experience-item:hover {
+      border-color: #fb923c;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .experience-marker {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      margin-bottom: 1rem;
+    }
+
+    .experience-num {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: #fb923c;
+      letter-spacing: 0.05em;
+    }
+
+    .experience-dot {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(251, 146, 60, 0.5), transparent);
+    }
+
+    .experience-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: #171717;
+      margin-bottom: 0.375rem;
+    }
+
+    .experience-desc {
+      font-size: 0.8125rem;
+      color: #737373;
+      line-height: 1.5;
+    }
+
+    /* ==========================================
+       PROCESS SECTION
+       ========================================== */
+    .process-grid {
+      display: grid;
+      gap: 1px;
+      background: #e5e5e5;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    @media (min-width: 768px) {
+      .process-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .process-card {
+      background: #ffffff;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .process-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 2rem;
+      right: 2rem;
+      height: 2px;
+      background: linear-gradient(90deg, #fb923c, transparent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .process-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .process-num {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      font-weight: 500;
+      color: #d4d4d4;
+      margin-bottom: 1rem;
+    }
+
+    .process-title {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #171717;
+      margin-bottom: 0.25rem;
+    }
+
+    .process-time {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: #fb923c;
+      margin-bottom: 0.75rem;
+    }
+
+    .process-desc {
+      font-size: 0.8125rem;
+      color: #737373;
+      line-height: 1.5;
+    }
+
+    /* ==========================================
+       PAIN POINTS
+       ========================================== */
+    .pain-grid {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 768px) {
+      .pain-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .pain-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .pain-card {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      padding: 1.25rem 1.5rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      align-items: start;
+      transition: all 0.2s ease;
+    }
+
+    .pain-card:hover {
+      border-color: #d4d4d4;
+    }
+
+    .pain-icon {
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #dc2626;
+    }
+
+    .pain-content {
+      min-width: 0;
+    }
+
+    .pain-text {
+      font-size: 0.8125rem;
+      color: #737373;
+      text-decoration: line-through;
+      margin-bottom: 0.375rem;
+    }
+
+    .pain-solve {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #171717;
+    }
+
+    /* ==========================================
+       BEST FIT SECTION
+       ========================================== */
+    .fit-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .fit-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .fit-card {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      padding: 1.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .fit-card:hover {
+      border-color: #fb923c;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .fit-title {
+      font-family: var(--font-display);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #171717;
+      margin-bottom: 0.5rem;
+    }
+
+    .fit-desc {
+      font-size: 0.8125rem;
+      color: #737373;
+      line-height: 1.5;
+    }
+
+    /* ==========================================
+       DIFFERENTIATORS SECTION
+       ========================================== */
+    .diff-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .diff-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .diff-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .diff-card {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      padding: 1.75rem;
+      transition: all 0.2s ease;
+    }
+
+    .diff-card:hover {
+      border-color: #fb923c;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .diff-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: #171717;
+      margin-bottom: 0.75rem;
+    }
+
+    .diff-desc {
+      font-size: 0.875rem;
+      color: #525252;
+      line-height: 1.6;
+    }
+
+    /* Section link */
+    .section-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #525252;
+      text-decoration: none;
+      margin-top: 2.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .section-link:hover {
+      color: #171717;
+    }
+
+    .section-link svg {
+      transition: transform 0.2s ease;
+    }
+
+    .section-link:hover svg {
+      transform: translateX(4px);
+    }
+  </style>
+
+  <!-- The Experience -->
+  <section class="section section-gray section-first">
     <Container>
-      <!-- Who We Are Section -->
-      <section class="relative mb-12">
-        <div class="section-white">
-          <div class="content-container">
-            <h1 class="heading-page">Who We Are</h1>
-            <div class="content-container-narrow">
-              <p class="text-large text-gray-600 text-center mb-6">
-                5 senior engineers. 30+ years experience. No middlemen.
-              </p>
-            </div>
+      <div class="section-header">
+        <div class="section-label">About Us</div>
+        <h1 class="section-title">What working with us is like</h1>
+        <p class="section-subtitle">We make product development easy. Especially if you've been burned before.</p>
+      </div>
 
+      <div class="experience-grid">
+        {experience.map((item) => (
+          <div class="experience-item">
+            <div class="experience-marker">
+              <span class="experience-num">{item.num}</span>
+              <span class="experience-dot"></span>
+            </div>
+            <div class="experience-title">{item.title}</div>
+            <div class="experience-desc">{item.desc}</div>
           </div>
-        </div>
-      </section>
-
-      <!-- Industries We Serve -->
-      <div class="border-t border-gray-100"></div>
-      <section class="relative mb-12 pt-12">
-        <div class="section-white">
-          <div class="content-container">
-            <h2 class="heading-section text-center">Industries We Serve</h2>
-            <div class="grid-3">
-              <div class="card">
-                <div class="text-2xl font-bold text-primary mb-3">Medical</div>
-                <p class="text-secondary mb-4">FDA-compliant devices for diagnostics and therapy</p>
-                <h4 class="text-sm font-medium mb-2">We build:</h4>
-                <ul class="text-sm text-secondary space-y-1">
-                  <li>• IEC 60601 compliant hardware</li>
-                  <li>• Safety-critical firmware</li>
-                  <li>• Regulatory documentation</li>
-                  <li>• EMC pre-compliance testing</li>
-                </ul>
-              </div>
-
-              <div class="card">
-                <div class="text-2xl font-bold text-primary mb-3">Industrial</div>
-                <p class="text-secondary mb-4">Automation and control systems for manufacturing</p>
-                <h4 class="text-sm font-medium mb-2">We build:</h4>
-                <ul class="text-sm text-secondary space-y-1">
-                  <li>• Rugged control systems</li>
-                  <li>• Real-time sensor integration</li>
-                  <li>• Industrial protocols (Modbus, CAN)</li>
-                  <li>• High-reliability firmware</li>
-                </ul>
-              </div>
-
-              <div class="card">
-                <div class="text-2xl font-bold text-primary mb-3">Scientific</div>
-                <p class="text-secondary mb-4">Lab equipment and precision measurement tools</p>
-                <h4 class="text-sm font-medium mb-2">We build:</h4>
-                <ul class="text-sm text-secondary space-y-1">
-                  <li>• Low-noise analog design</li>
-                  <li>• High-speed data acquisition</li>
-                  <li>• Precision timing systems</li>
-                  <li>• Custom instrumentation</li>
-                </ul>
-              </div>
-            </div>
-            <div class="text-center mt-8">
-              <a href="/capabilities" class="text-primary hover:underline font-medium">
-                View complete technical capabilities →
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Project Fit -->
-      <div class="border-t border-gray-100"></div>
-      <section class="relative mb-12 pt-12">
-        <div class="section-white">
-          <div class="content-container">
-            <h2 class="heading-section">Project Fit</h2>
-
-            <div class="max-w-5xl mx-auto">
-              <div class="grid-2 gap-8">
-
-                <!-- Perfect Fit -->
-                <div class="bg-white border-2 border-orange-200 rounded-lg p-6">
-                  <div class="text-center mb-6">
-                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <svg class="w-6 h-6 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                      </svg>
-                    </div>
-                    <h3 class="text-xl font-medium text-primary">Great Fit</h3>
-                  </div>
-
-                  <div class="space-y-4">
-                    <div class="space-y-3 text-sm text-secondary">
-                      <div>$10k - $100k project</div>
-                      <div>1-12 month timeline</div>
-                      <div>Want a fixed price</div>
-                      <div>Medical, industrial, or scientific device</div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Not the Right Fit -->
-                <div class="bg-white border border-gray-200 rounded-lg p-6">
-                  <div class="text-center mb-6">
-                    <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                      </svg>
-                    </div>
-                    <h3 class="text-xl font-medium text-gray-700">Not the Right Fit</h3>
-                  </div>
-
-                  <div class="space-y-4">
-                    <div class="space-y-3 text-sm text-secondary">
-                      <div>Under $10k or massive budgets</div>
-                      <div>Need someone on-site daily</div>
-                      <div>Building consumer gadgets</div>
-                      <div>Just need software help</div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- How We Work -->
-      <div class="border-t border-gray-100"></div>
-      <section class="relative mb-12 pt-12">
-        <div class="section-white">
-          <div class="content-container">
-            <h2 class="heading-section">How We Work</h2>
-
-            <!-- Process Flow -->
-            <div class="grid md:grid-cols-5 gap-8">
-              <div class="text-center">
-                <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span class="text-2xl font-bold text-orange-600">1</span>
-                </div>
-                <h4 class="font-semibold text-gray-900 mb-2">Discovery</h4>
-                <p class="text-sm text-gray-600 mb-2">30-minute technical discussion with an engineer</p>
-                <span class="inline-block px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">Free</span>
-              </div>
-
-              <div class="text-center">
-                <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span class="text-2xl font-bold text-orange-600">2</span>
-                </div>
-                <h4 class="font-semibold text-gray-900 mb-2">Quote</h4>
-                <p class="text-sm text-gray-600 mb-2">Detailed proposal with scope, timeline, and pricing</p>
-                <span class="inline-block px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">48 hours</span>
-              </div>
-
-              <div class="text-center">
-                <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span class="text-2xl font-bold text-orange-600">3</span>
-                </div>
-                <h4 class="font-semibold text-gray-900 mb-2">Design</h4>
-                <p class="text-sm text-gray-600 mb-2">Refine requirements and establish designs/specs</p>
-                <span class="inline-block px-2 py-1 bg-yellow-100 text-yellow-700 text-xs rounded-full">1-4 weeks</span>
-              </div>
-
-              <div class="text-center">
-                <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span class="text-2xl font-bold text-orange-600">4</span>
-                </div>
-                <h4 class="font-semibold text-gray-900 mb-2">Development</h4>
-                <p class="text-sm text-gray-600 mb-2">Weekly updates, direct engineer access</p>
-                <span class="inline-block px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">1-12 months</span>
-              </div>
-
-              <div class="text-center">
-                <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span class="text-2xl font-bold text-orange-600">5</span>
-                </div>
-                <h4 class="font-semibold text-gray-900 mb-2">Delivery</h4>
-                <p class="text-sm text-gray-600 mb-2">Complete handoff with documentation</p>
-                <span class="inline-block px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">30 days support</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Client Results -->
-      <div class="border-t border-gray-100"></div>
-      <section class="relative mb-12 pt-12">
-        <div class="section-white">
-          <div class="content-container">
-            <h2 class="heading-section">Client Results</h2>
-
-            <div class="grid-2 mb-12">
-              <div class="card">
-                <div class="flex items-start justify-between mb-4">
-                  <h3>Ultrasound Positioning System</h3>
-                  <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Medical</span>
-                </div>
-                <p class="text-secondary mb-4">
-                  High precision ultrasound positioning system for automated assessment
-                </p>
-                <div class="space-y-4 text-sm">
-                  <div>
-                    <div class="text-muted font-medium mb-2">Challenge:</div>
-                    <div class="text-gray-700 leading-relaxed">The previous positioning system couldn't achieve the required precision while maintaining IEC60601 compliance. Motor control algorithms were producing excessive noise and the hardware design created EMI issues.</div>
-                  </div>
-                  <div>
-                    <div class="text-muted font-medium mb-2">Solution:</div>
-                    <div class="text-gray-700 leading-relaxed">Complete PCB redesign with proper ground planes and shielding. Implemented custom motor control firmware with advanced control algorithms and trajectory planning.</div>
-                  </div>
-                  <div>
-                    <div class="text-muted font-medium mb-2">Result:</div>
-                    <div class="font-medium text-primary">IEC60601 Compliant • 70% smaller • 60% cheaper • 10% faster positioning • 5% more accurate</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="flex items-start justify-between mb-4">
-                  <h3>Smart PDU Monitor</h3>
-                  <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">Industrial</span>
-                </div>
-                <p class="text-secondary mb-4">
-                  Advanced monitoring and analysis system for power distribution in data centers and other similar contexts. 
-                </p>
-                <div class="space-y-4 text-sm">
-                  <div>
-                    <div class="text-muted font-medium mb-2">Challenge:</div>
-                    <div class="text-gray-700 leading-relaxed">Legacy PDU product line lacking smart features, with customers demanding real-time power monitoring and remote access capabilities without redesigning existing hardware.</div>
-                  </div>
-                  <div>
-                    <div class="text-muted font-medium mb-2">Solution:</div>
-                    <div class="text-gray-700 leading-relaxed">Custom hardware design with integrated power monitoring, purpose-built enclosure for seamless PDU integration, and wireless connectivity for remote monitoring and control.</div>
-                  </div>
-                  <div>
-                    <div class="text-muted font-medium mb-2">Result:</div>
-                    <div class="font-medium text-primary">Modernized entire product line • Restored competitive positioning • Sales turnaround within 9 months of launch</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="text-center">
-              <a href="/case-studies" class="text-primary hover:underline font-medium">
-                View all case studies with technical details →
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- What Clients Say -->
-      <div class="border-t border-gray-100"></div>
-      <section class="relative mb-12 pt-12">
-        <div class="section-white">
-          <div class="content-container">
-            <h2 class="heading-section">What Clients Say</h2>
-            <div>
-              <div class="card">
-                <div class="mb-4">
-                  <div class="text-orange-400 text-2xl mb-2">★★★★★</div>
-                  <p class="text-secondary italic">
-                    "Crab Labs played a key role in refining and validating our products development."
-                  </p>
-                </div>
-                <div class="border-t border-gray-200 pt-4">
-                  <p class="font-medium">Myles Ainley</p>
-                  <p class="text-sm text-muted">CEO, Atm0s Research and Development LLC</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Why Choose Us -->
-      <div class="border-t border-gray-100"></div>
-      <section class="relative mb-12 pt-12">
-        <div class="section-white">
-          <div class="content-container">
-            <h2 class="heading-section">Honest Comparison: Why Choose Crab Labs</h2>
-            <p class="text-center text-secondary mb-12">How we stack up against other options</p>
-
-            <div class="max-w-7xl mx-auto mb-12">
-              <!-- Comparison Table -->
-              <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                <div class="overflow-x-auto">
-                  <table class="w-full">
-                    <!-- Header -->
-                    <thead class="bg-gray-50">
-                      <tr>
-                        <th class="px-6 py-4 text-left text-sm font-medium text-gray-900"></th>
-                        <th class="px-6 py-4 text-center text-sm font-medium text-orange-600 bg-orange-50">Crab Labs</th>
-                        <th class="px-6 py-4 text-center text-sm font-medium text-gray-900">In-House Team</th>
-                        <th class="px-6 py-4 text-center text-sm font-medium text-gray-900">Big Consulting</th>
-                        <th class="px-6 py-4 text-center text-sm font-medium text-gray-900">Freelancers</th>
-                      </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200">
-                      <!-- Time to Start -->
-                      <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 text-sm font-medium text-gray-900">Time to Start</td>
-                        <td class="px-6 py-4 text-center text-sm bg-orange-50">
-                          <span class="font-semibold text-orange-700">1 week</span>
-                        </td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">3-6 months</td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">1-3 months</td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">1-4 weeks</td>
-                      </tr>
-                      <!-- Annual Cost -->
-                      <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 text-sm font-medium text-gray-900">Annual Cost</td>
-                        <td class="px-6 py-4 text-center text-sm bg-orange-50">
-                          <span class="font-semibold text-orange-700">$50-75k/year*</span>
-                          <div class="text-xs text-gray-500">*Project basis</div>
-                        </td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">$150-250k/year<div class="text-xs text-gray-500">Salary + benefits</div></td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">$200-400k/year<div class="text-xs text-gray-500">Hourly rates</div></td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">$75-150k/year<div class="text-xs text-gray-500">Depends on individual</div></td>
-                      </tr>
-                      <!-- Team Size -->
-                      <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 text-sm font-medium text-gray-900">Team Size</td>
-                        <td class="px-6 py-4 text-center text-sm bg-orange-50">
-                          <span class="font-semibold text-orange-700">2-5 engineers</span>
-                          <div class="text-xs text-gray-500">As needed</div>
-                        </td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">1-3 engineers<div class="text-xs text-gray-500">Focused domain</div></td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">5-15 engineers<div class="text-xs text-gray-500">Broad capabilities</div></td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">1 engineer<div class="text-xs text-gray-500">Deep specialization</div></td>
-                      </tr>
-                      <!-- Experience Level -->
-                      <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 text-sm font-medium text-gray-900">Experience Level</td>
-                        <td class="px-6 py-4 text-center text-sm bg-orange-50">
-                          <span class="font-semibold text-orange-700">15+ years avg</span>
-                          <div class="text-xs text-gray-500">All senior</div>
-                        </td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">5-15 years<div class="text-xs text-gray-500">Company-specific</div></td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">3-20 years<div class="text-xs text-gray-500">Structured teams</div></td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">2-25 years<div class="text-xs text-gray-500">Varies by individual</div></td>
-                      </tr>
-                      <!-- Project Risk -->
-                      <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 text-sm font-medium text-gray-900">Project Risk</td>
-                        <td class="px-6 py-4 text-center text-sm bg-orange-50">
-                          <span class="font-semibold text-orange-700">Fixed price</span>
-                          <div class="text-xs text-gray-500">Our risk</div>
-                        </td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">Variable<div class="text-xs text-gray-500">Depends on team</div></td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">Shared<div class="text-xs text-gray-500">Time & materials</div></td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">Variable<div class="text-xs text-gray-500">Depends on contract</div></td>
-                      </tr>
-                      <!-- Minimum Engagement -->
-                      <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 text-sm font-medium text-gray-900">Minimum Engagement</td>
-                        <td class="px-6 py-4 text-center text-sm bg-orange-50">
-                          <span class="font-semibold text-orange-700">$10k</span>
-                        </td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">$150k+<div class="text-xs text-gray-500">Annual salary</div></td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">$100-500k<div class="text-xs text-gray-500">Enterprise focus</div></td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">$5-50k<div class="text-xs text-gray-500">Variable scope</div></td>
-                      </tr>
-                      <!-- Support & Guarantee -->
-                      <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 text-sm font-medium text-gray-900">Post-Project Support</td>
-                        <td class="px-6 py-4 text-center text-sm bg-orange-50">
-                          <span class="font-semibold text-orange-700">30 days free</span>
-                          <div class="text-xs text-gray-500">Then support plans</div>
-                        </td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">Ongoing<div class="text-xs text-gray-500">If still employed</div></td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">Limited<div class="text-xs text-gray-500">Additional cost</div></td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">Varies<div class="text-xs text-gray-500">Individual basis</div></td>
-                      </tr>
-                      <!-- Documentation -->
-                      <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 text-sm font-medium text-gray-900">Documentation</td>
-                        <td class="px-6 py-4 text-center text-sm bg-orange-50">
-                          <span class="font-semibold text-orange-700">Complete handoff</span>
-                          <div class="text-xs text-gray-500">Source + docs</div>
-                        </td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">Internal knowledge<div class="text-xs text-gray-500">Team-based learning</div></td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">Formal process<div class="text-xs text-gray-500">Standardized approach</div></td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">Varies by freelancer<div class="text-xs text-gray-500">Individual approach</div></td>
-                      </tr>
-                      <!-- Communication -->
-                      <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 text-sm font-medium text-gray-900">Communication</td>
-                        <td class="px-6 py-4 text-center text-sm bg-orange-50">
-                          <span class="font-semibold text-orange-700">Direct to engineers</span>
-                          <div class="text-xs text-gray-500">Weekly updates</div>
-                        </td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">Direct<div class="text-xs text-gray-500">Daily availability</div></td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">Through PM<div class="text-xs text-gray-500">Filtered communication</div></td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-600">Direct<div class="text-xs text-gray-500">Individual style</div></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-
-            <div class="text-center bg-orange-50 rounded-lg p-8">
-              <h3 class="heading-card">When to Choose What</h3>
-              <div class="max-w-3xl mx-auto text-left space-y-4">
-                <div class="flex items-start gap-3">
-                  <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <p class="text-secondary"><strong>In-house teams excel when:</strong> You need daily collaboration, have ongoing product development, or require deep company-specific knowledge.</p>
-                </div>
-                <div class="flex items-start gap-3">
-                  <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <p class="text-secondary"><strong>Big consulting shines with:</strong> Large-scale enterprise projects, extensive compliance requirements, or when you need 10+ engineers with project management.</p>
-                </div>
-                <div class="flex items-start gap-3">
-                  <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <p class="text-secondary"><strong>Freelancers work great for:</strong> Specific expertise gaps, well-defined tasks, or when you prefer direct project management control.</p>
-                </div>
-                <div class="flex items-start gap-3">
-                  <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <p class="text-secondary"><strong>We're the right fit when:</strong> You want senior embedded expertise, predictable project costs, and direct engineer access for $10k-100k projects.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Navigation -->
-      <div class="border-t border-gray-100"></div>
-      <section class="relative mb-12 pt-12">
-        <div class="section-white">
-          <div class="content-container">
-            <h2 class="heading-section">Explore More</h2>
-            <div class="grid md:grid-cols-4 gap-6">
-              <a href="/services" class="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md hover:border-orange-200 transition-all duration-200">
-                <div class="w-20 h-20 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-8 hover:bg-orange-200 hover:scale-105 transition-all duration-200">
-                  <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-5 9l2 2 4-4"/>
-                  </svg>
-                </div>
-                <div class="text-center">
-                  <h3 class="heading-card">Services</h3>
-                  <p class="text-gray-600 text-lg leading-relaxed">
-                    Our complete service offerings and pricing
-                  </p>
-                </div>
-              </a>
-
-              <a href="/capabilities" class="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md hover:border-orange-200 transition-all duration-200">
-                <div class="w-20 h-20 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-8 hover:bg-orange-200 hover:scale-105 transition-all duration-200">
-                  <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
-                  </svg>
-                </div>
-                <div class="text-center">
-                  <h3 class="heading-card">Capabilities</h3>
-                  <p class="text-gray-600 text-lg leading-relaxed">
-                    Our lab equipment and technical expertise
-                  </p>
-                </div>
-              </a>
-
-              <a href="/case-studies" class="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md hover:border-orange-200 transition-all duration-200">
-                <div class="w-20 h-20 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-8 hover:bg-orange-200 hover:scale-105 transition-all duration-200">
-                  <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                  </svg>
-                </div>
-                <div class="text-center">
-                  <h3 class="heading-card">Case Studies</h3>
-                  <p class="text-gray-600 text-lg leading-relaxed">
-                    Real projects across industries
-                  </p>
-                </div>
-              </a>
-
-              <a href="/blog" class="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md hover:border-orange-200 transition-all duration-200">
-                <div class="w-20 h-20 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-8 hover:bg-orange-200 hover:scale-105 transition-all duration-200">
-                  <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
-                  </svg>
-                </div>
-                <div class="text-center">
-                  <h3 class="heading-card">Blog</h3>
-                  <p class="text-gray-600 text-lg leading-relaxed">
-                    Technical insights and industry updates
-                  </p>
-                </div>
-              </a>
-            </div>
-        </div>
-      </section>
-
-      <!-- Contact -->
-      <div class="border-t border-gray-100"></div>
-      <section class="relative pt-12">
-        <div class="cta-section">
-          <div class="max-w-2xl mx-auto">
-            <h2 class="heading-section">Ready to Start Your Project?</h2>
-            <p class="text-body-center">
-              Talk directly with a senior engineer about your technical requirements and regulatory pathway.
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-10">
-              <a href="/quote" class="cta-button-secondary">
-                Get a Quote
-              </a>
-              <a href="https://cal.com/crablabsllc/consultation" class="cta-button-primary">
-                Schedule a Consultation
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m9 18 6-6-6-6"></path>
-                </svg>
-              </a>
-              <a href="tel:+14242715569" class="cta-button-secondary">
-                Call (424) 271-5569
-              </a>
-            </div>
-
-            <p class="text-muted mt-6">
-              Long Beach, CA • Response within 24 hours
-            </p>
-          </div>
-        </div>
-      </section>
-
+        ))}
+      </div>
     </Container>
+  </section>
+
+  <!-- Process -->
+  <section class="section section-white">
+    <Container>
+      <div class="section-header">
+        <div class="section-label">Process</div>
+        <h2 class="section-title">How engagements work</h2>
+      </div>
+
+      <div class="process-grid">
+        {process.map((step) => (
+          <div class="process-card">
+            <div class="process-num">{step.num}</div>
+            <div class="process-title">{step.title}</div>
+            <div class="process-time">{step.time}</div>
+            <div class="process-desc">{step.desc}</div>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <!-- Pain Points We Solve -->
+  <section class="section section-light">
+    <Container>
+      <div class="section-header">
+        <div class="section-label">Pain Points</div>
+        <h2 class="section-title">Problems we solve</h2>
+        <p class="section-subtitle">Sound familiar? We hear these all the time.</p>
+      </div>
+
+      <div class="pain-grid">
+        {painPoints.map((item) => (
+          <div class="pain-card">
+            <div class="pain-icon">{item.icon}</div>
+            <div class="pain-content">
+              <div class="pain-text">{item.pain}</div>
+              <div class="pain-solve">{item.solve}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <!-- Who We Work Best With -->
+  <section class="section section-white">
+    <Container>
+      <div class="section-header">
+        <div class="section-label">Good Fit</div>
+        <h2 class="section-title">Who we work best with</h2>
+      </div>
+
+      <div class="fit-grid">
+        {bestFit.map((item) => (
+          <div class="fit-card">
+            <div class="fit-title">{item.title}</div>
+            <div class="fit-desc">{item.desc}</div>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <!-- What Makes Us Different -->
+  <section class="section section-gray">
+    <Container>
+      <div class="section-header">
+        <div class="section-label">Differentiators</div>
+        <h2 class="section-title">What makes us different</h2>
+      </div>
+
+      <div class="diff-grid">
+        {differentiators.map((item) => (
+          <div class="diff-card">
+            <div class="diff-title">{item.title}</div>
+            <div class="diff-desc">{item.desc}</div>
+          </div>
+        ))}
+      </div>
+
+      <a href="/capabilities" class="section-link">
+        View equipment and capabilities
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+    </Container>
+  </section>
 </Layout>

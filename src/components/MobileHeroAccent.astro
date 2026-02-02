@@ -1,0 +1,59 @@
+---
+/**
+ * MobileHeroAccent - Simplified circuit pattern for mobile hero sections
+ * Shows on mobile, hidden on lg+ (where TraceAnimation is used instead)
+ * Lightweight static SVG with no JavaScript animation
+ */
+---
+
+<div class="lg:hidden absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+  <!-- Subtle circuit pattern overlay -->
+  <svg
+    class="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 opacity-20"
+    viewBox="0 0 200 200"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <!-- Horizontal traces -->
+    <path d="M0 40 H60 L80 60 H140" stroke="#f97316" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M0 80 H40 L50 90 H100 L120 70 H160" stroke="#f97316" stroke-width="1" stroke-linecap="round"/>
+    <path d="M0 120 H80 L100 140 H180" stroke="#f97316" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M0 160 H50 L70 140 H120" stroke="#f97316" stroke-width="1" stroke-linecap="round"/>
+
+    <!-- Vertical traces -->
+    <path d="M60 0 V40" stroke="#f97316" stroke-width="1" stroke-linecap="round"/>
+    <path d="M100 60 V100" stroke="#f97316" stroke-width="1" stroke-linecap="round"/>
+    <path d="M140 40 V80 L160 100 V160" stroke="#f97316" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M80 120 V180" stroke="#f97316" stroke-width="1" stroke-linecap="round"/>
+
+    <!-- Via dots (connection points) -->
+    <circle cx="60" cy="40" r="3" fill="#f97316"/>
+    <circle cx="80" cy="60" r="2" fill="#f97316"/>
+    <circle cx="100" cy="90" r="3" fill="#f97316"/>
+    <circle cx="140" cy="60" r="2" fill="#f97316"/>
+    <circle cx="120" cy="70" r="2" fill="#f97316"/>
+    <circle cx="80" cy="120" r="3" fill="#f97316"/>
+    <circle cx="100" cy="140" r="2" fill="#f97316"/>
+    <circle cx="140" cy="80" r="2" fill="#f97316"/>
+    <circle cx="160" cy="100" r="3" fill="#f97316"/>
+
+    <!-- Component pads -->
+    <rect x="35" y="85" width="12" height="8" rx="1" fill="none" stroke="#f97316" stroke-width="1"/>
+    <rect x="115" y="135" width="12" height="8" rx="1" fill="none" stroke="#f97316" stroke-width="1"/>
+    <rect x="150" y="150" width="16" height="10" rx="1" fill="none" stroke="#f97316" stroke-width="1"/>
+  </svg>
+
+  <!-- Additional decorative element on left -->
+  <svg
+    class="absolute left-0 bottom-1/4 w-32 h-32 opacity-10"
+    viewBox="0 0 100 100"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M0 30 H40 L50 20 H80" stroke="#f97316" stroke-width="1" stroke-linecap="round"/>
+    <path d="M0 60 H30 L40 70 H60" stroke="#f97316" stroke-width="1" stroke-linecap="round"/>
+    <circle cx="40" cy="30" r="2" fill="#f97316"/>
+    <circle cx="50" cy="20" r="2" fill="#f97316"/>
+    <circle cx="40" cy="70" r="2" fill="#f97316"/>
+  </svg>
+</div>

@@ -1,0 +1,77 @@
+---
+/**
+ * MetricCard - Display key stats and metrics
+ *
+ * Props:
+ * - value: The metric value (e.g., "3x", "99%", "$50k")
+ * - label: Description of what the metric represents
+ * - highlight?: Whether to use brand color styling
+ * - color?: Color variant for non-highlight mode
+ */
+
+interface Props {
+  value: string;
+  label: string;
+  highlight?: boolean;
+  color?: 'neutral' | 'brand' | 'blue' | 'green' | 'purple' | 'red';
+}
+
+const { value, label, highlight = false, color = 'neutral' } = Astro.props;
+
+const colorClasses = {
+  neutral: {
+    bg: 'bg-neutral-50',
+    border: 'border-neutral-200',
+    value: 'text-neutral-900',
+    label: 'text-neutral-500',
+  },
+  brand: {
+    bg: 'bg-brand-50',
+    border: 'border-brand-200',
+    value: 'text-brand-700',
+    label: 'text-brand-600',
+  },
+  blue: {
+    bg: 'bg-blue-50',
+    border: 'border-blue-200',
+    value: 'text-blue-700',
+    label: 'text-blue-600',
+  },
+  green: {
+    bg: 'bg-green-50',
+    border: 'border-green-200',
+    value: 'text-green-700',
+    label: 'text-green-600',
+  },
+  purple: {
+    bg: 'bg-purple-50',
+    border: 'border-purple-200',
+    value: 'text-purple-700',
+    label: 'text-purple-600',
+  },
+  red: {
+    bg: 'bg-red-50',
+    border: 'border-red-200',
+    value: 'text-red-700',
+    label: 'text-red-600',
+  },
+};
+
+const classes = highlight
+  ? {
+      bg: 'bg-brand-600',
+      border: 'border-brand-600',
+      value: 'text-white',
+      label: 'text-brand-100',
+    }
+  : colorClasses[color];
+---
+
+<div class={`${classes.bg} border ${classes.border} rounded-lg p-4 text-center`}>
+  <div class={`text-2xl lg:text-3xl font-bold font-mono ${classes.value}`}>
+    {value}
+  </div>
+  <div class={`text-xs mt-1 ${classes.label}`}>
+    {label}
+  </div>
+</div>

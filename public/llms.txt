@@ -14,7 +14,7 @@ Crab Labs is a direct-access engineering consultancy based in Long Beach, CA. We
 ## Services
 1. **Product Development ($10k+):** Complete concept-to-production engineering. Hardware, firmware, enclosures, and manufacturing setup.
 2. **Design Review ($1k+):** Independent analysis of schematics and layouts to identify risks, reduce costs, and ensure compliance.
-3. **Testing & Compliance ($2.5k+):** EMC pre-compliance testing in our 1,000 sq ft lab (8 GHz scopes, spectrum analyzers, EMC tent).
+3. **Testing & Compliance ($2.5k+):** EMC pre-compliance testing in our in-house lab (8 GHz scopes, spectrum analyzers, EMC tent).
 
 ## Technical Capabilities
 ### Hardware

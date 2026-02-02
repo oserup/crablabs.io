@@ -1,532 +1,429 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Container from "../components/Container.astro";
+import { pricing } from "../config/company";
 
-// Service page structured data
 const serviceData = {
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Electronics Engineering Services",
-  "description": "Professional PCB design, embedded firmware development, and regulatory compliance testing for medical devices, industrial automation, and scientific instruments.",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Crab Labs LLC",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "235 E Broadway Ste 210",
-      "addressLocality": "Long Beach",
-      "addressRegion": "CA",
-      "postalCode": "90803",
-      "addressCountry": "US"
-    },
-    "telephone": "+1-424-271-5569"
-  },
-  "serviceType": "Electronics Engineering",
-  "areaServed": {
-    "@type": "Country",
-    "name": "United States"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Engineering Services Catalog",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Product Development",
-          "description": "Complete electrical and firmware development from concept to production"
-        },
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "10000",
-          "priceCurrency": "USD"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Design Rescue & Review",
-          "description": "Design failing certification or not performing as expected? We review it, identify issues, and deliver a roadmap to fix it."
-        },
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "1000",
-          "priceCurrency": "USD"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Testing & Compliance",
-          "description": "EMC, EMI, and environmental pre-certification testing"
-        },
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "2500",
-          "priceCurrency": "USD"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Team Augmentation",
-          "description": "Extend your engineering team with experienced consultants on an hourly basis"
-        }
-      }
-    ]
-  }
+  "provider": { "@type": "LocalBusiness", "name": "Crab Labs LLC" }
 };
 
-// Breadcrumb data
-const breadcrumbData = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://crablabs.io"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Services",
-      "item": "https://crablabs.io/services"
-    }
-  ]
-};
-
+const services = [
+  {
+    id: "product-development",
+    num: "01",
+    title: "Product Development",
+    tagline: "Concept to certified product",
+    desc: "Hardware, firmware, and manufacturing files. We handle the engineering, you get production-ready deliverables.",
+    color: "#ea580c",
+    items: ["Schematic & PCB layout", "Embedded firmware", "Test documentation", "Manufacturing files", "30 days support"],
+  },
+  {
+    id: "design-review",
+    num: "02",
+    title: "Design Review",
+    tagline: "Find problems before they cost you",
+    desc: "Independent assessment of your schematic, layout, or firmware. Written report with prioritized fixes.",
+    color: "#d97706",
+    items: ["Certification risks", "Field failure modes", "Manufacturing issues", "Cost optimization"],
+  },
+  {
+    id: "design-retooling",
+    num: "03",
+    title: "Design Retooling",
+    tagline: "Modernize and migrate",
+    desc: "Update existing products for modern components, reduce costs, improve manufacturability. Migrate between EDA platforms.",
+    color: "#0891b2",
+    items: ["Component obsolescence", "Cost reduction", "Manufacturing updates", "EDA migration"],
+  },
+  {
+    id: "reverse-engineering",
+    num: "04",
+    title: "Reverse Engineering",
+    tagline: "Recover lost designs",
+    desc: "Create schematics and documentation from existing hardware. Enable repairs, understand competitors, document legacy systems.",
+    color: "#7c3aed",
+    items: ["Schematic recovery", "Component identification", "Documentation creation", "Repair enablement"],
+  },
+  {
+    id: "testing-compliance",
+    num: "05",
+    title: "Testing & Compliance",
+    tagline: "Pass certification the first time",
+    desc: "Pre-compliance EMC and environmental testing in our lab. Fix issues before expensive test houses.",
+    color: "#16a34a",
+    items: ["Radiated emissions", "Conducted emissions", "ESD immunity", "Environmental stress"],
+  },
+  {
+    id: "team-augmentation",
+    num: "06",
+    title: "Team Augmentation",
+    tagline: "Senior engineers on demand",
+    desc: "Extend your team with experienced engineers. We integrate with your tools, attend your standups.",
+    color: "#8b5cf6",
+    items: ["No ramp-up time", "Use your tools", "Detailed time logs", "Flexible capacity"],
+  },
+];
 ---
 
-<main id="content">
-  <Layout
-    title="Services | Crab Labs"
-    description="PCB design, embedded firmware, medical device compliance, team augmentation. Transparent pricing."
-  >
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceData)}></script>
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbData)}></script>
+<Layout
+  title="Electronics Engineering Services - PCB Design, Firmware, Compliance | Crab Labs"
+  description="Fixed-price electronics engineering: product development from $10k, design review from $1k, EMC testing from $2.5k. Senior engineers, you own all IP."
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceData)}></script>
 
-    <div class="page-container">
+  <style>
+    /* ==========================================
+       SECTIONS - Light backgrounds
+       ========================================== */
+    .section {
+      padding: 5rem 0;
+      position: relative;
+    }
+
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: repeating-linear-gradient(90deg, #e5e5e5 0px, #e5e5e5 4px, transparent 4px, transparent 8px);
+    }
+
+    .section-white { background: #ffffff; }
+    .section-gray { background: #fafafa; }
+    .section-light { background: #f5f5f5; }
+    .section-first { padding-top: 3rem; padding-bottom: 3rem; }
+    .section-first::before { display: none; }
+
+    .section-header {
+      margin-bottom: 3rem;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #a3a3a3;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-label::before {
+      content: '//';
+      color: #d4d4d4;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #171717;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: #737373;
+      margin-top: 0.5rem;
+      max-width: 480px;
+    }
+
+    /* ==========================================
+       SERVICES GRID
+       ========================================== */
+    .services-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .service-card {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.2s ease;
+    }
+
+    .service-card:hover {
+      border-color: var(--card-color, #e5e5e5);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .service-marker {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .service-num {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .service-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, currentColor, transparent);
+      opacity: 0.4;
+    }
+
+    .service-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #171717;
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    .service-tagline {
+      font-size: 0.8125rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-desc {
+      font-size: 0.875rem;
+      color: #525252;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-item {
+      font-size: 0.75rem;
+      color: #737373;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .service-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .service-cta {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 0.625rem 1rem;
+      border-radius: 4px;
+      transition: all 0.15s ease;
+      width: fit-content;
+    }
+
+    .service-cta:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+    }
+
+    .service-cta svg {
+      width: 14px;
+      height: 14px;
+      transition: transform 0.15s ease;
+    }
+
+    .service-cta:hover svg {
+      transform: translateX(2px);
+    }
+
+    /* ==========================================
+       BILLING SECTION
+       ========================================== */
+    .billing-grid {
+      display: grid;
+      gap: 1px;
+      background: #e5e5e5;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    @media (min-width: 768px) {
+      .billing-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .billing-card {
+      background: #ffffff;
+      padding: 1.5rem;
+    }
+
+    .billing-label {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #a3a3a3;
+      margin-bottom: 0.5rem;
+    }
+
+    .billing-rate {
+      font-family: var(--font-mono);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #171717;
+      margin-bottom: 0.25rem;
+    }
+
+    .billing-note {
+      font-size: 0.75rem;
+      color: #737373;
+    }
+
+    .billing-extras {
+      margin-top: 1.5rem;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 768px) {
+      .billing-extras {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .billing-extra {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      padding: 1rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .billing-extra-label {
+      font-size: 0.875rem;
+      color: #525252;
+    }
+
+    .billing-extra-value {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #171717;
+    }
+  </style>
+
+  <!-- What We Do -->
+  <section class="section section-gray section-first">
     <Container>
-      <div class="py-16 lg:py-24">
+      <div class="section-header">
+        <div class="section-label">Services</div>
+        <h1 class="section-title">What we do</h1>
+        <p class="section-subtitle">Fixed-price engineering. You own everything we build.</p>
+      </div>
 
-        <!-- Header -->
-        <section class="max-w-xl mb-16">
-          <p class="text-sm font-mono text-brand-600 mb-2">Services</p>
-          <h1 class="text-4xl lg:text-5xl font-display font-semibold text-neutral-900 mb-4">What we do</h1>
-          <p class="text-xl text-neutral-600">
-            PCB design, firmware, pre-compliance testing, and engineering support.
-          </p>
-        </section>
-
-    <!-- Product Development Detail -->
-    <section id="product-development" class="py-16 lg:py-24 bg-neutral-50 scroll-mt-24">
-      <Container>
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          <div>
-            <div class="flex items-center gap-3 mb-4">
-              <span class="w-2 h-2 rounded-full bg-brand-500"></span>
-              <p class="text-sm font-mono text-brand-600">01</p>
+      <div class="services-grid">
+        {services.map((s) => (
+          <div class="service-card" id={s.id} style={`--card-color: ${s.color}`}>
+            <div class="service-marker" style={`color: ${s.color}`}>
+              <span class="service-num">{s.num}</span>
+              <span class="service-line"></span>
             </div>
-            <h2 class="text-3xl lg:text-4xl font-display font-semibold text-neutral-900 mb-4">Product Development</h2>
-            <p class="text-neutral-600 mb-8">
-              From requirements to production-ready hardware. We handle schematic capture, PCB layout, firmware development, and prototype builds. You get tested devices and complete documentation.
-            </p>
 
-            <div class="space-y-4 mb-8">
-              <div class="flex items-start gap-4">
-                <div class="w-8 h-8 rounded-lg bg-brand-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span class="text-brand-600 font-mono text-xs font-bold">1</span>
+            <h2 class="service-title">{s.title}</h2>
+            <div class="service-tagline" style={`color: ${s.color}`}>{s.tagline}</div>
+            <p class="service-desc">{s.desc}</p>
+
+            <div class="service-items">
+              {s.items.map((item) => (
+                <div class="service-item">
+                  <span class="service-dot" style={`background: ${s.color}`}></span>
+                  {item}
                 </div>
-                <div>
-                  <h4 class="font-semibold text-neutral-900">Requirements & Architecture</h4>
-                  <p class="text-sm text-neutral-600">System architecture, component selection, risk assessment</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <div class="w-8 h-8 rounded-lg bg-brand-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span class="text-brand-600 font-mono text-xs font-bold">2</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-neutral-900">Schematic & PCB Design</h4>
-                  <p class="text-sm text-neutral-600">Multi-layer boards, high-speed signals, power management</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <div class="w-8 h-8 rounded-lg bg-brand-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span class="text-brand-600 font-mono text-xs font-bold">3</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-neutral-900">Firmware Development</h4>
-                  <p class="text-sm text-neutral-600">Bare metal, RTOS, drivers, communication protocols</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <div class="w-8 h-8 rounded-lg bg-brand-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span class="text-brand-600 font-mono text-xs font-bold">4</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-neutral-900">Prototype & Validation</h4>
-                  <p class="text-sm text-neutral-600">Board bring-up, functional testing, design iteration</p>
-                </div>
-              </div>
+              ))}
             </div>
+
+            <a href={`/quote?service=${s.id}`} class="service-cta" style={`background: ${s.color}`}>
+              Get a quote
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 18 6-6-6-6"></path>
+              </svg>
+            </a>
           </div>
-
-          <div class="space-y-6">
-            <div class="bg-white border border-neutral-200 rounded-xl p-6">
-              <h3 class="font-semibold text-neutral-900 mb-4">Deliverables</h3>
-              <div class="grid grid-cols-2 gap-3">
-                <div class="flex items-center gap-2 text-sm text-neutral-600">
-                  <svg class="w-4 h-4 text-brand-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  Working prototypes
-                </div>
-                <div class="flex items-center gap-2 text-sm text-neutral-600">
-                  <svg class="w-4 h-4 text-brand-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  Gerber files
-                </div>
-                <div class="flex items-center gap-2 text-sm text-neutral-600">
-                  <svg class="w-4 h-4 text-brand-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  Source code
-                </div>
-                <div class="flex items-center gap-2 text-sm text-neutral-600">
-                  <svg class="w-4 h-4 text-brand-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  BOM & assembly
-                </div>
-                <div class="flex items-center gap-2 text-sm text-neutral-600">
-                  <svg class="w-4 h-4 text-brand-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  Test procedures
-                </div>
-                <div class="flex items-center gap-2 text-sm text-neutral-600">
-                  <svg class="w-4 h-4 text-brand-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  30 days support
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-neutral-900 rounded-xl p-6 text-white">
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-neutral-400 text-sm">Starting at</span>
-                <span class="px-2 py-1 bg-brand-600/20 text-brand-400 text-xs font-mono rounded">T&M or Fixed</span>
-              </div>
-              <div class="text-3xl font-bold font-mono mb-1">$10k</div>
-              <p class="text-neutral-400 text-sm mb-6">1-18 months typical timeline</p>
-              <a href="/quote?service=product-development" class="block w-full text-center py-2.5 bg-brand-600 hover:bg-brand-700 rounded-lg text-sm font-medium transition-colors">
-                Get a quote
-              </a>
-            </div>
-          </div>
-        </div>
-      </Container>
-    </section>
-
-    <!-- Design Review Detail -->
-    <section id="design-review" class="py-16 lg:py-24 scroll-mt-24">
-      <Container>
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          <div>
-            <div class="flex items-center gap-3 mb-4">
-              <span class="w-2 h-2 rounded-full bg-amber-500"></span>
-              <p class="text-sm font-mono text-amber-600">02</p>
-            </div>
-            <h2 class="text-3xl lg:text-4xl font-display font-semibold text-neutral-900 mb-4">Design Review & Rescue</h2>
-            <p class="text-neutral-600 mb-8">
-              Design not working? Failing EMC? Unreliable in the field? We review your schematic, layout, or firmware and deliver a detailed report with prioritized fixes.
-            </p>
-
-            <div class="space-y-4 mb-8">
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <div>
-                  <h4 class="font-medium text-neutral-900">Schematic Review</h4>
-                  <p class="text-sm text-neutral-600">Component selection, power sequencing, signal integrity</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <div>
-                  <h4 class="font-medium text-neutral-900">Layout Review</h4>
-                  <p class="text-sm text-neutral-600">Stackup, impedance, EMC, thermal, DFM</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <div>
-                  <h4 class="font-medium text-neutral-900">Firmware Review</h4>
-                  <p class="text-sm text-neutral-600">Architecture, code quality, MISRA compliance, security</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <div>
-                  <h4 class="font-medium text-neutral-900">Regulatory Gap Analysis</h4>
-                  <p class="text-sm text-neutral-600">FCC, CE, medical device compliance readiness</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="space-y-6">
-            <div class="bg-white border border-neutral-200 rounded-xl p-6">
-              <h3 class="font-semibold text-neutral-900 mb-4">Deliverables</h3>
-              <div class="space-y-2">
-                <div class="flex items-center gap-2 text-sm text-neutral-600">
-                  <svg class="w-4 h-4 text-amber-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  Detailed technical report
-                </div>
-                <div class="flex items-center gap-2 text-sm text-neutral-600">
-                  <svg class="w-4 h-4 text-amber-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  Risk-prioritized issue list
-                </div>
-                <div class="flex items-center gap-2 text-sm text-neutral-600">
-                  <svg class="w-4 h-4 text-amber-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  Recommended fixes with rationale
-                </div>
-                <div class="flex items-center gap-2 text-sm text-neutral-600">
-                  <svg class="w-4 h-4 text-amber-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  Follow-up call to discuss findings
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-amber-50 border border-amber-200 rounded-xl p-6">
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-amber-700 text-sm font-medium">Starting at</span>
-              </div>
-              <div class="text-3xl font-bold font-mono text-amber-900 mb-1">$1k</div>
-              <p class="text-amber-700 text-sm mb-6">1-4 weeks typical turnaround</p>
-              <a href="/quote?service=design-review" class="block w-full text-center py-2.5 bg-amber-600 hover:bg-amber-700 rounded-lg text-sm font-medium text-white transition-colors">
-                Get a quote
-              </a>
-            </div>
-          </div>
-        </div>
-      </Container>
-    </section>
-
-    <!-- Testing & Compliance Detail -->
-    <section id="testing-compliance" class="py-16 lg:py-24 bg-neutral-50 scroll-mt-24">
-      <Container>
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          <div>
-            <div class="flex items-center gap-3 mb-4">
-              <span class="w-2 h-2 rounded-full bg-green-500"></span>
-              <p class="text-sm font-mono text-green-600">03</p>
-            </div>
-            <h2 class="text-3xl lg:text-4xl font-display font-semibold text-neutral-900 mb-4">Testing & Compliance</h2>
-            <p class="text-neutral-600 mb-8">
-              Pre-compliance testing in our Long Beach lab. Find and fix EMC issues before you pay for the real certification test. We have the equipment to catch most problems early.
-            </p>
-
-            <div class="grid sm:grid-cols-2 gap-4 mb-8">
-              <div class="bg-white border border-neutral-200 rounded-lg p-4">
-                <h4 class="font-medium text-neutral-900 mb-2 text-sm">Radiated Emissions</h4>
-                <p class="text-xs text-neutral-500">EMC tent, calibrated antennas, 7 GHz spectrum analyzer</p>
-              </div>
-              <div class="bg-white border border-neutral-200 rounded-lg p-4">
-                <h4 class="font-medium text-neutral-900 mb-2 text-sm">Conducted Emissions</h4>
-                <p class="text-xs text-neutral-500">LISN, current probes, spectrum analysis</p>
-              </div>
-              <div class="bg-white border border-neutral-200 rounded-lg p-4">
-                <h4 class="font-medium text-neutral-900 mb-2 text-sm">ESD Testing</h4>
-                <p class="text-xs text-neutral-500">Contact and air discharge per IEC 61000-4-2</p>
-              </div>
-              <div class="bg-white border border-neutral-200 rounded-lg p-4">
-                <h4 class="font-medium text-neutral-900 mb-2 text-sm">Environmental</h4>
-                <p class="text-xs text-neutral-500">Temperature chamber, humidity cycling</p>
-              </div>
-            </div>
-
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1.5 bg-green-50 text-green-700 text-xs font-mono rounded-full">FCC Part 15</span>
-              <span class="px-3 py-1.5 bg-green-50 text-green-700 text-xs font-mono rounded-full">CE RED</span>
-              <span class="px-3 py-1.5 bg-green-50 text-green-700 text-xs font-mono rounded-full">IEC 61000</span>
-              <span class="px-3 py-1.5 bg-green-50 text-green-700 text-xs font-mono rounded-full">Medical EMC</span>
-            </div>
-          </div>
-
-          <div class="space-y-6">
-            <div class="bg-white border border-neutral-200 rounded-xl p-6">
-              <h3 class="font-semibold text-neutral-900 mb-4">Deliverables</h3>
-              <div class="space-y-2">
-                <div class="flex items-center gap-2 text-sm text-neutral-600">
-                  <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  Detailed test report with plots
-                </div>
-                <div class="flex items-center gap-2 text-sm text-neutral-600">
-                  <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  Pass/fail assessment per standard
-                </div>
-                <div class="flex items-center gap-2 text-sm text-neutral-600">
-                  <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  Root cause analysis for failures
-                </div>
-                <div class="flex items-center gap-2 text-sm text-neutral-600">
-                  <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  Design recommendations
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-green-50 border border-green-200 rounded-xl p-6">
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-green-700 text-sm font-medium">Starting at</span>
-              </div>
-              <div class="text-3xl font-bold font-mono text-green-900 mb-1">$2.5k</div>
-              <p class="text-green-700 text-sm mb-6">1-6 weeks typical turnaround</p>
-              <a href="/quote?service=testing" class="block w-full text-center py-2.5 bg-green-600 hover:bg-green-700 rounded-lg text-sm font-medium text-white transition-colors">
-                Get a quote
-              </a>
-            </div>
-          </div>
-        </div>
-      </Container>
-    </section>
-
-    <!-- Team Augmentation Detail -->
-    <section id="team-augmentation" class="py-16 lg:py-24 scroll-mt-24">
-      <Container>
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          <div>
-            <div class="flex items-center gap-3 mb-4">
-              <span class="w-2 h-2 rounded-full bg-purple-500"></span>
-              <p class="text-sm font-mono text-purple-600">04</p>
-            </div>
-            <h2 class="text-3xl lg:text-4xl font-display font-semibold text-neutral-900 mb-4">Team Augmentation</h2>
-            <p class="text-neutral-600 mb-8">
-              Need extra engineering capacity for a deadline? We integrate with your existing team, tools, and workflow. Billed hourly with detailed logs.
-            </p>
-
-            <div class="space-y-4 mb-8">
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <div>
-                  <h4 class="font-medium text-neutral-900">Join your standups</h4>
-                  <p class="text-sm text-neutral-600">We participate in your meetings and use your communication tools</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <div>
-                  <h4 class="font-medium text-neutral-900">Use your tools</h4>
-                  <p class="text-sm text-neutral-600">Git, Jira, Confluence, Slack - whatever you already use</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <div>
-                  <h4 class="font-medium text-neutral-900">No long-term commitment</h4>
-                  <p class="text-sm text-neutral-600">Scale up for a crunch, scale down when you're done</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <div>
-                  <h4 class="font-medium text-neutral-900">Fast ramp-up</h4>
-                  <p class="text-sm text-neutral-600">Senior engineers who can hit the ground running</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-neutral-100 rounded-lg p-4">
-              <p class="text-sm text-neutral-600 mb-3">Available expertise:</p>
-              <div class="flex flex-wrap gap-2">
-                <span class="px-2 py-1 bg-white text-neutral-700 text-xs font-mono rounded">PCB Design</span>
-                <span class="px-2 py-1 bg-white text-neutral-700 text-xs font-mono rounded">Firmware C/C++</span>
-                <span class="px-2 py-1 bg-white text-neutral-700 text-xs font-mono rounded">Rust</span>
-                <span class="px-2 py-1 bg-white text-neutral-700 text-xs font-mono rounded">RTOS</span>
-                <span class="px-2 py-1 bg-white text-neutral-700 text-xs font-mono rounded">EMC</span>
-                <span class="px-2 py-1 bg-white text-neutral-700 text-xs font-mono rounded">Power</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="space-y-6">
-            <div class="bg-white border border-neutral-200 rounded-xl p-6">
-              <h3 class="font-semibold text-neutral-900 mb-4">How It Works</h3>
-              <div class="space-y-3">
-                <div class="flex items-start gap-3">
-                  <div class="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0 text-xs font-bold text-purple-600">1</div>
-                  <p class="text-sm text-neutral-600">Tell us what you need and your tech stack</p>
-                </div>
-                <div class="flex items-start gap-3">
-                  <div class="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0 text-xs font-bold text-purple-600">2</div>
-                  <p class="text-sm text-neutral-600">We match you with the right engineer(s)</p>
-                </div>
-                <div class="flex items-start gap-3">
-                  <div class="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0 text-xs font-bold text-purple-600">3</div>
-                  <p class="text-sm text-neutral-600">Start within 1-2 weeks, billed hourly</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-purple-50 border border-purple-200 rounded-xl p-6">
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-purple-700 text-sm font-medium">Hourly rate</span>
-                <span class="px-2 py-1 bg-purple-200/50 text-purple-700 text-xs font-mono rounded">Time & Materials</span>
-              </div>
-              <div class="text-3xl font-bold font-mono text-purple-900 mb-1">$150/hr</div>
-              <p class="text-purple-700 text-sm mb-6">Minimum 20 hours/week</p>
-              <a href="/quote?service=augmentation" class="block w-full text-center py-2.5 bg-purple-600 hover:bg-purple-700 rounded-lg text-sm font-medium text-white transition-colors">
-                Discuss availability
-              </a>
-            </div>
-          </div>
-        </div>
-      </Container>
-    </section>
-
+        ))}
       </div>
     </Container>
-    </div>
-  </Layout>
-</main>
+  </section>
+
+  <!-- Rates -->
+  <section class="section section-white">
+    <Container>
+      <div class="section-header">
+        <div class="section-label">Rates</div>
+        <h2 class="section-title">Transparent hourly billing</h2>
+        <p class="section-subtitle">All work billed by the hour. Detailed time logs provided.</p>
+      </div>
+
+      <div class="billing-grid">
+        <div class="billing-card">
+          <div class="billing-label">Standard</div>
+          <div class="billing-rate">${pricing.hourlyRates.standard}/hr</div>
+          <div class="billing-note">Most clients</div>
+        </div>
+        <div class="billing-card">
+          <div class="billing-label">Startup / Academic</div>
+          <div class="billing-rate">${pricing.hourlyRates.startup}/hr</div>
+          <div class="billing-note">Pre-Series A, universities</div>
+        </div>
+        <div class="billing-card">
+          <div class="billing-label">Non-Profit</div>
+          <div class="billing-rate">${pricing.hourlyRates.nonprofit}/hr</div>
+          <div class="billing-note">501(c)(3) organizations</div>
+        </div>
+      </div>
+
+      <div class="billing-extras">
+        <div class="billing-extra">
+          <span class="billing-extra-label">Rush premium</span>
+          <span class="billing-extra-value">+{pricing.rushPremium * 100}%</span>
+        </div>
+        <div class="billing-extra">
+          <span class="billing-extra-label">Materials markup</span>
+          <span class="billing-extra-value">Cost + {pricing.materialsMarkup * 100}%</span>
+        </div>
+      </div>
+    </Container>
+  </section>
+</Layout>

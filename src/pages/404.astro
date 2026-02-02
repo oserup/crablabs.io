@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Container from '../components/Container.astro';
+---
+
+<Layout title="Page Not Found | Crab Labs" noindex={true}>
+  <div class="min-h-[70vh] flex items-center">
+    <Container>
+      <div class="py-24 text-center max-w-2xl mx-auto">
+        <p class="text-sm font-mono text-brand-600 mb-4 tracking-wider">404 ERROR</p>
+        <h1 class="text-4xl lg:text-5xl font-display font-semibold text-neutral-900 mb-6">
+          Page Not Found
+        </h1>
+        <p class="text-xl text-neutral-600 mb-8">
+          The page you're looking for doesn't exist or has been moved.
+          Let's get you back on track.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+          <a href="/" class="btn-brand btn-lg">
+            Go to Homepage
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"></path>
+            </svg>
+          </a>
+          <a href="/contact" class="btn-secondary btn-lg">
+            Contact Us
+          </a>
+        </div>
+
+        <div class="border-t border-neutral-200 pt-8">
+          <p class="text-sm text-neutral-500 mb-4">Or try one of these:</p>
+          <div class="flex flex-wrap justify-center gap-4 text-sm">
+            <a href="/services" class="text-brand-600 hover:text-brand-700 transition-colors">Services</a>
+            <span class="text-neutral-300">|</span>
+            <a href="/case-studies" class="text-brand-600 hover:text-brand-700 transition-colors">Case Studies</a>
+            <span class="text-neutral-300">|</span>
+            <a href="/insights" class="text-brand-600 hover:text-brand-700 transition-colors">Insights</a>
+            <span class="text-neutral-300">|</span>
+            <a href="/quote" class="text-brand-600 hover:text-brand-700 transition-colors">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </div>
+</Layout>

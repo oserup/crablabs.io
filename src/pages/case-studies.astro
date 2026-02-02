@@ -7,7 +7,7 @@ const industries = [
   {
     id: 'medical',
     name: 'Medical',
-    color: 'red',
+    color: '#dc2626',
     studies: [
       {
         id: 'medical-imaging',
@@ -15,9 +15,9 @@ const industries = [
         subtitle: 'Precision 5-axis motion system for medical imaging equipment',
         scope: 'Hardware + Firmware',
         timeline: '6 mo',
-        context: 'A client came to us after another firm delivered a board with electromagnetic interference issues and manufacturing defects. The original design used five separate driver boards connected by custom cables.',
-        work: 'We consolidated everything onto a single 6-layer PCB with integrated motor drivers for all five axes. USB-C handles both power and communication.',
-        outcome: 'Achieved +/-0.1mm positioning accuracy. Passed IEC 60601 medical pre-compliance on first attempt. Final design was 3x smaller and 10x cheaper than the original.'
+        context: 'A client came to us after another firm delivered a board with electromagnetic interference issues and manufacturing defects. The original design used five separate driver boards connected by complicated custom connectors and cabling—very labor intensive to assemble.',
+        work: 'We consolidated everything onto a single 6-layer PCB with TI-based motor drivers for all five axes controlling ~20W of low-inductance motors. A TI C2000 series MCU handles real-time control. USB-C provides both power and communication.',
+        outcome: 'Achieved +/-0.1mm positioning accuracy. Eliminated spurious emissions—now passes both radiated and conducted emissions testing. Passed IEC 60601 medical pre-compliance on first attempt. Final design was 3x smaller and 10x cheaper than the original.'
       },
       {
         id: 'neonatal-monitor',
@@ -26,15 +26,15 @@ const industries = [
         scope: 'Hardware + Firmware',
         timeline: '4 mo',
         context: 'A medical device startup needed hardware for an investigational study. The device had to be small enough for neonatal skin, run for extended periods, and survive repeated sterilization.',
-        work: 'We designed an ultra-compact board with a multi-sensor front-end and Bluetooth connectivity. Aggressive power management extends battery life significantly. We collaborated with a partner firm on the enclosure.',
-        outcome: 'Delivered a rechargeable, reusable device suitable for long-term clinical use. Used successfully in the client\'s pilot study.'
+        work: 'We designed an ultra-compact board (~1" square, 1.5cm tall, 2oz) with a multi-sensor front-end including ECG and PPG. An nRF54 handles BLE connectivity. Sleep mode management and sensor-specific power controls maximize battery life.',
+        outcome: 'Achieved 24-hour continuous operation and 1-year standby. Delivered a rechargeable, reusable device suitable for long-term clinical use. Used successfully in the client\'s pilot study.'
       }
     ]
   },
   {
     id: 'industrial',
     name: 'Industrial',
-    color: 'blue',
+    color: '#2563eb',
     studies: [
       {
         id: 'industrial-power',
@@ -43,8 +43,8 @@ const industries = [
         scope: 'Hardware + Firmware + UI',
         timeline: '11 mo',
         context: 'An industrial equipment manufacturer needed to modernize their power distribution unit product line. Existing units had no remote monitoring, and customers wanted connectivity and building automation integration.',
-        work: 'We built a dual-processor architecture combining a Linux system-on-module with a microcontroller. A 13-inch touchscreen provides local control. The system supports Modbus, SNMP, BACnet, and HTTPS for broad compatibility, plus ground fault monitoring and temperature sensing.',
-        outcome: 'Client launched an updated product line with fleet management capabilities. Now deployed in datacenters and commercial buildings.'
+        work: 'We built a dual-processor architecture: a Raspberry Pi CM5 runs the UI and networking while an ESP32-S3 handles real-time I/O. A 13-inch touchscreen provides local control. The system interfaces with up to 15 external meters (12 feeds) and supports Modbus, SNMP, BACnet, and HTTPS for broad compatibility.',
+        outcome: 'Delivered a complete UI and remote administration/control tool. Client launched an updated product line with fleet management capabilities. Now deployed in datacenters and commercial buildings.'
       },
       {
         id: 'bldc-motor-controller',
@@ -52,16 +52,16 @@ const industries = [
         subtitle: 'Compact 4kW brushless motor driver',
         scope: 'Hardware + Firmware',
         timeline: '6 mo',
-        context: 'A client needed a 4kW brushless motor controller in a smaller form factor than existing solutions. The application required fast torque response and low acoustic noise.',
-        work: 'We used gallium nitride (GaN) transistors for high efficiency in a compact package. The PCB layout was optimized for heat dissipation, and a high-bandwidth control loop ensures smooth, quiet operation.',
-        outcome: 'Delivered higher efficiency and lower acoustic noise than the predecessor. Compact enough to mount directly on the motor housing.'
+        context: 'A client needed a 4kW brushless motor controller in a smaller form factor than existing solutions. The application required fast torque response and low acoustic noise from a 72V bus.',
+        work: 'We used EPC gallium nitride (GaN) transistors for high switching efficiency. A TI C2000 series MCU runs the FOC control loop. PCB layout was optimized for thermal performance with heatsink integration.',
+        outcome: '98% efficiency at 3kW. 40% smaller and 50% lighter than the predecessor. Lower acoustic noise. Compact enough to mount directly on the motor housing.'
       }
     ]
   },
   {
     id: 'scientific',
     name: 'Scientific',
-    color: 'purple',
+    color: '#7c3aed',
     studies: [
       {
         id: 'scientific-instrument',
@@ -70,8 +70,8 @@ const industries = [
         scope: 'Hardware + Firmware',
         timeline: '4 mo',
         context: 'LaCoste-Romberg gravimeters are precision instruments used in geophysical surveys to measure subtle variations in Earth\'s gravity. The original manufacturer went out of business, leaving critical components unavailable.',
-        work: 'We designed a two-part system. An internal module adds a precision analog-to-digital converter, OLED display, and expansion interface. An external data logger provides automatic data capture with GPS tagging and wireless connectivity.',
-        outcome: 'Extended the life of instruments that would otherwise be scrapped. The client can now perform automated surveys with GPS-tagged data.'
+        work: 'We designed a two-part system. An internal module with an ESP32 adds a 16-bit ADC with oversampling, OLED display, and expansion interface. A wired external data logger provides automatic data capture with GPS tagging, WiFi, and BLE connectivity.',
+        outcome: 'Improved noise floor, reduced drift, and increased accuracy and precision over the original. Extended the life of instruments that would otherwise be scrapped. Client can now perform automated surveys with GPS-tagged data.'
       },
       {
         id: 'aeroponics-controller',
@@ -80,91 +80,258 @@ const industries = [
         scope: 'Hardware + Firmware',
         timeline: '4 mo',
         context: 'An ag-tech startup was developing an aeroponics system for plant research. Aeroponics grows plants by misting roots with nutrient solution instead of using soil. Off-the-shelf components could not achieve the flow stability needed for reproducible experiments.',
-        work: 'We designed custom driver boards with closed-loop flow control to maintain precise misting rates. Bluetooth connectivity enables wireless monitoring and parameter adjustment.',
+        work: 'We designed custom driver boards using a Silicon Labs BGM series MCU. Closed-loop control uses piezo feedback to maintain precise misting from a static pressure system. Environmental sensors track temperature and humidity. Bluetooth enables wireless monitoring and parameter adjustment.',
         outcome: 'Achieved 99%+ flow stability. Enabled the client to file patents and establish university research partnerships.'
       }
     ]
   }
 ];
-
-const colorClasses: Record<string, { accent: string; bg: string; gradient: string; light: string }> = {
-  red: { accent: 'text-red-600', bg: 'bg-red-600', gradient: 'from-red-500 to-red-600', light: 'bg-red-50' },
-  blue: { accent: 'text-blue-600', bg: 'bg-blue-600', gradient: 'from-blue-500 to-blue-600', light: 'bg-blue-50' },
-  purple: { accent: 'text-purple-600', bg: 'bg-purple-600', gradient: 'from-purple-500 to-purple-600', light: 'bg-purple-50' }
-};
 ---
 
 <Layout
-  title="Case Studies | Crab Labs"
-  description="Medical devices, industrial systems, scientific instruments. Hardware and firmware projects."
+  title="Electronics Engineering Case Studies - Medical, Industrial, Scientific | Crab Labs"
+  description="Real project examples: ultrasound controllers, neonatal monitors, GaN power systems, industrial automation. See how we deliver from concept to certified product."
 >
-  <div class="page-container">
+  <style>
+    /* ==========================================
+       SECTIONS - Light backgrounds (matches site)
+       ========================================== */
+    .section {
+      padding: 5rem 0;
+      position: relative;
+    }
+
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: repeating-linear-gradient(90deg, #e5e5e5 0px, #e5e5e5 4px, transparent 4px, transparent 8px);
+    }
+
+    .section-white { background: #ffffff; }
+    .section-gray { background: #fafafa; }
+    .section-first { padding-top: 3rem; padding-bottom: 3rem; }
+    .section-first::before { display: none; }
+
+    .section-header {
+      margin-bottom: 3rem;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #a3a3a3;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-label::before {
+      content: '//';
+      color: #d4d4d4;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #171717;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: #737373;
+      margin-top: 0.5rem;
+      max-width: 480px;
+    }
+
+    /* ==========================================
+       INDUSTRY SECTION HEADER
+       ========================================== */
+    .industry-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .industry-marker {
+      width: 3px;
+      height: 1.25rem;
+      border-radius: 2px;
+    }
+
+    .industry-name {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #171717;
+      letter-spacing: -0.01em;
+    }
+
+    /* ==========================================
+       CASE STUDY CARDS
+       ========================================== */
+    .studies-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .study-card {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    .study-card:hover {
+      border-color: var(--study-color, #d4d4d4);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .study-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid #f5f5f5;
+      gap: 1rem;
+    }
+
+    .study-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: #171717;
+      margin-bottom: 0.25rem;
+    }
+
+    .study-subtitle {
+      font-size: 0.8125rem;
+      color: #737373;
+    }
+
+    .study-meta {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .study-timeline {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--study-color, #525252);
+    }
+
+    .study-scope {
+      font-size: 0.6875rem;
+      color: #a3a3a3;
+      margin-top: 0.125rem;
+    }
+
+    .study-content {
+      padding: 1.25rem 1.5rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .study-content {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    .study-block-label {
+      font-family: var(--font-mono);
+      font-size: 0.625rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #a3a3a3;
+      margin-bottom: 0.5rem;
+    }
+
+    .study-block-label.accent {
+      color: var(--study-color, #525252);
+    }
+
+    .study-block-text {
+      font-size: 0.8125rem;
+      color: #525252;
+      line-height: 1.6;
+    }
+
+    .study-block-text.outcome {
+      color: #171717;
+      font-weight: 500;
+    }
+
+  </style>
+
+  <!-- Page Header -->
+  <section class="section section-gray section-first">
     <Container>
-      <div class="py-16 lg:py-24">
-
-        <!-- Header -->
-        <section class="max-w-xl mb-16">
-          <p class="text-sm font-mono text-brand-600 mb-2">Case Studies</p>
-          <h1 class="text-4xl lg:text-5xl font-display font-semibold text-neutral-900 mb-4">Our work</h1>
-          <p class="text-xl text-neutral-600">
-            Selected projects from medical devices, industrial systems, and scientific instruments.
-          </p>
-        </section>
-
-        <!-- Industry Sections -->
-        {industries.map((industry) => (
-          <section class="mb-16" id={industry.id}>
-            <!-- Industry Header -->
-            <div class="flex items-center gap-3 mb-6">
-              <div class={`w-1 h-6 ${colorClasses[industry.color].bg} rounded-full`}></div>
-              <h2 class="text-xl font-display font-semibold text-neutral-900">{industry.name}</h2>
-            </div>
-
-            <!-- Case Study Cards -->
-            <div class="space-y-6">
-              {industry.studies.map((study) => (
-                <article class="relative bg-white border border-neutral-200 rounded-lg overflow-hidden">
-                  <!-- Colored top bar -->
-                  <div class={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${colorClasses[industry.color].gradient}`}></div>
-
-                  <!-- Header -->
-                  <div class="px-6 py-4 border-b border-neutral-100">
-                    <div class="flex items-start justify-between">
-                      <div>
-                        <h3 class="font-semibold text-neutral-900 text-lg">{study.title}</h3>
-                        <p class="text-sm text-neutral-500">{study.subtitle}</p>
-                      </div>
-                      <div class="text-right ml-4 flex-shrink-0">
-                        <span class="text-xs font-mono text-neutral-500 block">{study.timeline}</span>
-                        <span class="text-xs text-neutral-400">{study.scope}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Content -->
-                  <div class="p-6 space-y-4">
-                    <div>
-                      <h4 class="text-xs font-mono text-neutral-400 uppercase tracking-wide mb-1">Context</h4>
-                      <p class="text-sm text-neutral-600 leading-relaxed">{study.context}</p>
-                    </div>
-
-                    <div>
-                      <h4 class={`text-xs font-mono ${colorClasses[industry.color].accent} uppercase tracking-wide mb-1`}>What we built</h4>
-                      <p class="text-sm text-neutral-600 leading-relaxed">{study.work}</p>
-                    </div>
-
-                    <div>
-                      <h4 class="text-xs font-mono text-neutral-400 uppercase tracking-wide mb-1">Outcome</h4>
-                      <p class="text-sm text-neutral-700 leading-relaxed font-medium">{study.outcome}</p>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </section>
-        ))}
-
+      <div class="section-header">
+        <div class="section-label">Case Studies</div>
+        <h1 class="section-title">Our work</h1>
+        <p class="section-subtitle">Selected projects from medical devices, industrial systems, and scientific instruments.</p>
       </div>
     </Container>
-  </div>
+  </section>
+
+  <!-- Industry Sections -->
+  {industries.map((industry, index) => (
+    <section class={`section ${index % 2 === 0 ? 'section-white' : 'section-gray'}`} id={industry.id} style={`--study-color: ${industry.color}`}>
+      <Container>
+        <div class="industry-header">
+          <div class="industry-marker" style={`background: ${industry.color}`}></div>
+          <h2 class="industry-name">{industry.name}</h2>
+        </div>
+
+        <div class="studies-grid">
+          {industry.studies.map((study) => (
+            <article class="study-card">
+              <div class="study-header">
+                <div>
+                  <h3 class="study-title">{study.title}</h3>
+                  <p class="study-subtitle">{study.subtitle}</p>
+                </div>
+                <div class="study-meta">
+                  <div class="study-timeline">{study.timeline}</div>
+                  <div class="study-scope">{study.scope}</div>
+                </div>
+              </div>
+
+              <div class="study-content">
+                <div>
+                  <div class="study-block-label">Context</div>
+                  <p class="study-block-text">{study.context}</p>
+                </div>
+                <div>
+                  <div class="study-block-label accent">Work</div>
+                  <p class="study-block-text">{study.work}</p>
+                </div>
+                <div>
+                  <div class="study-block-label">Outcome</div>
+                  <p class="study-block-text outcome">{study.outcome}</p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </Container>
+    </section>
+  ))}
+
 </Layout>

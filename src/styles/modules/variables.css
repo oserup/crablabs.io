@@ -4,7 +4,7 @@
 
 :root {
   /* Typography */
-  --font-display: 'Inter Tight', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', 'SF Mono', ui-monospace, monospace;
 
@@ -24,10 +24,34 @@
   /* Colors - Brand (Orange) */
   --brand-50: #fff7ed;
   --brand-100: #ffedd5;
+  --brand-200: #fed7aa;
   --brand-400: #fb923c;
   --brand-500: #f97316;
   --brand-600: #ea580c;
   --brand-700: #c2410c;
+  --brand-text: #c2410c; /* WCAG AA compliant for text on white (4.5:1+) */
+
+  /* Spacing Scale */
+  --space-xs: 0.5rem;
+  --space-sm: 0.875rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+
+  /* Border Radius Scale */
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --shadow-brand: 0 4px 12px rgba(234, 88, 12, 0.3);
 
   /* Transitions */
   --transition-fast: 150ms ease;
