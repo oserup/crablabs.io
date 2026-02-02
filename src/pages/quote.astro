@@ -1,36 +1,137 @@
 ---
 import Container from "../components/Container.astro";
 import Layout from "../layouts/Layout.astro";
-import { company } from "../config/company";
 
 const service = Astro.url.searchParams.get('service') || '';
 ---
 
-<Layout title="Get a Quote - Fixed-Price Electronics Engineering | Crab Labs Long Beach"
-    description="Fixed-price quotes within 24 hours. PCB design, firmware, compliance projects $1k-$100k. You own all IP from day one. Senior engineers, no middlemen."
+<Layout title="Request a Quote - Fixed-Price Electronics Engineering | Crab Labs"
+    description="Get a fixed-price quote within 24 hours. PCB design, firmware, compliance projects $1k-$100k. You own all IP from day one. Senior engineers, no middlemen."
 >
   <style>
-    /* ==========================================
-       FORM LAYOUT
-       ========================================== */
-    .quote-container {
-      max-width: 640px;
+    .quote-layout {
+      max-width: 720px;
       margin: 0 auto;
     }
 
-    .alt-contact {
-      margin-top: 1.5rem;
-      text-align: center;
-      font-size: 0.8125rem;
-      color: var(--neutral-500);
+    .form-section {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--neutral-200);
     }
 
-    .alt-contact a {
+    .form-section:last-of-type {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .form-section-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--neutral-900);
+      margin-bottom: 0.25rem;
+    }
+
+    .form-section-desc {
+      font-size: 0.8125rem;
+      color: var(--neutral-500);
+      margin-bottom: 1.25rem;
+    }
+
+    .checkbox-group {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      font-size: 0.875rem;
+      color: var(--neutral-700);
+      cursor: pointer;
+    }
+
+    .checkbox-label input[type="checkbox"] {
+      margin-top: 0.125rem;
+      accent-color: var(--brand-600);
+    }
+
+    .radio-group {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .radio-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      font-size: 0.875rem;
+      color: var(--neutral-700);
+      cursor: pointer;
+    }
+
+    .radio-label input[type="radio"] {
+      margin-top: 0.125rem;
+      accent-color: var(--brand-600);
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 2rem;
+      align-self: start;
+    }
+
+    .sidebar-card {
+      background: var(--neutral-50);
+      border: 1px solid var(--neutral-200);
+      border-radius: 4px;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar-title {
+      font-family: var(--font-mono);
+      font-size: 0.625rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--neutral-400);
+      margin-bottom: 0.75rem;
+    }
+
+    .sidebar-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .sidebar-item {
+      font-size: 0.8125rem;
+      color: var(--neutral-600);
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .sidebar-num {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: var(--neutral-400);
+    }
+
+    .sidebar-contact {
+      font-size: 0.8125rem;
+      color: var(--neutral-600);
+    }
+
+    .sidebar-contact a {
       color: var(--brand-600);
       text-decoration: none;
     }
 
-    .alt-contact a:hover {
+    .sidebar-contact a:hover {
       text-decoration: underline;
     }
   </style>
@@ -39,9 +140,9 @@ const service = Astro.url.searchParams.get('service') || '';
   <section class="section section-gray section-first">
     <Container>
       <div class="section-header">
-        <div class="section-label">Quote</div>
-        <h1 class="section-title">Get a quote</h1>
-        <p class="section-subtitle">Fixed-price quotes within 24 hours.</p>
+        <div class="section-label">Request for Quote</div>
+        <h1 class="section-title">Tell us about your project</h1>
+        <p class="section-subtitle">The more detail you provide, the more accurate your quote. Fixed-price proposals within 24 hours.</p>
       </div>
     </Container>
   </section>
@@ -49,72 +150,357 @@ const service = Astro.url.searchParams.get('service') || '';
   <!-- Quote Form -->
   <section class="section section-white">
     <Container>
-      <div class="quote-container">
+      <div class="quote-layout">
         <div class="form-card">
           <form
             action="https://usebasin.com/f/00c426b2708e"
             method="POST"
             data-form-handler='{"loadingText":"Submitting...","successText":"Request Sent","defaultText":"Submit Request"}'
           >
-            <div class="form-row form-row-2 form-group">
-              <div>
-                <label for="name" class="form-label">Name *</label>
-                <input type="text" name="name" id="name" class="form-input" placeholder="John Smith" required />
+            <!-- Section 1: Contact Information -->
+            <div class="form-section">
+              <h2 class="form-section-title">Contact Information</h2>
+              <p class="form-section-desc">Who should we send the quote to?</p>
+
+              <div class="form-row form-row-2 form-group">
+                <div>
+                  <label for="name" class="form-label">Your Name *</label>
+                  <input type="text" name="name" id="name" class="form-input" placeholder="John Smith" required />
+                </div>
+                <div>
+                  <label for="title" class="form-label">Title / Role</label>
+                  <input type="text" name="title" id="title" class="form-input" placeholder="CTO, Founder, Engineer..." />
+                </div>
               </div>
-              <div>
-                <label for="company" class="form-label">Company *</label>
-                <input type="text" name="company" id="company" class="form-input" placeholder="Acme Corp" required />
+
+              <div class="form-row form-row-2 form-group">
+                <div>
+                  <label for="company" class="form-label">Company *</label>
+                  <input type="text" name="company" id="company" class="form-input" placeholder="Acme Medical Devices" required />
+                </div>
+                <div>
+                  <label for="website" class="form-label">Company Website</label>
+                  <input type="url" name="website" id="website" class="form-input" placeholder="https://acme.com" />
+                </div>
+              </div>
+
+              <div class="form-row form-row-2 form-group">
+                <div>
+                  <label for="email" class="form-label">Email *</label>
+                  <input type="email" name="email" id="email" class="form-input" placeholder="john@acme.com" required />
+                </div>
+                <div>
+                  <label for="phone" class="form-label">Phone</label>
+                  <input type="tel" name="phone" id="phone" class="form-input" placeholder="+1 (555) 123-4567" />
+                </div>
               </div>
             </div>
 
-            <div class="form-row form-row-2 form-group">
-              <div>
-                <label for="email" class="form-label">Email *</label>
-                <input type="email" name="email" id="email" class="form-input" placeholder="john@acme.com" required />
+            <!-- Section 2: Service Type -->
+            <div class="form-section">
+              <h2 class="form-section-title">Service Needed</h2>
+              <p class="form-section-desc">What type of engagement are you looking for?</p>
+
+              <div class="form-group">
+                <label for="service-type" class="form-label">Primary Service *</label>
+                <select name="service-type" id="service-type" class="form-select" required>
+                  <option value="" selected={!service}>Select a service...</option>
+                  <option value="product-development" selected={service === 'product-development'}>New Product Development (concept to production)</option>
+                  <option value="design-review" selected={service === 'design-review'}>Design Review (independent assessment)</option>
+                  <option value="design-retooling" selected={service === 'design-retooling'}>Design Retooling (fix/improve existing design)</option>
+                  <option value="reverse-engineering" selected={service === 'reverse-engineering'}>Reverse Engineering</option>
+                  <option value="testing-compliance" selected={service === 'testing-compliance'}>Testing & Compliance (EMC, safety, certification)</option>
+                  <option value="team-augmentation" selected={service === 'team-augmentation'}>Team Augmentation (hourly engineering support)</option>
+                  <option value="other">Other / Not Sure</option>
+                </select>
               </div>
-              <div>
-                <label for="phone" class="form-label">Phone (optional)</label>
-                <input type="tel" name="phone" id="phone" class="form-input" placeholder="+1 (555) 123-4567" />
+
+              <div class="form-group">
+                <label class="form-label">What do you need? (select all that apply)</label>
+                <div class="checkbox-group">
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="needs[]" value="pcb-design" />
+                    PCB / Hardware Design
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="needs[]" value="firmware" />
+                    Firmware / Embedded Software
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="needs[]" value="mechanical" />
+                    Mechanical / Enclosure Design
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="needs[]" value="prototyping" />
+                    Prototyping / Assembly
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="needs[]" value="compliance" />
+                    Regulatory / Certification Support
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="needs[]" value="testing" />
+                    Testing (EMC, Environmental, Functional)
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="needs[]" value="manufacturing" />
+                    Manufacturing Support / DFM
+                  </label>
+                </div>
               </div>
             </div>
 
-            <div class="form-group">
-              <label for="service-type" class="form-label">Service</label>
-              <select name="service-type" id="service-type" class="form-select">
-                <option value="" selected={!service}>Select a service...</option>
-                <option value="product-development" selected={service === 'product-development'}>Product Development</option>
-                <option value="design-review" selected={service === 'design-review'}>Design Review</option>
-                <option value="design-retooling" selected={service === 'design-retooling'}>Design Retooling</option>
-                <option value="reverse-engineering" selected={service === 'reverse-engineering'}>Reverse Engineering</option>
-                <option value="testing-compliance" selected={service === 'testing-compliance'}>Testing & Compliance</option>
-                <option value="team-augmentation" selected={service === 'team-augmentation'}>Team Augmentation</option>
-                <option value="other">Other / Not Sure</option>
-              </select>
+            <!-- Section 3: Project Details -->
+            <div class="form-section">
+              <h2 class="form-section-title">Project Details</h2>
+              <p class="form-section-desc">Help us understand what you're building.</p>
+
+              <div class="form-group">
+                <label for="project-name" class="form-label">Project Name / Codename</label>
+                <input type="text" name="project-name" id="project-name" class="form-input" placeholder="Project Phoenix, Widget v2, etc." />
+              </div>
+
+              <div class="form-group">
+                <label for="project-description" class="form-label">What does this product do? *</label>
+                <textarea name="project-description" id="project-description" rows="4" class="form-textarea" placeholder="Describe the product's function, who uses it, and the problem it solves..." required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="project-stage" class="form-label">Current Stage *</label>
+                <select name="project-stage" id="project-stage" class="form-select" required>
+                  <option value="">Select current stage...</option>
+                  <option value="idea">Idea / Concept only</option>
+                  <option value="requirements">Requirements defined</option>
+                  <option value="proof-of-concept">Proof of concept / Arduino prototype</option>
+                  <option value="schematic">Schematic exists</option>
+                  <option value="pcb-layout">PCB layout exists</option>
+                  <option value="prototype">Working prototype</option>
+                  <option value="production">In production (need changes/improvements)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="existing-work" class="form-label">Existing Work</label>
+                <textarea name="existing-work" id="existing-work" rows="3" class="form-textarea" placeholder="What exists already? Schematics, code, mechanical designs, prototypes, test data..."></textarea>
+              </div>
             </div>
 
-            <div class="form-group">
-              <label for="project-description" class="form-label">What are you building? *</label>
-              <textarea name="project-description" id="project-description" rows="5" class="form-textarea" placeholder="Describe your project: function, requirements, compliance needs, timeline..." required></textarea>
-              <p class="form-hint">Include budget range and timeline if known</p>
+            <!-- Section 4: Technical Requirements -->
+            <div class="form-section">
+              <h2 class="form-section-title">Technical Requirements</h2>
+              <p class="form-section-desc">The more specific, the more accurate your quote.</p>
+
+              <div class="form-group">
+                <label class="form-label">Industry / Application *</label>
+                <div class="radio-group">
+                  <label class="radio-label">
+                    <input type="radio" name="industry" value="medical" required />
+                    Medical Device (FDA regulated)
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="industry" value="industrial" />
+                    Industrial / Automation
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="industry" value="scientific" />
+                    Scientific / Lab Equipment
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="industry" value="consumer" />
+                    Consumer Electronics
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="industry" value="iot" />
+                    IoT / Connected Device
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="industry" value="aerospace" />
+                    Aerospace / Defense
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="industry" value="other" />
+                    Other
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="key-requirements" class="form-label">Key Technical Requirements</label>
+                <textarea name="key-requirements" id="key-requirements" rows="4" class="form-textarea" placeholder="Power requirements, interfaces, sensors, connectivity, size constraints, environmental conditions..."></textarea>
+                <p class="form-hint">Examples: "Battery powered, &lt;100mA sleep", "USB-C + BLE", "IP67 enclosure", "-40 to +85C"</p>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Connectivity (select all that apply)</label>
+                <div class="checkbox-group">
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="connectivity[]" value="ble" />
+                    Bluetooth / BLE
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="connectivity[]" value="wifi" />
+                    WiFi
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="connectivity[]" value="cellular" />
+                    Cellular (LTE/5G)
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="connectivity[]" value="lora" />
+                    LoRa / LPWAN
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="connectivity[]" value="ethernet" />
+                    Ethernet
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="connectivity[]" value="usb" />
+                    USB
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="connectivity[]" value="rs485" />
+                    RS-485 / Modbus
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="connectivity[]" value="can" />
+                    CAN Bus
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="connectivity[]" value="none" />
+                    None / Standalone
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Certifications Needed</label>
+                <div class="checkbox-group">
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="certifications[]" value="fcc" />
+                    FCC (US)
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="certifications[]" value="ce" />
+                    CE (Europe)
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="certifications[]" value="fda" />
+                    FDA 510(k)
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="certifications[]" value="iec60601" />
+                    IEC 60601 (Medical Electrical)
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="certifications[]" value="ul" />
+                    UL Listing
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="certifications[]" value="iso13485" />
+                    ISO 13485
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="certifications[]" value="unsure" />
+                    Not sure / Need guidance
+                  </label>
+                </div>
+              </div>
             </div>
 
-            <div class="form-group">
-              <label for="budget" class="form-label">Budget range (optional)</label>
-              <select name="budget" id="budget" class="form-select">
-                <option value="">Prefer to discuss</option>
-                <option value="1k-5k">$1k - $5k</option>
-                <option value="5k-10k">$5k - $10k</option>
-                <option value="10k-25k">$10k - $25k</option>
-                <option value="25k-50k">$25k - $50k</option>
-                <option value="50k-100k">$50k - $100k</option>
-                <option value="over-100k">$100k+</option>
-              </select>
+            <!-- Section 5: Timeline & Budget -->
+            <div class="form-section">
+              <h2 class="form-section-title">Timeline & Budget</h2>
+              <p class="form-section-desc">Helps us understand feasibility and prioritization.</p>
+
+              <div class="form-row form-row-2 form-group">
+                <div>
+                  <label for="timeline" class="form-label">Target Timeline</label>
+                  <select name="timeline" id="timeline" class="form-select">
+                    <option value="">Select timeline...</option>
+                    <option value="asap">ASAP / Rush (+50%)</option>
+                    <option value="1-2-months">1-2 months</option>
+                    <option value="3-4-months">3-4 months</option>
+                    <option value="6-months">6+ months</option>
+                    <option value="flexible">Flexible / No deadline</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="deadline" class="form-label">Hard Deadline?</label>
+                  <input type="text" name="deadline" id="deadline" class="form-input" placeholder="e.g., CES 2026, Q2 launch, FDA submission" />
+                </div>
+              </div>
+
+              <div class="form-row form-row-2 form-group">
+                <div>
+                  <label for="budget" class="form-label">Budget Range</label>
+                  <select name="budget" id="budget" class="form-select">
+                    <option value="">Prefer to discuss</option>
+                    <option value="under-5k">Under $5k</option>
+                    <option value="5k-10k">$5k - $10k</option>
+                    <option value="10k-25k">$10k - $25k</option>
+                    <option value="25k-50k">$25k - $50k</option>
+                    <option value="50k-100k">$50k - $100k</option>
+                    <option value="over-100k">$100k+</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="volume" class="form-label">Expected Production Volume</label>
+                  <select name="volume" id="volume" class="form-select">
+                    <option value="">Select volume...</option>
+                    <option value="prototype">Prototype only (1-5 units)</option>
+                    <option value="low">Low volume (10-100/year)</option>
+                    <option value="medium">Medium volume (100-1000/year)</option>
+                    <option value="high">High volume (1000+/year)</option>
+                    <option value="unsure">Not sure yet</option>
+                  </select>
+                </div>
+              </div>
             </div>
 
-            <input type="hidden" name="source" value="quote-form" />
+            <!-- Section 6: Additional Context -->
+            <div class="form-section">
+              <h2 class="form-section-title">Additional Context</h2>
+              <p class="form-section-desc">Anything else that would help us understand your project.</p>
+
+              <div class="form-group">
+                <label for="challenges" class="form-label">Specific Challenges or Concerns</label>
+                <textarea name="challenges" id="challenges" rows="3" class="form-textarea" placeholder="What keeps you up at night about this project? Previous failures? Technical unknowns?"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="previous-experience" class="form-label">Previous Engineering Experience</label>
+                <select name="previous-experience" id="previous-experience" class="form-select">
+                  <option value="">Select...</option>
+                  <option value="first-product">This is our first hardware product</option>
+                  <option value="some-experience">We've shipped products before</option>
+                  <option value="in-house-team">We have an in-house engineering team</option>
+                  <option value="burned-before">We've had issues with previous engineering firms</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="how-found" class="form-label">How did you find us?</label>
+                <select name="how-found" id="how-found" class="form-select">
+                  <option value="">Select...</option>
+                  <option value="google">Google search</option>
+                  <option value="referral">Referral / Word of mouth</option>
+                  <option value="linkedin">LinkedIn</option>
+                  <option value="blog">Blog / Article</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="additional-notes" class="form-label">Anything Else?</label>
+                <textarea name="additional-notes" id="additional-notes" rows="3" class="form-textarea" placeholder="Links to specs, competitor products, reference designs, or anything else relevant..."></textarea>
+              </div>
+            </div>
+
+            <input type="hidden" name="source" value="rfq-form" />
+            <input type="hidden" name="form-version" value="2" />
 
             <button type="submit" class="form-submit">
-              <span data-btn-text>Submit Request</span>
+              <span data-btn-text>Submit Request for Quote</span>
               <svg data-btn-icon fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 18 6-6-6-6"></path>
               </svg>
@@ -125,26 +511,13 @@ const service = Astro.url.searchParams.get('service') || '';
             </button>
 
             <div data-success class="form-message form-message-success hidden">
-              Quote request received. We'll respond within 24 hours with a fixed-price proposal.
+              Quote request received. We review every submission personally and respond within 24 hours with a fixed-price proposal or follow-up questions.
             </div>
 
             <div data-error class="form-message form-message-error hidden">
-              Something went wrong. Email us directly at <a href="mailto:contact@crablabs.io">contact@crablabs.io</a>
+              Something went wrong. Please email us directly at <a href="mailto:contact@crablabs.io">contact@crablabs.io</a>
             </div>
           </form>
-
-          <div class="next-steps">
-            <div class="next-steps-title">What happens next</div>
-            <div class="next-steps-list">
-              <div class="next-steps-item"><span class="next-steps-num">1.</span> We review your request within 4 hours</div>
-              <div class="next-steps-item"><span class="next-steps-num">2.</span> If it's a fit, we schedule a brief call</div>
-              <div class="next-steps-item"><span class="next-steps-num">3.</span> You receive a fixed-price proposal within 24 hours</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="alt-contact">
-          Prefer to talk first? <a href={company.links.consultation}>Schedule a call</a> or phone <a href={company.contact.phoneHref}>{company.contact.phone}</a>
         </div>
 
       </div>
