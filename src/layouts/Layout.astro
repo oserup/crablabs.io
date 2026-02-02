@@ -14,32 +14,13 @@ interface Props {
 	type?: string;
 }
 
-// links for nav bar - organized by user journey: what we do → proof → who we are → contact
+// Nav links ordered by user journey
 const links = [
-	{
-		text: "Services",
-		href: "/services",
-	},
-	{
-		text: "Case Studies",
-		href: "/case-studies",
-	},
-	{
-		text: "Capabilities",
-		href: "/capabilities",
-	},
-	{
-		text: "About",
-		href: "/about",
-	},
-	{
-		text: "Contact",
-		href: "/contact",
-	},
-	{
-		text: "Insights",
-		href: "/insights",
-	},
+	{ text: "About", href: "/about" },
+	{ text: "Services", href: "/services" },
+	{ text: "Capabilities", href: "/capabilities" },
+	{ text: "Insights", href: "/insights" },
+	{ text: "Contact", href: "/contact" },
 ];
 
 const {
@@ -181,13 +162,4 @@ const currentUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
 	<script>
 		import "preline/dist/preline.js";
 	</script>
-
-	<!-- CSS -->
-	<style is:global>
-		html {
-			background: #ffffff;
-		}
-	</style>
-
-
 </html>

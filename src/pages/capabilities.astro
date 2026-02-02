@@ -42,66 +42,7 @@ const regulatory = {
   description="PCB design to 20 layers/10 GHz, embedded C/Rust firmware, in-house EMC pre-compliance lab. Nordic, STM32, TI. Medical and industrial certifications."
 >
   <style>
-    /* ==========================================
-       SECTIONS - Light backgrounds (matches about/services)
-       ========================================== */
-    .section {
-      padding: 5rem 0;
-      position: relative;
-    }
-
-    .section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: repeating-linear-gradient(90deg, #e5e5e5 0px, #e5e5e5 4px, transparent 4px, transparent 8px);
-    }
-
-    .section-white { background: #ffffff; }
-    .section-gray { background: #fafafa; }
-    .section-light { background: #f5f5f5; }
-    .section-first { padding-top: 3rem; padding-bottom: 3rem; }
-    .section-first::before { display: none; }
-
-    .section-header {
-      margin-bottom: 3rem;
-    }
-
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--font-mono);
-      font-size: 0.6875rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #a3a3a3;
-      margin-bottom: 0.75rem;
-    }
-
-    .section-label::before {
-      content: '//';
-      color: #d4d4d4;
-    }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 4vw, 2.25rem);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: #171717;
-    }
-
-    .section-subtitle {
-      font-size: 1rem;
-      color: #737373;
-      margin-top: 0.5rem;
-      max-width: 480px;
-    }
+    /* Page-specific styles (section styles are global) */
 
     /* ==========================================
        CAPABILITY GRID - 4 column cards
