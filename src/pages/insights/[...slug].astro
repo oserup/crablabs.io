@@ -61,26 +61,6 @@ const articleSchema = {
   <script type="application/ld+json" is:inline set:html={JSON.stringify(articleSchema)}></script>
 
   <style>
-    .section {
-      padding: 5rem 0;
-      position: relative;
-    }
-
-    .section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: repeating-linear-gradient(90deg, #e5e5e5 0px, #e5e5e5 4px, transparent 4px, transparent 8px);
-    }
-
-    .section-white { background: #ffffff; }
-    .section-gray { background: #fafafa; }
-    .section-first { padding-top: 3rem; padding-bottom: 3rem; }
-    .section-first::before { display: none; }
-
     /* Breadcrumb */
     .breadcrumb {
       display: flex;
@@ -478,7 +458,7 @@ const articleSchema = {
                   <article class="related-card">
                     {relatedPost.data.heroImage && (
                       <div class="related-card-image">
-                        <img src={relatedPost.data.heroImage} alt="" loading="lazy" />
+                        <img src={relatedPost.data.heroImage} alt={relatedPost.data.title} loading="lazy" />
                       </div>
                     )}
                     <div class="related-card-content">

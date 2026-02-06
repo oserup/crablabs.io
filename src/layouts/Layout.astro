@@ -16,7 +16,6 @@ interface Props {
 
 // Nav links ordered by user journey
 const links = [
-	{ text: "About", href: "/about" },
 	{ text: "Services", href: "/services" },
 	{ text: "Capabilities", href: "/capabilities" },
 	{ text: "Insights", href: "/insights" },
@@ -40,6 +39,9 @@ const currentUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 		<meta name="description" content={description} />
 		<meta name="keywords" content="electronics engineering, PCB design, embedded systems, medical device design, industrial automation, scientific instruments, EMC testing, compliance testing" />
 		<meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />

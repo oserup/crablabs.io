@@ -22,6 +22,34 @@ const businessData = {
   }
 };
 
+// What we believe good engineering looks like
+const commitments = [
+  { num: "01", title: "Focused communication", desc: "Every call has a purpose. Every update shows real progress." },
+  { num: "02", title: "Flexibility on changes", desc: "Scope evolves. We adapt without making it a battle." },
+  { num: "03", title: "Full visibility", desc: "Weekly demos, photos, and test results. You always know where things stand." },
+  { num: "04", title: "Useful documentation", desc: "Handoffs you can actually build from. Not binders that collect dust." },
+  { num: "05", title: "Early problem-solving", desc: "We catch issues as they come up, not at the final review." },
+  { num: "06", title: "Plain-English updates", desc: "You don't need to read schematics to know how your project is going." },
+];
+
+// Process steps
+const process = [
+  { num: "01", title: "Consultation", time: "30 min", desc: "We learn about your project, constraints, and goals. No sales pitch. We'll tell you if we're not the right fit." },
+  { num: "02", title: "Quote", time: "Same day", desc: "Fixed-price quote with clear scope and deliverables. Detailed enough to sign." },
+  { num: "03", title: "Build", time: "Weeks to months", desc: "Regular demos and updates. Photos, videos, test results. No black boxes." },
+  { num: "04", title: "Deliver", time: "On schedule", desc: "Manufacturing files, source code, documentation. Everything you need to walk away." },
+];
+
+// The CrabLabs Experience - what we actually sell
+const experience = [
+  { num: "01", title: "Fast Start", desc: "Quote same day. Contract signed within a week. No waiting for resource allocation." },
+  { num: "02", title: "Fixed Pricing", desc: "No surprise bills. No change order battles. We absorb overruns." },
+  { num: "03", title: "Full Visibility", desc: "Weekly updates with demos, photos, and test results. You see progress as it happens." },
+  { num: "04", title: "Direct Access", desc: "Talk to the engineers doing the work. No account managers in between." },
+  { num: "05", title: "Clean Handoff", desc: "Documentation you can actually use. 30 days free support included." },
+  { num: "06", title: "Your IP", desc: "You own everything from day one. No licensing. No lock-in." },
+];
+
 const services = [
   {
     title: "Product Development",
@@ -52,14 +80,7 @@ const industries = [
   { name: "Scientific", pct: 23, color: "#8b5cf6", examples: "Data acquisition, metrology, precision analog" },
 ];
 
-const whyUs = [
-  { title: "Fixed Pricing", desc: "We absorb overruns. Not you.", num: "01" },
-  { title: "Constant Visibility", desc: "Demos, photos, videos. You see progress as it happens.", num: "02" },
-  { title: "Direct Access", desc: "Engineers. Not account managers.", num: "03" },
-  { title: "Full IP Ownership", desc: "Your IP from day one. No licensing.", num: "04" },
-  { title: "In-House Lab", desc: "EMC pre-compliance. Environmental testing.", num: "05" },
-  { title: "30 Days Support", desc: "Post-delivery adjustments included.", num: "06" },
-];
+const featuredTestimonials = testimonials.filter(t => t.featured);
 ---
 
 <Layout
@@ -80,7 +101,6 @@ const whyUs = [
       align-items: center;
     }
 
-    /* Technical grid pattern - finer, more precise */
     .hero::before {
       content: '';
       position: absolute;
@@ -94,7 +114,6 @@ const whyUs = [
       mask-image: radial-gradient(ellipse 90% 70% at 60% 50%, black 20%, transparent 70%);
     }
 
-    /* Ambient glow - shifted for balance */
     .hero::after {
       content: '';
       position: absolute;
@@ -128,7 +147,6 @@ const whyUs = [
       max-width: 580px;
     }
 
-    /* Eyebrow label */
     .hero-eyebrow {
       display: inline-flex;
       align-items: center;
@@ -138,7 +156,7 @@ const whyUs = [
       font-weight: 500;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: #fb923c;
+      color: var(--brand-400);
       margin-bottom: 1.5rem;
       opacity: 0;
       animation: fadeSlideUp 0.6s ease-out 0.2s forwards;
@@ -163,20 +181,10 @@ const whyUs = [
 
     .hero-headline span {
       display: block;
-      background: linear-gradient(135deg, #a3a3a3 0%, #737373 100%);
+      background: linear-gradient(135deg, var(--neutral-400) 0%, var(--neutral-500) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-    }
-
-    .hero-sub {
-      font-size: 1.125rem;
-      color: #a3a3a3;
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-      max-width: 460px;
-      opacity: 0;
-      animation: fadeSlideUp 0.6s ease-out 0.5s forwards;
     }
 
     .hero-cta-row {
@@ -193,8 +201,8 @@ const whyUs = [
       align-items: center;
       gap: 0.625rem;
       padding: 0.875rem 1.5rem;
-      background: #fb923c;
-      color: #0a0a0a;
+      background: var(--brand-400);
+      color: var(--neutral-950);
       font-family: var(--font-body);
       font-weight: 600;
       font-size: 0.9375rem;
@@ -215,7 +223,7 @@ const whyUs = [
     }
 
     .hero-cta-primary:hover {
-      background: #fdba74;
+      background: var(--brand-200);
       transform: translateY(-1px);
       box-shadow: 0 8px 24px rgba(251, 146, 60, 0.25);
     }
@@ -236,22 +244,21 @@ const whyUs = [
 
     .hero-cta-secondary {
       font-size: 0.875rem;
-      color: #737373;
+      color: var(--neutral-500);
     }
 
     .hero-cta-secondary a {
-      color: #d4d4d4;
+      color: var(--neutral-300);
       text-decoration: none;
-      border-bottom: 1px solid #525252;
+      border-bottom: 1px solid var(--neutral-600);
       transition: all 0.2s ease;
     }
 
     .hero-cta-secondary a:hover {
-      color: #fb923c;
-      border-color: #fb923c;
+      color: var(--brand-400);
+      border-color: var(--brand-400);
     }
 
-    /* Animation container */
     .hero-visual {
       display: none;
       justify-content: center;
@@ -259,9 +266,17 @@ const whyUs = [
       position: relative;
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 768px) {
       .hero-visual {
         display: flex;
+        transform: scale(0.75);
+        transform-origin: center;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-visual {
+        transform: none;
       }
     }
 
@@ -270,7 +285,6 @@ const whyUs = [
       transform: translateX(20px);
     }
 
-    /* Glow effect behind trace */
     .hero-visual-glow {
       position: absolute;
       top: 50%;
@@ -281,6 +295,24 @@ const whyUs = [
       background: radial-gradient(circle, rgba(251, 146, 60, 0.08) 0%, transparent 60%);
       filter: blur(40px);
       pointer-events: none;
+    }
+
+    .hero-coords {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.625rem;
+      color: rgba(251, 146, 60, 0.4);
+      letter-spacing: 0.1em;
+      z-index: 5;
+    }
+
+    @media (min-width: 768px) {
+      .hero-coords {
+        bottom: 2rem;
+        left: 2rem;
+      }
     }
 
     @keyframes fadeSlideUp {
@@ -295,15 +327,223 @@ const whyUs = [
     }
 
     /* ==========================================
+       COMMITMENTS SECTION
+       ========================================== */
+    .commit-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    @media (min-width: 480px) {
+      .commit-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .commit-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .commit-card {
+      background: var(--neutral-50);
+      border: 1px solid var(--neutral-200);
+      border-radius: 4px;
+      padding: 1.5rem;
+      transition: all 0.25s ease;
+    }
+
+    .commit-card:hover {
+      border-color: var(--brand-400);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .commit-marker {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      margin-bottom: 1rem;
+    }
+
+    .commit-num {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--brand-400);
+      letter-spacing: 0.05em;
+    }
+
+    .commit-dot {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(251, 146, 60, 0.5), transparent);
+    }
+
+    .commit-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--neutral-900);
+      margin-bottom: 0.375rem;
+    }
+
+    .commit-desc {
+      font-size: 0.8125rem;
+      color: var(--neutral-500);
+      line-height: 1.5;
+    }
+
+    /* ==========================================
+       PROCESS SECTION
+       ========================================== */
+    .process-grid {
+      display: grid;
+      gap: 1px;
+      background: var(--neutral-200);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    @media (min-width: 768px) {
+      .process-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .process-card {
+      background: #ffffff;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .process-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 2rem;
+      right: 2rem;
+      height: 2px;
+      background: linear-gradient(90deg, var(--brand-400), transparent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .process-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .process-num {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      font-weight: 500;
+      color: var(--neutral-300);
+      margin-bottom: 1rem;
+    }
+
+    .process-title {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--neutral-900);
+      margin-bottom: 0.25rem;
+    }
+
+    .process-time {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--brand-400);
+      margin-bottom: 0.75rem;
+    }
+
+    .process-desc {
+      font-size: 0.8125rem;
+      color: var(--neutral-500);
+      line-height: 1.5;
+    }
+
+    /* ==========================================
+       EXPERIENCE / WHY US SECTION
+       ========================================== */
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    @media (min-width: 480px) {
+      .experience-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .experience-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .experience-item {
+      background: var(--neutral-50);
+      border: 1px solid var(--neutral-200);
+      border-radius: 4px;
+      padding: 1.5rem;
+      transition: all 0.25s ease;
+    }
+
+    .experience-item:hover {
+      border-color: var(--brand-400);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .experience-marker {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      margin-bottom: 1rem;
+    }
+
+    .experience-num {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--brand-400);
+      letter-spacing: 0.05em;
+    }
+
+    .experience-dot {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(251, 146, 60, 0.5), transparent);
+    }
+
+    .experience-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--neutral-900);
+      margin-bottom: 0.375rem;
+    }
+
+    .experience-desc {
+      font-size: 0.8125rem;
+      color: var(--neutral-500);
+      line-height: 1.5;
+    }
+
+    /* ==========================================
        SERVICES SECTION
        ========================================== */
     .services-section {
-      background: #fafafa;
+      background: var(--neutral-50);
       padding: 5rem 0;
       position: relative;
     }
 
-    /* Subtle measurement marks on section edges */
     .services-section::before {
       content: '';
       position: absolute;
@@ -313,47 +553,17 @@ const whyUs = [
       height: 1px;
       background: repeating-linear-gradient(
         90deg,
-        #e5e5e5 0px,
-        #e5e5e5 4px,
+        var(--neutral-200) 0px,
+        var(--neutral-200) 4px,
         transparent 4px,
         transparent 8px
       );
     }
 
-    .section-header {
-      margin-bottom: 3rem;
-    }
-
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--font-mono);
-      font-size: 0.6875rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #a3a3a3;
-      margin-bottom: 0.75rem;
-    }
-
-    .section-label::before {
-      content: '//';
-      color: #d4d4d4;
-    }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 4vw, 2.25rem);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: #171717;
-    }
-
     .services-grid {
       display: grid;
       gap: 1px;
-      background: #e5e5e5;
+      background: var(--neutral-200);
       border-radius: 8px;
       overflow: hidden;
     }
@@ -382,7 +592,7 @@ const whyUs = [
       left: 2rem;
       right: 2rem;
       height: 2px;
-      background: linear-gradient(90deg, #fb923c, transparent);
+      background: linear-gradient(90deg, var(--brand-400), transparent);
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.3s ease;
@@ -400,7 +610,7 @@ const whyUs = [
       font-family: var(--font-mono);
       font-size: 0.6875rem;
       font-weight: 500;
-      color: #d4d4d4;
+      color: var(--neutral-300);
       margin-bottom: 1rem;
     }
 
@@ -408,7 +618,7 @@ const whyUs = [
       font-family: var(--font-mono);
       font-size: 0.8125rem;
       font-weight: 600;
-      color: #fb923c;
+      color: var(--brand-400);
       margin-bottom: 0.5rem;
     }
 
@@ -416,50 +626,26 @@ const whyUs = [
       font-family: var(--font-display);
       font-size: 1.25rem;
       font-weight: 600;
-      color: #171717;
+      color: var(--neutral-900);
       margin-bottom: 0.5rem;
       letter-spacing: -0.01em;
     }
 
     .service-desc {
       font-size: 0.875rem;
-      color: #737373;
+      color: var(--neutral-500);
       line-height: 1.6;
       flex-grow: 1;
     }
 
     .service-arrow {
       margin-top: 1.5rem;
-      color: #d4d4d4;
+      color: var(--neutral-300);
       transition: all 0.2s ease;
     }
 
     .service-card:hover .service-arrow {
-      color: #fb923c;
-      transform: translateX(4px);
-    }
-
-    .section-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: #525252;
-      text-decoration: none;
-      margin-top: 2.5rem;
-      transition: all 0.2s ease;
-    }
-
-    .section-link:hover {
-      color: #171717;
-    }
-
-    .section-link svg {
-      transition: transform 0.2s ease;
-    }
-
-    .section-link:hover svg {
+      color: var(--brand-400);
       transform: translateX(4px);
     }
 
@@ -467,7 +653,7 @@ const whyUs = [
        INDUSTRIES SECTION
        ========================================== */
     .industries-section {
-      background: #f5f5f5;
+      background: var(--neutral-100);
       padding: 5rem 0;
       position: relative;
     }
@@ -481,8 +667,8 @@ const whyUs = [
       height: 1px;
       background: repeating-linear-gradient(
         90deg,
-        #d4d4d4 0px,
-        #d4d4d4 4px,
+        var(--neutral-300) 0px,
+        var(--neutral-300) 4px,
         transparent 4px,
         transparent 8px
       );
@@ -501,7 +687,7 @@ const whyUs = [
 
     .industry-card {
       background: #ffffff;
-      border: 1px solid #e5e5e5;
+      border: 1px solid var(--neutral-200);
       border-radius: 4px;
       padding: 1.75rem;
       position: relative;
@@ -510,7 +696,7 @@ const whyUs = [
     }
 
     .industry-card:hover {
-      border-color: #d4d4d4;
+      border-color: var(--neutral-300);
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
     }
@@ -525,7 +711,7 @@ const whyUs = [
 
     .industry-pct {
       font-family: var(--font-mono);
-      font-size: 2.5rem;
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
       font-weight: 600;
       line-height: 1;
       margin-bottom: 0.75rem;
@@ -536,119 +722,35 @@ const whyUs = [
       font-family: var(--font-display);
       font-size: 1.125rem;
       font-weight: 600;
-      color: #171717;
+      color: var(--neutral-900);
       margin-bottom: 0.375rem;
     }
 
     .industry-examples {
       font-size: 0.8125rem;
-      color: #737373;
+      color: var(--neutral-500);
       line-height: 1.5;
     }
 
     /* ==========================================
-       WHY US SECTION
-       ========================================== */
-    .why-section {
-      background: #ffffff;
-      padding: 5rem 0;
-      position: relative;
-    }
-
-    .why-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: repeating-linear-gradient(
-        90deg,
-        #e5e5e5 0px,
-        #e5e5e5 4px,
-        transparent 4px,
-        transparent 8px
-      );
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-
-    @media (min-width: 768px) {
-      .why-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .why-item {
-      background: #fafafa;
-      border: 1px solid #e5e5e5;
-      border-radius: 4px;
-      padding: 1.5rem;
-      position: relative;
-      transition: all 0.25s ease;
-    }
-
-    .why-item:hover {
-      border-color: #fb923c;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-    }
-
-    .why-marker {
-      display: flex;
-      align-items: center;
-      gap: 0.625rem;
-      margin-bottom: 1rem;
-    }
-
-    .why-num {
-      font-family: var(--font-mono);
-      font-size: 0.6875rem;
-      font-weight: 600;
-      color: #fb923c;
-      letter-spacing: 0.05em;
-    }
-
-    .why-dot {
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(90deg, rgba(251, 146, 60, 0.5), transparent);
-    }
-
-    .why-title {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 600;
-      color: #171717;
-      margin-bottom: 0.375rem;
-    }
-
-    .why-desc {
-      font-size: 0.8125rem;
-      color: #737373;
-      line-height: 1.5;
-    }
-
-    /* ==========================================
-       TESTIMONIALS SECTION
+       TESTIMONIALS SECTION - Dark theme
        ========================================== */
     .testimonials-section {
-      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fcd34d 100%);
+      background: var(--neutral-900);
       padding: 4.5rem 0;
       position: relative;
       overflow: hidden;
     }
 
-    /* Subtle pattern overlay */
     .testimonials-section::before {
       content: '';
       position: absolute;
       inset: 0;
-      background-image: radial-gradient(circle at 20% 50%, rgba(251, 146, 60, 0.08) 0%, transparent 50%);
+      background-image:
+        linear-gradient(rgba(251, 146, 60, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(251, 146, 60, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 70%);
       pointer-events: none;
     }
 
@@ -656,26 +758,55 @@ const whyUs = [
       margin-bottom: 2rem;
     }
 
-    .section-label-amber {
-      color: #b45309;
+    .section-label-dark {
+      color: var(--brand-400);
     }
 
-    .section-title-dark {
-      color: #171717;
+    .section-label-dark::before {
+      color: rgba(251, 146, 60, 0.4);
     }
 
-    .testimonial-card {
+    .section-title-light {
+      color: #ffffff;
+    }
+
+    .testimonials-grid {
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonials-grid.single .testimonial-card {
       max-width: 640px;
       margin: 0 auto;
       text-align: center;
+    }
+
+    .testimonials-grid.multi {
+      display: grid;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .testimonials-grid.multi {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .testimonials-grid.multi {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .testimonial-card {
       position: relative;
-      z-index: 1;
     }
 
     .testimonial-quote-mark {
       font-family: Georgia, serif;
       font-size: 4rem;
-      color: rgba(180, 83, 9, 0.15);
+      color: var(--brand-400);
+      opacity: 0.3;
       line-height: 1;
       margin-bottom: -1rem;
     }
@@ -684,7 +815,7 @@ const whyUs = [
       font-family: var(--font-display);
       font-size: clamp(1.25rem, 3vw, 1.625rem);
       font-weight: 500;
-      color: #171717;
+      color: var(--neutral-200);
       line-height: 1.6;
       margin-bottom: 1.75rem;
       letter-spacing: -0.01em;
@@ -692,58 +823,36 @@ const whyUs = [
 
     .testimonial-author {
       font-size: 0.9375rem;
-      color: #525252;
+      color: var(--neutral-400);
     }
 
     .testimonial-author strong {
-      color: #171717;
+      color: var(--neutral-200);
       font-weight: 600;
     }
 
-    /* Technical coordinate markers */
-    .hero-coords {
-      position: absolute;
-      bottom: 1.5rem;
-      left: 1.5rem;
-      font-family: var(--font-mono);
-      font-size: 0.625rem;
-      color: rgba(251, 146, 60, 0.4);
-      letter-spacing: 0.1em;
-      z-index: 5;
-    }
-
-    @media (min-width: 768px) {
-      .hero-coords {
-        bottom: 2rem;
-        left: 2rem;
-      }
-    }
   </style>
 
-  <main id="content">
+  <div id="content">
 
     <!-- ==========================================
          HERO
          ========================================== -->
     <section class="hero">
-      <div class="hero-coords">33.7701°N 118.1937°W</div>
+      <div class="hero-coords">33.7701&deg;N 118.1937&deg;W</div>
       <Container>
         <div class="hero-inner">
           <div class="hero-content">
             <div class="hero-eyebrow">Electronics Engineering</div>
 
             <h1 class="hero-headline">
-              Electronics from
-              <span>idea to production.</span>
+              Electronics development
+              <span>without the headaches.</span>
             </h1>
-
-            <p class="hero-sub">
-              We handle the engineering. You get production-ready hardware, firmware, and documentation.
-            </p>
 
             <div class="hero-cta-row">
               <a href="https://cal.com/crablabsllc/consultation" class="hero-cta-primary">
-                Schedule a call
+                Book a free consultation
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 18 6-6-6-6"></path>
                 </svg>
@@ -828,59 +937,104 @@ const whyUs = [
     </section>
 
     <!-- ==========================================
-         WHY US
+         WHY US / EXPERIENCE
          ========================================== -->
-    <section class="why-section">
+    <section class="section section-white">
       <Container>
         <div class="section-header">
           <div class="section-label">Why Us</div>
-          <h2 class="section-title">How we operate</h2>
+          <h2 class="section-title">What working with us is like</h2>
         </div>
 
-        <div class="why-grid">
-          {whyUs.map((item) => (
-            <div class="why-item">
-              <div class="why-marker">
-                <span class="why-num">{item.num}</span>
-                <span class="why-dot"></span>
+        <div class="experience-grid">
+          {experience.map((item) => (
+            <div class="experience-item">
+              <div class="experience-marker">
+                <span class="experience-num">{item.num}</span>
+                <span class="experience-dot"></span>
               </div>
-              <div class="why-title">{item.title}</div>
-              <div class="why-desc">{item.desc}</div>
+              <div class="experience-title">{item.title}</div>
+              <div class="experience-desc">{item.desc}</div>
             </div>
           ))}
         </div>
 
-        <a href="/about" class="section-link">
-          Learn more about us
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-          </svg>
-        </a>
+      </Container>
+    </section>
+
+    <!-- ==========================================
+         HOW WE WORK / PROCESS
+         ========================================== -->
+    <section class="section section-gray">
+      <Container>
+        <div class="section-header">
+          <div class="section-label">Process</div>
+          <h2 class="section-title">How engagements work</h2>
+        </div>
+
+        <div class="process-grid">
+          {process.map((step) => (
+            <div class="process-card">
+              <div class="process-num">{step.num}</div>
+              <div class="process-title">{step.title}</div>
+              <div class="process-time">{step.time}</div>
+              <div class="process-desc">{step.desc}</div>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </section>
+
+    <!-- ==========================================
+         WHAT WE BELIEVE
+         ========================================== -->
+    <section class="section section-white">
+      <Container>
+        <div class="section-header">
+          <div class="section-label">Our Approach</div>
+          <h2 class="section-title">What good engineering looks like</h2>
+          <p class="section-subtitle">The things we think matter most when building a product together.</p>
+        </div>
+
+        <div class="commit-grid">
+          {commitments.map((item) => (
+            <div class="commit-card">
+              <div class="commit-marker">
+                <span class="commit-num">{item.num}</span>
+                <span class="commit-dot"></span>
+              </div>
+              <div class="commit-title">{item.title}</div>
+              <div class="commit-desc">{item.desc}</div>
+            </div>
+          ))}
+        </div>
       </Container>
     </section>
 
     <!-- ==========================================
          TESTIMONIALS
          ========================================== -->
-    {testimonials.length > 0 && testimonials.some(t => t.featured) && (
+    {featuredTestimonials.length > 0 && (
       <section class="testimonials-section">
         <Container>
           <div class="section-header testimonials-header">
-            <div class="section-label section-label-amber">Testimonials</div>
-            <h2 class="section-title section-title-dark">What our clients say</h2>
+            <div class="section-label section-label-dark">Testimonials</div>
+            <h2 class="section-title section-title-light">What our clients say</h2>
           </div>
-          {testimonials.filter(t => t.featured).map(t => (
-            <div class="testimonial-card">
-              <div class="testimonial-quote-mark">"</div>
-              <blockquote class="testimonial-quote">{t.quote}</blockquote>
-              <div class="testimonial-author">
-                <strong>{t.author}</strong> · {t.role}, {t.company}
+          <div class={`testimonials-grid ${featuredTestimonials.length === 1 ? 'single' : 'multi'}`}>
+            {featuredTestimonials.map(t => (
+              <div class="testimonial-card">
+                <div class="testimonial-quote-mark">&ldquo;</div>
+                <blockquote class="testimonial-quote">{t.quote}</blockquote>
+                <div class="testimonial-author">
+                  <strong>{t.author}</strong> &middot; {t.role}, {t.company}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </Container>
       </section>
     )}
 
-  </main>
+  </div>
 </Layout>

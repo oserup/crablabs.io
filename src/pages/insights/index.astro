@@ -26,63 +26,6 @@ function formatDate(date: Date) {
 
 <Layout title="Electronics Engineering Insights - PCB Design, Firmware, Compliance | Crab Labs" description="Practical tutorials and articles from working engineers: PCB design best practices, firmware development, EMC testing, medical device compliance, and cost optimization.">
   <style>
-    .section {
-      padding: 5rem 0;
-      position: relative;
-    }
-
-    .section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: repeating-linear-gradient(90deg, #e5e5e5 0px, #e5e5e5 4px, transparent 4px, transparent 8px);
-    }
-
-    .section-white { background: #ffffff; }
-    .section-gray { background: #fafafa; }
-    .section-first { padding-top: 3rem; padding-bottom: 3rem; }
-    .section-first::before { display: none; }
-
-    .section-header {
-      margin-bottom: 3rem;
-    }
-
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--font-mono);
-      font-size: 0.6875rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #a3a3a3;
-      margin-bottom: 0.75rem;
-    }
-
-    .section-label::before {
-      content: '//';
-      color: #d4d4d4;
-    }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 4vw, 2.25rem);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: #171717;
-    }
-
-    .section-subtitle {
-      font-size: 1rem;
-      color: #737373;
-      margin-top: 0.5rem;
-      max-width: 480px;
-    }
-
     /* Filter Bar */
     .filter-bar {
       display: flex;
@@ -94,7 +37,8 @@ function formatDate(date: Date) {
 
     .search-input {
       flex: 1;
-      min-width: 200px;
+      min-width: 0;
+      width: 100%;
       max-width: 280px;
       padding: 0.5rem 0.75rem 0.5rem 2.25rem;
       font-size: 0.875rem;
@@ -112,6 +56,13 @@ function formatDate(date: Date) {
 
     .search-wrapper {
       position: relative;
+      width: 100%;
+    }
+
+    @media (min-width: 640px) {
+      .search-wrapper {
+        width: auto;
+      }
     }
 
     .search-icon {
@@ -389,7 +340,7 @@ function formatDate(date: Date) {
             >
               {post.data.heroImage && (
                 <div class="post-image">
-                  <img src={post.data.heroImage} alt="" loading="lazy" />
+                  <img src={post.data.heroImage} alt={post.data.title} loading="lazy" />
                 </div>
               )}
 

@@ -105,6 +105,32 @@
   max-width: 480px;
 }
 
+/* Section navigation link */
+.section-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--neutral-600);
+  text-decoration: none;
+  margin-top: 2.5rem;
+  min-height: 2.75rem;
+  transition: all var(--transition-base);
+}
+
+.section-link:hover {
+  color: var(--neutral-900);
+}
+
+.section-link svg {
+  transition: transform var(--transition-base);
+}
+
+.section-link:hover svg {
+  transform: translateX(4px);
+}
+
 /* Section padding - standardized vertical rhythm */
 .py-section {
   padding-top: 4rem;

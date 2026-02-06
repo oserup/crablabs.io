@@ -94,66 +94,6 @@ const industries = [
 >
   <style>
     /* ==========================================
-       SECTIONS - Light backgrounds (matches site)
-       ========================================== */
-    .section {
-      padding: 5rem 0;
-      position: relative;
-    }
-
-    .section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: repeating-linear-gradient(90deg, #e5e5e5 0px, #e5e5e5 4px, transparent 4px, transparent 8px);
-    }
-
-    .section-white { background: #ffffff; }
-    .section-gray { background: #fafafa; }
-    .section-first { padding-top: 3rem; padding-bottom: 3rem; }
-    .section-first::before { display: none; }
-
-    .section-header {
-      margin-bottom: 3rem;
-    }
-
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--font-mono);
-      font-size: 0.6875rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #a3a3a3;
-      margin-bottom: 0.75rem;
-    }
-
-    .section-label::before {
-      content: '//';
-      color: #d4d4d4;
-    }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 4vw, 2.25rem);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: #171717;
-    }
-
-    .section-subtitle {
-      font-size: 1rem;
-      color: #737373;
-      margin-top: 0.5rem;
-      max-width: 480px;
-    }
-
-    /* ==========================================
        INDUSTRY SECTION HEADER
        ========================================== */
     .industry-header {
@@ -203,9 +143,16 @@ const industries = [
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      padding: 1.25rem 1.5rem;
+      padding: 1rem 1rem;
       border-bottom: 1px solid #f5f5f5;
-      gap: 1rem;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 768px) {
+      .study-header {
+        padding: 1.25rem 1.5rem;
+        gap: 1rem;
+      }
     }
 
     .study-title {
@@ -240,9 +187,16 @@ const industries = [
     }
 
     .study-content {
-      padding: 1.25rem 1.5rem;
+      padding: 1rem 1rem;
       display: grid;
-      gap: 1rem;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 768px) {
+      .study-content {
+        padding: 1.25rem 1.5rem;
+        gap: 1rem;
+      }
     }
 
     @media (min-width: 768px) {
