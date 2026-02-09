@@ -1,367 +1,155 @@
 ---
 // Cookie Banner Component
+// Shows on every page load until user accepts or declines cookies.
+// Uses sessionStorage so it reappears on new browser sessions.
 ---
 
-<div
-  id="cookie-banner"
-  class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50"
-  style="display: none;"
->
-  <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-4">
-    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
-      
-      <!-- Cookie Notice Text -->
-      <div class="flex-1">
-        <div class="flex items-start gap-3">
-          <!-- Cookie Icon -->
-          <div class="flex-shrink-0 mt-1">
-            <svg class="w-5 h-5 text-orange-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-              <path d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/>
-              <circle cx="7" cy="8" r="1"/>
-              <circle cx="13" cy="8" r="1"/>
-              <circle cx="10" cy="12" r="1"/>
-              <circle cx="7" cy="13" r="0.5"/>
-              <circle cx="13" cy="13" r="0.5"/>
-            </svg>
-          </div>
-          
-          <!-- Text Content -->
-          <div class="min-w-0 flex-1">
-            <p class="text-xs sm:text-sm text-gray-800 leading-relaxed">
-              We use cookies to enhance your experience and analyze traffic.
-              <a href="/privacy" class="text-orange-600 hover:text-orange-500 underline font-medium ml-1">Learn more</a>
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Action Buttons -->
-      <div class="flex flex-row gap-2 sm:gap-3 flex-shrink-0">
-        <button 
-          id="cookie-settings-btn"
-          class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-800 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors duration-200"
-        >
-          Cookie Settings
-        </button>
-        <button 
-          id="cookie-accept-btn"
-          class="px-4 py-2 text-sm font-medium text-white bg-orange-600 hover:bg-orange-700 rounded-lg transition-colors duration-200 whitespace-nowrap"
-        >
-          Accept All
-        </button>
-      </div>
-
+<div id="cookie-banner" style="display:none;">
+  <div class="cookie-inner">
+    <div class="cookie-text">
+      <svg class="cookie-icon" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+        <path d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/>
+        <circle cx="7" cy="8" r="1"/><circle cx="13" cy="8" r="1"/>
+        <circle cx="10" cy="12" r="1"/>
+      </svg>
+      <p>We use cookies to analyze site traffic. <a href="/privacy">Privacy policy</a></p>
+    </div>
+    <div class="cookie-buttons">
+      <button id="cookie-decline" type="button">Decline</button>
+      <button id="cookie-accept" type="button">Accept</button>
     </div>
   </div>
 </div>
 
-<!-- Cookie Settings Modal -->
-<div
-  id="cookie-settings-modal"
-  class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
-  role="dialog"
-  aria-modal="true"
-  aria-labelledby="cookie-modal-title"
->
-  <div class="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-    
-    <!-- Modal Header -->
-    <div class="border-b border-gray-200 p-6">
-      <div class="flex items-center justify-between">
-        <h2 id="cookie-modal-title" class="text-xl font-semibold text-gray-800">Cookie Preferences</h2>
-        <button
-          id="cookie-modal-close"
-          class="text-gray-400 hover:text-gray-600"
-          aria-label="Close cookie settings"
-        >
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-          </svg>
-        </button>
-      </div>
-    </div>
+<script is:inline>
+  // Runs inline at the bottom of <body>, after all DOM elements exist.
+  (function() {
+    var banner = document.getElementById('cookie-banner');
+    if (!banner) return;
 
-    <!-- Modal Content -->
-    <div class="p-6 space-y-6">
-      
-      <!-- Essential Cookies -->
-      <div class="border border-gray-200 rounded-lg p-4">
-        <div class="flex items-center justify-between mb-3">
-          <div>
-            <h3 class="font-medium text-gray-800">Essential Cookies</h3>
-            <p class="text-sm text-gray-600 mt-1">Required for basic website functionality</p>
-          </div>
-          <div class="flex items-center">
-            <input 
-              type="checkbox" 
-              id="essential-cookies" 
-              checked 
-              disabled 
-              class="rounded border-gray-300 text-orange-600 focus:ring-orange-500 opacity-50"
-            >
-            <label for="essential-cookies" class="ml-2 text-sm text-gray-500">Always On</label>
-          </div>
-        </div>
-        <p class="text-sm text-gray-600">
-          These cookies are necessary for the website to function and cannot be switched off. They include session management, security features, and basic functionality.
-        </p>
-      </div>
-
-      <!-- Analytics Cookies -->
-      <div class="border border-gray-200 rounded-lg p-4">
-        <div class="flex items-center justify-between mb-3">
-          <div>
-            <h3 class="font-medium text-gray-800">Analytics Cookies</h3>
-            <p class="text-sm text-gray-600 mt-1">Help us understand how visitors use our website</p>
-          </div>
-          <div class="flex items-center">
-            <input 
-              type="checkbox" 
-              id="analytics-cookies" 
-              class="rounded border-gray-300 text-orange-600 focus:ring-orange-500"
-            >
-          </div>
-        </div>
-        <p class="text-sm text-gray-600">
-          These cookies collect information about how you use our website, such as which pages you visit and any errors you encounter. This data helps us improve our website performance.
-        </p>
-      </div>
-
-      <!-- Marketing Cookies -->
-      <div class="border border-gray-200 rounded-lg p-4">
-        <div class="flex items-center justify-between mb-3">
-          <div>
-            <h3 class="font-medium text-gray-800">Marketing Cookies</h3>
-            <p class="text-sm text-gray-600 mt-1">Used to track visitors and display relevant ads</p>
-          </div>
-          <div class="flex items-center">
-            <input 
-              type="checkbox" 
-              id="marketing-cookies" 
-              class="rounded border-gray-300 text-orange-600 focus:ring-orange-500"
-            >
-          </div>
-        </div>
-        <p class="text-sm text-gray-600">
-          These cookies are used to make advertising messages more relevant to you and your interests. They also perform functions like preventing the same ad from appearing repeatedly.
-        </p>
-      </div>
-
-    </div>
-
-    <!-- Modal Footer -->
-    <div class="border-t border-gray-200 p-6">
-      <div class="flex flex-col sm:flex-row gap-3 sm:justify-end">
-        <button 
-          id="cookie-save-preferences"
-          class="px-6 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
-        >
-          Save Preferences
-        </button>
-        <button 
-          id="cookie-accept-all"
-          class="px-6 py-2 text-sm font-medium text-white bg-orange-600 hover:bg-orange-700 rounded-lg transition-colors"
-        >
-          Accept All
-        </button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<script>
-  // Cookie banner functionality
-  document.addEventListener('DOMContentLoaded', function() {
-    const banner = document.getElementById('cookie-banner');
-    const modal = document.getElementById('cookie-settings-modal');
-    const acceptBtn = document.getElementById('cookie-accept-btn');
-    const settingsBtn = document.getElementById('cookie-settings-btn');
-    const modalClose = document.getElementById('cookie-modal-close');
-    const savePreferencesBtn = document.getElementById('cookie-save-preferences');
-    const acceptAllBtn = document.getElementById('cookie-accept-all');
-
-    console.log('[CookieBanner] Initializing...');
-    console.log('[CookieBanner] Banner element:', banner);
-
-    // Check if cookies have been accepted
-    const cookiesAccepted = localStorage.getItem('cookiesAccepted');
-    console.log('[CookieBanner] Cookies accepted:', cookiesAccepted);
-
-    // Expose reset function globally for testing
-    (window as any).resetCookieConsent = function() {
-      localStorage.removeItem('cookiesAccepted');
-      localStorage.removeItem('analyticsEnabled');
-      localStorage.removeItem('marketingEnabled');
-      location.reload();
-    };
-    console.log('[CookieBanner] To test banner, run: resetCookieConsent()');
-
-    if (!cookiesAccepted) {
-      console.log('[CookieBanner] Showing banner...');
-      // Show banner immediately
-      if (banner) {
-        banner.style.display = 'block';
-        console.log('[CookieBanner] Banner displayed');
-      }
-    } else {
-      console.log('[CookieBanner] Banner already accepted, not showing');
-    }
-
-    // Accept all cookies
-    function acceptAllCookies() {
-      localStorage.setItem('cookiesAccepted', 'true');
-      localStorage.setItem('analyticsEnabled', 'true');
-      localStorage.setItem('marketingEnabled', 'true');
-      hideBanner();
-      enableAnalytics();
-    }
-
-    // Save cookie preferences
-    function saveCookiePreferences() {
-      const analyticsCheckbox = document.getElementById('analytics-cookies') as HTMLInputElement;
-      const marketingCheckbox = document.getElementById('marketing-cookies') as HTMLInputElement;
-      const analyticsEnabled = analyticsCheckbox?.checked || false;
-      const marketingEnabled = marketingCheckbox?.checked || false;
-      
-      localStorage.setItem('cookiesAccepted', 'true');
-      localStorage.setItem('analyticsEnabled', analyticsEnabled.toString());
-      localStorage.setItem('marketingEnabled', marketingEnabled.toString());
-      
-      if (analyticsEnabled) {
-        enableAnalytics();
-      }
-      
-      hideBanner();
-      hideModal();
-    }
-
-    // Hide banner
-    function hideBanner() {
-      if (banner) {
-        banner.style.display = 'none';
-      }
-    }
-
-    // Focus trap for modal
-    function trapFocus(element: HTMLElement) {
-      const focusableElements = element.querySelectorAll<HTMLElement>(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-      );
-      const firstElement = focusableElements[0];
-      const lastElement = focusableElements[focusableElements.length - 1];
-
-      const handleKeyDown = (e: KeyboardEvent) => {
-        if (e.key === 'Tab') {
-          if (e.shiftKey && document.activeElement === firstElement) {
-            e.preventDefault();
-            lastElement?.focus();
-          } else if (!e.shiftKey && document.activeElement === lastElement) {
-            e.preventDefault();
-            firstElement?.focus();
-          }
-        }
-        if (e.key === 'Escape') {
-          hideModal();
-        }
-      };
-
-      element.addEventListener('keydown', handleKeyDown);
-      firstElement?.focus();
-
-      // Store the handler so we can remove it later
-      (element as any)._focusTrapHandler = handleKeyDown;
-    }
-
-    // Remove focus trap
-    function removeFocusTrap(element: HTMLElement) {
-      const handler = (element as any)._focusTrapHandler;
-      if (handler) {
-        element.removeEventListener('keydown', handler);
-        delete (element as any)._focusTrapHandler;
-      }
-    }
-
-    // Show modal
-    function showModal() {
-      if (modal) {
-        modal.classList.remove('hidden');
-        // Load current preferences
-        const analyticsEnabled = localStorage.getItem('analyticsEnabled') === 'true';
-        const marketingEnabled = localStorage.getItem('marketingEnabled') === 'true';
-
-        const analyticsCheckbox = document.getElementById('analytics-cookies') as HTMLInputElement;
-        const marketingCheckbox = document.getElementById('marketing-cookies') as HTMLInputElement;
-
-        if (analyticsCheckbox) analyticsCheckbox.checked = analyticsEnabled;
-        if (marketingCheckbox) marketingCheckbox.checked = marketingEnabled;
-
-        // Enable focus trap
-        trapFocus(modal);
-      }
-    }
-
-    // Hide modal
-    function hideModal() {
-      if (modal) {
-        removeFocusTrap(modal);
-        modal.classList.add('hidden');
-      }
-    }
-
-    // Enable analytics
-    function enableAnalytics() {
-      // Analytics is already loaded in the layout, this is just for consistency
-      if (typeof (window as any).gtag !== 'undefined') {
-        (window as any).gtag('consent', 'update', {
-          'analytics_storage': 'granted'
+    // Show banner if user hasn't responded this session
+    var responded = sessionStorage.getItem('cookieConsent');
+    if (!responded) {
+      banner.style.display = 'block';
+    } else if (responded === 'accepted') {
+      // Re-grant consent from previous acceptance this session
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', {
+          'analytics_storage': 'granted',
+          'ad_storage': 'granted'
         });
       }
     }
 
-    // Event listeners - only add if elements exist
-    if (acceptBtn) {
-      acceptBtn.addEventListener('click', acceptAllCookies);
-    }
-    if (settingsBtn) {
-      settingsBtn.addEventListener('click', showModal);
-    }
-    if (modalClose) {
-      modalClose.addEventListener('click', hideModal);
-    }
-    if (savePreferencesBtn) {
-      savePreferencesBtn.addEventListener('click', saveCookiePreferences);
-    }
-    if (acceptAllBtn) {
-      acceptAllBtn.addEventListener('click', () => {
-        acceptAllCookies();
-        hideModal();
-      });
-    }
-
-    // Close modal when clicking outside
-    if (modal) {
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          hideModal();
-        }
-      });
-    }
-
-    // Initialize analytics consent based on stored preferences
-    if (cookiesAccepted) {
-      const analyticsEnabled = localStorage.getItem('analyticsEnabled') === 'true';
-      if (analyticsEnabled && typeof (window as any).gtag !== 'undefined') {
-        (window as any).gtag('consent', 'update', {
-          'analytics_storage': 'granted'
+    document.getElementById('cookie-accept').addEventListener('click', function() {
+      sessionStorage.setItem('cookieConsent', 'accepted');
+      banner.style.display = 'none';
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', {
+          'analytics_storage': 'granted',
+          'ad_storage': 'granted'
         });
       }
-    }
-  });
+    });
+
+    document.getElementById('cookie-decline').addEventListener('click', function() {
+      sessionStorage.setItem('cookieConsent', 'declined');
+      banner.style.display = 'none';
+    });
+  })();
 </script>
 
 <style>
   #cookie-banner {
-    max-height: 200px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: var(--neutral-900);
+    border-top: 1px solid var(--neutral-700);
+  }
+
+  .cookie-inner {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0.875rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .cookie-text {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    min-width: 0;
+  }
+
+  .cookie-icon {
+    width: 1.125rem;
+    height: 1.125rem;
+    flex-shrink: 0;
+    color: var(--brand-400);
+  }
+
+  .cookie-text p {
+    font-size: 0.8125rem;
+    color: var(--neutral-300);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .cookie-text a {
+    color: var(--brand-400);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .cookie-text a:hover {
+    color: var(--brand-300);
+  }
+
+  .cookie-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  #cookie-decline {
+    padding: 0.375rem 1rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--neutral-400);
+    background: transparent;
+    border: 1px solid var(--neutral-600);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-family: var(--font-body);
+  }
+
+  #cookie-decline:hover {
+    color: var(--neutral-200);
+    border-color: var(--neutral-400);
+  }
+
+  #cookie-accept {
+    padding: 0.375rem 1rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--neutral-950);
+    background: var(--brand-400);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-family: var(--font-body);
+  }
+
+  #cookie-accept:hover {
+    background: var(--brand-300);
   }
 </style>
