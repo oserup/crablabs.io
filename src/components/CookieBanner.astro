@@ -1,126 +1,41 @@
 ---
-// Cookie Banner Component
-// Shows at the top of every page until the user accepts or declines.
-// Choice is saved to localStorage permanently.
+// Cookie Banner - shows at top of page until user accepts or declines.
 ---
 
-<div id="cookie-banner" style="display:none;">
-  <div class="cookie-inner">
-    <p>We use cookies to analyze site traffic. <a href="/privacy">Privacy policy</a></p>
-    <div class="cookie-buttons">
-      <button id="cookie-decline" type="button">Decline</button>
-      <button id="cookie-accept" type="button">Accept</button>
+<div id="cookie-banner" style="display:none; position:fixed; top:0; left:0; right:0; z-index:9999; background:#171717; border-bottom:1px solid #404040;">
+  <div style="max-width:72rem; margin:0 auto; padding:0.75rem 1rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
+    <p style="font-size:0.8125rem; color:#d4d4d4; margin:0; line-height:1.4;">
+      We use cookies to analyze site traffic.
+      <a href="/privacy" style="color:#fb923c; text-decoration:underline; text-underline-offset:2px;">Privacy policy</a>
+    </p>
+    <div style="display:flex; gap:0.5rem; flex-shrink:0;">
+      <button id="cookie-decline" type="button" style="padding:0.375rem 1rem; font-size:0.8125rem; font-weight:500; color:#a3a3a3; background:transparent; border:1px solid #525252; border-radius:4px; cursor:pointer;">Decline</button>
+      <button id="cookie-accept" type="button" style="padding:0.375rem 1rem; font-size:0.8125rem; font-weight:600; color:#0a0a0a; background:#fb923c; border:none; border-radius:4px; cursor:pointer;">Accept</button>
     </div>
   </div>
 </div>
 
 <script is:inline>
-  (function() {
-    var banner = document.getElementById('cookie-banner');
-    if (!banner) return;
-
-    // Only hide if user has made a choice previously
-    if (localStorage.getItem('cookieConsent')) {
-      // Already responded — grant analytics if accepted
-      if (localStorage.getItem('cookieConsent') === 'accepted' && typeof gtag === 'function') {
-        gtag('consent', 'update', { 'analytics_storage': 'granted', 'ad_storage': 'granted' });
-      }
-      return;
+(function() {
+  var b = document.getElementById('cookie-banner');
+  if (!b) return;
+  if (localStorage.getItem('cookieConsent')) {
+    if (localStorage.getItem('cookieConsent') === 'accepted' && typeof gtag === 'function') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted', 'ad_storage': 'granted' });
     }
-
-    // No choice made yet — show the banner
-    banner.style.display = 'block';
-
-    document.getElementById('cookie-accept').addEventListener('click', function() {
-      localStorage.setItem('cookieConsent', 'accepted');
-      banner.style.display = 'none';
-      if (typeof gtag === 'function') {
-        gtag('consent', 'update', { 'analytics_storage': 'granted', 'ad_storage': 'granted' });
-      }
-    });
-
-    document.getElementById('cookie-decline').addEventListener('click', function() {
-      localStorage.setItem('cookieConsent', 'declined');
-      banner.style.display = 'none';
-    });
-  })();
+    return;
+  }
+  b.style.display = 'block';
+  document.getElementById('cookie-accept').onclick = function() {
+    localStorage.setItem('cookieConsent', 'accepted');
+    b.style.display = 'none';
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted', 'ad_storage': 'granted' });
+    }
+  };
+  document.getElementById('cookie-decline').onclick = function() {
+    localStorage.setItem('cookieConsent', 'declined');
+    b.style.display = 'none';
+  };
+})();
 </script>
-
-<style>
-  #cookie-banner {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-    background: var(--neutral-900);
-    border-bottom: 1px solid var(--neutral-700);
-  }
-
-  .cookie-inner {
-    max-width: 72rem;
-    margin: 0 auto;
-    padding: 0.75rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .cookie-inner p {
-    font-size: 0.8125rem;
-    color: var(--neutral-300);
-    margin: 0;
-    line-height: 1.4;
-  }
-
-  .cookie-inner a {
-    color: var(--brand-400);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
-
-  .cookie-inner a:hover {
-    color: var(--brand-300);
-  }
-
-  .cookie-buttons {
-    display: flex;
-    gap: 0.5rem;
-    flex-shrink: 0;
-  }
-
-  #cookie-decline {
-    padding: 0.375rem 1rem;
-    font-size: 0.8125rem;
-    font-weight: 500;
-    color: var(--neutral-400);
-    background: transparent;
-    border: 1px solid var(--neutral-600);
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: var(--font-body);
-  }
-
-  #cookie-decline:hover {
-    color: var(--neutral-200);
-    border-color: var(--neutral-400);
-  }
-
-  #cookie-accept {
-    padding: 0.375rem 1rem;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: var(--neutral-950);
-    background: var(--brand-400);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: var(--font-body);
-  }
-
-  #cookie-accept:hover {
-    background: var(--brand-300);
-  }
-</style>
