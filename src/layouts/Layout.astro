@@ -149,14 +149,12 @@ const currentUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
 			Skip to main content
 		</a>
 
-		<div class="flex flex-col min-h-screen">
-			<NavBar links={links} />
-			<main id="main-content" class="flex-grow">
-				<slot />
-			</main>
-			<Footer />
-			<CookieBanner />
-		</div>
+		<NavBar links={links} />
+		<main id="main-content">
+			<slot />
+		</main>
+		<Footer />
+		<CookieBanner />
 	</body>
 
 
