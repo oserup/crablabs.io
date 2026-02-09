@@ -10,7 +10,7 @@
 
 html {
   scroll-behavior: smooth;
-  background: #ffffff;
+  background: var(--neutral-900);
 }
 
 body {
@@ -19,7 +19,9 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: var(--neutral-600);
-  background-color: white;
+  background-color: var(--neutral-900);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
 }
