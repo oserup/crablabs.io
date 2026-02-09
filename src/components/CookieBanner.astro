@@ -4,7 +4,8 @@
 
 <div
   id="cookie-banner"
-  class="hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 transform translate-y-full transition-transform duration-300 ease-in-out"
+  class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 transform translate-y-full transition-transform duration-300 ease-in-out"
+  style="display: none;"
 >
   <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-4">
     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
@@ -180,15 +181,36 @@
     const savePreferencesBtn = document.getElementById('cookie-save-preferences');
     const acceptAllBtn = document.getElementById('cookie-accept-all');
 
+    console.log('[CookieBanner] Initializing...');
+    console.log('[CookieBanner] Banner element:', banner);
+
     // Check if cookies have been accepted
     const cookiesAccepted = localStorage.getItem('cookiesAccepted');
-    
+    console.log('[CookieBanner] Cookies accepted:', cookiesAccepted);
+
+    // Expose reset function globally for testing
+    (window as any).resetCookieConsent = function() {
+      localStorage.removeItem('cookiesAccepted');
+      localStorage.removeItem('analyticsEnabled');
+      localStorage.removeItem('marketingEnabled');
+      location.reload();
+    };
+    console.log('[CookieBanner] To test banner, run: resetCookieConsent()');
+
     if (!cookiesAccepted) {
-      // Show banner immediately
+      console.log('[CookieBanner] Showing banner...');
+      // Show banner with animation
       if (banner) {
-        banner.classList.remove('hidden');
-        banner.classList.remove('translate-y-full');
+        banner.style.display = 'block';
+        // Force reflow to ensure animation works
+        banner.offsetHeight;
+        requestAnimationFrame(() => {
+          banner.classList.remove('translate-y-full');
+          console.log('[CookieBanner] Banner animated in');
+        });
       }
+    } else {
+      console.log('[CookieBanner] Banner already accepted, not showing');
     }
 
     // Accept all cookies
@@ -224,7 +246,7 @@
       if (banner) {
         banner.classList.add('translate-y-full');
         setTimeout(() => {
-          banner.classList.add('hidden');
+          banner.style.display = 'none';
         }, 300);
       }
     }
