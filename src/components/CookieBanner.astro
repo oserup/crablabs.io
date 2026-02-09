@@ -4,7 +4,7 @@
 
 <div
   id="cookie-banner"
-  class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 transform translate-y-full transition-transform duration-300 ease-in-out"
+  class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50"
   style="display: none;"
 >
   <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-4">
@@ -199,15 +199,10 @@
 
     if (!cookiesAccepted) {
       console.log('[CookieBanner] Showing banner...');
-      // Show banner with animation
+      // Show banner immediately
       if (banner) {
         banner.style.display = 'block';
-        // Force reflow to ensure animation works
-        banner.offsetHeight;
-        requestAnimationFrame(() => {
-          banner.classList.remove('translate-y-full');
-          console.log('[CookieBanner] Banner animated in');
-        });
+        console.log('[CookieBanner] Banner displayed');
       }
     } else {
       console.log('[CookieBanner] Banner already accepted, not showing');
@@ -244,10 +239,7 @@
     // Hide banner
     function hideBanner() {
       if (banner) {
-        banner.classList.add('translate-y-full');
-        setTimeout(() => {
-          banner.style.display = 'none';
-        }, 300);
+        banner.style.display = 'none';
       }
     }
 
@@ -369,13 +361,7 @@
 </script>
 
 <style>
-  /* Ensure the banner doesn't interfere with page scrolling */
   #cookie-banner {
     max-height: 200px;
-  }
-  
-  /* Smooth scrolling adjustments */
-  body:has(#cookie-banner:not(.translate-y-full)) {
-    padding-bottom: 120px;
   }
 </style>
