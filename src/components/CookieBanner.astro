@@ -1,19 +1,12 @@
 ---
 // Cookie Banner Component
-// Shows on every page load until user accepts or declines cookies.
-// Uses sessionStorage so it reappears on new browser sessions.
+// Shows at the top of every page until the user accepts or declines.
+// Choice is saved to localStorage permanently.
 ---
 
 <div id="cookie-banner" style="display:none;">
   <div class="cookie-inner">
-    <div class="cookie-text">
-      <svg class="cookie-icon" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-        <path d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/>
-        <circle cx="7" cy="8" r="1"/><circle cx="13" cy="8" r="1"/>
-        <circle cx="10" cy="12" r="1"/>
-      </svg>
-      <p>We use cookies to analyze site traffic. <a href="/privacy">Privacy policy</a></p>
-    </div>
+    <p>We use cookies to analyze site traffic. <a href="/privacy">Privacy policy</a></p>
     <div class="cookie-buttons">
       <button id="cookie-decline" type="button">Decline</button>
       <button id="cookie-accept" type="button">Accept</button>
@@ -22,38 +15,32 @@
 </div>
 
 <script is:inline>
-  // Runs inline at the bottom of <body>, after all DOM elements exist.
   (function() {
     var banner = document.getElementById('cookie-banner');
     if (!banner) return;
 
-    // Show banner if user hasn't responded this session
-    var responded = sessionStorage.getItem('cookieConsent');
-    if (!responded) {
-      banner.style.display = 'block';
-    } else if (responded === 'accepted') {
-      // Re-grant consent from previous acceptance this session
-      if (typeof gtag === 'function') {
-        gtag('consent', 'update', {
-          'analytics_storage': 'granted',
-          'ad_storage': 'granted'
-        });
+    // Only hide if user has made a choice previously
+    if (localStorage.getItem('cookieConsent')) {
+      // Already responded — grant analytics if accepted
+      if (localStorage.getItem('cookieConsent') === 'accepted' && typeof gtag === 'function') {
+        gtag('consent', 'update', { 'analytics_storage': 'granted', 'ad_storage': 'granted' });
       }
+      return;
     }
 
+    // No choice made yet — show the banner
+    banner.style.display = 'block';
+
     document.getElementById('cookie-accept').addEventListener('click', function() {
-      sessionStorage.setItem('cookieConsent', 'accepted');
+      localStorage.setItem('cookieConsent', 'accepted');
       banner.style.display = 'none';
       if (typeof gtag === 'function') {
-        gtag('consent', 'update', {
-          'analytics_storage': 'granted',
-          'ad_storage': 'granted'
-        });
+        gtag('consent', 'update', { 'analytics_storage': 'granted', 'ad_storage': 'granted' });
       }
     });
 
     document.getElementById('cookie-decline').addEventListener('click', function() {
-      sessionStorage.setItem('cookieConsent', 'declined');
+      localStorage.setItem('cookieConsent', 'declined');
       banner.style.display = 'none';
     });
   })();
@@ -62,18 +49,18 @@
 <style>
   #cookie-banner {
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
     right: 0;
     z-index: 9999;
     background: var(--neutral-900);
-    border-top: 1px solid var(--neutral-700);
+    border-bottom: 1px solid var(--neutral-700);
   }
 
   .cookie-inner {
     max-width: 72rem;
     margin: 0 auto;
-    padding: 0.875rem 1rem;
+    padding: 0.75rem 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -81,34 +68,20 @@
     flex-wrap: wrap;
   }
 
-  .cookie-text {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-    min-width: 0;
-  }
-
-  .cookie-icon {
-    width: 1.125rem;
-    height: 1.125rem;
-    flex-shrink: 0;
-    color: var(--brand-400);
-  }
-
-  .cookie-text p {
+  .cookie-inner p {
     font-size: 0.8125rem;
     color: var(--neutral-300);
     margin: 0;
     line-height: 1.4;
   }
 
-  .cookie-text a {
+  .cookie-inner a {
     color: var(--brand-400);
     text-decoration: underline;
     text-underline-offset: 2px;
   }
 
-  .cookie-text a:hover {
+  .cookie-inner a:hover {
     color: var(--brand-300);
   }
 
@@ -127,7 +100,6 @@
     border: 1px solid var(--neutral-600);
     border-radius: 4px;
     cursor: pointer;
-    transition: all 0.15s ease;
     font-family: var(--font-body);
   }
 
@@ -145,7 +117,6 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: all 0.15s ease;
     font-family: var(--font-body);
   }
 
