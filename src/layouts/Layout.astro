@@ -109,9 +109,7 @@ const currentUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
 
 			// Check if user has previously consented (matches CookieBanner localStorage key)
 			try {
-				const hasConsent = localStorage.getItem('cookiesAccepted') === 'true';
-				const analyticsEnabled = localStorage.getItem('analyticsEnabled') === 'true';
-				if (hasConsent && analyticsEnabled) {
+				if (localStorage.getItem('cookieConsent') === 'accepted') {
 					gtag('consent', 'update', {
 						'analytics_storage': 'granted',
 						'ad_storage': 'granted'
