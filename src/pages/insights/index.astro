@@ -438,7 +438,7 @@ document.addEventListener('DOMContentLoaded', function() {
       noResults.classList.toggle('visible', visible === 0);
     }
 
-    const hasFilters = searchTerm || currentType !== 'all';
+    const hasFilters = !!searchTerm || currentType !== 'all';
     clearFiltersBtn?.classList.toggle('visible', hasFilters);
   }
 });
