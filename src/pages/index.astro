@@ -99,7 +99,7 @@ const featuredTestimonials = testimonials.filter(t => t.featured);
       overflow: hidden;
       display: flex;
       align-items: center;
-      padding-top: 3.5rem;
+      padding-top: 3rem;
     }
 
     .hero::before {
@@ -131,9 +131,9 @@ const featuredTestimonials = testimonials.filter(t => t.featured);
       z-index: 10;
       display: grid;
       grid-template-columns: 1fr;
-      gap: 1.5rem;
+      gap: 1rem;
       align-items: center;
-      padding: 1.5rem 0 2rem;
+      padding: 1rem 0 1.5rem;
     }
 
     @media (min-width: 768px) {
@@ -270,26 +270,35 @@ const featuredTestimonials = testimonials.filter(t => t.featured);
       border-color: var(--brand-400);
     }
 
+    /* Mobile: traces fill the hero as a background, fade out after drawing */
     .hero-visual {
       display: flex;
       justify-content: center;
       align-items: flex-start;
       position: absolute;
-      right: -5%;
-      top: 0;
-      opacity: 0.12;
+      inset: 0;
       pointer-events: none;
       z-index: 1;
+      overflow: hidden;
+      animation: traceFadeOut 4s ease-out 2.5s forwards;
+      opacity: 0.35;
     }
 
+    @keyframes traceFadeOut {
+      0% { opacity: 0.35; }
+      100% { opacity: 0.06; }
+    }
+
+    /* Tablet+: normal 2-col layout, no fade */
     @media (min-width: 768px) {
       .hero-visual {
         position: relative;
-        right: auto;
-        top: auto;
+        inset: auto;
         opacity: 1;
         pointer-events: auto;
         z-index: auto;
+        overflow: visible;
+        animation: none;
       }
     }
 
