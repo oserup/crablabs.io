@@ -99,6 +99,7 @@ const featuredTestimonials = testimonials.filter(t => t.featured);
       overflow: hidden;
       display: flex;
       align-items: center;
+      padding-top: 3rem;
     }
 
     .hero::before {
@@ -145,7 +146,7 @@ const featuredTestimonials = testimonials.filter(t => t.featured);
       .hero-inner {
         grid-template-columns: 1fr 1fr;
         gap: 3rem;
-        padding: 4rem 0;
+        padding: 3rem 0 4rem;
       }
     }
 
@@ -191,9 +192,17 @@ const featuredTestimonials = testimonials.filter(t => t.featured);
 
     .hero-cta-row {
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1.25rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 480px) {
+      .hero-cta-row {
+        flex-direction: row;
+        align-items: center;
+        gap: 1.25rem;
+      }
     }
 
     .hero-cta-primary {
@@ -262,7 +271,7 @@ const featuredTestimonials = testimonials.filter(t => t.featured);
     .hero-visual {
       display: none;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       position: relative;
     }
 
@@ -270,7 +279,7 @@ const featuredTestimonials = testimonials.filter(t => t.featured);
       .hero-visual {
         display: flex;
         transform: scale(0.75);
-        transform-origin: center;
+        transform-origin: top center;
       }
     }
 
