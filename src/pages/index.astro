@@ -270,41 +270,19 @@ const featuredTestimonials = testimonials.filter(t => t.featured);
       border-color: var(--brand-400);
     }
 
-    /* Mobile: traces fill the hero as a background, fade out after drawing */
+    /* Mobile: hide traces entirely — they don't work at this size */
     .hero-visual {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1;
-      overflow: hidden;
-      animation: traceFadeOut 4s ease-out 2.5s forwards;
-      opacity: 0.35;
+      display: none;
     }
 
-    @keyframes traceFadeOut {
-      0% { opacity: 0.35; }
-      100% { opacity: 0.06; }
-    }
-
-    /* Tablet+: normal 2-col layout, no fade */
-    @media (min-width: 768px) {
-      .hero-visual {
-        position: relative;
-        inset: auto;
-        opacity: 1;
-        pointer-events: auto;
-        z-index: auto;
-        overflow: visible;
-        animation: none;
-        margin-top: -3rem;
-      }
-    }
-
+    /* Desktop: show traces in 2-col layout */
     @media (min-width: 1024px) {
       .hero-visual {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        position: relative;
+        overflow: visible;
         margin-top: -4rem;
       }
     }
